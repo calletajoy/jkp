@@ -1,0 +1,111 @@
+# structured — PHP Project Structure
+
+## Overview
+A clean PHP project using a **front-controller pattern** with reusable partials.  
+No framework required — just PHP, Bootstrap, and your existing CSS/JS assets.
+
+---
+
+## Directory Structure
+
+```
+structured/
+│
+├── index.php               ← Front controller & router (all requests land here)
+├── layout.php              ← Master layout (wraps every page)
+├── .htaccess               ← Rewrites all URLs → index.php
+│
+├── partials/               ← Reusable components
+│   ├── head.php            ← <head> meta, CSS links
+│   ├── header.php          ← Top bar + navbar (auto-highlights active link)
+│   ├── footer.php          ← Footer columns + copyright bar
+│   ├── scripts.php         ← All <script> tags before </body>
+│   └── page-hero.php       ← Inner-page hero banner (used by all inner pages)
+│
+├── pages/                  ← One file per page — content only
+│   ├── home.php
+│   ├── about.php
+│   ├── services.php
+│   ├── blog.php
+│   ├── team.php
+│   └── contact.php
+│
+└── assets/                 ← Static files (copy from your original project)
+    ├── css/
+    │   ├── bootstrap.min.css
+    │   ├── style.min.css
+    │   ├── slick.css / slick-theme.css
+    │   ├── cssanimation.min.css
+    │   ├── all.min.css / fontawesome.min.css
+    ├── js/
+    │   ├── app.js
+    │   ├── jquery-3.7.1.min.js
+    │   ├── bootstrap.bundle.min.js
+    │   └── plugins/
+    │       ├── slick.min.js
+    │       └── letteranimation.min.js
+    └── images/             ← All images from original project
+```
+
+---
+
+## How It Works
+
+### Routing (index.php)
+Every request hits `index.php` (via `.htaccess`). The router maps URL slugs to page files:
+
+| URL         | Page file            |
+|-------------|----------------------|
+| `/`         | `pages/home.php`     |
+| `/about`    | `pages/about.php`    |
+| `/services` | `pages/services.php` |
+| `/blog`     | `pages/blog.php`     |
+| `/team`     | `pages/team.php`     |
+| `/contact`  | `pages/contact.php`  |
+
+### Page Files (pages/*.php)
+Each page file follows this pattern:
+
+```php
+<?php
+$pageTitle   = 'About Us';   // Sets <title> and hero heading
+$currentPage = 'about';      // Highlights the nav link
+
+ob_start();                  // Start capturing content
+// ... your HTML here ...
+$pageContent = ob_get_clean(); // End capture
+require __DIR__ . '/../layout.php'; // Inject into layout
+```
+
+### Layout (layout.php)
+Renders `head.php` → `header.php` → `$pageContent` → `footer.php` → `scripts.php`.
+
+### Active Nav Links
+Set `$currentPage` in each page file to the route key (`'home'`, `'about'`, etc.).  
+`header.php` uses the `navActive()` helper to add the `active` CSS class automatically.
+
+### Inner Page Hero
+Use `partials/page-hero.php` at the top of any inner page:
+
+```php
+$heroTitle    = 'About Us';
+$heroSubtitle = 'About';  // Used in breadcrumb
+$heroBg       = '/assets/images/custom-banner.png'; // optional
+include __DIR__ . '/../partials/page-hero.php';
+```
+
+---
+
+## Adding a New Page
+
+1. Create `pages/my-page.php`
+2. Set `$pageTitle`, `$currentPage`
+3. Add to `$routes` in `index.php`: `'my-page' => 'pages/my-page.php'`
+4. Add to `$navLinks` in `partials/header.php` if it needs a nav entry
+
+---
+
+## Requirements
+- PHP 7.4+
+- Apache with `mod_rewrite` enabled (or configure Nginx equivalent)
+- Your original CSS/JS/image assets copied into `/assets/`
