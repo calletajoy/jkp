@@ -57,7 +57,7 @@ ob_start();
     <div class="container">
         <?php
         $mandateCards = [
-            ['gif' => '/assets/images/coord.jpg',           'title' => 'Coordination',   'text' => 'Socio-political & regional '],
+            ['img' => '/assets/images/coord.jpg',           'title' => 'Coordination',   'text' => 'Socio-political & regional '],
             ['gif' => 'planning-animation.gif',         'title' => 'Policy Harmonization',   'text' => 'Jumuiya 2030..'],
             ['gif' => 'recycle-animation.gif',          'title' => 'Promotion',      'text' => 'Sea-Land of Opportunities... '],
             ['gif' => 'travel-insurance-animation.gif', 'title' => 'Investments',    'text' => 'Unlocking value chains...'],
