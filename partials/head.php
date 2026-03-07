@@ -42,3 +42,6 @@
 
 <!-- Site Styles -->
 <link rel="stylesheet" href="/assets/css/style.min.css">
+
+<!-- Mega Menu Custom Styles -->
+<link rel="stylesheet" href="/assets/css/mega_menu.css">

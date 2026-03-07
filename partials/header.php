@@ -2,10 +2,9 @@
 
 /**
  * partials/header.php
- * Top bar + main navbar — updated with Jumuiya ya Kaunti za Pwani content.
+ * Top bar + main navbar — updated with mega menus.
  *
  * Uses $currentPage (string) set in each page file to highlight the active nav link.
- * Example: $currentPage = 'home';
  */
 
 function navActive(string $key): string
@@ -14,15 +13,6 @@ function navActive(string $key): string
     return (isset($currentPage) && $currentPage === $key) ? 'active' : '';
 }
 
-$navLinks = [
-    'home'     => ['label' => 'Home',         'href' => '/'],
-    'about'    => ['label' => 'About Us',      'href' => '/'],
-    'services' => ['label' => 'Resources',     'href' => '/services'],
-    'blog'     => ['label' => 'Media Center',  'href' => '/'],
-    'events'   => ['label' => 'Events',        'href' => '/events'],
-    'milestone'     => ['label' => 'milestone',          'href' => '/'],
-    'contact'  => ['label' => 'Contact',       'href' => '/contact'],
-];
 ?>
 
 <header>
@@ -73,23 +63,136 @@ $navLinks = [
 
                 <!-- Mobile toggle -->
                 <button class="navbar-toggler ms-auto" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                        data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <!-- Nav links -->
                 <div class="navigation-link collapse navbar-collapse gap-4" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto">
-                        <?php foreach ($navLinks as $key => $link): ?>
-                            <li class="nav-item">
-                                <a class="nav-link fw-normal <?php echo navActive($key); ?>"
-                                    href="<?php echo htmlspecialchars($link['href']); ?>">
-                                    <?php echo htmlspecialchars($link['label']); ?>
-                                </a>
-                            </li>
-                        <?php endforeach; ?>
+
+                        <!-- Home -->
+                        <li class="nav-item">
+                            <a class="nav-link fw-normal <?php echo navActive('home'); ?>" href="/">Home</a>
+                        </li>
+
+                        <!-- About Us Mega Menu -->
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a class="nav-link dropdown-toggle <?php echo navActive('about'); ?>"
+                               href="/about"
+                               id="aboutMega"
+                               role="button"
+                               data-bs-toggle="dropdown"
+                               aria-expanded="false">
+                                About Us
+                            </a>
+                            <div class="dropdown-menu mega-menu p-4" aria-labelledby="aboutMega">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h6 class="fw-bold mb-3">📊 About JKP Economic Bloc</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a class="dropdown-item px-0" href="/about">Overview & History</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h6 class="fw-bold mb-3">🎯 Core Mandate</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a class="dropdown-item px-0" href="/core-mandate">Mission & Vision</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h6 class="fw-bold mb-3">🤝 Stakeholders</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a class="dropdown-item px-0" href="/stakeholders">Our Partners</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Resources Mega Menu -->
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a class="nav-link dropdown-toggle <?php echo navActive('resources'); ?>"
+                               href="/resources"
+                               id="resourcesMega"
+                               role="button"
+                               data-bs-toggle="dropdown"
+                               aria-expanded="false">
+                                Resources
+                            </a>
+                            <div class="dropdown-menu mega-menu p-4" aria-labelledby="resourcesMega">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h6 class="fw-bold mb-3">📘 Blueprint & Plans</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a class="dropdown-item px-0" href="#">Jumuiya-TCH Blueprint 2030</a></li>
+                                                <li><a class="dropdown-item px-0" href="#">Strategic Plan</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6 class="fw-bold mb-3">📄 Opportunities</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a class="dropdown-item px-0" href="#">Local Tender (AICS)</a></li>
+                                                <li><a class="dropdown-item px-0" href="#">Opportunities</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Media Center Mega Menu -->
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a class="nav-link dropdown-toggle <?php echo navActive('media'); ?>"
+                               href="/media-center"
+                               id="mediaMega"
+                               role="button"
+                               data-bs-toggle="dropdown"
+                               aria-expanded="false">
+                                Media Center
+                            </a>
+                            <div class="dropdown-menu mega-menu p-4" aria-labelledby="mediaMega">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h6 class="fw-bold mb-3">📰 News</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a class="dropdown-item px-0" href="#">Latest News</a></li>
+                                                <li><a class="dropdown-item px-0" href="#">Newsletters</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h6 class="fw-bold mb-3">📸 Gallery</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a class="dropdown-item px-0" href="#">Photo & Video Gallery</a></li>
+                                                <li><a class="dropdown-item px-0" href="#">Media</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h6 class="fw-bold mb-3">Archive</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a class="dropdown-item px-0" href="#">Archive</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Events -->
+                        <li class="nav-item">
+                            <a class="nav-link fw-normal <?php echo navActive('events'); ?>" href="/events">Events</a>
+                        </li>
+
+                        <!-- Contact -->
+                        <li class="nav-item">
+                            <a class="nav-link fw-normal <?php echo navActive('contact'); ?>" href="/contact">Contact</a>
+                        </li>
                     </ul>
 
                     <!-- CTA + Sidebar toggle -->
@@ -113,34 +216,17 @@ $navLinks = [
 
                                 <div class="our-mission">
                                     <h4 class="text-white">Our Mission</h4>
-                                    <p>Catalyze economic growth of Kenya's coast regional counties through coordination, promotion, and investment facilitation — guided by the Jumuiya 2030 Economic Blueprint.</p>
+                                    <p>Catalyze economic growth of Kenya's coastal counties through coordination, promotion, and investment facilitation — guided by the Jumuiya 2030 Economic Blueprint.</p>
                                 </div>
 
                                 <div class="contact">
                                     <div class="con-info">
                                         <h4 class="text-white">Contact Info</h4>
                                         <ul>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="bi bi-geo-alt"></i>
-                                                    Bustani Close, Links Road – Nyali, Mombasa, Kenya
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="tel:+254777101115">
-                                                    <i class="bi bi-telephone phone"></i> +254 777 101 115
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="mailto:info@jumuiya.org">
-                                                    <i class="bi bi-envelope email"></i> info@jumuiya.org
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="mailto:secretariat@jumuiya.org">
-                                                    <i class="bi bi-envelope email"></i> secretariat@jumuiya.org
-                                                </a>
-                                            </li>
+                                            <li><a href="#"><i class="bi bi-geo-alt"></i> Bustani Close, Links Road – Nyali, Mombasa, Kenya</a></li>
+                                            <li><a href="tel:+254777101115"><i class="bi bi-telephone phone"></i> +254 777 101 115</a></li>
+                                            <li><a href="mailto:info@jumuiya.org"><i class="bi bi-envelope email"></i> info@jumuiya.org</a></li>
+                                            <li><a href="mailto:secretariat@jumuiya.org"><i class="bi bi-envelope email"></i> secretariat@jumuiya.org</a></li>
                                         </ul>
                                     </div>
                                     <div class="social-link">
@@ -156,6 +242,7 @@ $navLinks = [
 
                         </div>
                     </div>
+
                 </div>
 
             </div>
