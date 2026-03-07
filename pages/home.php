@@ -541,21 +541,21 @@ ob_start();
         <?php
         $news = [
             [
-                'img'   => 'agri-summit.jpeg',
+                'img'   => '/assets/images/agri summit.jpeg',
                 'date'  => '24',
                 'month' => 'February',
                 'title' => 'Jumuiya Ya Pwani Agriculture Revitalization Summit',
                 'author' => 'Editorial Staff',
             ],
             [
-                'img'   => 'fauna.jpeg',
+                'img'   => '/assets/images/fauna.jpeg',
                 'date'  => '26',
                 'month' => 'February',
                 'title' => 'Ocean Conservation and Sustainable Coastal Development Workshop',
                 'author' => 'Editorial Staff',
             ],
             [
-                'img'   => 'strength-bi.png',
+                'img'   => '/assets/images/strength bi.png',
                 'date'  => '19',
                 'month' => 'April',
                 'title' => 'Strengthening Bilateral Relations — Australian Deputy High Commissioner Visits JKP Offices',
