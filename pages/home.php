@@ -12,7 +12,7 @@ $bodyClass   = 'page-home';
 ob_start();
 ?>
 
-<!-- ===== Banner  6 Coastal Sites (Zoom in/out Animation) ===== -->
+<!-- ===== Banner 6 Coastal Sites (Zoom in/out Animation) ===== -->
 <style>
     .carousel-item img {
         animation: zoomInOut 12s infinite alternate ease-in-out;
@@ -404,14 +404,14 @@ ob_start();
     </div>
 </section>
 
-<!-- ===== JKP Projects & Initiatives ===== -->
+<!-- ===== JKP Projects & Initiatives (4 Cards) ===== -->
 <section class="government-service">
     <div class="container">
         <div class="section-title">
             <div class="semi-title" data-aos="fade-up">
                 <div class="animated-circles justify-content-center">
                     <div class="small-circle-start"></div>
-                    <div class="title">JKP </div>
+                    <div class="title">JKP</div>
                     <div class="small-circle-end"></div>
                 </div>
             </div>
@@ -419,23 +419,38 @@ ob_start();
                 <h2 class="cssanimation lePopUp sequence">JKP Projects & Initiatives</h2>
             </div>
         </div>
+        
         <?php
+        // Updated projects array with only 4 specific projects
         $projects = [
-            ['gif' => 'skills.gif',         'title' => 'Workforce &amp; MSME Incubator',        'desc' => 'Empowering youth and women with business skills and entrepreneurship support across the Coast region.'],
-            ['gif' => 'police.gif',          'title' => 'Go Blue Project',                       'desc' => 'Advancing blue economy growth by addressing gender exclusion, poverty, and marginalisation through targeted interventions.'],
-            ['gif' => 'elections.gif',       'title' => 'County Aggregation &amp; Industrial Parks', 'desc' => 'Establishing CAIPs to foster industrialization, value addition, and job creation across the six counties.'],
-            ['gif' => 'money-transfer.gif',  'title' => 'Regional Flagship Projects',            'desc' => 'High-impact projects identified and implemented under the Jumuiya 2030 Economic Blueprint for the region.'],
-            ['gif' => 'planning.gif',        'title' => 'Go Kenya Coast Tourism',                'desc' => 'Marketing JKP counties as a prime destination, highlighting cultural heritage and world-class coastal attractions.'],
-            ['gif' => 'profit.gif',          'title' => 'Agribusiness Value Chains',             'desc' => 'Facilitating partnerships between farming communities, government, and the private sector to unlock agricultural investment.'],
-            ['gif' => 'parking.gif',         'title' => 'Public-Private Partnerships',           'desc' => 'Supporting collaborative investments and aligning CIDPs with the Jumuiya 2030 blueprint and Vision 2030 MTPs.'],
-            ['gif' => 'spinach.gif',         'title' => 'Blue Economy Vocational Training',      'desc' => 'Vocational programs in Hotel &amp; Hospitality, Maritime, and fisheries — supported by the EU, GIZ, and CAP YEI.'],
+            [
+                'img' => 'she-stands.jpg', 
+                'title' => 'She Stands Project', 
+                'desc' => 'She Stands Kenya is a faith based collaborative initiative between Grace Center Malindi and Jumuiya Economic Development Secretariat to equip and inspire the progressive kenya christian woman with biblical principles for everyday living and leading change for self, family and community.'
+            ],
+            [
+                'img' => 'go-blue.jpg', 
+                'title' => 'The Go Blue Project', 
+                'desc' => 'The Go Blue Project is a four year project funded by the European union (EU) to support Kenya\'s Coastal economic development agenda and blue economy strategy.'
+            ],
+            [
+                'img' => 'innovation-lab.jpg', 
+                'title' => 'Jumuiya Innovation Lab', 
+                'desc' => 'Established of six (6) Jumuiya innovation labs is an anchor flagship project to changing the story of the region under Jumuiya 2030 framework.'
+            ],
+            [
+                'img' => 'jumuiya-2030.jpg', 
+                'title' => 'Jumuiya 2030', 
+                'desc' => 'Is the regional economic development strategy for the period 2020/30. Its development and architecture are drawn from...'
+            ],
         ];
         ?>
+        
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
             <?php foreach ($projects as $project): ?>
                 <div class="col" data-aos="fade-up">
                     <div class="card h-100 border-0 rounded-0">
-                        <img src="/assets/images/01_home/goverment-service/<?php echo $project['gif']; ?>" class="card-img-top img-fluid" alt="">
+                        <img src="/assets/images/01_home/goverment-service/<?php echo $project['img']; ?>" class="card-img-top img-fluid" alt="<?php echo $project['title']; ?>">
                         <div class="card-body">
                             <a href="/services">
                                 <h4 class="card-title"><?php echo $project['title']; ?></h4>
@@ -452,10 +467,10 @@ ob_start();
     </div>
 </section>
 
-<!-- ===== Mission & Vision Strip ===== -->
+<!-- ===== Jumuiya Hub Section ===== -->
 <section class="best-city-government remove-div one-second" data-aos="fade-up">
     <div class="images-and-overlay">
-        <img class="img-fluid" src="/assets/images/01_home/best-city/image-footer.png" alt="JKP Mission">
+        <img class="img-fluid" src="/assets/images/01_home/best-city/image-footer.png" alt="Jumuiya Hub">
         <div class="overlay"></div>
     </div>
     <div class="container">
@@ -467,70 +482,36 @@ ob_start();
             </div>
             <div class="city-service-list">
                 <div class="row city-footer-content">
-                    <div class="col-12 col-md-6 col-lg-4" data-aos="fade-right">
+                    <div class="col-12 col-md-6 col-lg-3" data-aos="fade-right">
                         <ul>
-                            <li class="hove"><a href="/about" target="_blank" rel="noopener noreferrer"><span>Mission: Catalyze economic growth of Kenya's coast regional counties</span><i class="bi bi-chevron-right float-end me-2"></i></a>
+                            <li class="hove"><a href="/about" target="_blank" rel="noopener noreferrer"><span>Agriculture & Agribusiness</span><i class="bi bi-chevron-right float-end me-2"></i></a>
                                 <div class="divide-row"></div>
                             </li>
-                            <li><a href="/about" target="_blank" rel="noopener noreferrer"><span>Social Innovation Network for Workforce &amp; MSMEs</span><i class="bi bi-chevron-right float-end me-2"></i></a>
-                                <div class="divide-row"></div>
-                            </li>
-                            <li><a href="/about" target="_blank" rel="noopener noreferrer"><span>Youth &amp; Women Empowerment in the Coast Region</span><i class="bi bi-chevron-right float-end me-2"></i></a>
-                                <div class="divide-row"></div>
-                            </li>
-                            <li><a href="/about" target="_blank" rel="noopener noreferrer"><span>High Middle-Income Population Transformation Goal</span><i class="bi bi-chevron-right float-end me-2"></i></a>
-                                <div class="divide-row"></div>
-                            </li>
-                            <li><a href="/about" target="_blank" rel="noopener noreferrer"><span>County Integrated Development Plans (CIDPs) Alignment</span><i class="bi bi-chevron-right float-end me-2"></i></a>
-                                <div class="divide-row"></div>
-                            </li>
-                            <li><a href="/about" target="_blank" rel="noopener noreferrer"><span>Vision 2030 Medium Term Plans (MTP) Integration</span><i class="bi bi-chevron-right float-end me-2"></i></a>
-                                <div class="divide-row"></div>
-                            </li>
+                            <li><span class="hub-description">Promoting sustainable farming, value addition, and market access for coastal farmers.</span></li>
                         </ul>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-4" data-aos="fade-down">
+                    <div class="col-12 col-md-6 col-lg-3" data-aos="fade-down">
                         <ul>
-                            <li class="hove"><a href="/about" target="_blank" rel="noopener noreferrer"><span>Socio-Political &amp; Regional Policy Harmonization</span><i class="bi bi-chevron-right float-end me-2"></i></a>
+                            <li class="hove"><a href="/about" target="_blank" rel="noopener noreferrer"><span>Blue Economy</span><i class="bi bi-chevron-right float-end me-2"></i></a>
                                 <div class="divide-row"></div>
                             </li>
-                            <li><a href="/about" target="_blank" rel="noopener noreferrer"><span>Promoting Regional Tourism, Culture &amp; Heritage</span><i class="bi bi-chevron-right float-end me-2"></i></a>
-                                <div class="divide-row"></div>
-                            </li>
-                            <li><a href="/about" target="_blank" rel="noopener noreferrer"><span>Facilitating Investor &amp; Development Partner Engagement</span><i class="bi bi-chevron-right float-end me-2"></i></a>
-                                <div class="divide-row"></div>
-                            </li>
-                            <li><a href="/about" target="_blank" rel="noopener noreferrer"><span>Supporting Public-Private Partnerships for Investments</span><i class="bi bi-chevron-right float-end me-2"></i></a>
-                                <div class="divide-row"></div>
-                            </li>
-                            <li><a href="/about" target="_blank" rel="noopener noreferrer"><span>JABEIC Annual Conference — Flagship Investment Event</span><i class="bi bi-chevron-right float-end me-2"></i></a>
-                                <div class="divide-row"></div>
-                            </li>
-                            <li><a href="/about" target="_blank" rel="noopener noreferrer"><span>Reducing Poverty &amp; Stimulating Socio-Economic Transformation</span><i class="bi bi-chevron-right float-end me-2"></i></a>
-                                <div class="divide-row"></div>
-                            </li>
+                            <li><span class="hub-description">Sustainable use of ocean resources for economic growth, jobs, and healthy marine ecosystems.</span></li>
                         </ul>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-4" data-aos="fade-left">
+                    <div class="col-12 col-md-6 col-lg-3" data-aos="fade-left">
                         <ul>
-                            <li class="hove"><a href="/about" target="_blank" rel="noopener noreferrer"><span>Jumuiya 10 Pillars Program Implementation</span><i class="bi bi-chevron-right float-end me-2"></i></a>
+                            <li class="hove"><a href="/about" target="_blank" rel="noopener noreferrer"><span>Tourism</span><i class="bi bi-chevron-right float-end me-2"></i></a>
                                 <div class="divide-row"></div>
                             </li>
-                            <li><a href="/about" target="_blank" rel="noopener noreferrer"><span>Regional Flagship Projects — High-Impact Execution</span><i class="bi bi-chevron-right float-end me-2"></i></a>
+                            <li><span class="hub-description">Showcasing the beautiful beaches, culture, and heritage of Kenya's coast.</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up">
+                        <ul>
+                            <li class="hove"><a href="/about" target="_blank" rel="noopener noreferrer"><span>Education & Academia</span><i class="bi bi-chevron-right float-end me-2"></i></a>
                                 <div class="divide-row"></div>
                             </li>
-                            <li><a href="/about" target="_blank" rel="noopener noreferrer"><span>Showcasing Investment Opportunities at JABEIC</span><i class="bi bi-chevron-right float-end me-2"></i></a>
-                                <div class="divide-row"></div>
-                            </li>
-                            <li><a href="/about" target="_blank" rel="noopener noreferrer"><span>Knowledge Exchange for High-Growth Coastal Sectors</span><i class="bi bi-chevron-right float-end me-2"></i></a>
-                                <div class="divide-row"></div>
-                            </li>
-                            <li><a href="/about" target="_blank" rel="noopener noreferrer"><span>Coordinating Six County Governments via the Secretariat</span><i class="bi bi-chevron-right float-end me-2"></i></a>
-                                <div class="divide-row"></div>
-                            </li>
-                            <li><a href="/about" target="_blank" rel="noopener noreferrer"><span>Bilateral Relations &amp; International Development Partnerships</span><i class="bi bi-chevron-right float-end me-2"></i></a>
-                                <div class="divide-row"></div>
-                            </li>
+                            <li><span class="hub-description">Investing in quality education, research, and skills development for youth.</span></li>
                         </ul>
                     </div>
                 </div>
@@ -556,24 +537,25 @@ ob_start();
                 </div>
             </div>
         </div>
+        
         <?php
         $news = [
             [
-                'img'   => 'assets/images/agri summit.jpeg',
+                'img'   => 'agri-summit.jpeg',
                 'date'  => '24',
                 'month' => 'February',
                 'title' => 'Jumuiya Ya Pwani Agriculture Revitalization Summit',
                 'author' => 'Editorial Staff',
             ],
             [
-                'img'   => 'assets/images/fauna.jpeg',
+                'img'   => 'fauna.jpeg',
                 'date'  => '26',
                 'month' => 'February',
                 'title' => 'Ocean Conservation and Sustainable Coastal Development Workshop',
                 'author' => 'Editorial Staff',
             ],
             [
-                'img'   => 'assets/images/strength bi.png',
+                'img'   => 'strength-bi.png',
                 'date'  => '19',
                 'month' => 'April',
                 'title' => 'Strengthening Bilateral Relations — Australian Deputy High Commissioner Visits JKP Offices',
@@ -581,11 +563,12 @@ ob_start();
             ],
         ];
         ?>
+        
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
             <?php foreach ($news as $item): ?>
                 <div class="col">
                     <div class="card h-100 border-0 rounded" data-aos="fade-right">
-                        <img src="/assets/images/multiple-use/newsroom/<?php echo $item['img']; ?>" class="card-img-top img-fluid" alt="">
+                        <img src="<?php echo htmlspecialchars($item['img']); ?>" class="card-img-top img-fluid" alt="<?php echo htmlspecialchars($item['title']); ?>">
                         <div class="card-body p-3">
                             <div class="date-comment d-flex justify-content-between gap-3">
                                 <div class="date">
@@ -612,11 +595,8 @@ ob_start();
 </section>
 
 <?php
-
 include __DIR__ . '/components/partners.php';
-
 ?>
-
 
 <!-- ===== Contact Strip ===== -->
 <section class="upcoming-city" data-aos="fade-up">
