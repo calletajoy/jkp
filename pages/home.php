@@ -18,8 +18,8 @@ ob_start();
         <div class="carousel-inner">
             <?php
             $slides = [
-                ['img' => '/assets/images/placeholders/brianna-parks-WQW0uTofZiE-unsplash.jpg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani — Economic Bloc', 'title1' => 'Catalyzing Economic Growth', 'title2' => 'Along Kenya\'s Coastline'],
-                ['img' => '/assets/images/placeholders/oluwatobi-akindunjoye-bISd7DpFJWw-unsplash.jpg',       'subtitle' => 'Sea-Land of Opportunities',                  'title1' => 'Unlocking Green &amp; Blue',    'title2' => 'Economy Investments'],
+                ['img' => '/assets/images/diani beach.jpg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani — Economic Bloc', 'title1' => 'Catalyzing Economic Growth', 'title2' => 'Along Kenya\'s Coastline'],
+                ['img' => '/assets/images/fort jesus mbs.jpg',       'subtitle' => 'Sea-Land of Opportunities',                  'title1' => 'Unlocking Green &amp; Blue',    'title2' => 'Economy Investments'],
             ];
             foreach ($slides as $i => $slide):
             ?>
