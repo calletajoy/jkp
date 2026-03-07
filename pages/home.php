@@ -450,7 +450,7 @@ ob_start();
             <?php foreach ($projects as $project): ?>
                 <div class="col" data-aos="fade-up">
                     <div class="card h-100 border-0 rounded-0">
-                        <img src="/assets/images/01_home/goverment-service/<?php echo $project['img']; ?>" class="card-img-top img-fluid" alt="<?php echo $project['title']; ?>">
+                        <img src="<?php echo htmlspecialchars($project['img']); ?>" class="card-img-top img-fluid" alt="<?php echo $project['title']; ?>">
                         <div class="card-body">
                             <a href="/services">
                                 <h4 class="card-title"><?php echo $project['title']; ?></h4>
