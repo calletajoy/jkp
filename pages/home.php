@@ -57,10 +57,10 @@ ob_start();
     <div class="container">
         <?php
         $mandateCards = [
-            ['gif' => 'church-animation.gif',           'title' => 'Coordination',   'text' => 'Socio-political &amp; regional policy harmonization across the six coastal counties.'],
-            ['gif' => 'planning-animation.gif',         'title' => 'Jumuiya 2030',   'text' => 'Regional Economic Blueprint driving sustainable development and shared prosperity.'],
-            ['gif' => 'recycle-animation.gif',          'title' => 'Promotion',      'text' => 'Showcasing the Sea-Land of Opportunities to local and international investors.'],
-            ['gif' => 'travel-insurance-animation.gif', 'title' => 'Investments',    'text' => 'Unlocking value chains and financing models to boost agribusiness and blue economy.'],
+            ['gif' => 'church-animation.gif',           'title' => 'Coordination',   'text' => 'Socio-political & regional '],
+            ['gif' => 'planning-animation.gif',         'title' => 'Policy Harmonization',   'text' => 'Jumuiya 2030..'],
+            ['gif' => 'recycle-animation.gif',          'title' => 'Promotion',      'text' => 'Sea-Land of Opportunities... '],
+            ['gif' => 'travel-insurance-animation.gif', 'title' => 'Investments',    'text' => 'Unlocking value chains...'],
         ];
         ?>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
