@@ -160,23 +160,23 @@ function navActive(string $key): string
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <h6 class="fw-bold mb-3">📰 News</h6>
+
                                             <ul class="list-unstyled">
-                                                <li><a class="dropdown-item px-0" href="#">Latest News</a></li>
-                                                <li><a class="dropdown-item px-0" href="#">Newsletters</a></li>
+                                                <li><a class="dropdown-item px-0" href="#">News & updates </a></li>
+
                                             </ul>
                                         </div>
                                         <div class="col-md-4">
-                                            <h6 class="fw-bold mb-3">📸 Gallery</h6>
+                                            
                                             <ul class="list-unstyled">
                                                 <li><a class="dropdown-item px-0" href="#">Photo & Video Gallery</a></li>
-                                                <li><a class="dropdown-item px-0" href="#">Media</a></li>
+                                                
                                             </ul>
                                         </div>
                                         <div class="col-md-4">
-                                            <h6 class="fw-bold mb-3">Archive</h6>
+                                            
                                             <ul class="list-unstyled">
-                                                <li><a class="dropdown-item px-0" href="#">Archive</a></li>
+                                                <li><a class="dropdown-item px-0" href="#">Newsletter Archive </a></li>
                                             </ul>
                                         </div>
                                     </div>
