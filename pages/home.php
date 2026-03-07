@@ -423,22 +423,22 @@ ob_start();
         // Updated projects array with only 4 specific projects
         $projects = [
             [
-                'img' => '/assets/images/she stands.png', 
+                'img' => 'assets/images/she stands.png', 
                 'title' => 'She Stands Project', 
                 'desc' => 'She Stands Kenya is a faith based collaborative initiative between Grace Center Malindi and Jumuiya Economic Development Secretariat to equip and inspire the progressive kenya christian woman with biblical principles for everyday living and leading change for self, family and community.'
             ],
             [
-                'img' => '/assets/images/goo-blu.png', 
+                'img' => 'assets/images/goo-blu.png', 
                 'title' => 'The Go Blue Project', 
                 'desc' => 'The Go Blue Project is a four year project funded by the European union (EU) to support Kenya\'s Coastal economic development agenda and blue economy strategy.'
             ],
             [
-                'img' => '/assets/images/inno-lab.png', 
+                'img' => 'assets/images/inno-lab.png', 
                 'title' => 'Jumuiya Innovation Lab', 
                 'desc' => 'Established of six (6) Jumuiya innovation labs is an anchor flagship project to changing the story of the region under Jumuiya 2030 framework.'
             ],
             [
-                'img' => '/assets/images/jum 2030.png', 
+                'img' => 'assets/images/jum 2030.png', 
                 'title' => 'Jumuiya 2030', 
                 'desc' => 'Is the regional economic development strategy for the period 2020/30. Its development and architecture are drawn from...'
             ],
