@@ -403,7 +403,6 @@ ob_start();
         </div>
     </div>
 </section>
-
 <!-- ===== JKP Projects & Initiatives (4 Cards) ===== -->
 <section class="government-service">
     <div class="container">
@@ -449,16 +448,17 @@ ob_start();
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
             <?php foreach ($projects as $project): ?>
                 <div class="col" data-aos="fade-up">
-                    <div class="card h-100 border-0 rounded-0">
+                    <div class="card h-100 border-0 rounded">
                         <img src="/assets/images/01_home/goverment-service/<?php echo $project['img']; ?>" class="card-img-top img-fluid" alt="<?php echo $project['title']; ?>">
-                        <div class="card-body">
+                        <div class="card-body p-3">
                             <a href="/services">
                                 <h4 class="card-title"><?php echo $project['title']; ?></h4>
                             </a>
                             <p class="card-text"><?php echo $project['desc']; ?></p>
                         </div>
-                        <div class="card-footer bg-white border-0 p-0">
-                            <a href="/services" class="card-btn">More Details <i class="bi bi-arrow-up-right"></i></a>
+                        <div class="card-footer bg-white border-0 d-flex align-items-center justify-content-between mb-3">
+                            <div class="divide-row-tow"></div>
+                            <a href="/services" class="more-link ms-2">More Details <i class="bi bi-arrow-up-right ps-2"></i></a>
                         </div>
                     </div>
                 </div>
