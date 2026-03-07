@@ -470,7 +470,7 @@ ob_start();
 <!-- ===== Jumuiya Hub Section ===== -->
 <section class="best-city-government remove-div one-second" data-aos="fade-up">
     <div class="images-and-overlay">
-        <img class="img-fluid" src="/assets/images/01_home/best-city/image-footer.png" alt="Jumuiya Hub">
+        <img class="img-fluid" src="assets/images/jum house.webp" alt="Jumuiya Hub">
         <div class="overlay"></div>
     </div>
     <div class="container">
