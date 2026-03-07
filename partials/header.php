@@ -16,11 +16,11 @@ function navActive(string $key): string
 
 $navLinks = [
     'home'     => ['label' => 'Home',         'href' => '/'],
-    'about'    => ['label' => 'About Us',      'href' => '/about'],
+    'about'    => ['label' => 'About Us',      'href' => '/'],
     'services' => ['label' => 'Resources',     'href' => '/services'],
-    'blog'     => ['label' => 'Media Center',  'href' => '/blog'],
+    'blog'     => ['label' => 'Media Center',  'href' => '/'],
     'events'   => ['label' => 'Events',        'href' => '/events'],
-    'team'     => ['label' => 'Team',          'href' => '/team'],
+    'milestone'     => ['label' => 'milestone',          'href' => '/'],
     'contact'  => ['label' => 'Contact',       'href' => '/contact'],
 ];
 ?>
