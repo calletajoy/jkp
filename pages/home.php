@@ -420,7 +420,6 @@ ob_start();
             </div>
         </div>
         
-        <?php
         <!-- ===== JKP Projects & Initiatives (4 Cards) ===== -->
 <section class="government-service">
     <div class="container">
