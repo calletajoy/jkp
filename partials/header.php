@@ -92,21 +92,21 @@ function navActive(string $key): string
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <h6 class="fw-bold mb-3">📊 About JKP Economic Bloc</h6>
+                                           
                                             <ul class="list-unstyled">
-                                                <li><a class="dropdown-item px-0" href="/about">Overview & History</a></li>
+                                                <li><a class="dropdown-item px-0" href="/about">📊 About JKP Economic Bloc</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-md-4">
-                                            <h6 class="fw-bold mb-3">🎯 Core Mandate</h6>
+                                           
                                             <ul class="list-unstyled">
-                                                <li><a class="dropdown-item px-0" href="/core-mandate">Mission & Vision</a></li>
+                                                <li><a class="dropdown-item px-0" href="/core-mandate">🎯 Core Mandate</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-md-4">
-                                            <h6 class="fw-bold mb-3">🤝 Stakeholders</h6>
+                                          
                                             <ul class="list-unstyled">
-                                                <li><a class="dropdown-item px-0" href="/stakeholders">Our Partners</a></li>
+                                                <li><a class="dropdown-item px-0" href="/stakeholders">🤝 Stakeholders</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -128,17 +128,17 @@ function navActive(string $key): string
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <h6 class="fw-bold mb-3">📘 Blueprint & Plans</h6>
+                                           
                                             <ul class="list-unstyled">
-                                                <li><a class="dropdown-item px-0" href="#">Jumuiya-TCH Blueprint 2030</a></li>
+                                                <li><a class="dropdown-item px-0" href="#">📘Jumuiya-TCH Blueprint 2030</a></li>
                                                 <li><a class="dropdown-item px-0" href="#">Strategic Plan</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-md-6">
-                                            <h6 class="fw-bold mb-3">📄 Opportunities</h6>
+                                           
                                             <ul class="list-unstyled">
-                                                <li><a class="dropdown-item px-0" href="#">Local Tender (AICS)</a></li>
-                                                <li><a class="dropdown-item px-0" href="#">Opportunities</a></li>
+                                                <li><a class="dropdown-item px-0" href="#">📄 Local Tender (AICS)</a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
@@ -162,21 +162,21 @@ function navActive(string $key): string
                                         <div class="col-md-4">
 
                                             <ul class="list-unstyled">
-                                                <li><a class="dropdown-item px-0" href="#">News & updates </a></li>
+                                                <li><a class="dropdown-item px-0" href="#">📰 News & updates </a></li>
 
                                             </ul>
                                         </div>
                                         <div class="col-md-4">
                                             
                                             <ul class="list-unstyled">
-                                                <li><a class="dropdown-item px-0" href="#">Photo & Video Gallery</a></li>
+                                                <li><a class="dropdown-item px-0" href="#">📸 Photo & Video Gallery</a></li>
                                                 
                                             </ul>
                                         </div>
                                         <div class="col-md-4">
                                             
                                             <ul class="list-unstyled">
-                                                <li><a class="dropdown-item px-0" href="#">Newsletter Archive </a></li>
+                                                <li><a class="dropdown-item px-0" href="#">📧 Newsletter Archive </a></li>
                                             </ul>
                                         </div>
                                     </div>
