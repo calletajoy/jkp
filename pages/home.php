@@ -308,6 +308,48 @@ ob_start();
     </div>
 </section>
 
+<!-- ===== Achievements / Fun Facts ===== -->
+<section class="government-service" style="background: #f8f9fa;">
+    <div class="container">
+        <div class="section-title">
+            <div class="semi-title" data-aos="fade-up">
+                <div class="animated-circles justify-content-center">
+                    <div class="small-circle-start"></div>
+                    <div class="title">Go Blue Project — Our Impact</div>
+                    <div class="small-circle-end"></div>
+                </div>
+            </div>
+            <div class="title text-center mb-5" data-aos="fade-up">
+                <h2 class="cssanimation lePopUp sequence">Jumuiya Economic Bloc's Achievements</h2>
+            </div>
+        </div>
+
+        <?php
+        $stats = [
+            ['gif' => 'skills.gif',         'value' => '16',    'unit' => '',  'label' => 'MSME Tourism Grants',          'desc' => 'Supporting micro and small enterprises in the coastal tourism sector.'],
+            ['gif' => 'planning.gif',        'value' => '26+',   'unit' => '',  'label' => 'Boats Delivered',              'desc' => 'Fishing vessels delivered to coastal fishing communities and cooperatives.'],
+            ['gif' => 'profit.gif',          'value' => '2,000+', 'unit' => '',  'label' => 'Jobs Created (Youth &amp; Women)', 'desc' => 'Employment opportunities created through the Go Blue Project initiatives.'],
+            ['gif' => 'spinach.gif',         'value' => '1,900+', 'unit' => '',  'label' => 'Skills Trainings Delivered',   'desc' => 'Vocational and technical training programs completed across the region.'],
+        ];
+        ?>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            <?php foreach ($stats as $stat): ?>
+                <div class="col" data-aos="fade-up">
+                    <div class="card h-100 border-0 rounded-0 text-center p-3">
+                        <img src="/assets/images/01_home/goverment-service/<?php echo $stat['gif']; ?>" class="card-img-top img-fluid mx-auto" style="max-width:80px;" alt="">
+                        <div class="card-body">
+                            <h2 class="fw-bold" style="font-size:2.4rem; color: var(--bs-primary, #0d6efd);"><?php echo $stat['value']; ?></h2>
+                            <h5 class="card-title fw-bold mb-2"><?php echo $stat['label']; ?></h5>
+                            <p class="card-text text-muted small"><?php echo $stat['desc']; ?></p>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+
 <!-- ===== Milestone Section - Staircase Layout ===== -->
 <section class="container my-5" data-aos="fade-up">
     <div class="section-title text-center mb-5">
@@ -358,47 +400,6 @@ ob_start();
                 <div class="staircase-title">10th Anniversary</div>
                 <div class="staircase-desc">Celebrating 10 years of transformative impact, with over 200 completed projects, 100,000+ beneficiaries, and counting.</div>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== Achievements / Fun Facts ===== -->
-<section class="government-service" style="background: #f8f9fa;">
-    <div class="container">
-        <div class="section-title">
-            <div class="semi-title" data-aos="fade-up">
-                <div class="animated-circles justify-content-center">
-                    <div class="small-circle-start"></div>
-                    <div class="title">Go Blue Project — Our Impact</div>
-                    <div class="small-circle-end"></div>
-                </div>
-            </div>
-            <div class="title text-center mb-5" data-aos="fade-up">
-                <h2 class="cssanimation lePopUp sequence">Jumuiya Economic Bloc's Achievements</h2>
-            </div>
-        </div>
-
-        <?php
-        $stats = [
-            ['gif' => 'skills.gif',         'value' => '16',    'unit' => '',  'label' => 'MSME Tourism Grants',          'desc' => 'Supporting micro and small enterprises in the coastal tourism sector.'],
-            ['gif' => 'planning.gif',        'value' => '26+',   'unit' => '',  'label' => 'Boats Delivered',              'desc' => 'Fishing vessels delivered to coastal fishing communities and cooperatives.'],
-            ['gif' => 'profit.gif',          'value' => '2,000+', 'unit' => '',  'label' => 'Jobs Created (Youth &amp; Women)', 'desc' => 'Employment opportunities created through the Go Blue Project initiatives.'],
-            ['gif' => 'spinach.gif',         'value' => '1,900+', 'unit' => '',  'label' => 'Skills Trainings Delivered',   'desc' => 'Vocational and technical training programs completed across the region.'],
-        ];
-        ?>
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-            <?php foreach ($stats as $stat): ?>
-                <div class="col" data-aos="fade-up">
-                    <div class="card h-100 border-0 rounded-0 text-center p-3">
-                        <img src="/assets/images/01_home/goverment-service/<?php echo $stat['gif']; ?>" class="card-img-top img-fluid mx-auto" style="max-width:80px;" alt="">
-                        <div class="card-body">
-                            <h2 class="fw-bold" style="font-size:2.4rem; color: var(--bs-primary, #0d6efd);"><?php echo $stat['value']; ?></h2>
-                            <h5 class="card-title fw-bold mb-2"><?php echo $stat['label']; ?></h5>
-                            <p class="card-text text-muted small"><?php echo $stat['desc']; ?></p>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
         </div>
     </div>
 </section>
