@@ -420,22 +420,6 @@ ob_start();
             </div>
         </div>
         
-        <!-- ===== JKP Projects & Initiatives (4 Cards) ===== -->
-<section class="government-service">
-    <div class="container">
-        <div class="section-title">
-            <div class="semi-title" data-aos="fade-up">
-                <div class="animated-circles justify-content-center">
-                    <div class="small-circle-start"></div>
-                    <div class="title">JKP</div>
-                    <div class="small-circle-end"></div>
-                </div>
-            </div>
-            <div class="title text-center mb-5" data-aos="fade-up">
-                <h2 class="cssanimation lePopUp sequence">JKP Projects & Initiatives</h2>
-            </div>
-        </div>
-        
         <?php
         // Updated projects array with only 4 specific projects
         $projects = [
@@ -462,48 +446,18 @@ ob_start();
         ];
         ?>
         
-        <style>
-            .project-card {
-                border: none !important;
-                background: transparent !important;
-                margin-bottom: 30px;
-            }
-            .project-card .card-img-top {
-                width: 100%;
-                height: auto;
-                object-fit: contain;
-                border-radius: 0;
-            }
-            .project-card .card-body {
-                padding: 1rem 0;
-            }
-            .project-card .card-title {
-                color: #0b2a4f;
-                font-weight: 700;
-                margin-bottom: 0.5rem;
-            }
-            .project-card .card-text {
-                color: #4a5568;
-                line-height: 1.6;
-            }
-            .project-card .card-footer {
-                background: transparent !important;
-                padding: 0;
-            }
-        </style>
-        
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
             <?php foreach ($projects as $project): ?>
-                <div class="col">
-                    <div class="card project-card h-100">
-                        <img src="<?php echo htmlspecialchars($project['img']); ?>" class="card-img-top img-fluid" alt="<?php echo $project['title']; ?>">
+                <div class="col" data-aos="fade-up">
+                    <div class="card h-100 border-0 rounded-0">
+                        <img src="/assets/images/01_home/goverment-service/<?php echo $project['img']; ?>" class="card-img-top img-fluid" alt="<?php echo $project['title']; ?>">
                         <div class="card-body">
-                            <a href="/services" style="text-decoration: none;">
+                            <a href="/services">
                                 <h4 class="card-title"><?php echo $project['title']; ?></h4>
                             </a>
                             <p class="card-text"><?php echo $project['desc']; ?></p>
                         </div>
-                        <div class="card-footer">
+                        <div class="card-footer bg-white border-0 p-0">
                             <a href="/services" class="card-btn">More Details <i class="bi bi-arrow-up-right"></i></a>
                         </div>
                     </div>
