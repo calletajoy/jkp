@@ -12,7 +12,7 @@ $bodyClass   = 'page-home';
 ob_start();
 ?>
 
-<!-- ===== Banner with 6 Coastal Sites (Zoom Animation) ===== -->
+<!-- ===== Banner  6 Coastal Sites (Zoom in/out Animation) ===== -->
 <style>
     .carousel-item img {
         animation: zoomInOut 12s infinite alternate ease-in-out;
@@ -136,11 +136,11 @@ ob_start();
             <?php
             $slides = [
                 ['img' => '/assets/images/fort jesus mbs.jpg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani — Economic Bloc', 'title1' => 'Fort Jesus', 'title2' => 'Mombasa County'],
-                ['img' => '/assets/images/kilifi-creek.jpg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani — Economic Bloc', 'title1' => 'Kilifi Creek', 'title2' => 'Kilifi County'],
-                ['img' => '/assets/images/red-elephants-taita.jpg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani — Economic Bloc', 'title1' => 'Red Elephants', 'title2' => 'Taita Taveta County'],
+                ['img' => '/assets/images/kilifi creek.jpg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani — Economic Bloc', 'title1' => 'Kilifi Creek', 'title2' => 'Kilifi County'],
+                ['img' => '/assets/images/red el taita.jpeg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani — Economic Bloc', 'title1' => 'Red Elephants', 'title2' => 'Taita Taveta County'],
                 ['img' => '/assets/images/diani beach.jpg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani — Economic Bloc', 'title1' => 'Diani Beach', 'title2' => 'Kwale County'],
-                ['img' => '/assets/images/tana-river-delta.jpg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani — Economic Bloc', 'title1' => 'Tana River Delta', 'title2' => 'Tana River County'],
-                ['img' => '/assets/images/lamu-island.jpg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani — Economic Bloc', 'title1' => 'Lamu Island', 'title2' => 'Lamu County'],
+                ['img' => '/assets/images/tana river delta.jpeg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani — Economic Bloc', 'title1' => 'Tana River Delta', 'title2' => 'Tana River County'],
+                ['img' => '/assets/images/Lamu_Island.jpg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani — Economic Bloc', 'title1' => 'Lamu Island', 'title2' => 'Lamu County'],
             ];
             foreach ($slides as $i => $slide):
             ?>
