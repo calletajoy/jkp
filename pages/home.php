@@ -411,7 +411,7 @@ ob_start();
             <div class="semi-title" data-aos="fade-up">
                 <div class="animated-circles justify-content-center">
                     <div class="small-circle-start"></div>
-                    <div class="title">Jumuiya 2030 Blueprint</div>
+                    <div class="title">JKP </div>
                     <div class="small-circle-end"></div>
                 </div>
             </div>
