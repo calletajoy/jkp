@@ -13,13 +13,134 @@ ob_start();
 ?>
 
 <!-- ===== Banner with 6 Coastal Sites (Zoom Animation) ===== -->
+<style>
+    .carousel-item img {
+        animation: zoomInOut 12s infinite alternate ease-in-out;
+    }
+    
+    @keyframes zoomInOut {
+        0% { transform: scale(1); }
+        100% { transform: scale(1.2); }
+    }
+    
+    /* Staircase milestone styles */
+    .staircase-container {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 0;
+    }
+    
+    .staircase-row {
+        display: flex;
+        margin-bottom: 30px;
+        position: relative;
+    }
+    
+    .staircase-row:nth-child(odd) {
+        justify-content: flex-start;
+    }
+    
+    .staircase-row:nth-child(even) {
+        justify-content: flex-end;
+    }
+    
+    .staircase-card {
+        width: 45%;
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(11,42,79,0.1);
+        position: relative;
+        border-left: 6px solid #0b2a4f;
+        transition: transform 0.3s;
+    }
+    
+    .staircase-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(11,42,79,0.2);
+    }
+    
+    .staircase-card::before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: #0b2a4f;
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .staircase-row:nth-child(odd) .staircase-card::before {
+        right: -40px;
+    }
+    
+    .staircase-row:nth-child(even) .staircase-card::before {
+        left: -40px;
+    }
+    
+    .staircase-year {
+        font-size: 3rem;
+        font-weight: 800;
+        color: #0b2a4f;
+        line-height: 1;
+        margin-bottom: 10px;
+    }
+    
+    .staircase-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #1e2b3c;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 2px dashed #dee2e6;
+    }
+    
+    .staircase-desc {
+        color: #6c757d;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .staircase-line {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 4px;
+        background: linear-gradient(to bottom, #0b2a4f, #ffc857);
+        transform: translateX(-50%);
+        z-index: -1;
+    }
+    
+    @media (max-width: 768px) {
+        .staircase-card {
+            width: 100%;
+        }
+        
+        .staircase-row:nth-child(odd) .staircase-card::before,
+        .staircase-row:nth-child(even) .staircase-card::before {
+            display: none;
+        }
+        
+        .staircase-line {
+            display: none;
+        }
+    }
+</style>
+
 <div class="banner">
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <?php
             $slides = [
-                ['img' => '/assets/images/diani beach.jpg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani — Economic Bloc', 'title1' => 'Catalyzing Economic Growth', 'title2' => 'Along Kenya\'s Coastline'],
-                ['img' => '/assets/images/fort jesus mbs.jpg',       'subtitle' => 'Sea-Land of Opportunities',                  'title1' => 'Unlocking Green &amp; Blue',    'title2' => 'Economy Investments'],
+                ['img' => '/assets/images/fort jesus mbs.jpg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani — Economic Bloc', 'title1' => 'Fort Jesus', 'title2' => 'Mombasa County'],
+                ['img' => '/assets/images/kilifi-creek.jpg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani — Economic Bloc', 'title1' => 'Kilifi Creek', 'title2' => 'Kilifi County'],
+                ['img' => '/assets/images/red-elephants-taita.jpg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani — Economic Bloc', 'title1' => 'Red Elephants', 'title2' => 'Taita Taveta County'],
+                ['img' => '/assets/images/diani beach.jpg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani — Economic Bloc', 'title1' => 'Diani Beach', 'title2' => 'Kwale County'],
+                ['img' => '/assets/images/tana-river-delta.jpg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani — Economic Bloc', 'title1' => 'Tana River Delta', 'title2' => 'Tana River County'],
+                ['img' => '/assets/images/lamu-island.jpg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani — Economic Bloc', 'title1' => 'Lamu Island', 'title2' => 'Lamu County'],
             ];
             foreach ($slides as $i => $slide):
             ?>
@@ -48,120 +169,6 @@ ob_start();
                     </div>
                 </div>
             <?php endforeach; ?>
-        </div>
-    </div>
-</div>
-
-<!-- ===== 6 Unique Coastal Sites Grid with Zoom Animation ===== -->
-<div class="container mt-5" data-aos="fade-up">
-    <div class="section-title text-center mb-4">
-        <div class="semi-title">
-            <div class="animated-circles justify-content-center">
-                <div class="small-circle-start"></div>
-                <span class="title">Unique Sites of the Six Coastal Counties</span>
-                <div class="small-circle-end"></div>
-            </div>
-        </div>
-        <h2 class="cssanimation lePopUp sequence">Discover the Beauty of Our Coast</h2>
-    </div>
-    
-    <style>
-        .zoom-card {
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            margin-bottom: 20px;
-        }
-        .zoom-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: transform 8s ease-in-out;
-            animation: zoomInOut 12s infinite alternate ease-in-out;
-        }
-        .zoom-card:hover img {
-            animation-play-state: paused;
-        }
-        @keyframes zoomInOut {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.2); }
-        }
-        .site-label {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            color: white;
-            padding: 20px 15px 10px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            pointer-events: none;
-        }
-        .site-container {
-            position: relative;
-        }
-    </style>
-    
-    <div class="row g-4">
-        <!-- 1. Fort Jesus, Mombasa -->
-        <div class="col-md-6 col-lg-4">
-            <div class="site-container">
-                <div class="zoom-card">
-                    <img src="/assets/images/fort jesus mbs.jpg" alt="Fort Jesus - Mombasa">
-                </div>
-                <div class="site-label">Fort Jesus · Mombasa</div>
-            </div>
-        </div>
-        
-        <!-- 2. Kilifi Creek -->
-        <div class="col-md-6 col-lg-4">
-            <div class="site-container">
-                <div class="zoom-card">
-                    <img src="/assets/images/kilifi-creek.jpg" alt="Kilifi Creek">
-                </div>
-                <div class="site-label">Kilifi Creek · Kilifi</div>
-            </div>
-        </div>
-        
-        <!-- 3. Red Elephants of Taita -->
-        <div class="col-md-6 col-lg-4">
-            <div class="site-container">
-                <div class="zoom-card">
-                    <img src="/assets/images/red-elephants-taita.jpg" alt="Red Elephants - Taita">
-                </div>
-                <div class="site-label">Red Elephants · Taita Taveta</div>
-            </div>
-        </div>
-        
-        <!-- 4. Diani Beach, Kwale -->
-        <div class="col-md-6 col-lg-4">
-            <div class="site-container">
-                <div class="zoom-card">
-                    <img src="/assets/images/diani beach.jpg" alt="Diani Beach - Kwale">
-                </div>
-                <div class="site-label">Diani Beach · Kwale</div>
-            </div>
-        </div>
-        
-        <!-- 5. Tana River Delta -->
-        <div class="col-md-6 col-lg-4">
-            <div class="site-container">
-                <div class="zoom-card">
-                    <img src="/assets/images/tana-river-delta.jpg" alt="Tana River Delta">
-                </div>
-                <div class="site-label">Tana River Delta · Tana River</div>
-            </div>
-        </div>
-        
-        <!-- 6. Lamu Island -->
-        <div class="col-md-6 col-lg-4">
-            <div class="site-container">
-                <div class="zoom-card">
-                    <img src="/assets/images/lamu-island.jpg" alt="Lamu Island">
-                </div>
-                <div class="site-label">Lamu Island · Lamu</div>
-            </div>
         </div>
     </div>
 </div>
@@ -301,7 +308,7 @@ ob_start();
     </div>
 </section>
 
-<!-- ===== Milestone Section ===== -->
+<!-- ===== Milestone Section - Staircase Layout ===== -->
 <section class="container my-5" data-aos="fade-up">
     <div class="section-title text-center mb-5">
         <div class="semi-title">
@@ -311,79 +318,45 @@ ob_start();
                 <div class="small-circle-end"></div>
             </div>
         </div>
-        <h2 class="cssanimation lePopUp sequence">Key Milestones</h2>
+        <h2 class="cssanimation lePopUp sequence">Key Milestones in Staircase</h2>
     </div>
     
-    <style>
-        .milestone-card {
-            border-left: 4px solid #0b2a4f;
-            background: white;
-            padding: 25px;
-            border-radius: 0 15px 15px 0;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            height: 100%;
-            transition: transform 0.3s;
-        }
-        .milestone-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(11,42,79,0.1);
-        }
-        .milestone-year {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #0b2a4f;
-            line-height: 1;
-            margin-bottom: 10px;
-        }
-        .milestone-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #1e2b3c;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px dashed #dee2e6;
-        }
-        .milestone-desc {
-            color: #6c757d;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-    </style>
-    
-    <div class="row g-4">
+    <div class="staircase-container">
+        <div class="staircase-line"></div>
+        
         <!-- 2015 Foundation of Jumuiya -->
-        <div class="col-md-6 col-lg-3">
-            <div class="milestone-card">
-                <div class="milestone-year">2015</div>
-                <div class="milestone-title">Foundation of Jumuiya</div>
-                <div class="milestone-desc">Six coastal counties united to form the economic bloc, establishing our vision for regional prosperity and sustainable development.</div>
+        <div class="staircase-row">
+            <div class="staircase-card">
+                <div class="staircase-year">2015</div>
+                <div class="staircase-title">Foundation of Jumuiya</div>
+                <div class="staircase-desc">Six coastal counties united to form the economic bloc, establishing our vision for regional prosperity and sustainable development.</div>
             </div>
         </div>
         
         <!-- 2015 Blue Economy Framework -->
-        <div class="col-md-6 col-lg-3">
-            <div class="milestone-card">
-                <div class="milestone-year">2015</div>
-                <div class="milestone-title">Blue Economy Framework Launched</div>
-                <div class="milestone-desc">Introduced comprehensive strategy for sustainable marine resource development across all member counties, unlocking the potential of our ocean resources.</div>
+        <div class="staircase-row">
+            <div class="staircase-card">
+                <div class="staircase-year">2015</div>
+                <div class="staircase-title">Blue Economy Framework Launched</div>
+                <div class="staircase-desc">Introduced comprehensive strategy for sustainable marine resource development across all member counties, unlocking the potential of our ocean resources.</div>
             </div>
         </div>
         
         <!-- 2020 50,000 Jobs Created -->
-        <div class="col-md-6 col-lg-3">
-            <div class="milestone-card">
-                <div class="milestone-year">2020</div>
-                <div class="milestone-title">50,000 Jobs Created</div>
-                <div class="milestone-desc">Milestone achievement in youth and women employment through our economic empowerment programs, skills development initiatives, and investment attraction.</div>
+        <div class="staircase-row">
+            <div class="staircase-card">
+                <div class="staircase-year">2020</div>
+                <div class="staircase-title">50,000 Jobs Created</div>
+                <div class="staircase-desc">Milestone achievement in youth and women employment through our economic empowerment programs, skills development initiatives, and investment attraction.</div>
             </div>
         </div>
         
         <!-- 2025 10th Anniversary -->
-        <div class="col-md-6 col-lg-3">
-            <div class="milestone-card">
-                <div class="milestone-year">2025</div>
-                <div class="milestone-title">10th Anniversary</div>
-                <div class="milestone-desc">Celebrating 10 years of transformative impact, with over 200 completed projects, 100,000+ beneficiaries, and counting.</div>
+        <div class="staircase-row">
+            <div class="staircase-card">
+                <div class="staircase-year">2025</div>
+                <div class="staircase-title">10th Anniversary</div>
+                <div class="staircase-desc">Celebrating 10 years of transformative impact, with over 200 completed projects, 100,000+ beneficiaries, and counting.</div>
             </div>
         </div>
     </div>
