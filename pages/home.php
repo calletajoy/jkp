@@ -560,10 +560,10 @@ ob_start();
         <?php
         $news = [
             [
-                'img'   => '01.png',
-                'date'  => '29',
-                'month' => 'May',
-                'title' => 'Kisauni VTC Graduates 513 Students in Blue Economy Courses',
+                'img'   => '/assets/images/agri summit.jpeg',
+                'date'  => '24',
+                'month' => 'February',
+                'title' => 'Jumuiya Ya Pwani Agriculture Revitalization Summit',
                 'author' => 'Editorial Staff',
             ],
             [
