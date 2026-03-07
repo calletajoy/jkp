@@ -622,7 +622,7 @@ include __DIR__ . '/components/partners.php';
                     <div class="card mb-3 border-end-0 border-start-0 border-top-0 bg-transparent rounded-0">
                         <div class="details-information">
                             <div class="upcoming-photo">
-                                <img src="/assets/images/multiple-use/upcoming-city/1.png" class="img-fluid rounded-start" alt="">
+                                <img src="assets/images/jum house.webp" class="img-fluid rounded-start" alt="">
                             </div>
                             <div class="upcoming-info">
                                 <div class="info">
@@ -638,7 +638,7 @@ include __DIR__ . '/components/partners.php';
                     <div class="card mb-3 border-end-0 border-start-0 border-top-0 bg-transparent rounded-0">
                         <div class="details-information">
                             <div class="upcoming-photo">
-                                <img src="/assets/images/multiple-use/upcoming-city/2.png" class="img-fluid rounded-start" alt="">
+                                <img src="assets/images/jum house.webp" class="img-fluid rounded-start" alt="">
                             </div>
                             <div class="upcoming-info">
                                 <div class="info">
