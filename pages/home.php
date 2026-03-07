@@ -58,16 +58,16 @@ ob_start();
         <?php
         $mandateCards = [
             ['img' => '/assets/images/coord.jpg',           'title' => 'Coordination',   'text' => 'Socio-political & regional '],
-            ['gif' => 'planning-animation.gif',         'title' => 'Policy Harmonization',   'text' => 'Jumuiya 2030..'],
-            ['gif' => 'recycle-animation.gif',          'title' => 'Promotion',      'text' => 'Sea-Land of Opportunities... '],
-            ['gif' => 'travel-insurance-animation.gif', 'title' => 'Investments',    'text' => 'Unlocking value chains...'],
+            ['img' => '/assets/images/policy.jpg',         'title' => 'Policy Harmonization',   'text' => 'Jumuiya 2030..'],
+            ['img' => '/assets/images/promotion.jpg',          'title' => 'Promotion',      'text' => 'Sea-Land of Opportunities... '],
+            ['img' => '/assets/images/investments.jpg', 'title' => 'Investments',    'text' => 'Unlocking value chains...'],
         ];
         ?>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
             <?php foreach ($mandateCards as $card): ?>
                 <div class="col">
                     <div class="card h-100">
-                        <img src="/assets/images/multiple-use/banner-card/<?php echo $card['gif']; ?>" class="card-img-top img-fluid" alt="">
+                        <img src="/assets/images/multiple-use/banner-card/<?php echo $card['img']; ?>" class="card-img-top img-fluid" alt="">
                         <div class="card-body">
                             <a href="/services">
                                 <h4 class="card-title"><?php echo $card['title']; ?></h4>
@@ -475,3 +475,4 @@ include __DIR__ . '/components/partners.php';
 <?php
 $pageContent = ob_get_clean();
 require __DIR__ . '/../layout.php';
+?>
