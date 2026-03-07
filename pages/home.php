@@ -560,21 +560,21 @@ ob_start();
         <?php
         $news = [
             [
-                'img'   => '/assets/images/agri summit.jpeg',
+                'img'   => 'assets/images/agri summit.jpeg',
                 'date'  => '24',
                 'month' => 'February',
                 'title' => 'Jumuiya Ya Pwani Agriculture Revitalization Summit',
                 'author' => 'Editorial Staff',
             ],
             [
-                'img'   => '02.png',
-                'date'  => '29',
-                'month' => 'April',
-                'title' => 'JKP Governors Deliberations on the CRA\'s 4th Edition of the County Revenue Sharing Formula',
+                'img'   => 'assets/images/fauna.jpeg',
+                'date'  => '26',
+                'month' => 'February',
+                'title' => 'Ocean Conservation and Sustainable Coastal Development Workshop',
                 'author' => 'Editorial Staff',
             ],
             [
-                'img'   => '03.png',
+                'img'   => 'assets/images/strength bi.png',
                 'date'  => '19',
                 'month' => 'April',
                 'title' => 'Strengthening Bilateral Relations — Australian Deputy High Commissioner Visits JKP Offices',
