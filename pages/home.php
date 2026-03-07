@@ -416,7 +416,7 @@ ob_start();
                 </div>
             </div>
             <div class="title text-center mb-5" data-aos="fade-up">
-                <h2 class="cssanimation lePopUp sequence">JKP Projects &amp; Initiatives</h2>
+                <h2 class="cssanimation lePopUp sequence">JKP Projects & Initiatives</h2>
             </div>
         </div>
         <?php
@@ -462,8 +462,7 @@ ob_start();
         <div class="city-content">
             <div class="city-title" data-aos="fade-up">
                 <h2 class="text-white text-center">
-                    <span class="cssanimation lePopUp sequence">JKP Guiding Principles &amp; Core Mandate</span><br>
-                    <span class="cssanimation lePopUp sequence">Jumuiya 2030 — Regional Economic Blueprint</span>
+                    <span class="cssanimation lePopUp sequence">Jumuiya Hub</span><br>
                 </h2>
             </div>
             <div class="city-service-list">
