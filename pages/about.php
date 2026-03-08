@@ -272,21 +272,7 @@ include __DIR__ . '/../partials/page-hero.php';
                     <p class="mb-3">To coordinate the mandates of Jumuiya there is a Structured Sector Consultative Platform run by a Secretariat led by <strong>Dr. Emmanuel Kombe Nzai</strong> as the Chief Executive Officer. Within the Secretariat are the Steering Committee, Technical and administrative teams and the Sector working groups.</p>
                     <p class="mb-3">The Secretariat mandate is coordination, policy harmonization, promotion of regional assets and driving investments into the region. The secretariat manages a repository of data that defines and describes the Coastal region, giving us a bird's-eye view of its opportunities, needs, and potential. Our role is to understand the region and create an environment for its socioeconomic development, changing its story.</p>
 
-                    <div class="row row-cols-1 row-cols-md-2 g-3 mt-3">
-                        
-                        <div class="col">
-                            <div class="d-flex gap-3 align-items-start p-3 bg-white rounded-3 shadow-sm h-100">
-                                <div style="flex-shrink:0; width:40px; height:40px; background:rgba(13,110,253,.1); border-radius:8px; display:flex; align-items:center; justify-content:center;">
-                                    <i class="bi <?php echo $m['icon']; ?>" style="font-size:1.1rem; color:#0d6efd;"></i>
-                                </div>
-                                <div>
-                                    <h6 class="fw-bold mb-1"><?php echo $m['label']; ?></h6>
-                                    <p class="text-muted mb-0" style="font-size:.85rem;"><?php echo $m['text']; ?></p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
+                   
                 </div>
             </div>
         </div>
