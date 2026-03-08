@@ -20,6 +20,7 @@ $routes = [
     'team'     => 'pages/team.php',
     'contact'  => 'pages/contact.php',
     'events'   => 'pages/events.php',
+    'core mandate'   => 'pages/core-mandate.php',
     'event-details'   => 'pages/event-details.php',
 ];
 
