@@ -5,7 +5,7 @@
 
 $pageTitle    = 'Our Stakeholders';
 $currentPage  = 'stakeholders';
-$heroTitle    = 'Our Stakeholders & Partners';
+$heroTitle    = 'stakeholders';
 $heroSubtitle = 'Driving Sustainable Development Together';
 
 ob_start();
