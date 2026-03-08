@@ -163,7 +163,7 @@ include __DIR__ . '/../partials/page-hero.php';
             <!-- Map Image -->
             <div class="col-lg-6" data-aos="fade-right">
                 <div class="text-center">
-                    <img src="/assets/images/jkp-counties-map.png" alt="JKP Coastal Counties Map" class="img-fluid rounded-4" style="box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                    <img src="assets/images/ke.svg" alt="JKP Coastal Counties Map" class="img-fluid rounded-4" style="box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
                 </div>
             </div>
             
