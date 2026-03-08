@@ -273,15 +273,7 @@ include __DIR__ . '/../partials/page-hero.php';
                     <p class="mb-3">The Secretariat mandate is coordination, policy harmonization, promotion of regional assets and driving investments into the region. The secretariat manages a repository of data that defines and describes the Coastal region, giving us a bird's-eye view of its opportunities, needs, and potential. Our role is to understand the region and create an environment for its socioeconomic development, changing its story.</p>
 
                     <div class="row row-cols-1 row-cols-md-2 g-3 mt-3">
-                        <?php
-                        $mandates = [
-                            ['icon' => 'bi-diagram-3',   'label' => 'Coordination',            'text' => 'Policy harmonization across the six coastal counties'],
-                            ['icon' => 'bi-megaphone',   'label' => 'Promotion',               'text' => 'Marketing regional assets and investment opportunities'],
-                            ['icon' => 'bi-graph-up',    'label' => 'Driving Investments',     'text' => 'Facilitating capital flow into the coastal region'],
-                            ['icon' => 'bi-file-earmark-text', 'label' => 'Data Repository',   'text' => 'Managing a bird\'s-eye view of the Coast region\'s potential'],
-                        ];
-                        foreach ($mandates as $m):
-                        ?>
+                        
                         <div class="col">
                             <div class="d-flex gap-3 align-items-start p-3 bg-white rounded-3 shadow-sm h-100">
                                 <div style="flex-shrink:0; width:40px; height:40px; background:rgba(13,110,253,.1); border-radius:8px; display:flex; align-items:center; justify-content:center;">
