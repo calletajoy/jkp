@@ -366,7 +366,7 @@ include __DIR__ . '/../partials/page-hero.php';
             <div class="col-lg-6" data-aos="fade-right">
                 <div class="county-map-container">
                     <!-- SVG Map - You'll need to replace with your actual SVG -->
-                    <img src="/assets/images/jkp-counties-map.svg" alt="JKP Coastal Counties Map" class="map-svg img-fluid" style="filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));">
+                    <img src="/assets/images/ke.svg" alt="JKP Coastal Counties Map" class="map-svg img-fluid" style="filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));">
                     
                     <!-- Pulsating Markers with County Name Tags -->
                     <!-- Mombasa -->
