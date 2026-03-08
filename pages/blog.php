@@ -33,7 +33,7 @@ $posts = [
                 </div>
             </div>
             <div class="title text-center" data-aos="fade-up">
-                <h2 class="cssanimation lePopUp sequence">News &amp; Blog</h2>
+                <h2 class="cssanimation lePopUp sequence">News updates  & Blog</h2>
             </div>
         </div>
 
