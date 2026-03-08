@@ -285,7 +285,7 @@ include __DIR__ . '/../partials/page-hero.php';
                                 </div>
                             </div>
                         </div>
-                        <?php endforeach; ?>
+                        
                     </div>
                 </div>
             </div>
