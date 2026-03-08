@@ -100,7 +100,7 @@ function navActive(string $key): string
                                         <div class="col-md-4">
                                            
                                             <ul class="list-unstyled">
-                                                <li><a class="dropdown-item px-0" href="/core-mandate.php">🎯 Core Mandate</a></li>
+                                                <li><a class="dropdown-item px-0" href="/core-mandate">🎯 Core Mandate</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-md-4">
