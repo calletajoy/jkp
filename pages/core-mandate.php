@@ -228,6 +228,73 @@ include __DIR__ . '/../partials/page-hero.php';
     </div>
 </section>
 
+<!-- ===== Core Mandates Section ===== -->
+<section class="our-investigators py-5 bg-light">
+    <div class="container">
+        <div class="section-title">
+            <div class="semi-title" data-aos="fade-up">
+                <div class="animated-circles justify-content-center">
+                    <div class="small-circle-start"></div>
+                    <div class="title">What We Do</div>
+                    <div class="small-circle-end"></div>
+                </div>
+            </div>
+            <div class="title text-center mb-2" data-aos="fade-up">
+                <h2 class="cssanimation lePopUp sequence">Our Core Mandates</h2>
+            </div>
+            <p class="text-center text-muted mb-5" data-aos="fade-up">
+                The JKP Secretariat is mandated to drive regional development through these key pillars
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Policy Harmonization -->
+            <div class="col-md-6 col-lg-3" data-aos="fade-up">
+                <div class="card h-100 border-0 text-center p-4" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                    <div class="rounded-circle bg-primary bg-opacity-10 p-3 mx-auto mb-3" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                        <i class="bi bi-file-earmark-text-fill" style="font-size: 2rem; color: #0d6efd;"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2">Policy Harmonization</h5>
+                    <p class="text-muted small">Aligning county policies to create a cohesive regional framework for development</p>
+                </div>
+            </div>
+            
+            <!-- Coordination -->
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 border-0 text-center p-4" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                    <div class="rounded-circle bg-success bg-opacity-10 p-3 mx-auto mb-3" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                        <i class="bi bi-diagram-3-fill" style="font-size: 2rem; color: #198754;"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2">Coordination</h5>
+                    <p class="text-muted small">Harmonizing efforts across counties, universities, and the private sector</p>
+                </div>
+            </div>
+            
+            <!-- Investment Promotion -->
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 border-0 text-center p-4" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                    <div class="rounded-circle bg-warning bg-opacity-10 p-3 mx-auto mb-3" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                        <i class="bi bi-graph-up-arrow" style="font-size: 2rem; color: #ffc107;"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2">Investment Promotion</h5>
+                    <p class="text-muted small">Attracting and facilitating capital flow into the coastal region</p>
+                </div>
+            </div>
+            
+            <!-- Regional Promotion -->
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100 border-0 text-center p-4" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                    <div class="rounded-circle bg-info bg-opacity-10 p-3 mx-auto mb-3" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                        <i class="bi bi-megaphone-fill" style="font-size: 2rem; color: #0dcaf0;"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2">Regional Promotion</h5>
+                    <p class="text-muted small">Marketing regional assets and opportunities to investors and partners</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ===== Mission & Vision Folded Cards ===== -->
 <section class="about-company py-5">
     <div class="container">
@@ -297,72 +364,7 @@ include __DIR__ . '/../partials/page-hero.php';
     </div>
 </section>
 
-<!-- ===== Core Mandates Section ===== -->
-<section class="our-investigators py-5 bg-light">
-    <div class="container">
-        <div class="section-title">
-            <div class="semi-title" data-aos="fade-up">
-                <div class="animated-circles justify-content-center">
-                    <div class="small-circle-start"></div>
-                    <div class="title">What We Do</div>
-                    <div class="small-circle-end"></div>
-                </div>
-            </div>
-            <div class="title text-center mb-2" data-aos="fade-up">
-                <h2 class="cssanimation lePopUp sequence">Our Core Mandates</h2>
-            </div>
-            <p class="text-center text-muted mb-5" data-aos="fade-up">
-                The JKP Secretariat is mandated to drive regional development through these key pillars
-            </p>
-        </div>
 
-        <div class="row g-4">
-            <!-- Policy Harmonization -->
-            <div class="col-md-6 col-lg-3" data-aos="fade-up">
-                <div class="card h-100 border-0 text-center p-4" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.3s ease;">
-                    <div class="rounded-circle bg-primary bg-opacity-10 p-3 mx-auto mb-3" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
-                        <i class="bi bi-file-earmark-text-fill" style="font-size: 2rem; color: #0d6efd;"></i>
-                    </div>
-                    <h5 class="fw-bold mb-2">Policy Harmonization</h5>
-                    <p class="text-muted small">Aligning county policies to create a cohesive regional framework for development</p>
-                </div>
-            </div>
-            
-            <!-- Coordination -->
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                <div class="card h-100 border-0 text-center p-4" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.3s ease;">
-                    <div class="rounded-circle bg-success bg-opacity-10 p-3 mx-auto mb-3" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
-                        <i class="bi bi-diagram-3-fill" style="font-size: 2rem; color: #198754;"></i>
-                    </div>
-                    <h5 class="fw-bold mb-2">Coordination</h5>
-                    <p class="text-muted small">Harmonizing efforts across counties, universities, and the private sector</p>
-                </div>
-            </div>
-            
-            <!-- Investment Promotion -->
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                <div class="card h-100 border-0 text-center p-4" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.3s ease;">
-                    <div class="rounded-circle bg-warning bg-opacity-10 p-3 mx-auto mb-3" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
-                        <i class="bi bi-graph-up-arrow" style="font-size: 2rem; color: #ffc107;"></i>
-                    </div>
-                    <h5 class="fw-bold mb-2">Investment Promotion</h5>
-                    <p class="text-muted small">Attracting and facilitating capital flow into the coastal region</p>
-                </div>
-            </div>
-            
-            <!-- Regional Promotion -->
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                <div class="card h-100 border-0 text-center p-4" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.3s ease;">
-                    <div class="rounded-circle bg-info bg-opacity-10 p-3 mx-auto mb-3" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
-                        <i class="bi bi-megaphone-fill" style="font-size: 2rem; color: #0dcaf0;"></i>
-                    </div>
-                    <h5 class="fw-bold mb-2">Regional Promotion</h5>
-                    <p class="text-muted small">Marketing regional assets and opportunities to investors and partners</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- ===== Stats / Impact Section ===== -->
 <section class="py-5 bg-light">
