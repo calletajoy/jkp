@@ -13,49 +13,284 @@ ob_start();
 include __DIR__ . '/../partials/page-hero.php';
 ?>
 
+<style>
+/* Folded Card Styles */
+.folded-card {
+    perspective: 1500px;
+    height: 300px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.folded-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.folded-card.active .folded-card-inner {
+    transform: rotateX(0deg);
+}
+
+.folded-card:not(.active) .folded-card-inner {
+    transform: rotateX(20deg);
+}
+
+.folded-card-front, .folded-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.folded-card-front {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotateX(0deg);
+}
+
+.folded-card-front.mission {
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+}
+
+.folded-card-front.vision {
+    background: linear-gradient(135deg, #198754 0%, #146c43 100%);
+}
+
+.folded-card-front i {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.folded-card-front h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.folded-card-front p {
+    font-size: 1rem;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.folded-card-back {
+    background: white;
+    color: #333;
+    transform: rotateX(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.folded-card-back h4 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.folded-card-back p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    max-width: 80%;
+    margin: 0 auto;
+    font-style: italic;
+}
+
+.folded-card-back.mission h4 { color: #0d6efd; }
+.folded-card-back.vision h4 { color: #198754; }
+
+.tap-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,0.2);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.folded-card.active .tap-indicator {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+</style>
+
 <!-- ===== Introduction Section ===== -->
 <section class="about-company py-5">
     <div class="container">
-        <div class="row align-items-center g-5">
-            <!-- Text on the left side -->
-            <div class="col-12 col-lg-7 order-2 order-lg-1" data-aos="fade-right">
-                <div class="company-details">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10" data-aos="fade-up">
+                <div class="company-details text-center">
                     <div class="semi-title">
-                        <div class="animated-circles">
+                        <div class="animated-circles justify-content-center">
                             <div class="small-circle-start"></div>
                             <span class="title">JKP Core Mandate</span>
+                            <div class="small-circle-end"></div>
                         </div>
                     </div>
-                    <h2>
+                    <h2 class="mb-4">
                         <span class="cssanimation lePopUp sequence">Driving Socio-Economic</span><br>
                         <span class="cssanimation lePopUp sequence">Development of the Coast</span>
                     </h2>
                     
-                    <h4 class="mt-4 mb-3" style="color: #333; font-weight: 600;">Introduction</h4>
-                    <p>The <strong>JKP Secretariat</strong> plays a central role in advancing the shared development goals of the coastal counties. Its responsibility is to maintain a broad understanding of the region's opportunities and challenges while creating an enabling environment that supports collaboration, innovation, and investment.</p>
-                    <p>Through coordinated initiatives and strategic partnerships, the Secretariat provides a platform for the <strong>socio-economic development of the coastal region</strong>, working to transform the region and improve the livelihoods of its communities.</p>
+                    <div class="mt-4">
+                        <h4 class="mb-3" style="color: #333; font-weight: 600; text-align: left;">Introduction</h4>
+                        <p class="lead mb-4" style="font-size: 1.2rem; color: #555; text-align: left;">The <strong>JKP Secretariat</strong> plays a central role in advancing the shared development goals of the coastal counties. Its responsibility is to maintain a broad understanding of the region's opportunities and challenges while creating an enabling environment that supports collaboration, innovation, and investment.</p>
+                        
+                        <p class="mb-5" style="font-size: 1.1rem; text-align: left;">Through coordinated initiatives and strategic partnerships, the Secretariat provides a platform for the <strong>socio-economic development of the coastal region</strong>, working to transform the region and improve the livelihoods of its communities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-                    <div class="row mt-4">
-                        <div class="col-md-6">
-                            <div class="p-4 bg-light rounded-4 mb-3" style="border-left: 5px solid #0d6efd;">
-                                <h5 style="font-weight: 700; color: #0d6efd;">Our Mission</h5>
-                                <p class="mb-0 fst-italic" style="font-size: 1.1rem;">"To catalyze economic growth of Kenya's coastal regional counties."</p>
+<!-- ===== Strategic Focus Areas ===== -->
+<section class="about-company py-5 bg-light">
+    <div class="container">
+        <div class="section-title text-center mb-5" data-aos="fade-up">
+            <div class="semi-title">
+                <div class="animated-circles justify-content-center">
+                    <div class="small-circle-start"></div>
+                    <div class="title">Where We Focus</div>
+                    <div class="small-circle-end"></div>
+                </div>
+            </div>
+            <h2 class="mt-2 cssanimation lePopUp sequence">Strategic Focus Areas</h2>
+            <p class="text-muted mt-3">Driving growth through key sectors of the coastal economy</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Education & Academia -->
+            <div class="col-md-6 col-lg-3" data-aos="fade-up">
+                <div class="card h-100 border-0 text-center p-4" style="border-radius: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <div class="mb-3">
+                        <i class="bi bi-book-half" style="font-size: 3rem; color: white;"></i>
+                    </div>
+                    <h5 class="fw-bold text-white mb-3">Education & Academia</h5>
+                    <p class="text-white-50 small mb-0">Partnering with 3 universities to drive research and innovation in the coastal region</p>
+                </div>
+            </div>
+            
+            <!-- Agriculture & Agribusiness -->
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 border-0 text-center p-4" style="border-radius: 15px; background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <div class="mb-3">
+                        <i class="bi bi-tree-fill" style="font-size: 3rem; color: white;"></i>
+                    </div>
+                    <h5 class="fw-bold text-white mb-3">Agriculture & Agribusiness</h5>
+                    <p class="text-white-50 small mb-0">Value chain development and modern farming techniques for sustainable growth</p>
+                </div>
+            </div>
+            
+            <!-- Blue Economy -->
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 border-0 text-center p-4" style="border-radius: 15px; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <div class="mb-3">
+                        <i class="bi bi-water" style="font-size: 3rem; color: white;"></i>
+                    </div>
+                    <h5 class="fw-bold text-white mb-3">Blue Economy</h5>
+                    <p class="text-white-50 small mb-0">Sustainable marine resources and fisheries management for coastal communities</p>
+                </div>
+            </div>
+            
+            <!-- Tourism -->
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100 border-0 text-center p-4" style="border-radius: 15px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <div class="mb-3">
+                        <i class="bi bi-umbrella" style="font-size: 3rem; color: white;"></i>
+                    </div>
+                    <h5 class="fw-bold text-white mb-3">Tourism</h5>
+                    <p class="text-white-50 small mb-0">Coastal, cultural and eco-tourism development to showcase our region</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Mission & Vision Folded Cards ===== -->
+<section class="about-company py-5">
+    <div class="container">
+        <div class="section-title text-center mb-5" data-aos="fade-up">
+            <div class="semi-title">
+                <div class="animated-circles justify-content-center">
+                    <div class="small-circle-start"></div>
+                    <div class="title">Our Purpose</div>
+                    <div class="small-circle-end"></div>
+                </div>
+            </div>
+            <h2 class="mt-2 cssanimation lePopUp sequence">Mission & Vision</h2>
+            <p class="text-muted mt-3">Tap on each card to unfold and reveal our guiding principles</p>
+        </div>
+
+        <div class="row justify-content-center g-4">
+            <!-- Mission Folded Card -->
+            <div class="col-md-6" data-aos="fade-right">
+                <div class="folded-card" id="missionCard" onclick="toggleCard('missionCard')">
+                    <div class="folded-card-inner">
+                        <!-- Front of card (folded state) -->
+                        <div class="folded-card-front mission">
+                            <i class="bi bi-bullseye"></i>
+                            <h3>Our Mission</h3>
+                            <p>Tap to unfold →</p>
+                            <div class="tap-indicator">
+                                <i class="bi bi-hand-index-thumb"></i> Tap to reveal
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="p-4 bg-light rounded-4 mb-3" style="border-left: 5px solid #198754;">
-                                <h5 style="font-weight: 700; color: #198754;">Our Vision</h5>
-                                <p class="mb-0 fst-italic" style="font-size: 1.1rem;">"A regional economy that creates wealth and shared prosperity for its communities."</p>
+                        <!-- Back of card (unfolded state) -->
+                        <div class="folded-card-back mission">
+                            <h4>Our Mission</h4>
+                            <p>"To catalyze economic growth of Kenya's coastal regional counties."</p>
+                            <div class="tap-indicator" style="background: rgba(0,0,0,0.1); color: #333;">
+                                <i class="bi bi-hand-index-thumb"></i> Tap to fold
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Image on the right side, slightly below -->
-            <div class="col-12 col-lg-5 order-1 order-lg-2" data-aos="fade-left" style="margin-top: 50px;">
-                <div class="images text-center text-lg-end">
-                    <img class="img-fluid img-one" src="/assets/images/about jkp bloc.png" alt="Jumuiya ya Kaunti za Pwani" style="max-width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+
+            <!-- Vision Folded Card -->
+            <div class="col-md-6" data-aos="fade-left">
+                <div class="folded-card" id="visionCard" onclick="toggleCard('visionCard')">
+                    <div class="folded-card-inner">
+                        <!-- Front of card (folded state) -->
+                        <div class="folded-card-front vision">
+                            <i class="bi bi-eye"></i>
+                            <h3>Our Vision</h3>
+                            <p>Tap to unfold →</p>
+                            <div class="tap-indicator">
+                                <i class="bi bi-hand-index-thumb"></i> Tap to reveal
+                            </div>
+                        </div>
+                        <!-- Back of card (unfolded state) -->
+                        <div class="folded-card-back vision">
+                            <h4>Our Vision</h4>
+                            <p>"A regional economy that creates wealth and shared prosperity for its communities."</p>
+                            <div class="tap-indicator" style="background: rgba(0,0,0,0.1); color: #333;">
+                                <i class="bi bi-hand-index-thumb"></i> Tap to fold
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -129,69 +364,6 @@ include __DIR__ . '/../partials/page-hero.php';
     </div>
 </section>
 
-<!-- ===== Strategic Focus Areas ===== -->
-<section class="about-company py-5">
-    <div class="container">
-        <div class="section-title text-center mb-5" data-aos="fade-up">
-            <div class="semi-title">
-                <div class="animated-circles justify-content-center">
-                    <div class="small-circle-start"></div>
-                    <div class="title">Where We Focus</div>
-                    <div class="small-circle-end"></div>
-                </div>
-            </div>
-            <h2 class="mt-2 cssanimation lePopUp sequence">Strategic Focus Areas</h2>
-            <p class="text-muted mt-3">Driving growth through key sectors of the coastal economy</p>
-        </div>
-
-        <div class="row g-4">
-            <!-- Education & Academia -->
-            <div class="col-md-6 col-lg-3" data-aos="fade-up">
-                <div class="position-relative overflow-hidden rounded-4" style="height: 250px;">
-                    <img src="/assets/images/education.jpg" class="img-fluid w-100 h-100" alt="Education & Academia" style="object-fit: cover;">
-                    <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-                        <h5 class="text-white mb-0 fw-bold">Education & Academia</h5>
-                        <p class="text-white-50 small mb-0">Partnering with 3 universities</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Agriculture & Agribusiness -->
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                <div class="position-relative overflow-hidden rounded-4" style="height: 250px;">
-                    <img src="/assets/images/agriculture.jpg" class="img-fluid w-100 h-100" alt="Agriculture & Agribusiness" style="object-fit: cover;">
-                    <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-                        <h5 class="text-white mb-0 fw-bold">Agriculture & Agribusiness</h5>
-                        <p class="text-white-50 small mb-0">Value chain development</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Blue Economy -->
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                <div class="position-relative overflow-hidden rounded-4" style="height: 250px;">
-                    <img src="/assets/images/blue-economy.jpg" class="img-fluid w-100 h-100" alt="Blue Economy" style="object-fit: cover;">
-                    <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-                        <h5 class="text-white mb-0 fw-bold">Blue Economy</h5>
-                        <p class="text-white-50 small mb-0">Marine resources & fisheries</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Tourism -->
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                <div class="position-relative overflow-hidden rounded-4" style="height: 250px;">
-                    <img src="/assets/images/tourism.jpg" class="img-fluid w-100 h-100" alt="Tourism" style="object-fit: cover;">
-                    <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-                        <h5 class="text-white mb-0 fw-bold">Tourism</h5>
-                        <p class="text-white-50 small mb-0">Coastal & cultural tourism</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- ===== Stats / Impact Section ===== -->
 <section class="py-5 bg-light">
     <div class="container">
@@ -207,20 +379,28 @@ include __DIR__ . '/../partials/page-hero.php';
         </div>
         <div class="row row-cols-2 row-cols-md-4 g-4 text-center">
             <div class="col" data-aos="fade-up">
-                <h2 class="fw-bold" style="font-size:2.5rem; color: #0d6efd;">6</h2>
-                <p class="text-muted">Member Counties</p>
+                <div class="p-4">
+                    <h2 class="fw-bold" style="font-size:3rem; color: #0d6efd;">6</h2>
+                    <p class="text-muted fs-5">Member Counties</p>
+                </div>
             </div>
             <div class="col" data-aos="fade-up">
-                <h2 class="fw-bold" style="font-size:2.5rem; color: #198754;">3</h2>
-                <p class="text-muted">Partner Universities</p>
+                <div class="p-4">
+                    <h2 class="fw-bold" style="font-size:3rem; color: #198754;">3</h2>
+                    <p class="text-muted fs-5">Partner Universities</p>
+                </div>
             </div>
             <div class="col" data-aos="fade-up">
-                <h2 class="fw-bold" style="font-size:2.5rem; color: #ffc107;">4</h2>
-                <p class="text-muted">Core Mandates</p>
+                <div class="p-4">
+                    <h2 class="fw-bold" style="font-size:3rem; color: #ffc107;">4</h2>
+                    <p class="text-muted fs-5">Core Mandates</p>
+                </div>
             </div>
             <div class="col" data-aos="fade-up">
-                <h2 class="fw-bold" style="font-size:2.5rem; color: #0dcaf0;">4</h2>
-                <p class="text-muted">Strategic Focus Areas</p>
+                <div class="p-4">
+                    <h2 class="fw-bold" style="font-size:3rem; color: #0dcaf0;">4</h2>
+                    <p class="text-muted fs-5">Strategic Focus Areas</p>
+                </div>
             </div>
         </div>
     </div>
@@ -250,6 +430,13 @@ include __DIR__ . '/../partials/page-hero.php';
         </div>
     </div>
 </section>
+
+<script>
+function toggleCard(cardId) {
+    const card = document.getElementById(cardId);
+    card.classList.toggle('active');
+}
+</script>
 
 <?php
 $pageContent = ob_get_clean();
