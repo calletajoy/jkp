@@ -452,11 +452,11 @@ include __DIR__ . '/../partials/page-hero.php';
                     <div class="card mb-3 p-4 rounded-0">
                         <div class="eyes-download-icons">
                             <div>
-                                <img class="img-fluid" src="/assets/images/eye.gif" alt="Preview">
+                                <img class="img-fluid" src="/assets/images/icons8-eye.gif" alt="Preview">
                             </div>
                             <div class="uploadFile-icon">
                                 <a href="/assets/resources/jkp-counties-complete-resources.pdf" download>
-                                    <img class="img-fluid down" src="/assets/images/download.gif" alt="Download">
+                                    <img class="img-fluid down" src="/assets/images/icons8-downloads-folder.gif" alt="Download">
                                 </a>
                             </div>
                         </div>
@@ -499,12 +499,12 @@ include __DIR__ . '/../partials/page-hero.php';
             
             <?php
             $countyFiles = [
-                ['name' => 'Mombasa', 'color' => '#0d6efd', 'file' => 'goblue-mombasa.pdf'],
-                ['name' => 'Kwale', 'color' => '#198754', 'file' => 'goblue-kwale.pdf'],
-                ['name' => 'Kilifi', 'color' => '#ffc107', 'file' => 'goblue-kilifi.pdf'],
-                ['name' => 'Tana River', 'color' => '#dc3545', 'file' => 'goblue-tana-river.pdf'],
-                ['name' => 'Lamu', 'color' => '#0dcaf0', 'file' => 'goblue-lamu.pdf'],
-                ['name' => 'Taita Taveta', 'color' => '#6f42c1', 'file' => 'goblue-taita-taveta.pdf'],
+                ['name' => 'Mombasa', 'color' => '#0d6efd', 'file' => 'assets/content-files/Brochure-Mombasa.pdf'],
+                ['name' => 'Kwale', 'color' => '#198754', 'file' => 'assets/content-files/Brochure-Kwale.pdf'],
+                ['name' => 'Kilifi', 'color' => '#ffc107', 'file' => 'assets/content-files/Brochure-Kilifi.pdf'],
+                ['name' => 'Tana River', 'color' => '#dc3545', 'file' => 'assets/content-files/Brochure-Tana-River.pdf'],
+                ['name' => 'Lamu', 'color' => '#0dcaf0', 'file' => 'assets/content-files/Brochure-Lamu.pdf'],
+                ['name' => 'Taita Taveta', 'color' => '#6f42c1', 'file' => 'assets/content-files/Brochure-Taita-Taveta.pdf'],
             ];
             ?>
             
@@ -528,48 +528,6 @@ include __DIR__ . '/../partials/page-hero.php';
                 </div>
             </div>
             <?php endforeach; ?>
-        </div>
-    </div>
-</section>
-
-<!-- ===== Stats / Impact Section ===== -->
-<section class="py-5">
-    <div class="container">
-        <div class="section-title text-center mb-5" data-aos="fade-up">
-            <div class="semi-title">
-                <div class="animated-circles justify-content-center">
-                    <div class="small-circle-start"></div>
-                    <div class="title">Our Impact</div>
-                    <div class="small-circle-end"></div>
-                </div>
-            </div>
-            <h2 class="mt-2 cssanimation lePopUp sequence">Delivering Results Together</h2>
-        </div>
-        <div class="row row-cols-2 row-cols-md-4 g-4 text-center">
-            <div class="col" data-aos="fade-up">
-                <div class="p-4">
-                    <h2 class="fw-bold" style="font-size:3rem; color: #0d6efd;">6</h2>
-                    <p class="text-muted fs-5">Member Counties</p>
-                </div>
-            </div>
-            <div class="col" data-aos="fade-up">
-                <div class="p-4">
-                    <h2 class="fw-bold" style="font-size:3rem; color: #198754;">3+</h2>
-                    <p class="text-muted fs-5">Global Partners</p>
-                </div>
-            </div>
-            <div class="col" data-aos="fade-up">
-                <div class="p-4">
-                    <h2 class="fw-bold" style="font-size:3rem; color: #ffc107;">2</h2>
-                    <p class="text-muted fs-5">Flagship Projects</p>
-                </div>
-            </div>
-            <div class="col" data-aos="fade-up">
-                <div class="p-4">
-                    <h2 class="fw-bold" style="font-size:3rem; color: #0dcaf0;">2030</h2>
-                    <p class="text-muted fs-5">Blueprint Vision</p>
-                </div>
-            </div>
         </div>
     </div>
 </section>
