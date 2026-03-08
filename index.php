@@ -21,7 +21,7 @@ $routes = [
     'contact'  => 'pages/contact.php',
     'events'   => 'pages/events.php',
     'core-mandate'   => 'pages/core-mandate.php',
-    'partners'   => 'pages/stakeholders.php',
+    'stakeholders'   => 'pages/stakeholders.php',
     'event-details'   => 'pages/event-details.php',
 ];
 
