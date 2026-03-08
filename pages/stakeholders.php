@@ -240,7 +240,7 @@ include __DIR__ . '/../partials/page-hero.php';
             <!-- FAO -->
             <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up">
                 <div class="card partner-card h-100 border-0 p-4 text-center">
-                    <img src="/assets/images/partners/fao.png" class="img-fluid" alt="FAO" style="max-height: 70px; width: auto; margin: 0 auto;">
+                    <img src="/assets/images/FAO-Logo.png" class="img-fluid" alt="FAO" style="max-height: 70px; width: auto; margin: 0 auto;">
                     <div class="partner-description">
                         Leads international efforts to defeat hunger and improve nutrition and food security
                     </div>
@@ -250,7 +250,7 @@ include __DIR__ . '/../partials/page-hero.php';
             <!-- EU -->
             <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="50">
                 <div class="card partner-card h-100 border-0 p-4 text-center">
-                    <img src="/assets/images/partners/eu.png" class="img-fluid" alt="European Union" style="max-height: 70px; width: auto; margin: 0 auto;">
+                    <img src="/assets/images/eu-go blue.png" class="img-fluid" alt="European Union" style="max-height: 70px; width: auto; margin: 0 auto;">
                     <div class="partner-description">
                         Focus on creating growth, ensuring healthy waters and building sustainable communities
                     </div>
@@ -260,7 +260,7 @@ include __DIR__ . '/../partials/page-hero.php';
             <!-- Trade Mark East Africa -->
             <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100">
                 <div class="card partner-card h-100 border-0 p-4 text-center">
-                    <img src="/assets/images/partners/tmea.png" class="img-fluid" alt="Trade Mark East Africa" style="max-height: 70px; width: auto; margin: 0 auto;">
+                    <img src="/assets/images/trade mark EA.png" class="img-fluid" alt="Trade Mark East Africa" style="max-height: 70px; width: auto; margin: 0 auto;">
                     <div class="partner-description">
                         Established with the aim of growing prosperity in Africa through increased trade
                     </div>
@@ -288,7 +288,7 @@ include __DIR__ . '/../partials/page-hero.php';
         <div class="row justify-content-center">
             <div class="col-lg-10" data-aos="zoom-in">
                 <div class="text-center">
-                    <img src="/assets/images/jumuiya-collaborators.jpg" alt="Jumuiya and Collaborators" class="img-fluid rounded-4" style="box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                    <img src="/assets/images/Screenshot 2026-03-08 214011.png" alt="Jumuiya and Collaborators" class="img-fluid rounded-4" style="box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
                 </div>
             </div>
         </div>
