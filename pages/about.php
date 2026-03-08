@@ -17,12 +17,8 @@ include __DIR__ . '/../partials/page-hero.php';
 <section class="about-company py-5">
     <div class="container">
         <div class="row align-items-center g-5">
-            <div class="col-12 col-lg-5" data-aos="fade-right">
-                <div class="images">
-                    <img class="img-fluid img-one" src="/assets/images/about jkp bloc.png" alt="Jumuiya ya Kaunti za Pwani
-                </div>
-            </div>
-            <div class="col-12 col-lg-7 data-aos="fade-left">
+            <!-- Text on the left side -->
+            <div class="col-12 col-lg-7 order-2 order-lg-1" data-aos="fade-right">
                 <div class="company-details">
                     <div class="semi-title">
                         <div class="animated-circles">
@@ -62,11 +58,16 @@ include __DIR__ . '/../partials/page-hero.php';
                     </div>
                 </div>
             </div>
+            
+            <!-- Image on the right side, slightly below -->
+            <div class="col-12 col-lg-5 order-1 order-lg-2" data-aos="fade-left" style="margin-top: 50px;">
+                <div class="images text-center text-lg-end">
+                    <img class="img-fluid img-one" src="/assets/images/about jkp bloc.png" alt="Jumuiya ya Kaunti za Pwani" style="max-width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                </div>
+            </div>
         </div>
     </div>
 </section>
-
-
 
 <!-- ===== Board of Governors ===== -->
 <section class="our-investigators py-5">
@@ -146,8 +147,17 @@ include __DIR__ . '/../partials/page-hero.php';
             position: relative;
             overflow: hidden;
             cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .governor-card:hover {
+            transform: translateY(-5px);
         }
         .governor-card .card-img-top {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
             transition: all 0.3s ease;
         }
         .governor-card .hover-description {
@@ -169,17 +179,20 @@ include __DIR__ . '/../partials/page-hero.php';
             pointer-events: none;
             font-size: 0.9rem;
             line-height: 1.6;
-            border-radius: 8px;
+            border-radius: 10px;
         }
         .governor-card:hover .hover-description {
             opacity: 1;
         }
         .governor-card .card-body {
-            position: relative;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
             z-index: 3;
             background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-            margin-top: -80px;
-            border-radius: 0 0 8px 8px;
+            padding: 20px 15px 15px;
+            border-radius: 0 0 10px 10px;
         }
         .governor-card .social-links {
             position: absolute;
@@ -188,22 +201,64 @@ include __DIR__ . '/../partials/page-hero.php';
             z-index: 4;
             display: flex;
             gap: 8px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
         .governor-card .social-links li a {
             background: white;
             color: #333;
-            width: 32px;
-            height: 32px;
+            width: 35px;
+            height: 35px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
             transition: all 0.3s ease;
+            text-decoration: none;
         }
         .governor-card .social-links li a:hover {
             background: #0d6efd;
             color: white;
             transform: translateY(-3px);
+        }
+        .governor-card .share-btn {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            z-index: 4;
+            background: white;
+            color: #333;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .governor-card .share-btn:hover {
+            background: #0d6efd;
+            color: white;
+        }
+        .governor-card .info {
+            padding: 10px 0 0 0;
+        }
+        .governor-card .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: white;
+        }
+        .governor-card .card-text {
+            font-size: 0.9rem;
+            margin-bottom: 3px;
+            color: rgba(255,255,255,0.9);
+        }
+        .governor-card .text-white-50 {
+            color: rgba(255,255,255,0.7) !important;
+            font-size: 0.85rem;
         }
         </style>
 
@@ -211,7 +266,7 @@ include __DIR__ . '/../partials/page-hero.php';
             <?php foreach ($governors as $gov): ?>
             <div class="col" data-aos="fade-up">
                 <div class="card h-100 border-0 governor-card">
-                    <img src="/assets/images/multiple-use/investigator/<?php echo $gov['img']; ?>" class="card-img-top img-fluid" alt="<?php echo htmlspecialchars(strip_tags($gov['name'])); ?>">
+                    <img src="<?php echo $gov['img']; ?>" class="card-img-top img-fluid" alt="<?php echo htmlspecialchars(strip_tags($gov['name'])); ?>">
                     
                     <!-- Hover Description -->
                     <div class="hover-description">
@@ -221,9 +276,9 @@ include __DIR__ . '/../partials/page-hero.php';
                     <div class="card-body">
                         <!-- Social Links -->
                         <ul class="social-links hideLink">
-                            <li><a href="<?php echo $gov['social']['fb']; ?>"><i class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a href="<?php echo $gov['social']['ig']; ?>"><i class="fa-brands fa-instagram"></i></a></li>
-                            <li><a href="<?php echo $gov['social']['twitter']; ?>"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="<?php echo $gov['social']['fb']; ?>" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="<?php echo $gov['social']['ig']; ?>" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="<?php echo $gov['social']['twitter']; ?>" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
                         </ul>
                         <button class="share-btn border-0 share-button"><i class="fa-solid fa-share-nodes"></i></button>
                         
@@ -257,7 +312,7 @@ include __DIR__ . '/../partials/page-hero.php';
 
         <div class="row align-items-center g-5">
             <div class="col-12 col-lg-4 text-center" data-aos="fade-right">
-                <img class="img-fluid rounded-3 shadow" src="/assets/images/ceo jkp.png" alt="Dr. Emmanuel Kombe Nzai" style="max-width:280px;">
+                <img class="img-fluid rounded-3 shadow" src="/assets/images/ceo jkp.png" alt="Dr. Emmanuel Kombe Nzai" style="max-width:280px; border-radius: 10px;">
                 <div class="mt-3">
                     <h4 class="fw-bold">Dr. Emmanuel Nzai</h4>
                     <p class="text-muted">CEO - JKP Secretariat</p>
@@ -271,15 +326,11 @@ include __DIR__ . '/../partials/page-hero.php';
                 <div class="company-details">
                     <p class="mb-3">To coordinate the mandates of Jumuiya there is a Structured Sector Consultative Platform run by a Secretariat led by <strong>Dr. Emmanuel Kombe Nzai</strong> as the Chief Executive Officer. Within the Secretariat are the Steering Committee, Technical and administrative teams and the Sector working groups.</p>
                     <p class="mb-3">The Secretariat mandate is coordination, policy harmonization, promotion of regional assets and driving investments into the region. The secretariat manages a repository of data that defines and describes the Coastal region, giving us a bird's-eye view of its opportunities, needs, and potential. Our role is to understand the region and create an environment for its socioeconomic development, changing its story.</p>
-
-                   
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-
 
 <!-- ===== CTA Strip ===== -->
 <section class="best-city-government remove-div one-second" data-aos="fade-up">
