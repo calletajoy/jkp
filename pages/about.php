@@ -19,11 +19,10 @@ include __DIR__ . '/../partials/page-hero.php';
         <div class="row align-items-center g-5">
             <div class="col-12 col-lg-5" data-aos="fade-right">
                 <div class="images">
-                    <img class="img-fluid img-one" src="/assets/images/01_home/about-company/image-01.png" alt="Jumuiya ya Kaunti za Pwani">
-                    <img class="img-fluid img-tow left-slider" src="/assets/images/01_home/about-company/image-02.png" alt="Coastal Counties Kenya">
+                    <img class="img-fluid img-one" src="/assets/images/01_home/about-company/image-01.png" alt="Jumuiya ya Kaunti za Pwani
                 </div>
             </div>
-            <div class="col-12 col-lg-7" data-aos="fade-left">
+            <div class="col-12 col-lg-7 data-aos="fade-left">
                 <div class="company-details">
                     <div class="semi-title">
                         <div class="animated-circles">
@@ -67,37 +66,7 @@ include __DIR__ . '/../partials/page-hero.php';
     </div>
 </section>
 
-<!-- ===== Stats ===== -->
-<section class="py-5 bg-light">
-    <div class="container">
-        <div class="section-title text-center mb-5" data-aos="fade-up">
-            <div class="semi-title">
-                <div class="animated-circles justify-content-center">
-                    <div class="small-circle-start"></div>
-                    <div class="title">Go Blue Project — Impact</div>
-                    <div class="small-circle-end"></div>
-                </div>
-            </div>
-            <h2 class="mt-2 cssanimation lePopUp sequence">Jumuiya Economic Bloc's Achievements</h2>
-        </div>
-        <div class="row row-cols-2 row-cols-md-4 g-4 text-center">
-            <?php
-            $stats = [
-                ['value' => '16',    'label' => 'MSME Tourism Grants'],
-                ['value' => '26+',   'label' => 'Boats Delivered'],
-                ['value' => '2,000+','label' => 'Jobs Created (Youth &amp; Women)'],
-                ['value' => '1,900+','label' => 'Skills Trainings Delivered'],
-            ];
-            foreach ($stats as $s):
-            ?>
-            <div class="col" data-aos="fade-up">
-                <h2 class="fw-bold" style="font-size:2.5rem;"><?php echo $s['value']; ?></h2>
-                <p class="text-muted"><?php echo $s['label']; ?></p>
-            </div>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</section>
+
 
 <!-- ===== Board of Governors ===== -->
 <section class="our-investigators py-5">
