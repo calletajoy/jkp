@@ -19,7 +19,7 @@ include __DIR__ . '/../partials/page-hero.php';
         <div class="row align-items-center g-5">
             <div class="col-12 col-lg-5" data-aos="fade-right">
                 <div class="images">
-                    <img class="img-fluid img-one" src="/assets/images/01_home/about-company/image-01.png" alt="Jumuiya ya Kaunti za Pwani
+                    <img class="img-fluid img-one" src="/assets/images/about jkp bloc.png" alt="Jumuiya ya Kaunti za Pwani
                 </div>
             </div>
             <div class="col-12 col-lg-7 data-aos="fade-left">
