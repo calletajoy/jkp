@@ -25,7 +25,7 @@ $galleryItems = [
         'location' => 'Voi, Taita Taveta',
         'date' => 'November 2024',
         'category' => 'JABEIC Conference',
-        'image' => 'conference.jpg'
+        'image' => '/assets/images/jab.jpg'
     ],
     [
         'type' => 'photo',
@@ -34,7 +34,7 @@ $galleryItems = [
         'location' => 'Coastal Region',
         'date' => '2024',
         'category' => 'Community Engagement',
-        'image' => 'community.jpg'
+        'image' => '/assets/images/ig-1.png'
     ],
     [
         'type' => 'photo',
@@ -43,7 +43,7 @@ $galleryItems = [
         'location' => 'Coastal Counties',
         'date' => '2024',
         'category' => 'Project Highlights',
-        'image' => 'projects.jpg'
+        'image' => '/assets/images/ig-2.png'
     ],
     [
         'type' => 'photo',
@@ -52,7 +52,7 @@ $galleryItems = [
         'location' => 'Multiple Counties',
         'date' => '2023-2024',
         'category' => 'Regional Activities',
-        'image' => 'activities.jpg'
+        'image' => '/assets/images/jum1.jpg'
     ],
     [
         'type' => 'photo',
@@ -61,7 +61,7 @@ $galleryItems = [
         'location' => 'Coastal Region',
         'date' => '2023-2024',
         'category' => 'Development Initiatives',
-        'image' => 'initiatives.jpg'
+        'image' => '/assets/images/jum2.jpg'
     ],
     [
         'type' => 'video',
@@ -70,7 +70,7 @@ $galleryItems = [
         'location' => 'Coastal Region',
         'date' => '2024',
         'category' => 'JKP Documentary',
-        'image' => 'documentary.jpg',
+        'image' => '/assets/images/jum3.jpg',
         'video' => true
     ]
 ];
@@ -81,15 +81,9 @@ $videoItems = [
         'description' => 'A comprehensive video documenting the journey of coastal development through JKP\'s collaborative efforts and strategic partnerships across the six coastal counties.',
         'location' => 'Six Coastal Counties',
         'date' => '2024',
-        'image' => 'coastal-story.jpg'
-    ],
-    [
-        'title' => 'Project Showcase',
-        'description' => 'Video presentation of key projects and initiatives implemented by JKP for economic transformation and sustainable development in the coastal region.',
-        'location' => 'Coastal Region',
-        'date' => '2024',
-        'image' => 'project-showcase.jpg'
+        'image' => '/assets/images/jum3.jpg'
     ]
+   
 ];
 
 $recentEvents = [
@@ -595,13 +589,13 @@ $recentEvents = [
         <p class="mb-4" data-aos="fade-up" data-aos-delay="100">Follow us on social media for the latest updates, events, and stories from Jumuiya ya Kaunti za Pwani</p>
         
         <div class="social-links" data-aos="fade-up" data-aos-delay="200">
-            <a href="https://web.facebook.com/JumuiyaKauntiZaPwani" class="social-icon" target="_blank" rel="noopener noreferrer">
+            <a href="https://web.facebook.com/JKPKE/?_rdc=1&_rdr#" class="social-icon" target="_blank" rel="noopener noreferrer">
                 <i class="bi bi-facebook"></i>
             </a>
-            <a href="https://www.instagram.com/jumuiyakauntizapwani/" class="social-icon" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/jumuiyapwani/" class="social-icon" target="_blank" rel="noopener noreferrer">
                 <i class="bi bi-instagram"></i>
             </a>
-            <a href="https://www.youtube.com/@jumuiyakauntizapwani" class="social-icon" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.youtube.com/watch?v=ZaE74xQkQoE" class="social-icon" target="_blank" rel="noopener noreferrer">
                 <i class="bi bi-youtube"></i>
             </a>
         </div>
