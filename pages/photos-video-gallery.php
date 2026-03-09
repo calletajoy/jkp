@@ -17,6 +17,13 @@ include __DIR__ . '/../partials/page-hero.php';
 $primaryBlue = '#6EC1E4';
 $darkBlue = '#244080';
 
+// Helper function to detect platform from image path
+function detectPlatform($image, $type) {
+    if ($type === 'video') return 'youtube';
+    if (strpos($image, 'ig-') !== false) return 'instagram';
+    return 'facebook';
+}
+
 // Gallery data
 $galleryItems = [
     [
@@ -26,9 +33,7 @@ $galleryItems = [
         'location' => 'Voi, Taita Taveta',
         'date' => 'November 2024',
         'category' => 'JABEIC Conference',
-        'image' => '/assets/images/jab.jpg',
-        'platform' => 'facebook',
-        'platform_url' => 'https://web.facebook.com/JumuiyaKauntiZaPwani'
+        'image' => '/assets/images/jab.jpg'
     ],
     [
         'type' => 'photo',
@@ -37,9 +42,7 @@ $galleryItems = [
         'location' => 'Coastal Region',
         'date' => '2024',
         'category' => 'Community Engagement',
-        'image' => '/assets/images/ig-1.png',
-        'platform' => 'instagram',
-        'platform_url' => 'https://www.instagram.com/jumuiyapwani/'
+        'image' => '/assets/images/ig-1.png'
     ],
     [
         'type' => 'photo',
@@ -48,9 +51,7 @@ $galleryItems = [
         'location' => 'Coastal Counties',
         'date' => '2024',
         'category' => 'Project Highlights',
-        'image' => '/assets/images/ig-2.png',
-        'platform' => 'instagram',
-        'platform_url' => 'https://www.instagram.com/jumuiyapwani/'
+        'image' => '/assets/images/ig-2.png'
     ],
     [
         'type' => 'photo',
@@ -59,9 +60,7 @@ $galleryItems = [
         'location' => 'Multiple Counties',
         'date' => '2023-2024',
         'category' => 'Regional Activities',
-        'image' => '/assets/images/jum1.jpg',
-        'platform' => 'facebook',
-        'platform_url' => 'https://web.facebook.com/JumuiyaKauntiZaPwani'
+        'image' => '/assets/images/jum1.jpg'
     ],
     [
         'type' => 'photo',
@@ -70,9 +69,7 @@ $galleryItems = [
         'location' => 'Coastal Region',
         'date' => '2023-2024',
         'category' => 'Development Initiatives',
-        'image' => '/assets/images/jum2.jpg',
-        'platform' => 'facebook',
-        'platform_url' => 'https://web.facebook.com/JumuiyaKauntiZaPwani'
+        'image' => '/assets/images/jum2.jpg'
     ],
     [
         'type' => 'video',
@@ -82,9 +79,7 @@ $galleryItems = [
         'date' => '2024',
         'category' => 'JKP Documentary',
         'image' => '/assets/images/jum3.jpg',
-        'video' => true,
-        'platform' => 'youtube',
-        'platform_url' => 'https://www.youtube.com/watch?v=ZaE74xQkQoE'
+        'video' => true
     ]
 ];
 
@@ -95,8 +90,7 @@ $videoItems = [
         'location' => 'Six Coastal Counties',
         'date' => '2024',
         'image' => '/assets/images/jum3.jpg',
-        'platform' => 'youtube',
-        'platform_url' => 'https://www.youtube.com/watch?v=IpCFswR0pio'
+        'video_url' => 'https://www.youtube.com/watch?v=IpCFswR0pio'
     ],
     [
         'title' => 'Jumuiya Conference Taita Taveta',
@@ -104,8 +98,7 @@ $videoItems = [
         'location' => 'Taita Taveta',
         'date' => '2024',
         'image' => '/assets/images/jum3.jpg',
-        'platform' => 'youtube',
-        'platform_url' => 'https://www.youtube.com/watch?v=PaCOzld48J4'
+        'video_url' => 'https://www.youtube.com/watch?v=PaCOzld48J4'
     ],
     [
         'title' => 'Go Blue Project Launch',
@@ -113,8 +106,7 @@ $videoItems = [
         'location' => 'Coastal Region',
         'date' => '2024',
         'image' => '/assets/images/jum3.jpg',
-        'platform' => 'youtube',
-        'platform_url' => 'https://www.youtube.com/watch?v=IpCFswR0pio'
+        'video_url' => 'https://www.youtube.com/watch?v=IpCFswR0pio'
     ]
 ];
 
@@ -124,36 +116,29 @@ $recentEvents = [
         'description' => 'Jumuiya Agribusiness & Blue Economy Investment Conference bringing together investors, government leaders, and development partners for coastal region transformation.',
         'location' => 'Voi, Taita Taveta',
         'date' => 'November 2024',
-        'type' => 'event',
-        'platform' => 'facebook',
-        'platform_url' => 'https://web.facebook.com/JumuiyaKauntiZaPwani'
+        'image' => '/assets/images/jab.jpg'
     ],
     [
         'title' => 'Community Engagement Initiative',
         'description' => 'Showcasing JKP\'s community initiatives and partnerships that drive sustainable development across the coastal counties.',
         'location' => 'Coastal Region',
         'date' => '2024',
-        'type' => 'post',
-        'platform' => 'instagram',
-        'platform_url' => 'https://www.instagram.com/jumuiyapwani/'
+        'image' => '/assets/images/ig-1.png'
     ],
     [
         'title' => 'Project Highlights Launch',
         'description' => 'Highlighting key projects and achievements of Jumuiya ya Kaunti za Pwani in regional development and economic transformation.',
         'location' => 'Coastal Counties',
         'date' => '2024',
-        'type' => 'post',
-        'platform' => 'facebook',
-        'platform_url' => 'https://web.facebook.com/JumuiyaKauntiZaPwani'
+        'image' => '/assets/images/ig-2.png'
     ],
     [
         'title' => 'JKP Documentary Release',
         'description' => 'Documentary video showcasing the impact and achievements of Jumuiya ya Kaunti za Pwani in driving regional development and economic growth across the coast.',
         'location' => 'Coastal Region',
         'date' => '2024',
-        'type' => 'video',
-        'platform' => 'youtube',
-        'platform_url' => 'https://www.youtube.com/watch?v=ZaE74xQkQoE'
+        'image' => '/assets/images/jum3.jpg',
+        'type' => 'video'
     ]
 ];
 ?>
@@ -177,7 +162,7 @@ $recentEvents = [
     gap: 1.5rem;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 2rem;
+    margin: 2rem 0 3rem;
 }
 
 .hero-nav-link {
@@ -185,35 +170,49 @@ $recentEvents = [
     align-items: center;
     gap: 0.5rem;
     color: white;
+    background: var(--primary-blue);
     text-decoration: none;
     font-weight: 600;
     padding: 0.75rem 2rem;
-    border: 2px solid white;
     border-radius: 50px;
     transition: all 0.3s ease;
+    border: 2px solid var(--primary-blue);
 }
 
 .hero-nav-link:hover {
-    background: white;
-    color: var(--dark-blue);
+    background: var(--dark-blue);
+    border-color: var(--dark-blue);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Full width Connect Section */
+.connect-wrapper {
+    width: 100%;
+    background: #f8f9fa;
+    margin: 2rem 0 3rem;
+    padding: 3rem 0;
 }
 
 .connect-section {
     text-align: center;
-    margin: 3rem 0;
-    padding: 2rem;
-    background: #f8f9fa;
-    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .connect-section h3 {
     color: var(--dark-blue);
     margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 .connect-section p {
     color: #6c757d;
     margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 .social-btn {
@@ -227,10 +226,12 @@ $recentEvents = [
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
+    border: 2px solid var(--primary-blue);
 }
 
 .social-btn:hover {
     background: var(--dark-blue);
+    border-color: var(--dark-blue);
     color: white;
     transform: translateY(-2px);
 }
@@ -415,12 +416,15 @@ $recentEvents = [
     padding: 4rem 0;
 }
 
-.stay-updated-section .container {
-    position: relative;
+.stay-updated-section .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
 .stay-updated-section .vertical-line-wrapper {
     position: relative;
+    max-width: 800px;
+    margin: 0 auto;
     padding-left: 2rem;
 }
 
@@ -429,17 +433,17 @@ $recentEvents = [
     left: 0;
     top: 0;
     bottom: 0;
-    width: 2px;
+    width: 3px;
     background: linear-gradient(to bottom, var(--primary-blue), var(--dark-blue));
 }
 
 .stay-updated-section .vertical-line::before {
     content: '';
     position: absolute;
-    left: -4px;
+    left: -6px;
     top: 0;
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     background: var(--primary-blue);
 }
@@ -447,29 +451,12 @@ $recentEvents = [
 .stay-updated-section .vertical-line::after {
     content: '';
     position: absolute;
-    left: -4px;
+    left: -6px;
     bottom: 0;
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     background: var(--dark-blue);
-}
-
-.stay-updated-section .section-header {
-    margin-bottom: 2rem;
-}
-
-.stay-updated-section .section-tag {
-    margin-bottom: 0.5rem;
-}
-
-.stay-updated-section .section-title-custom {
-    margin-bottom: 0.5rem;
-}
-
-.stay-updated-section .section-description {
-    color: #6c757d;
-    margin-bottom: 2rem;
 }
 
 .event-card {
@@ -477,13 +464,18 @@ $recentEvents = [
     border-radius: 10px;
     padding: 1.5rem;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    height: 100%;
+    margin-bottom: 1.5rem;
     transition: all 0.3s ease;
     position: relative;
 }
 
+.event-card:last-child {
+    margin-bottom: 0;
+}
+
 .event-card:hover {
     box-shadow: 0 8px 20px rgba(36, 64, 128, 0.1);
+    transform: translateX(5px);
 }
 
 .event-date {
@@ -516,22 +508,17 @@ $recentEvents = [
     align-items: center;
     gap: 0.5rem;
     transition: color 0.3s ease;
+    margin-top: 0.5rem;
 }
 
 .view-post-btn:hover {
     color: var(--dark-blue);
 }
-
-.event-platform {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid #eee;
-}
 </style>
 
-<!-- Navigation buttons after hero -->
-<div class="container text-center mt-4" data-aos="fade-up">
-    <div class="hero-nav-links">
+<!-- Navigation buttons -->
+<div class="container">
+    <div class="hero-nav-links" data-aos="fade-up">
         <a href="#photos-section" class="hero-nav-link" onclick="document.getElementById('photos-section').scrollIntoView({behavior: 'smooth'}); return false;">
             <i class="bi bi-images"></i> Explore Gallery
         </a>
@@ -541,8 +528,8 @@ $recentEvents = [
     </div>
 </div>
 
-<!-- Connect with Us Section -->
-<section class="container">
+<!-- Full Width Connect with Us Section -->
+<div class="connect-wrapper">
     <div class="connect-section" data-aos="fade-up">
         <h3>Connect With Us</h3>
         <p>More Photos on Facebook<br>Explore our complete photo collection and stay updated with the latest events and activities from Jumuiya ya Kaunti za Pwani</p>
@@ -550,7 +537,7 @@ $recentEvents = [
             <i class="bi bi-facebook"></i> Visit JKP Facebook Gallery
         </a>
     </div>
-</section>
+</div>
 
 <!-- Our Collection / Featured Photos -->
 <section id="photos-section" class="py-5">
@@ -562,7 +549,12 @@ $recentEvents = [
         </div>
 
         <div class="row g-4">
-            <?php foreach ($galleryItems as $item): ?>
+            <?php foreach ($galleryItems as $item): 
+                $platform = detectPlatform($item['image'], $item['type']);
+                $platformUrl = $platform === 'facebook' ? 'https://web.facebook.com/JumuiyaKauntiZaPwani' : 
+                              ($platform === 'instagram' ? 'https://www.instagram.com/jumuiyapwani/' : 
+                              'https://www.youtube.com/watch?v=ZaE74xQkQoE');
+            ?>
             <div class="col-md-6 col-lg-4" data-aos="fade-up">
                 <div class="gallery-card card">
                     <div class="card-img-wrapper">
@@ -585,12 +577,10 @@ $recentEvents = [
                                 <?php echo htmlspecialchars($item['date']); ?>
                             </div>
                         </div>
-                        <?php if (isset($item['platform'])): ?>
-                        <a href="<?php echo $item['platform_url']; ?>" class="platform-indicator" target="_blank" rel="noopener noreferrer">
-                            <i class="bi bi-<?php echo $item['platform']; ?>"></i> 
-                            View on <?php echo ucfirst($item['platform']); ?>
+                        <a href="<?php echo $platformUrl; ?>" class="platform-indicator" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-<?php echo $platform; ?>"></i> 
+                            View on <?php echo ucfirst($platform); ?>
                         </a>
-                        <?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -632,7 +622,7 @@ $recentEvents = [
                                 <?php echo htmlspecialchars($video['date']); ?>
                             </div>
                         </div>
-                        <a href="<?php echo $video['platform_url']; ?>" class="watch-now-btn" target="_blank" rel="noopener noreferrer">
+                        <a href="<?php echo $video['video_url']; ?>" class="watch-now-btn" target="_blank" rel="noopener noreferrer">
                             Watch on YouTube <i class="bi bi-box-arrow-up-right"></i>
                         </a>
                     </div>
@@ -646,42 +636,36 @@ $recentEvents = [
 <!-- Stay Updated Section with Vertical Line -->
 <section class="stay-updated-section py-5">
     <div class="container">
-        <div class="vertical-line-wrapper">
-            <div class="vertical-line"></div>
-            <div class="section-header" data-aos="fade-up">
-                <div class="section-tag">Stay Updated</div>
-                <h2 class="section-title-custom">Recent Events & Updates</h2>
-                <p class="section-description">Latest happenings from Jumuiya ya Kaunti za Pwani</p>
-            </div>
+        <!-- Centered Section Header -->
+        <div class="section-header" data-aos="fade-up">
+            <div class="section-tag">Stay Updated</div>
+            <h2 class="section-title-custom">Recent Events & Updates</h2>
+            <p class="text-muted">Latest happenings from Jumuiya ya Kaunti za Pwani</p>
+        </div>
 
-            <div class="row g-4">
-                <?php foreach ($recentEvents as $event): ?>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up">
-                    <div class="event-card">
-                        <div class="event-date"><?php echo htmlspecialchars($event['date']); ?></div>
-                        <h5 class="event-title"><?php echo htmlspecialchars($event['title']); ?></h5>
-                        <p class="small text-muted"><?php echo htmlspecialchars($event['description']); ?></p>
-                        <div class="event-location">
-                            <i class="bi bi-geo-alt" style="color: var(--primary-blue);"></i>
-                            <?php echo htmlspecialchars($event['location']); ?>
-                        </div>
-                        
-                        <div class="event-platform">
-                            <?php if ($event['type'] === 'post'): ?>
-                            <a href="<?php echo $event['platform_url']; ?>" class="view-post-btn" target="_blank" rel="noopener noreferrer">
-                                <i class="bi bi-<?php echo $event['platform']; ?>"></i> View Post <i class="bi bi-arrow-right"></i>
-                            </a>
-                            <?php elseif ($event['type'] === 'video'): ?>
-                            <a href="<?php echo $event['platform_url']; ?>" class="view-post-btn" target="_blank" rel="noopener noreferrer">
-                                <i class="bi bi-youtube"></i> Watch Video <i class="bi bi-arrow-right"></i>
-                            </a>
-                            <?php else: ?>
-                            <a href="<?php echo $event['platform_url']; ?>" class="view-post-btn" target="_blank" rel="noopener noreferrer">
-                                <i class="bi bi-<?php echo $event['platform']; ?>"></i> View Event <i class="bi bi-arrow-right"></i>
-                            </a>
-                            <?php endif; ?>
-                        </div>
+        <!-- Vertical Line Content -->
+        <div class="vertical-line-wrapper" data-aos="fade-up" data-aos-delay="100">
+            <div class="vertical-line"></div>
+            <div class="events-list">
+                <?php foreach ($recentEvents as $event): 
+                    $platform = detectPlatform($event['image'], $event['type'] ?? 'photo');
+                    $platformUrl = $platform === 'facebook' ? 'https://web.facebook.com/JumuiyaKauntiZaPwani' : 
+                                  ($platform === 'instagram' ? 'https://www.instagram.com/jumuiyapwani/' : 
+                                  'https://www.youtube.com/watch?v=ZaE74xQkQoE');
+                ?>
+                <div class="event-card">
+                    <div class="event-date"><?php echo htmlspecialchars($event['date']); ?></div>
+                    <h5 class="event-title"><?php echo htmlspecialchars($event['title']); ?></h5>
+                    <p class="small text-muted"><?php echo htmlspecialchars($event['description']); ?></p>
+                    <div class="event-location">
+                        <i class="bi bi-geo-alt" style="color: var(--primary-blue);"></i>
+                        <?php echo htmlspecialchars($event['location']); ?>
                     </div>
+                    <a href="<?php echo $platformUrl; ?>" class="view-post-btn" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-<?php echo $platform; ?>"></i> 
+                        <?php echo isset($event['type']) && $event['type'] === 'video' ? 'Watch Video' : 'View Post'; ?> 
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
                 </div>
                 <?php endforeach; ?>
             </div>
