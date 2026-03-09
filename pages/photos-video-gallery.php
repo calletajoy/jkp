@@ -1,6 +1,6 @@
 <?php
 /**
- * pages/blog.php
+ * pages/photos-video-gallery.php — Photos & Video Gallery page
  */
 
 $pageTitle    = 'Blog & News';
