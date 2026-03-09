@@ -97,7 +97,7 @@ $videoItems = [
         'description' => 'Jumuiya ya Kaunti za Pwani to hold conference in Taita Taveta. It is the first business and investment conference. Residents of the county are expected to benefit economically.',
         'location' => 'Taita Taveta',
         'date' => '2024',
-        'image' => '/assets/images/jum3.jpg',
+        'image' => '/assets/images/taita vid.jpg',
         'video_url' => 'https://www.youtube.com/watch?v=PaCOzld48J4'
     ],
     [
@@ -105,7 +105,7 @@ $videoItems = [
         'description' => 'Six coastal counties have received funding to the tune of 3.5 billion shillings from the European Union. The "Go Blue" project is a grant under implementation, a partnership between the European Union and the Government of Kenya to advance the Blue Economy Agenda through coastal development.',
         'location' => 'Coastal Region',
         'date' => '2024',
-        'image' => '/assets/images/jum3.jpg',
+        'image' => '/assets/images/funding.jpg',
         'video_url' => 'https://www.youtube.com/watch?v=IpCFswR0pio'
     ]
 ];
