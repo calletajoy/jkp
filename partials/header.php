@@ -162,7 +162,7 @@ function navActive(string $key): string
                                         <div class="col-md-4">
 
                                             <ul class="list-unstyled">
-                                                <li><a class="dropdown-item px-0" href="#">📰 News & updates </a></li>
+                                                <li><a class="dropdown-item px-0" href="/news-updates">📰 News & updates </a></li>
 
                                             </ul>
                                         </div>
