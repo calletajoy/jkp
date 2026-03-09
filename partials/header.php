@@ -169,7 +169,7 @@ function navActive(string $key): string
                                         <div class="col-md-4">
                                             
                                             <ul class="list-unstyled">
-                                                <li><a class="dropdown-item px-0" href="#">📸 Photo & Video Gallery</a></li>
+                                                <li><a class="dropdown-item px-0" href="/photos-video-gallery">📸 Photo & Video Gallery</a></li>
                                                 
                                             </ul>
                                         </div>
