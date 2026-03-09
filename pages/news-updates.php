@@ -1,6 +1,6 @@
 <?php
 /**
- * pages/team.php
+ * pages/news-updates.php — News & Updates Page
  */
 
 $pageTitle    = 'Our Team';
