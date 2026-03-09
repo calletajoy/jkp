@@ -6,7 +6,8 @@
 $pageTitle    = 'Photo & Video Gallery';
 $currentPage  = 'gallery';
 $heroTitle    = 'Photo & Video Gallery';
-$heroSubtitle = 'Gallery';
+// Adding intro text to hero subtitle
+$heroSubtitle = 'A visual journey through Jumuiya ya Kaunti za Pwani initiatives, events, and community transformations across the six coastal counties with an explore gallery and watch video part.';
 
 ob_start();
 
@@ -25,7 +26,9 @@ $galleryItems = [
         'location' => 'Voi, Taita Taveta',
         'date' => 'November 2024',
         'category' => 'JABEIC Conference',
-        'image' => '/assets/images/jab.jpg'
+        'image' => '/assets/images/jab.jpg',
+        'platform' => 'facebook',
+        'platform_url' => 'https://web.facebook.com/JumuiyaKauntiZaPwani'
     ],
     [
         'type' => 'photo',
@@ -34,7 +37,9 @@ $galleryItems = [
         'location' => 'Coastal Region',
         'date' => '2024',
         'category' => 'Community Engagement',
-        'image' => '/assets/images/ig-1.png'
+        'image' => '/assets/images/ig-1.png',
+        'platform' => 'instagram',
+        'platform_url' => 'https://www.instagram.com/jumuiyapwani/'
     ],
     [
         'type' => 'photo',
@@ -43,7 +48,9 @@ $galleryItems = [
         'location' => 'Coastal Counties',
         'date' => '2024',
         'category' => 'Project Highlights',
-        'image' => '/assets/images/ig-2.png'
+        'image' => '/assets/images/ig-2.png',
+        'platform' => 'instagram',
+        'platform_url' => 'https://www.instagram.com/jumuiyapwani/'
     ],
     [
         'type' => 'photo',
@@ -52,7 +59,9 @@ $galleryItems = [
         'location' => 'Multiple Counties',
         'date' => '2023-2024',
         'category' => 'Regional Activities',
-        'image' => '/assets/images/jum1.jpg'
+        'image' => '/assets/images/jum1.jpg',
+        'platform' => 'facebook',
+        'platform_url' => 'https://web.facebook.com/JumuiyaKauntiZaPwani'
     ],
     [
         'type' => 'photo',
@@ -61,7 +70,9 @@ $galleryItems = [
         'location' => 'Coastal Region',
         'date' => '2023-2024',
         'category' => 'Development Initiatives',
-        'image' => '/assets/images/jum2.jpg'
+        'image' => '/assets/images/jum2.jpg',
+        'platform' => 'facebook',
+        'platform_url' => 'https://web.facebook.com/JumuiyaKauntiZaPwani'
     ],
     [
         'type' => 'video',
@@ -71,7 +82,9 @@ $galleryItems = [
         'date' => '2024',
         'category' => 'JKP Documentary',
         'image' => '/assets/images/jum3.jpg',
-        'video' => true
+        'video' => true,
+        'platform' => 'youtube',
+        'platform_url' => 'https://www.youtube.com/watch?v=ZaE74xQkQoE'
     ]
 ];
 
@@ -81,9 +94,28 @@ $videoItems = [
         'description' => 'A comprehensive video documenting the journey of coastal development through JKP\'s collaborative efforts and strategic partnerships across the six coastal counties.',
         'location' => 'Six Coastal Counties',
         'date' => '2024',
-        'image' => '/assets/images/jum3.jpg'
+        'image' => '/assets/images/jum3.jpg',
+        'platform' => 'youtube',
+        'platform_url' => 'https://www.youtube.com/watch?v=IpCFswR0pio'
+    ],
+    [
+        'title' => 'Jumuiya Conference Taita Taveta',
+        'description' => 'Jumuiya ya Kaunti za Pwani to hold conference in Taita Taveta. It is the first business and investment conference. Residents of the county are expected to benefit economically.',
+        'location' => 'Taita Taveta',
+        'date' => '2024',
+        'image' => '/assets/images/jum3.jpg',
+        'platform' => 'youtube',
+        'platform_url' => 'https://www.youtube.com/watch?v=PaCOzld48J4'
+    ],
+    [
+        'title' => 'Go Blue Project Launch',
+        'description' => 'Six coastal counties have received funding to the tune of 3.5 billion shillings from the European Union. The "Go Blue" project is a grant under implementation, a partnership between the European Union and the Government of Kenya to advance the Blue Economy Agenda through coastal development.',
+        'location' => 'Coastal Region',
+        'date' => '2024',
+        'image' => '/assets/images/jum3.jpg',
+        'platform' => 'youtube',
+        'platform_url' => 'https://www.youtube.com/watch?v=IpCFswR0pio'
     ]
-   
 ];
 
 $recentEvents = [
@@ -92,21 +124,27 @@ $recentEvents = [
         'description' => 'Jumuiya Agribusiness & Blue Economy Investment Conference bringing together investors, government leaders, and development partners for coastal region transformation.',
         'location' => 'Voi, Taita Taveta',
         'date' => 'November 2024',
-        'type' => 'event'
+        'type' => 'event',
+        'platform' => 'facebook',
+        'platform_url' => 'https://web.facebook.com/JumuiyaKauntiZaPwani'
     ],
     [
         'title' => 'Community Engagement Initiative',
         'description' => 'Showcasing JKP\'s community initiatives and partnerships that drive sustainable development across the coastal counties.',
         'location' => 'Coastal Region',
         'date' => '2024',
-        'type' => 'post'
+        'type' => 'post',
+        'platform' => 'instagram',
+        'platform_url' => 'https://www.instagram.com/jumuiyapwani/'
     ],
     [
         'title' => 'Project Highlights Launch',
         'description' => 'Highlighting key projects and achievements of Jumuiya ya Kaunti za Pwani in regional development and economic transformation.',
         'location' => 'Coastal Counties',
         'date' => '2024',
-        'type' => 'post'
+        'type' => 'post',
+        'platform' => 'facebook',
+        'platform_url' => 'https://web.facebook.com/JumuiyaKauntiZaPwani'
     ],
     [
         'title' => 'JKP Documentary Release',
@@ -114,7 +152,8 @@ $recentEvents = [
         'location' => 'Coastal Region',
         'date' => '2024',
         'type' => 'video',
-        'videos' => ['Video 1', 'Video 2']
+        'platform' => 'youtube',
+        'platform_url' => 'https://www.youtube.com/watch?v=ZaE74xQkQoE'
     ]
 ];
 ?>
@@ -125,33 +164,23 @@ $recentEvents = [
     --dark-blue: #244080;
 }
 
-.gallery-intro {
-    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
-    color: white;
-    padding: 4rem 0;
-    margin-bottom: 3rem;
-}
-
-.gallery-intro h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-}
-
-.gallery-intro .lead {
+/* Hero section customization */
+.page-hero .subtitle {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    max-width: 800px;
+    margin: 1rem auto 2rem;
     opacity: 0.95;
 }
 
-.gallery-nav-links {
+.hero-nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 2rem;
 }
 
-.gallery-nav-link {
+.hero-nav-link {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -164,7 +193,7 @@ $recentEvents = [
     transition: all 0.3s ease;
 }
 
-.gallery-nav-link:hover {
+.hero-nav-link:hover {
     background: white;
     color: var(--dark-blue);
 }
@@ -264,6 +293,9 @@ $recentEvents = [
     font-size: 0.9rem;
     font-weight: 600;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
 }
 
 .card-badge.video {
@@ -292,6 +324,21 @@ $recentEvents = [
     display: flex;
     align-items: center;
     gap: 0.25rem;
+}
+
+.platform-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.85rem;
+    color: var(--primary-blue);
+    text-decoration: none;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+.platform-indicator:hover {
+    color: var(--dark-blue);
 }
 
 .video-thumbnail {
@@ -362,6 +409,69 @@ $recentEvents = [
     transform: translateY(-3px);
 }
 
+/* Stay Updated Section with Vertical Line */
+.stay-updated-section {
+    position: relative;
+    padding: 4rem 0;
+}
+
+.stay-updated-section .container {
+    position: relative;
+}
+
+.stay-updated-section .vertical-line-wrapper {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.stay-updated-section .vertical-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--primary-blue), var(--dark-blue));
+}
+
+.stay-updated-section .vertical-line::before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--primary-blue);
+}
+
+.stay-updated-section .vertical-line::after {
+    content: '';
+    position: absolute;
+    left: -4px;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--dark-blue);
+}
+
+.stay-updated-section .section-header {
+    margin-bottom: 2rem;
+}
+
+.stay-updated-section .section-tag {
+    margin-bottom: 0.5rem;
+}
+
+.stay-updated-section .section-title-custom {
+    margin-bottom: 0.5rem;
+}
+
+.stay-updated-section .section-description {
+    color: #6c757d;
+    margin-bottom: 2rem;
+}
+
 .event-card {
     background: white;
     border-radius: 10px;
@@ -369,6 +479,7 @@ $recentEvents = [
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     height: 100%;
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .event-card:hover {
@@ -411,38 +522,24 @@ $recentEvents = [
     color: var(--dark-blue);
 }
 
-.video-tags {
-    display: flex;
-    gap: 0.5rem;
-    margin: 1rem 0;
-}
-
-.video-tag {
-    background: #f8f9fa;
-    color: var(--dark-blue);
-    padding: 0.25rem 0.75rem;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 600;
+.event-platform {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
 }
 </style>
 
-<!-- Gallery Intro Section -->
-<section class="gallery-intro">
-    <div class="container text-center">
-        <h1 data-aos="fade-up">Photo & Video Gallery</h1>
-        <p class="lead" data-aos="fade-up" data-aos-delay="100">A visual journey through Jumuiya ya Kaunti za Pwani initiatives, events, and community transformations across the six coastal counties with an explore gallery and watch video part.</p>
-        
-        <div class="gallery-nav-links" data-aos="fade-up" data-aos-delay="200">
-            <a href="#photos-section" class="gallery-nav-link" onclick="document.getElementById('photos-section').scrollIntoView({behavior: 'smooth'}); return false;">
-                <i class="bi bi-images"></i> Explore Gallery
-            </a>
-            <a href="#videos-section" class="gallery-nav-link" onclick="document.getElementById('videos-section').scrollIntoView({behavior: 'smooth'}); return false;">
-                <i class="bi bi-play-circle"></i> Watch Video
-            </a>
-        </div>
+<!-- Navigation buttons after hero -->
+<div class="container text-center mt-4" data-aos="fade-up">
+    <div class="hero-nav-links">
+        <a href="#photos-section" class="hero-nav-link" onclick="document.getElementById('photos-section').scrollIntoView({behavior: 'smooth'}); return false;">
+            <i class="bi bi-images"></i> Explore Gallery
+        </a>
+        <a href="#videos-section" class="hero-nav-link" onclick="document.getElementById('videos-section').scrollIntoView({behavior: 'smooth'}); return false;">
+            <i class="bi bi-play-circle"></i> Watch Video
+        </a>
     </div>
-</section>
+</div>
 
 <!-- Connect with Us Section -->
 <section class="container">
@@ -469,7 +566,7 @@ $recentEvents = [
             <div class="col-md-6 col-lg-4" data-aos="fade-up">
                 <div class="gallery-card card">
                     <div class="card-img-wrapper">
-                        <img src="/assets/images/gallery/<?php echo $item['image']; ?>" class="card-img-top" alt="<?php echo htmlspecialchars($item['title']); ?>">
+                        <img src="<?php echo $item['image']; ?>" class="card-img-top" alt="<?php echo htmlspecialchars($item['title']); ?>">
                         <div class="card-badge <?php echo $item['type']; ?>">
                             <?php echo $item['type'] === 'video' ? '🎥 Video' : '📸 Photo'; ?>
                         </div>
@@ -488,6 +585,12 @@ $recentEvents = [
                                 <?php echo htmlspecialchars($item['date']); ?>
                             </div>
                         </div>
+                        <?php if (isset($item['platform'])): ?>
+                        <a href="<?php echo $item['platform_url']; ?>" class="platform-indicator" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-<?php echo $item['platform']; ?>"></i> 
+                            View on <?php echo ucfirst($item['platform']); ?>
+                        </a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -507,32 +610,31 @@ $recentEvents = [
 
         <div class="row g-4">
             <?php foreach ($videoItems as $video): ?>
-            <div class="col-md-6" data-aos="fade-up">
+            <div class="col-md-6 col-lg-4" data-aos="fade-up">
                 <div class="gallery-card card">
                     <div class="card-img-wrapper video-thumbnail">
-                        <img src="/assets/images/gallery/<?php echo $video['image']; ?>" class="card-img-top" alt="<?php echo htmlspecialchars($video['title']); ?>">
+                        <img src="<?php echo $video['image']; ?>" class="card-img-top" alt="<?php echo htmlspecialchars($video['title']); ?>">
                         <div class="play-button">
                             <i class="bi bi-play-fill"></i>
                         </div>
+                        <div class="card-badge video">🎥 Video</div>
                     </div>
                     <div class="card-body">
                         <h4 class="card-title h5"><?php echo htmlspecialchars($video['title']); ?></h4>
                         <p class="card-text small"><?php echo htmlspecialchars($video['description']); ?></p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <div class="card-location">
-                                    <i class="bi bi-geo-alt" style="color: var(--primary-blue);"></i>
-                                    <?php echo htmlspecialchars($video['location']); ?>
-                                </div>
-                                <div class="card-date">
-                                    <i class="bi bi-calendar" style="color: var(--primary-blue);"></i>
-                                    <?php echo htmlspecialchars($video['date']); ?>
-                                </div>
+                        <div class="d-flex gap-3 mb-2">
+                            <div class="card-location">
+                                <i class="bi bi-geo-alt" style="color: var(--primary-blue);"></i>
+                                <?php echo htmlspecialchars($video['location']); ?>
                             </div>
-                            <a href="#" class="watch-now-btn" onclick="event.preventDefault();">
-                                Watch Now <i class="bi bi-arrow-right"></i>
-                            </a>
+                            <div class="card-date">
+                                <i class="bi bi-calendar" style="color: var(--primary-blue);"></i>
+                                <?php echo htmlspecialchars($video['date']); ?>
+                            </div>
                         </div>
+                        <a href="<?php echo $video['platform_url']; ?>" class="watch-now-btn" target="_blank" rel="noopener noreferrer">
+                            Watch on YouTube <i class="bi bi-box-arrow-up-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -541,43 +643,48 @@ $recentEvents = [
     </div>
 </section>
 
-<!-- Stay Updated Section -->
-<section class="py-5">
+<!-- Stay Updated Section with Vertical Line -->
+<section class="stay-updated-section py-5">
     <div class="container">
-        <div class="text-center mb-5" data-aos="fade-up">
-            <div class="section-tag">Stay Updated</div>
-            <h2 class="section-title-custom">Recent Events & Updates</h2>
-            <p class="text-muted">Latest happenings from Jumuiya ya Kaunti za Pwani</p>
-        </div>
-
-        <div class="row g-4">
-            <?php foreach ($recentEvents as $event): ?>
-            <div class="col-md-6 col-lg-3" data-aos="fade-up">
-                <div class="event-card">
-                    <div class="event-date"><?php echo htmlspecialchars($event['date']); ?></div>
-                    <h5 class="event-title"><?php echo htmlspecialchars($event['title']); ?></h5>
-                    <p class="small text-muted"><?php echo htmlspecialchars($event['description']); ?></p>
-                    <div class="event-location">
-                        <i class="bi bi-geo-alt" style="color: var(--primary-blue);"></i>
-                        <?php echo htmlspecialchars($event['location']); ?>
-                    </div>
-                    
-                    <?php if (isset($event['videos'])): ?>
-                    <div class="video-tags">
-                        <?php foreach ($event['videos'] as $video): ?>
-                        <span class="video-tag"><?php echo $video; ?></span>
-                        <?php endforeach; ?>
-                    </div>
-                    <?php endif; ?>
-                    
-                    <?php if ($event['type'] === 'post'): ?>
-                    <a href="#" class="view-post-btn" onclick="event.preventDefault();">
-                        View Post <i class="bi bi-arrow-right"></i>
-                    </a>
-                    <?php endif; ?>
-                </div>
+        <div class="vertical-line-wrapper">
+            <div class="vertical-line"></div>
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-tag">Stay Updated</div>
+                <h2 class="section-title-custom">Recent Events & Updates</h2>
+                <p class="section-description">Latest happenings from Jumuiya ya Kaunti za Pwani</p>
             </div>
-            <?php endforeach; ?>
+
+            <div class="row g-4">
+                <?php foreach ($recentEvents as $event): ?>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up">
+                    <div class="event-card">
+                        <div class="event-date"><?php echo htmlspecialchars($event['date']); ?></div>
+                        <h5 class="event-title"><?php echo htmlspecialchars($event['title']); ?></h5>
+                        <p class="small text-muted"><?php echo htmlspecialchars($event['description']); ?></p>
+                        <div class="event-location">
+                            <i class="bi bi-geo-alt" style="color: var(--primary-blue);"></i>
+                            <?php echo htmlspecialchars($event['location']); ?>
+                        </div>
+                        
+                        <div class="event-platform">
+                            <?php if ($event['type'] === 'post'): ?>
+                            <a href="<?php echo $event['platform_url']; ?>" class="view-post-btn" target="_blank" rel="noopener noreferrer">
+                                <i class="bi bi-<?php echo $event['platform']; ?>"></i> View Post <i class="bi bi-arrow-right"></i>
+                            </a>
+                            <?php elseif ($event['type'] === 'video'): ?>
+                            <a href="<?php echo $event['platform_url']; ?>" class="view-post-btn" target="_blank" rel="noopener noreferrer">
+                                <i class="bi bi-youtube"></i> Watch Video <i class="bi bi-arrow-right"></i>
+                            </a>
+                            <?php else: ?>
+                            <a href="<?php echo $event['platform_url']; ?>" class="view-post-btn" target="_blank" rel="noopener noreferrer">
+                                <i class="bi bi-<?php echo $event['platform']; ?>"></i> View Event <i class="bi bi-arrow-right"></i>
+                            </a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
         </div>
     </div>
 </section>
