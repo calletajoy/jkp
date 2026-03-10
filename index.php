@@ -22,7 +22,7 @@ $routes = [
     'events'   => 'pages/events.php',
     'core-mandate'   => 'pages/core-mandate.php',
     'stakeholders'   => 'pages/stakeholders.php',
-    'Jumuiya-TCH-Blueprint-2030'   => 'pages/Jumuiya-TCH-Blueprint-2030.php',
+    'blueprint'   => 'pages/blueprint.php',
     'event-details'   => 'pages/event-details.php',
 ];
 
