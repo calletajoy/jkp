@@ -130,7 +130,7 @@ function navActive(string $key): string
                                         <div class="col-md-6">
                                         
                                             <ul class="list-unstyled">
-                                                <li><a class="dropdown-item px-0" href="/blueprint.php">📘Jumuiya-TCH Blueprint 2030</a></li>
+                                                <li><a class="dropdown-item px-0" href="/blueprint">📘Jumuiya-TCH Blueprint 2030</a></li>
                                     
                                             </ul>
                                         </div>
