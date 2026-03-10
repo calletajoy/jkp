@@ -3,9 +3,9 @@
  * pages/news-updates.php — News & Updates Page
  */
 
-$pageTitle    = 'News & Updates';
+$pageTitle    = 'News Updates';
 $currentPage  = 'news';
-$heroTitle    = 'News & Updates';
+$heroTitle    = 'News Updates';
 $heroSubtitle = 'Latest stories and developments from Jumuiya ya Kaunti za Pwani';
 
 ob_start();
