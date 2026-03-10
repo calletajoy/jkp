@@ -1,6 +1,6 @@
 <?php
 /**
- * pages/Jumuiya-TCH Blueprint 2030.php — Tourism & Cultural Heritage Blueprint 2030
+ * pages/Jumuiya-TCH-Blueprint-2030.php.php — Tourism & Cultural Heritage Blueprint 2030
  */
 
 $pageTitle    = 'TCH Blueprint 2030';
