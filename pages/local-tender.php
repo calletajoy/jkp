@@ -47,8 +47,8 @@ $darkBlue = '#244080';
 
 .tender-image {
     width: 100%;
-    max-height: 400px;
-    object-fit: cover;
+    height: auto;
+    display: block;
 }
 
 .tender-content {
@@ -121,7 +121,7 @@ $darkBlue = '#244080';
     <div class="container">
         <!-- Tender Card -->
         <div class="tender-card" data-aos="fade-up">
-            <!-- Image -->
+            <!-- Image - Now full height auto so all content visible -->
             <img src="/assets/images/supply contract.png" alt="Cold Rooms and Ice Machines Tender" class="tender-image">
             
             <!-- Content -->
