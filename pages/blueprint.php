@@ -5,7 +5,7 @@
 
 $pageTitle    = 'TCH Blueprint 2030';
 $currentPage  = 'tch-blueprint';
-$heroTitle    = 'Tourism & Cultural Heritage Blueprint 2030';
+$heroTitle    = 'Go Blue Documents and Resources';
 $heroSubtitle = 'A globally competitive & sustainable Kenya coastal Tourism and Cultural Heritage destination by 2030';
 
 ob_start();
