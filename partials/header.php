@@ -137,7 +137,7 @@ function navActive(string $key): string
                                         <div class="col-md-6">
                                            
                                             <ul class="list-unstyled">
-                                                <li><a class="dropdown-item px-0" href="#">📄 Local Tender (AICS)</a></li>
+                                                <li><a class="dropdown-item px-0" href="/local-tender">📄 Local Tender (AICS)</a></li>
                                                 
                                             </ul>
                                         </div>

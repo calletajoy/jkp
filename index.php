@@ -23,6 +23,7 @@ $routes = [
     'core-mandate'   => 'pages/core-mandate.php',
     'stakeholders'   => 'pages/stakeholders.php',
     'blueprint'   => 'pages/blueprint.php',
+    'local-tender'   => 'pages/local-tender.php',
     'event-details'   => 'pages/event-details.php',
 ];
 
