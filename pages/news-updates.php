@@ -229,9 +229,28 @@ $newsPosts = [
     ]
 ];
 
+// Define category mapping
+$categoryMapping = [
+    'Go Blue Component 1' => ['Blue Economy', 'Infrastructure', 'Fisheries', 'Climate Change', 'Conservation', 'Fashion'],
+    'Go Blue News' => ['Partnerships'],
+    'JKP News Updates' => ['Governance', 'Tourism', 'Education', 'Investment', 'Trade']
+];
+
+// Calculate dynamic category counts
+$categoryCounts = [];
+foreach ($categoryMapping as $mainCategory => $subCategories) {
+    $categoryCounts[$mainCategory] = 0;
+    foreach ($newsPosts as $post) {
+        if (in_array($post['category'], $subCategories)) {
+            $categoryCounts[$mainCategory]++;
+        }
+    }
+}
+
 // Get filter parameters from URL
 $selectedMonth = isset($_GET['month']) ? $_GET['month'] : '';
 $selectedCategory = isset($_GET['category']) ? $_GET['category'] : '';
+$selectedYear = isset($_GET['year']) ? $_GET['year'] : '';
 
 // Filter news posts based on parameters
 $filteredPosts = $newsPosts;
@@ -243,32 +262,50 @@ if (!empty($selectedMonth)) {
 }
 
 if (!empty($selectedCategory)) {
-    $filteredPosts = array_filter($filteredPosts, function($post) use ($selectedCategory) {
-        return $post['category'] === $selectedCategory;
+    $filteredPosts = array_filter($filteredPosts, function($post) use ($selectedCategory, $categoryMapping) {
+        if (isset($categoryMapping[$selectedCategory])) {
+            return in_array($post['category'], $categoryMapping[$selectedCategory]);
+        }
+        return false;
     });
 }
 
-// Category counts for display
-$categoryCounts = [
-    'Go Blue Component 1' => 9,
-    'Go Blue News' => 1,
-    'JKP News Updates' => 18
-];
+if (!empty($selectedYear)) {
+    $filteredPosts = array_filter($filteredPosts, function($post) use ($selectedYear) {
+        $postYear = '20' . substr($post['month'], -2);
+        return $postYear === $selectedYear;
+    });
+}
 
-// Archive data
-$archives = [
-    ['month' => 'May 2024', 'count' => 2],
-    ['month' => 'April 2024', 'count' => 3],
-    ['month' => 'March 2024', 'count' => 2],
-    ['month' => 'January 2024', 'count' => 1],
-    ['month' => 'November 2023', 'count' => 1],
-    ['month' => 'October 2023', 'count' => 3],
-    ['month' => 'September 2023', 'count' => 3],
-    ['month' => 'August 2023', 'count' => 1],
-    ['month' => 'July 2023', 'count' => 1],
-    ['month' => 'June 2023', 'count' => 3],
-    ['month' => 'April 2023', 'count' => null]
-];
+// Generate dynamic archives from news posts
+$archives = [];
+foreach ($newsPosts as $post) {
+    $month = $post['month'];
+    if (!isset($archives[$month])) {
+        $archives[$month] = 0;
+    }
+    $archives[$month]++;
+}
+
+// Sort archives by date (newest first)
+uksort($archives, function($a, $b) {
+    $dateA = DateTime::createFromFormat('M y', str_replace('.', '', $a));
+    $dateB = DateTime::createFromFormat('M y', str_replace('.', '', $b));
+    return $dateB <=> $dateA;
+});
+
+// Generate dynamic years from news posts
+$years = [];
+foreach ($newsPosts as $post) {
+    $year = '20' . substr($post['month'], -2);
+    if (!isset($years[$year])) {
+        $years[$year] = 0;
+    }
+    $years[$year]++;
+}
+
+// Sort years descending
+krsort($years);
 
 // Pagination using filtered posts
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
@@ -283,6 +320,34 @@ $prevPagePosts = [];
 if ($page > 1) {
     $prevOffset = ($page - 2) * $perPage;
     $prevPagePosts = array_slice(array_values($filteredPosts), $prevOffset, 3);
+}
+
+// Function to get main category for a post
+function getMainCategory($postCategory, $categoryMapping) {
+    foreach ($categoryMapping as $mainCategory => $subCategories) {
+        if (in_array($postCategory, $subCategories)) {
+            return $mainCategory;
+        }
+    }
+    return 'JKP News Updates'; // Default
+}
+
+// Build query string for pagination
+function buildQueryString($exclude = []) {
+    $params = [];
+    if (isset($_GET['month']) && !in_array('month', $exclude)) {
+        $params['month'] = $_GET['month'];
+    }
+    if (isset($_GET['category']) && !in_array('category', $exclude)) {
+        $params['category'] = $_GET['category'];
+    }
+    if (isset($_GET['year']) && !in_array('year', $exclude)) {
+        $params['year'] = $_GET['year'];
+    }
+    if (isset($_GET['page']) && !in_array('page', $exclude)) {
+        $params['page'] = $_GET['page'];
+    }
+    return http_build_query($params);
 }
 ?>
 
@@ -532,6 +597,53 @@ if ($page > 1) {
     background: var(--dark-blue);
 }
 
+/* Years Widget */
+.years-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.year-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.year-item:last-child {
+    border-bottom: none;
+}
+
+.year-link {
+    color: #6c757d;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.year-link:hover {
+    color: var(--primary-blue);
+}
+
+.year-link i {
+    font-size: 0.8rem;
+    color: var(--primary-blue);
+}
+
+.year-count {
+    background: rgba(110, 193, 228, 0.1);
+    color: var(--primary-blue);
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
 /* Archives Widget */
 .archive-list {
     list-style: none;
@@ -733,6 +845,21 @@ if ($page > 1) {
     pointer-events: none;
 }
 
+/* Active filter highlight */
+.category-item.active .category-link,
+.archive-item.active .archive-link,
+.year-item.active .year-link {
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+.category-item.active .category-count,
+.archive-item.active .archive-count,
+.year-item.active .year-count {
+    background: var(--primary-blue);
+    color: white;
+}
+
 /* Responsive */
 @media (max-width: 992px) {
     .news-main {
@@ -759,13 +886,14 @@ if ($page > 1) {
     <div class="container">
         
         <!-- Filter Alert -->
-        <?php if (!empty($selectedMonth) || !empty($selectedCategory)): ?>
+        <?php if (!empty($selectedMonth) || !empty($selectedCategory) || !empty($selectedYear)): ?>
         <div class="filter-alert" data-aos="fade-up">
             <div>
                 <i class="bi bi-funnel" style="color: var(--primary-blue);"></i> 
                 <strong>Showing filtered results</strong>
                 <?php if ($selectedMonth): ?> for <strong><?php echo $selectedMonth; ?></strong><?php endif; ?>
                 <?php if ($selectedCategory): ?> in category <strong><?php echo $selectedCategory; ?></strong><?php endif; ?>
+                <?php if ($selectedYear): ?> from year <strong><?php echo $selectedYear; ?></strong><?php endif; ?>
             </div>
             <a href="/news-updates" class="clear-filter">Clear Filter</a>
         </div>
@@ -796,7 +924,7 @@ if ($page > 1) {
                             <h3 class="news-title"><?php echo htmlspecialchars($post['title']); ?></h3>
                             <p class="news-excerpt"><?php echo htmlspecialchars($post['excerpt']); ?></p>
                             <div class="news-footer">
-                                <a href="/news-updates?category=<?php echo urlencode($post['category']); ?>" class="news-category">
+                                <a href="/news-updates?category=<?php echo urlencode(getMainCategory($post['category'], $categoryMapping)); ?>" class="news-category">
                                     <?php echo $post['category']; ?>
                                 </a>
                                 <a href="/news/<?php echo $post['id']; ?>" class="read-more">
@@ -808,11 +936,16 @@ if ($page > 1) {
                     <?php endforeach; ?>
 
                     <!-- Pagination -->
+                    <?php if ($totalPages > 1): ?>
                     <div class="pagination-wrapper">
                         <ul class="pagination">
                             <!-- Previous Page -->
                             <li class="page-item <?php echo $page <= 1 ? 'disabled' : ''; ?>">
-                                <a class="page-link" href="?page=<?php echo $page - 1; ?><?php echo $selectedMonth ? '&month='.urlencode($selectedMonth) : ''; ?><?php echo $selectedCategory ? '&category='.urlencode($selectedCategory) : ''; ?>" <?php echo $page <= 1 ? 'tabindex="-1" aria-disabled="true"' : ''; ?>>
+                                <a class="page-link" href="?<?php 
+                                    $params = $_GET;
+                                    $params['page'] = $page - 1;
+                                    echo http_build_query($params);
+                                ?>" <?php echo $page <= 1 ? 'tabindex="-1" aria-disabled="true"' : ''; ?>>
                                     <i class="bi bi-chevron-left"></i>
                                 </a>
                             </li>
@@ -820,18 +953,27 @@ if ($page > 1) {
                             <!-- Page Numbers -->
                             <?php for ($i = 1; $i <= $totalPages; $i++): ?>
                             <li class="page-item <?php echo $i === $page ? 'active' : ''; ?>">
-                                <a class="page-link" href="?page=<?php echo $i; ?><?php echo $selectedMonth ? '&month='.urlencode($selectedMonth) : ''; ?><?php echo $selectedCategory ? '&category='.urlencode($selectedCategory) : ''; ?>"><?php echo $i; ?></a>
+                                <a class="page-link" href="?<?php 
+                                    $params = $_GET;
+                                    $params['page'] = $i;
+                                    echo http_build_query($params);
+                                ?>"><?php echo $i; ?></a>
                             </li>
                             <?php endfor; ?>
                             
                             <!-- Next Page -->
                             <li class="page-item <?php echo $page >= $totalPages ? 'disabled' : ''; ?>">
-                                <a class="page-link" href="?page=<?php echo $page + 1; ?><?php echo $selectedMonth ? '&month='.urlencode($selectedMonth) : ''; ?><?php echo $selectedCategory ? '&category='.urlencode($selectedCategory) : ''; ?>" <?php echo $page >= $totalPages ? 'tabindex="-1" aria-disabled="true"' : ''; ?>>
+                                <a class="page-link" href="?<?php 
+                                    $params = $_GET;
+                                    $params['page'] = $page + 1;
+                                    echo http_build_query($params);
+                                ?>" <?php echo $page >= $totalPages ? 'tabindex="-1" aria-disabled="true"' : ''; ?>>
                                     <i class="bi bi-chevron-right"></i>
                                 </a>
                             </li>
                         </ul>
                     </div>
+                    <?php endif; ?>
                 <?php else: ?>
                     <div class="text-center py-5">
                         <i class="bi bi-newspaper" style="font-size: 3rem; color: #ccc;"></i>
@@ -847,57 +989,59 @@ if ($page > 1) {
                 <!-- Search Widget -->
                 <div class="sidebar-widget" data-aos="fade-up">
                     <h4 class="widget-title">Search News</h4>
-                    <form class="search-form" action="/news/search" method="GET">
-                        <input type="text" class="search-input" placeholder="Search articles..." name="q">
+                    <form class="search-form" action="/news-updates" method="GET">
+                        <input type="text" class="search-input" placeholder="Search articles..." name="search">
                         <button type="submit" class="search-btn">
                             <i class="bi bi-search"></i>
                         </button>
                     </form>
                 </div>
 
-                <!-- Archives Widget - FIXED LINKS -->
-                <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="100">
-                    <h4 class="widget-title">Archives</h4>
-                    <ul class="archive-list">
-                        <?php foreach ($archives as $archive): ?>
-                        <li class="archive-item">
-                            <a href="/news-updates?month=<?php echo urlencode($archive['month']); ?>" class="archive-link">
-                                <i class="bi bi-calendar3"></i>
-                                <?php echo $archive['month']; ?>
+                <!-- Years Widget -->
+                <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="50">
+                    <h4 class="widget-title">Years</h4>
+                    <ul class="years-list">
+                        <?php foreach ($years as $year => $count): ?>
+                        <li class="year-item <?php echo $selectedYear == $year ? 'active' : ''; ?>">
+                            <a href="/news-updates?year=<?php echo $year; ?>" class="year-link">
+                                <i class="bi bi-calendar-year"></i>
+                                <?php echo $year; ?>
                             </a>
-                            <?php if ($archive['count']): ?>
-                            <span class="archive-count"><?php echo $archive['count']; ?></span>
-                            <?php endif; ?>
+                            <span class="year-count"><?php echo $count; ?></span>
                         </li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
 
-                <!-- NEW Categories Widget -->
+                <!-- Archives Widget (Months) -->
+                <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="widget-title">Archives</h4>
+                    <ul class="archive-list">
+                        <?php foreach ($archives as $month => $count): ?>
+                        <li class="archive-item <?php echo $selectedMonth == $month ? 'active' : ''; ?>">
+                            <a href="/news-updates?month=<?php echo urlencode($month); ?>" class="archive-link">
+                                <i class="bi bi-calendar3"></i>
+                                <?php echo $month; ?>
+                            </a>
+                            <span class="archive-count"><?php echo $count; ?></span>
+                        </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+
+                <!-- Categories Widget (Dynamic) -->
                 <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="150">
                     <h4 class="widget-title">Categories</h4>
                     <ul class="category-list">
-                        <li class="category-item">
-                            <a href="/news-updates?category=Go%20Blue%20Component%201" class="category-link">
+                        <?php foreach ($categoryCounts as $category => $count): ?>
+                        <li class="category-item <?php echo $selectedCategory == $category ? 'active' : ''; ?>">
+                            <a href="/news-updates?category=<?php echo urlencode($category); ?>" class="category-link">
                                 <i class="bi bi-folder"></i>
-                                Go Blue Component 1
+                                <?php echo $category; ?>
                             </a>
-                            <span class="category-count">9</span>
+                            <span class="category-count"><?php echo $count; ?></span>
                         </li>
-                        <li class="category-item">
-                            <a href="/news-updates?category=Go%20Blue%20News" class="category-link">
-                                <i class="bi bi-folder"></i>
-                                Go Blue News
-                            </a>
-                            <span class="category-count">1</span>
-                        </li>
-                        <li class="category-item">
-                            <a href="/news-updates?category=JKP%20News%20Updates" class="category-link">
-                                <i class="bi bi-folder"></i>
-                                JKP News Updates
-                            </a>
-                            <span class="category-count">18</span>
-                        </li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
 
@@ -924,7 +1068,11 @@ if ($page > 1) {
                         </div>
                         <?php endforeach; ?>
                         <div class="text-center mt-2">
-                            <a href="?page=<?php echo $page - 1; ?><?php echo $selectedMonth ? '&month='.urlencode($selectedMonth) : ''; ?><?php echo $selectedCategory ? '&category='.urlencode($selectedCategory) : ''; ?>" class="read-more small">
+                            <a href="?<?php 
+                                $params = $_GET;
+                                $params['page'] = $page - 1;
+                                echo http_build_query($params);
+                            ?>" class="read-more small">
                                 View Full Page <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
