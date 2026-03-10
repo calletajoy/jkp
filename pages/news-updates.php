@@ -125,7 +125,7 @@ $newsPosts = [
         'month' => 'Oct 23',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => '/assets/images/news/news-10.jpg',
+        'image' => '/assets/images/q4-reports.jpg',
         'category' => 'Partnerships'
     ],
     [
@@ -136,7 +136,7 @@ $newsPosts = [
         'month' => 'Oct 23',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => '/assets/images/news/news-11.jpg',
+        'image' => '/assets/images/tourism.png',
         'category' => 'Tourism'
     ],
     [
@@ -147,7 +147,7 @@ $newsPosts = [
         'month' => 'Sep 23',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => '/assets/images/news/news-12.jpg',
+        'image' => '/assets/images/eurometal.png',
         'category' => 'Investment'
     ],
     [
@@ -158,7 +158,7 @@ $newsPosts = [
         'month' => 'Sep 23',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => '/assets/images/news/news-13.jpg',
+        'image' => '/assets/images/trade mission.png',
         'category' => 'Trade'
     ],
     [
@@ -169,7 +169,7 @@ $newsPosts = [
         'month' => 'Aug 23',
         'author' => 'Editorial Staff',
         'comments' => '3 Comments',
-        'image' => '/assets/images/news/news-14.jpg',
+        'image' => '/assets/images/eth-oromia.png',
         'category' => 'Tourism'
     ],
     [
@@ -180,7 +180,7 @@ $newsPosts = [
         'month' => 'Jul 23',
         'author' => 'Editorial Staff',
         'comments' => '3 Comments',
-        'image' => '/assets/images/news/news-15.jpg',
+        'image' => '/assets/images/jum-eco.png',
         'category' => 'Blue Economy'
     ],
     [
@@ -191,7 +191,7 @@ $newsPosts = [
         'month' => 'Jun 23',
         'author' => 'Editorial Staff',
         'comments' => '2 Comments',
-        'image' => '/assets/images/news/news-16.jpg',
+        'image' => '/assets/images/rege.png',
         'category' => 'Fashion'
     ],
     [
@@ -202,7 +202,7 @@ $newsPosts = [
         'month' => 'Jun 23',
         'author' => 'Editorial Staff',
         'comments' => '3 Comments',
-        'image' => '/assets/images/news/news-17.jpg',
+        'image' => '/assets/images/saf-plc.png',
         'category' => 'Partnerships'
     ],
     [
@@ -213,7 +213,7 @@ $newsPosts = [
         'month' => 'Jun 23',
         'author' => 'Editorial Staff',
         'comments' => '2 Comments',
-        'image' => '/assets/images/news/news-18.jpg',
+        'image' => '/assets/images/eu-heads.png',
         'category' => 'Blue Economy'
     ],
     [
@@ -224,7 +224,7 @@ $newsPosts = [
         'month' => 'Apr 23',
         'author' => 'Editorial Staff',
         'comments' => '2 Comments',
-        'image' => '/assets/images/news/news-19.jpg',
+        'image' => '/assets/images/fishermen.png',
         'category' => 'Fisheries'
     ]
 ];
