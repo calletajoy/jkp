@@ -18,6 +18,7 @@ $routes = [
     'services' => 'pages/services.php',
     'photos-video-gallery'     => 'pages/photos-video-gallery.php',
     'news-updates'     => 'pages/news-updates.php',
+    'newsletter-archive'     => 'pages/newsletter-archive.php',
     'contact'  => 'pages/contact.php',
     'events'   => 'pages/events.php',
     'core-mandate'   => 'pages/core-mandate.php',

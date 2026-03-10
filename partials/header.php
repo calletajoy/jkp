@@ -176,7 +176,7 @@ function navActive(string $key): string
                                         <div class="col-md-4">
                                             
                                             <ul class="list-unstyled">
-                                                <li><a class="dropdown-item px-0" href="#">📧 Newsletter Archive </a></li>
+                                                <li><a class="dropdown-item px-0" href="/newsletter-archive">📧 Newsletter Archive </a></li>
                                             </ul>
                                         </div>
                                     </div>
