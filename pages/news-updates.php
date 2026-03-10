@@ -229,6 +229,32 @@ $newsPosts = [
     ]
 ];
 
+// Get filter parameters from URL
+$selectedMonth = isset($_GET['month']) ? $_GET['month'] : '';
+$selectedCategory = isset($_GET['category']) ? $_GET['category'] : '';
+
+// Filter news posts based on parameters
+$filteredPosts = $newsPosts;
+
+if (!empty($selectedMonth)) {
+    $filteredPosts = array_filter($filteredPosts, function($post) use ($selectedMonth) {
+        return $post['month'] === $selectedMonth;
+    });
+}
+
+if (!empty($selectedCategory)) {
+    $filteredPosts = array_filter($filteredPosts, function($post) use ($selectedCategory) {
+        return $post['category'] === $selectedCategory;
+    });
+}
+
+// Category counts for display
+$categoryCounts = [
+    'Go Blue Component 1' => 9,
+    'Go Blue News' => 1,
+    'JKP News Updates' => 18
+];
+
 // Archive data
 $archives = [
     ['month' => 'May 2024', 'count' => 2],
@@ -244,19 +270,19 @@ $archives = [
     ['month' => 'April 2023', 'count' => null]
 ];
 
-// Pagination
+// Pagination using filtered posts
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $perPage = 5;
-$totalPosts = count($newsPosts);
+$totalPosts = count($filteredPosts);
 $totalPages = ceil($totalPosts / $perPage);
 $offset = ($page - 1) * $perPage;
-$currentPagePosts = array_slice($newsPosts, $offset, $perPage);
+$currentPagePosts = array_slice(array_values($filteredPosts), $offset, $perPage);
 
 // Previous page preview (for page 2 and beyond)
 $prevPagePosts = [];
 if ($page > 1) {
     $prevOffset = ($page - 2) * $perPage;
-    $prevPagePosts = array_slice($newsPosts, $prevOffset, 3); // Show 3 previews
+    $prevPagePosts = array_slice(array_values($filteredPosts), $prevOffset, 3);
 }
 ?>
 
@@ -277,6 +303,35 @@ if ($page > 1) {
 
 .news-sidebar {
     padding-left: 1rem;
+}
+
+/* Filter Alert */
+.filter-alert {
+    background: rgba(110, 193, 228, 0.1);
+    border-left: 4px solid var(--primary-blue);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.filter-alert .clear-filter {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.3rem 1rem;
+    border: 1px solid var(--primary-blue);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.filter-alert .clear-filter:hover {
+    background: var(--primary-blue);
+    color: white;
 }
 
 /* News Card Styles */
@@ -388,6 +443,13 @@ if ($page > 1) {
     border-radius: 50px;
     font-size: 0.8rem;
     font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.news-category:hover {
+    background: var(--primary-blue);
+    color: white;
 }
 
 .read-more {
@@ -508,6 +570,53 @@ if ($page > 1) {
 }
 
 .archive-count {
+    background: rgba(110, 193, 228, 0.1);
+    color: var(--primary-blue);
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Categories Widget */
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.category-item:last-child {
+    border-bottom: none;
+}
+
+.category-link {
+    color: #6c757d;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.category-link:hover {
+    color: var(--primary-blue);
+}
+
+.category-link i {
+    font-size: 0.8rem;
+    color: var(--primary-blue);
+}
+
+.category-count {
     background: rgba(110, 193, 228, 0.1);
     color: var(--primary-blue);
     padding: 0.2rem 0.6rem;
@@ -648,64 +757,89 @@ if ($page > 1) {
 
 <section class="news-wrapper">
     <div class="container">
+        
+        <!-- Filter Alert -->
+        <?php if (!empty($selectedMonth) || !empty($selectedCategory)): ?>
+        <div class="filter-alert" data-aos="fade-up">
+            <div>
+                <i class="bi bi-funnel" style="color: var(--primary-blue);"></i> 
+                <strong>Showing filtered results</strong>
+                <?php if ($selectedMonth): ?> for <strong><?php echo $selectedMonth; ?></strong><?php endif; ?>
+                <?php if ($selectedCategory): ?> in category <strong><?php echo $selectedCategory; ?></strong><?php endif; ?>
+            </div>
+            <a href="/news-updates" class="clear-filter">Clear Filter</a>
+        </div>
+        <?php endif; ?>
+
         <div class="row">
             <!-- Main Content Column -->
             <div class="col-lg-8 news-main">
                 <!-- News Posts -->
-                <?php foreach ($currentPagePosts as $post): ?>
-                <article class="news-card" data-aos="fade-up">
-                    <div class="news-card-image">
-                        <img src="<?php echo $post['image']; ?>" alt="<?php echo htmlspecialchars($post['title']); ?>">
-                    </div>
-                    <div class="news-card-content">
-                        <div class="news-meta">
-                            <div class="news-date-box">
-                                <div class="day"><?php echo $post['date']; ?></div>
-                                <div class="month"><?php echo $post['month']; ?></div>
+                <?php if (count($currentPagePosts) > 0): ?>
+                    <?php foreach ($currentPagePosts as $post): ?>
+                    <article class="news-card" data-aos="fade-up">
+                        <div class="news-card-image">
+                            <img src="<?php echo $post['image']; ?>" alt="<?php echo htmlspecialchars($post['title']); ?>">
+                        </div>
+                        <div class="news-card-content">
+                            <div class="news-meta">
+                                <div class="news-date-box">
+                                    <div class="day"><?php echo $post['date']; ?></div>
+                                    <div class="month"><?php echo $post['month']; ?></div>
+                                </div>
+                                <div class="news-author-info">
+                                    <i class="bi bi-person"></i> <?php echo $post['author']; ?>
+                                    <span class="separator">|</span>
+                                    <i class="bi bi-chat"></i> <?php echo $post['comments']; ?>
+                                </div>
                             </div>
-                            <div class="news-author-info">
-                                <i class="bi bi-person"></i> <?php echo $post['author']; ?>
-                                <span class="separator">|</span>
-                                <i class="bi bi-chat"></i> <?php echo $post['comments']; ?>
+                            <h3 class="news-title"><?php echo htmlspecialchars($post['title']); ?></h3>
+                            <p class="news-excerpt"><?php echo htmlspecialchars($post['excerpt']); ?></p>
+                            <div class="news-footer">
+                                <a href="/news-updates?category=<?php echo urlencode($post['category']); ?>" class="news-category">
+                                    <?php echo $post['category']; ?>
+                                </a>
+                                <a href="/news/<?php echo $post['id']; ?>" class="read-more">
+                                    Read More <i class="bi bi-arrow-right"></i>
+                                </a>
                             </div>
                         </div>
-                        <h3 class="news-title"><?php echo htmlspecialchars($post['title']); ?></h3>
-                        <p class="news-excerpt"><?php echo htmlspecialchars($post['excerpt']); ?></p>
-                        <div class="news-footer">
-                            <span class="news-category"><?php echo $post['category']; ?></span>
-                            <a href="/news/<?php echo $post['id']; ?>" class="read-more">
-                                Read More <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-                <?php endforeach; ?>
+                    </article>
+                    <?php endforeach; ?>
 
-                <!-- Pagination -->
-                <div class="pagination-wrapper">
-                    <ul class="pagination">
-                        <!-- Previous Page -->
-                        <li class="page-item <?php echo $page <= 1 ? 'disabled' : ''; ?>">
-                            <a class="page-link" href="?page=<?php echo $page - 1; ?>" <?php echo $page <= 1 ? 'tabindex="-1" aria-disabled="true"' : ''; ?>>
-                                <i class="bi bi-chevron-left"></i>
-                            </a>
-                        </li>
-                        
-                        <!-- Page Numbers -->
-                        <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-                        <li class="page-item <?php echo $i === $page ? 'active' : ''; ?>">
-                            <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
-                        </li>
-                        <?php endfor; ?>
-                        
-                        <!-- Next Page -->
-                        <li class="page-item <?php echo $page >= $totalPages ? 'disabled' : ''; ?>">
-                            <a class="page-link" href="?page=<?php echo $page + 1; ?>" <?php echo $page >= $totalPages ? 'tabindex="-1" aria-disabled="true"' : ''; ?>>
-                                <i class="bi bi-chevron-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                    <!-- Pagination -->
+                    <div class="pagination-wrapper">
+                        <ul class="pagination">
+                            <!-- Previous Page -->
+                            <li class="page-item <?php echo $page <= 1 ? 'disabled' : ''; ?>">
+                                <a class="page-link" href="?page=<?php echo $page - 1; ?><?php echo $selectedMonth ? '&month='.urlencode($selectedMonth) : ''; ?><?php echo $selectedCategory ? '&category='.urlencode($selectedCategory) : ''; ?>" <?php echo $page <= 1 ? 'tabindex="-1" aria-disabled="true"' : ''; ?>>
+                                    <i class="bi bi-chevron-left"></i>
+                                </a>
+                            </li>
+                            
+                            <!-- Page Numbers -->
+                            <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                            <li class="page-item <?php echo $i === $page ? 'active' : ''; ?>">
+                                <a class="page-link" href="?page=<?php echo $i; ?><?php echo $selectedMonth ? '&month='.urlencode($selectedMonth) : ''; ?><?php echo $selectedCategory ? '&category='.urlencode($selectedCategory) : ''; ?>"><?php echo $i; ?></a>
+                            </li>
+                            <?php endfor; ?>
+                            
+                            <!-- Next Page -->
+                            <li class="page-item <?php echo $page >= $totalPages ? 'disabled' : ''; ?>">
+                                <a class="page-link" href="?page=<?php echo $page + 1; ?><?php echo $selectedMonth ? '&month='.urlencode($selectedMonth) : ''; ?><?php echo $selectedCategory ? '&category='.urlencode($selectedCategory) : ''; ?>" <?php echo $page >= $totalPages ? 'tabindex="-1" aria-disabled="true"' : ''; ?>>
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                <?php else: ?>
+                    <div class="text-center py-5">
+                        <i class="bi bi-newspaper" style="font-size: 3rem; color: #ccc;"></i>
+                        <h3 class="mt-3">No posts found</h3>
+                        <p class="text-muted">Try clearing your filters to see all news posts.</p>
+                        <a href="/news-updates" class="read-more">View All News <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                <?php endif; ?>
             </div>
 
             <!-- Sidebar Column -->
@@ -721,13 +855,13 @@ if ($page > 1) {
                     </form>
                 </div>
 
-                <!-- Archives Widget -->
+                <!-- Archives Widget - FIXED LINKS -->
                 <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="100">
                     <h4 class="widget-title">Archives</h4>
                     <ul class="archive-list">
                         <?php foreach ($archives as $archive): ?>
                         <li class="archive-item">
-                            <a href="/news/archive/<?php echo strtolower(str_replace(' ', '-', $archive['month'])); ?>" class="archive-link">
+                            <a href="/news-updates?month=<?php echo urlencode($archive['month']); ?>" class="archive-link">
                                 <i class="bi bi-calendar3"></i>
                                 <?php echo $archive['month']; ?>
                             </a>
@@ -739,9 +873,37 @@ if ($page > 1) {
                     </ul>
                 </div>
 
-                <!-- Previous Page Preview (shows when on page 2 or beyond) -->
-                <?php if (!empty($prevPagePosts)): ?>
+                <!-- NEW Categories Widget -->
                 <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="150">
+                    <h4 class="widget-title">Categories</h4>
+                    <ul class="category-list">
+                        <li class="category-item">
+                            <a href="/news-updates?category=Go%20Blue%20Component%201" class="category-link">
+                                <i class="bi bi-folder"></i>
+                                Go Blue Component 1
+                            </a>
+                            <span class="category-count">9</span>
+                        </li>
+                        <li class="category-item">
+                            <a href="/news-updates?category=Go%20Blue%20News" class="category-link">
+                                <i class="bi bi-folder"></i>
+                                Go Blue News
+                            </a>
+                            <span class="category-count">1</span>
+                        </li>
+                        <li class="category-item">
+                            <a href="/news-updates?category=JKP%20News%20Updates" class="category-link">
+                                <i class="bi bi-folder"></i>
+                                JKP News Updates
+                            </a>
+                            <span class="category-count">18</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Previous Page Preview -->
+                <?php if (!empty($prevPagePosts)): ?>
+                <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="200">
                     <div class="prev-page-preview">
                         <div class="prev-page-title">
                             <i class="bi bi-skip-backward-fill"></i> 
@@ -762,7 +924,7 @@ if ($page > 1) {
                         </div>
                         <?php endforeach; ?>
                         <div class="text-center mt-2">
-                            <a href="?page=<?php echo $page - 1; ?>" class="read-more small">
+                            <a href="?page=<?php echo $page - 1; ?><?php echo $selectedMonth ? '&month='.urlencode($selectedMonth) : ''; ?><?php echo $selectedCategory ? '&category='.urlencode($selectedCategory) : ''; ?>" class="read-more small">
                                 View Full Page <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
@@ -777,3 +939,4 @@ if ($page > 1) {
 <?php
 $pageContent = ob_get_clean();
 require __DIR__ . '/../layout.php';
+?>
