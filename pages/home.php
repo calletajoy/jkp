@@ -898,8 +898,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <section class="stats-section" style="background: var(--light-bg);" data-aos="fade-up">
     <div class="container">
         <div class="section-title-fancy text-center mb-5">
-            <div class="subtitle">Go Blue Project</div>
-            <h2>Our Impact by Numbers</h2>
+            <div class="subtitle">Our Impacts</div>
+            
         </div>
 
         <?php
@@ -999,7 +999,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="container">
         <div class="section-title-fancy text-center mb-5">
             <div class="subtitle">JKP</div>
-            <h2>Flagship Projects & Initiatives</h2>
+            <h2>Jumuiya Projects and Initiatives</h2>
         </div>
         
         <?php
@@ -1093,8 +1093,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <section class="newsroom" data-aos="fade-up">
     <div class="container">
         <div class="section-title-fancy text-center mb-5">
-            <div class="subtitle">Impact Stories & Updates</div>
-            <h2>Latest From Our Newsroom</h2>
+            <div class="subtitle"> Updates</div>
+            <h2>Latest Updates</h2>
         </div>
         
         <?php
