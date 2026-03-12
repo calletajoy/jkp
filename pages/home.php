@@ -506,6 +506,55 @@ ob_start();
         border-radius: 4px;
     }
     
+    /* Map container styles */
+    .map-container {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        border-radius: 30px;
+        padding: 2rem;
+        box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+        transition: all 0.3s ease;
+    }
+    
+    .map-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 30px 60px -12px var(--turquoise);
+    }
+    
+    .county-legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 1.5rem;
+    }
+    
+    .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        color: var(--text-dark);
+    }
+    
+    .legend-color {
+        width: 15px;
+        height: 15px;
+        border-radius: 4px;
+    }
+    
+    /* SVG map styles - adjust based on your SVG structure */
+    .kenya-map svg path {
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    
+    .kenya-map svg path:hover {
+        filter: brightness(1.1);
+        transform: scale(1.02);
+        stroke: var(--turquoise);
+        stroke-width: 2px;
+    }
+    
     @media (max-width: 768px) {
         .section-title-fancy h2 {
             font-size: 2rem;
@@ -744,47 +793,101 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </section>
 
-<!-- ===== Mission, Vision, Aspiration & Core Mandate ===== -->
-<section style="background: linear-gradient(135deg, var(--navy) 0%, var(--deep-blue) 100%);" data-aos="fade-up">
-    <div class="container py-5">
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-3">
-                <div class="fancy-card card h-100 border-0 p-4 text-center bg-white">
-                    <div class="mb-3">
-                        <i class="bi bi-bullseye" style="font-size: 3rem; color: var(--turquoise);"></i>
+<!-- ===== Mission, Vision, Aspiration & Core Mandate Section with Map ===== -->
+<section style="background: linear-gradient(135deg, var(--navy) 0%, var(--deep-blue) 100%); padding: 60px 0;" data-aos="fade-up">
+    <div class="container">
+        <div class="row align-items-start g-5">
+            <!-- Left side - Cards stacked vertically -->
+            <div class="col-lg-6">
+                <div class="row g-4">
+                    <!-- Mission Card - Slightly higher -->
+                    <div class="col-12" style="transform: translateY(-20px);">
+                        <div class="fancy-card card h-100 border-0 p-4 text-center bg-white">
+                            <div class="mb-3">
+                                <i class="bi bi-bullseye" style="font-size: 3rem; color: var(--turquoise);"></i>
+                            </div>
+                            <h3 class="h5 fw-bold mb-3" style="color: var(--navy);">Our Mission</h3>
+                            <p class="small text-muted">Catalyze economic growth of Kenya's coast regional counties.</p>
+                        </div>
                     </div>
-                    <h3 class="h5 fw-bold mb-3" style="color: var(--navy);">Our Mission</h3>
-                    <p class="small text-muted">Catalyze economic growth of Kenya's coast regional counties.</p>
+                    
+                    <!-- Vision Card -->
+                    <div class="col-12">
+                        <div class="fancy-card card h-100 border-0 p-4 text-center bg-white">
+                            <div class="mb-3">
+                                <i class="bi bi-eye" style="font-size: 3rem; color: var(--soft-blue);"></i>
+                            </div>
+                            <h3 class="h5 fw-bold mb-3" style="color: var(--navy);">Our Vision</h3>
+                            <p class="small text-muted">A regional economy that creates wealth and shared prosperity for its communities.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Aspirations Card -->
+                    <div class="col-12">
+                        <div class="fancy-card card h-100 border-0 p-4 text-center bg-white">
+                            <div class="mb-3">
+                                <i class="bi bi-stars" style="font-size: 3rem; color: var(--deep-blue);"></i>
+                            </div>
+                            <h3 class="h5 fw-bold mb-3" style="color: var(--navy);">Our Aspirations</h3>
+                            <p class="small text-muted">A social innovation network focused on enabling Workforce and MSMEs.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Core Mandate Card -->
+                    <div class="col-12">
+                        <div class="fancy-card card h-100 border-0 p-4 text-center bg-white">
+                            <div class="mb-3">
+                                <i class="bi bi-briefcase" style="font-size: 3rem; color: var(--navy);"></i>
+                            </div>
+                            <h3 class="h5 fw-bold mb-3" style="color: var(--navy);">Core Mandate</h3>
+                            <p class="small text-muted">Creating an enabling platform for socio-economic development.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <div class="col-md-6 col-lg-3">
-                <div class="fancy-card card h-100 border-0 p-4 text-center bg-white">
-                    <div class="mb-3">
-                        <i class="bi bi-eye" style="font-size: 3rem; color: var(--turquoise);"></i>
+            <!-- Right side - Map positioned slightly lower -->
+            <div class="col-lg-6" style="transform: translateY(40px);">
+                <div class="map-container">
+                    <h4 class="text-center fw-bold mb-4" style="color: var(--navy);">Our Six Coastal Counties</h4>
+                    
+                    <!-- SVG Map - Using your existing path -->
+                    <div class="kenya-map text-center">
+                        <img src="/assets/images/ke.svg" alt="Kenya Map with Coastal Counties" class="img-fluid" style="max-height: 400px; width: auto;">
                     </div>
-                    <h3 class="h5 fw-bold mb-3" style="color: var(--navy);">Our Vision</h3>
-                    <p class="small text-muted">A regional economy that creates wealth and shared prosperity for its communities.</p>
-                </div>
-            </div>
-            
-            <div class="col-md-6 col-lg-3">
-                <div class="fancy-card card h-100 border-0 p-4 text-center bg-white">
-                    <div class="mb-3">
-                        <i class="bi bi-stars" style="font-size: 3rem; color: var(--turquoise);"></i>
+                    
+                    <!-- County Legend -->
+                    <div class="county-legend">
+                        <div class="legend-item">
+                            <span class="legend-color" style="background: var(--turquoise);"></span>
+                            <span>Mombasa</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background: var(--soft-blue);"></span>
+                            <span>Kwale</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background: var(--deep-blue);"></span>
+                            <span>Kilifi</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background: var(--navy);"></span>
+                            <span>Tana River</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background: #4A6FA5;"></span>
+                            <span>Lamu</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background: #6B8CBE;"></span>
+                            <span>Taita Taveta</span>
+                        </div>
                     </div>
-                    <h3 class="h5 fw-bold mb-3" style="color: var(--navy);">Our Aspirations</h3>
-                    <p class="small text-muted">A social innovation network focused on enabling Workforce and MSMEs.</p>
-                </div>
-            </div>
-            
-            <div class="col-md-6 col-lg-3">
-                <div class="fancy-card card h-100 border-0 p-4 text-center bg-white">
-                    <div class="mb-3">
-                        <i class="bi bi-briefcase" style="font-size: 3rem; color: var(--turquoise);"></i>
-                    </div>
-                    <h3 class="h5 fw-bold mb-3" style="color: var(--navy);">Core Mandate</h3>
-                    <p class="small text-muted">Creating an enabling platform for socio-economic development.</p>
+                    
+                    <p class="text-muted small text-center mt-4 mb-0">
+                        <i class="bi bi-info-circle me-1" style="color: var(--turquoise);"></i>
+                        Hover over counties to highlight
+                    </p>
                 </div>
             </div>
         </div>
