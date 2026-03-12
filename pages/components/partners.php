@@ -7,6 +7,7 @@ $partnersLabel = $partnersLabel ?? 'Our Supporters';
 $partners = $partners ?? [
    
     ['img' => '/assets/images/merry pat 1.png',    'href' => '#', 'alt' => 'Partner 2'],
+     ['img' => '/assets/images/crop pics 2.png',    'href' => '#', 'alt' => 'Partner 2'],
    
     
 ];
