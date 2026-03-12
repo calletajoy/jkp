@@ -1162,7 +1162,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="col-lg-7">
                 <div class="section-title-fancy text-start mb-4">
                     <div class="subtitle" style="color: var(--turquoise);">Get In Touch</div>
-                    <h2 class="text-white">Contact the Jumuiya<br>Economic Development Secretariat</h2>
+                    <h2 class="text-black">Contact the Jumuiya<br>Economic Development Secretariat</h2>
                 </div>
                 
                 <div class="row g-4">
