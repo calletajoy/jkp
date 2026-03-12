@@ -959,61 +959,39 @@ document.addEventListener('DOMContentLoaded', function() {
 <section style="background: linear-gradient(135deg, var(--navy) 0%, var(--deep-blue) 100%); padding: 60px 0;" data-aos="fade-up">
     <div class="container">
         <div class="row align-items-start g-5">
-            <!-- Left side - Cards in stat-card-fancy style -->
+            <!-- Left side - Cards stacked vertically (ORIGINAL CONTENT RESTORED) -->
             <div class="col-lg-6">
                 <div class="row g-4">
-                    <!-- Core Mandate Card -->
+                    <!-- Mission Card - Slightly higher -->
+                    <div class="col-12" style="transform: translateY(-20px);">
+                        <div class="fancy-card card h-100 border-0 p-4 text-center bg-white">
+                            <div class="mb-3">
+                                <i class="bi bi-bullseye" style="font-size: 3rem; color: var(--turquoise);"></i>
+                            </div>
+                            <h3 class="h5 fw-bold mb-3" style="color: var(--navy);">Our Mission</h3>
+                            <p class="small text-muted">Catalyze economic growth of Kenya's coast regional counties.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Vision Card -->
                     <div class="col-12">
-                        <div class="stat-card-fancy text-center">
-                            <div class="stat-icon-fancy">
-                                <i class="bi bi-briefcase"></i>
+                        <div class="fancy-card card h-100 border-0 p-4 text-center bg-white">
+                            <div class="mb-3">
+                                <i class="bi bi-eye" style="font-size: 3rem; color: var(--soft-blue);"></i>
                             </div>
-                            <h5 class="fw-bold mb-2" style="color: var(--deep-blue);">Jumuiya's Core Mandate</h5>
-                            <p class="small text-muted mb-0">Creating an enabling platform for socio-economic development.</p>
+                            <h3 class="h5 fw-bold mb-3" style="color: var(--navy);">Our Vision</h3>
+                            <p class="small text-muted">A regional economy that creates wealth and shared prosperity for its communities.</p>
                         </div>
                     </div>
                     
-                    <!-- Coordination Card -->
-                    <div class="col-md-6">
-                        <div class="stat-card-fancy text-center">
-                            <div class="stat-icon-fancy">
-                                <i class="bi bi-diagram-3"></i>
+                    <!-- Aspirations Card -->
+                    <div class="col-12">
+                        <div class="fancy-card card h-100 border-0 p-4 text-center bg-white">
+                            <div class="mb-3">
+                                <i class="bi bi-stars" style="font-size: 3rem; color: var(--deep-blue);"></i>
                             </div>
-                            <h5 class="fw-bold mb-2" style="color: var(--deep-blue);">Coordination</h5>
-                            <p class="small text-muted mb-0">Socio-political & regional policy harmonization across six coastal counties</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Policy Harmonization Card -->
-                    <div class="col-md-6">
-                        <div class="stat-card-fancy text-center">
-                            <div class="stat-icon-fancy">
-                                <i class="bi bi-file-earmark-text"></i>
-                            </div>
-                            <h5 class="fw-bold mb-2" style="color: var(--deep-blue);">Policy Harmonization</h5>
-                            <p class="small text-muted mb-0">Jumuiya 2030 Regional Economic Blueprint driving sustainable development</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Promotion Card -->
-                    <div class="col-md-6">
-                        <div class="stat-card-fancy text-center">
-                            <div class="stat-icon-fancy">
-                                <i class="bi bi-megaphone"></i>
-                            </div>
-                            <h5 class="fw-bold mb-2" style="color: var(--deep-blue);">Promotion</h5>
-                            <p class="small text-muted mb-0">Showcasing Sea-Land of Opportunities to local and international investors</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Investments Card -->
-                    <div class="col-md-6">
-                        <div class="stat-card-fancy text-center">
-                            <div class="stat-icon-fancy">
-                                <i class="bi bi-graph-up-arrow"></i>
-                            </div>
-                            <h5 class="fw-bold mb-2" style="color: var(--deep-blue);">Investments</h5>
-                            <p class="small text-muted mb-0">Unlocking value chains to boost agribusiness and blue economy</p>
+                            <h3 class="h5 fw-bold mb-3" style="color: var(--navy);">Our Aspirations</h3>
+                            <p class="small text-muted">A social innovation network focused on enabling Workforce and MSMEs.</p>
                         </div>
                     </div>
                 </div>
