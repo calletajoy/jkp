@@ -1169,7 +1169,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="col-md-6">
                         <div class="d-flex align-items-center gap-3">
                             <div class="bg-white bg-opacity-10 p-3 rounded-3">
-                                <i class="bi bi-geo-alt-fill" style="color: var(--turquoise); font-size: 1.5rem;"></i>
+                                <i class="bi bi-geo-alt-fill" style="color: var(#f8f9fa); font-size: 1.5rem;"></i>
                             </div>
                             <div>
                                 <h5 class="fw-bold mb-2">Head Office</h5>
