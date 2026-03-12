@@ -5,13 +5,10 @@ $partnersTitle = $partnersTitle ?? 'Our Partners And Supporters';
 $partnersLabel = $partnersLabel ?? 'Our Supporters';
 
 $partners = $partners ?? [
-    ['img' => '/assets/images/partners/image.png',                          'href' => '#', 'alt' => 'Partner 1'],
-    ['img' => '/assets/images/multiple-use/sponsors-company-logo/2.png',    'href' => '#', 'alt' => 'Partner 2'],
-    ['img' => '/assets/images/multiple-use/sponsors-company-logo/3.png',    'href' => '#', 'alt' => 'Partner 3'],
-    ['img' => '/assets/images/multiple-use/sponsors-company-logo/4.png',    'href' => '#', 'alt' => 'Partner 4'],
-    ['img' => '/assets/images/multiple-use/sponsors-company-logo/5.png',    'href' => '#', 'alt' => 'Partner 5'],
-    ['img' => '/assets/images/multiple-use/sponsors-company-logo/6.png',    'href' => '#', 'alt' => 'Partner 6'],
-    ['img' => '/assets/images/multiple-use/sponsors-company-logo/7.png',    'href' => '#', 'alt' => 'Partner 7'],
+   
+    ['img' => '/assets/images/merry pat 1.png',    'href' => '#', 'alt' => 'Partner 2'],
+   
+    
 ];
 
 $slides = array_merge($partners, $partners);
