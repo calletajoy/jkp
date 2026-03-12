@@ -1156,7 +1156,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <?php include __DIR__ . '/components/partners.php'; ?>
 
 <!-- ===== Contact Strip ===== -->
-<section class="upcoming-city" data-aos="fade-up" style="background: var(--navy); color: white;">
+<section class="upcoming-city" data-aos="fade-up" style="background: var(--light-bg); color: white;">
     <div class="container py-5">
         <div class="row align-items-center g-5">
             <div class="col-lg-7">
@@ -1169,7 +1169,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="col-md-6">
                         <div class="d-flex align-items-center gap-3">
                             <div class="bg-white bg-opacity-10 p-3 rounded-3">
-                                <i class="bi bi-geo-alt-fill" style="color: var(#f8f9fa); font-size: 1.5rem;"></i>
+                                <i class="bi bi-geo-alt-fill" style="color: var(); font-size: 1.5rem;"></i>
                             </div>
                             <div>
                                 <h5 class="fw-bold mb-2">Head Office</h5>
