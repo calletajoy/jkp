@@ -75,7 +75,7 @@ function navActive(string $key): string
 
                         <!-- Home -->
                         <li class="nav-item">
-                            <a class="nav-link fw-normal <?php echo navActive('home'); ?>" href="/home">Home</a>
+                            <a class="nav-link fw-normal <?php echo navActive('home'); ?>" href="/">Home</a>
                         </li>
 
                         <!-- About Us Mega Menu -->
