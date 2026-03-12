@@ -1156,12 +1156,12 @@ document.addEventListener('DOMContentLoaded', function() {
 <?php include __DIR__ . '/components/partners.php'; ?>
 
 <!-- ===== Contact Strip ===== -->
-<section class="upcoming-city" data-aos="fade-up" style="background: var(--turquoise); color: white;">
+<section class="upcoming-city" data-aos="fade-up" style="background: var(--white); color: white;">
     <div class="container py-5">
         <div class="row align-items-center g-5">
             <div class="col-lg-7">
                 <div class="section-title-fancy text-start mb-4">
-                    <div class="subtitle" style="color: var(--black);">Get In Touch</div>
+                    <div class="subtitle" style="color: var(--turquoise);">Get In Touch</div>
                     <h2 class="text-white">Contact the Jumuiya<br>Economic Development Secretariat</h2>
                 </div>
                 
@@ -1169,7 +1169,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="col-md-6">
                         <div class="d-flex align-items-center gap-3">
                             <div class="bg-white bg-opacity-10 p-3 rounded-3">
-                                <i class="bi bi-geo-alt-fill" style="color: var(--white); font-size: 1.5rem;"></i>
+                                <i class="bi bi-geo-alt-fill" style="color: var(--navy); font-size: 1.5rem;"></i>
                             </div>
                             <div>
                                 <h5 class="fw-bold mb-2">Head Office</h5>
@@ -1181,7 +1181,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="col-md-6">
                         <div class="d-flex align-items-center gap-3">
                             <div class="bg-white bg-opacity-10 p-3 rounded-3">
-                                <i class="bi bi-telephone-fill" style="color: var(--white); font-size: 1.5rem;"></i>
+                                <i class="bi bi-telephone-fill" style="color: var(--navy); font-size: 1.5rem;"></i>
                             </div>
                             <div>
                                 <h5 class="fw-bold mb-2">Contact Us</h5>
