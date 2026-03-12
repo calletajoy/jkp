@@ -555,6 +555,74 @@ ob_start();
         stroke-width: 2px;
     }
     
+    /* Clickable location styles */
+    .clickable-location {
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+        display: inline-block;
+    }
+    
+    .clickable-location:hover {
+        color: var(--turquoise);
+        transform: translateX(5px);
+    }
+    
+    .clickable-location:hover i {
+        color: var(--turquoise);
+    }
+    
+    /* Search results styles */
+    .search-results-container {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px -10px rgba(0,0,0,0.2);
+        max-height: 400px;
+        overflow-y: auto;
+        z-index: 1000;
+        display: none;
+        margin-top: 10px;
+    }
+    
+    .search-results-container.show {
+        display: block;
+    }
+    
+    .search-result-item {
+        padding: 15px 20px;
+        border-bottom: 1px solid #f0f0f0;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    
+    .search-result-item:hover {
+        background: var(--light-bg);
+        padding-left: 25px;
+    }
+    
+    .search-result-item .result-title {
+        font-weight: 600;
+        color: var(--navy);
+        margin-bottom: 5px;
+    }
+    
+    .search-result-item .result-category {
+        font-size: 0.8rem;
+        color: var(--turquoise);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .search-result-item .result-snippet {
+        font-size: 0.9rem;
+        color: #6c757d;
+    }
+    
     @media (max-width: 768px) {
         .section-title-fancy h2 {
             font-size: 2rem;
@@ -574,6 +642,99 @@ ob_start();
         }
     }
 </style>
+
+<!-- ===== Site Search Data ===== -->
+<script>
+// Comprehensive site content for search
+const siteContent = [
+    // Pages from navigation
+    { title: "Home", category: "Page", url: "/", content: "Jumuiya ya Kaunti za Pwani - Coastal Economic Bloc" },
+    { title: "About Us", category: "Page", url: "/about", content: "Learn about Jumuiya, our history, mission, and the six coastal counties" },
+    { title: "Services", category: "Page", url: "/services", content: "Our services and initiatives for regional development" },
+    { title: "Projects", category: "Page", url: "/projects", content: "Current and past projects across the coastal region" },
+    { title: "Blog", category: "Page", url: "/blog", content: "Latest news, updates, and stories from Jumuiya" },
+    { title: "Contact", category: "Page", url: "/contact", content: "Get in touch with our secretariat" },
+    
+    // Core Mandate items
+    { title: "Coordination", category: "Core Mandate", url: "/services#coordination", content: "Socio-political & regional policy harmonization across six coastal counties" },
+    { title: "Policy Harmonization", category: "Core Mandate", url: "/services#policy", content: "Jumuiya 2030 Regional Economic Blueprint driving sustainable development" },
+    { title: "Promotion", category: "Core Mandate", url: "/services#promotion", content: "Showcasing Sea-Land of Opportunities to local and international investors" },
+    { title: "Investments", category: "Core Mandate", url: "/services#investments", content: "Unlocking value chains to boost agribusiness and blue economy" },
+    
+    // Counties
+    { title: "Mombasa County", category: "County", url: "/counties/mombasa", content: "Coastal county with Fort Jesus, tourism, and port city" },
+    { title: "Kwale County", category: "County", url: "/counties/kwale", content: "Home to Diani Beach, tourism, and mining" },
+    { title: "Kilifi County", category: "County", url: "/counties/kilifi", content: "Kilifi Creek, tourism, and agricultural potential" },
+    { title: "Tana River County", category: "County", url: "/counties/tana-river", content: "Tana River Delta, agriculture, and biodiversity" },
+    { title: "Lamu County", category: "County", url: "/counties/lamu", content: "Lamu Island, UNESCO heritage site, and culture" },
+    { title: "Taita Taveta County", category: "County", url: "/counties/taita-taveta", content: "Red Elephants, Tsavo parks, and wildlife" },
+    
+    // Projects
+    { title: "She Stands Project", category: "Project", url: "/projects/she-stands", content: "A faith-based collaborative initiative equipping and inspiring Kenyan women with biblical principles for everyday living and community leadership." },
+    { title: "The Go Blue Project", category: "Project", url: "/projects/go-blue", content: "A four-year EU-funded project supporting Kenya's coastal economic development and blue economy strategy through sustainable marine resource utilization." },
+    { title: "Jumuiya Innovation Lab", category: "Project", url: "/projects/innovation-lab", content: "Six innovation labs established as flagship projects to transform the region's economic landscape under the Jumuiya 2030 framework." },
+    { title: "Jumuiya 2030", category: "Project", url: "/projects/jumuiya-2030", content: "The regional economic development strategy for 2020-2030, outlining the blueprint for sustainable growth and shared prosperity across coastal counties." },
+    
+    // Impact stats
+    { title: "MSME Tourism Grants", category: "Impact", url: "/impact#grants", content: "16 MSME Tourism Grants supporting micro and small enterprises in the coastal tourism sector." },
+    { title: "Boats Delivered", category: "Impact", url: "/impact#boats", content: "26+ Boats Delivered to coastal fishing communities and cooperatives." },
+    { title: "Jobs Created", category: "Impact", url: "/impact#jobs", content: "2000+ Jobs Created through the Go Blue Project initiatives." },
+    { title: "Skills Trainings", category: "Impact", url: "/impact#training", content: "1900+ Skills Trainings completed across the region." },
+    
+    // Mission/Vision
+    { title: "Our Mission", category: "Mission", url: "/#mission", content: "Catalyze economic growth of Kenya's coast regional counties." },
+    { title: "Our Vision", category: "Vision", url: "/#vision", content: "A regional economy that creates wealth and shared prosperity for its communities." },
+    { title: "Our Aspirations", category: "Aspirations", url: "/#aspirations", content: "A social innovation network focused on enabling Workforce and MSMEs." },
+    
+    // News
+    { title: "Agriculture Revitalization Summit", category: "News", url: "/blog/agriculture-summit", content: "Jumuiya Ya Pwani Agriculture Revitalization Summit - February 2026" },
+    { title: "Ocean Conservation Workshop", category: "News", url: "/blog/ocean-conservation", content: "Ocean Conservation and Sustainable Coastal Development Workshop" },
+    { title: "Australian Deputy High Commissioner Visit", category: "News", url: "/blog/australian-visit", content: "Strengthening Bilateral Relations — Australian Deputy High Commissioner Visits JKP Offices" },
+];
+
+// Search function
+function searchSite(query) {
+    if (!query || query.length < 2) return [];
+    
+    query = query.toLowerCase();
+    return siteContent.filter(item => {
+        return item.title.toLowerCase().includes(query) || 
+               item.content.toLowerCase().includes(query) ||
+               item.category.toLowerCase().includes(query);
+    }).slice(0, 8); // Limit to 8 results
+}
+
+// Display search results
+function showSearchResults(results) {
+    const container = document.getElementById('searchResults');
+    if (!container) return;
+    
+    if (results.length === 0) {
+        container.innerHTML = '<div class="search-result-item"><div class="result-title">No results found</div><div class="result-snippet">Try different keywords</div></div>';
+    } else {
+        container.innerHTML = results.map(result => `
+            <div class="search-result-item" onclick="window.location.href='${result.url}'">
+                <div class="result-category">${result.category}</div>
+                <div class="result-title">${result.title}</div>
+                <div class="result-snippet">${result.content.substring(0, 80)}${result.content.length > 80 ? '...' : ''}</div>
+            </div>
+        `).join('');
+    }
+    
+    container.classList.add('show');
+}
+
+// Close search results when clicking outside
+document.addEventListener('click', function(e) {
+    const searchContainer = document.getElementById('searchResults');
+    const searchInput = document.getElementById('siteSearch');
+    if (searchContainer && searchInput) {
+        if (!searchContainer.contains(e.target) && !searchInput.contains(e.target)) {
+            searchContainer.classList.remove('show');
+        }
+    }
+});
+</script>
 
 <!-- ===== Animated Counter Script ===== -->
 <script>
@@ -730,11 +891,12 @@ document.addEventListener('DOMContentLoaded', function() {
             <?php endforeach; ?>
         </div>
 
-        <form action="/search" method="GET" class="mt-5 mx-auto" style="max-width: 600px;">
+        <form action="/search" method="GET" class="mt-5 mx-auto position-relative" style="max-width: 600px;" onsubmit="event.preventDefault(); const results = searchSite(document.getElementById('siteSearch').value); showSearchResults(results);">
             <div class="input-group">
-                <input type="text" name="q" class="form-control form-control-lg border-0 shadow-sm" placeholder="Explore investment opportunities..." style="border-radius: 50px 0 0 50px; padding: 15px 25px;">
-                <button type="submit" class="btn btn-fancy" style="background: var(--turquoise); color: white; border-radius: 0 50px 50px 0; padding: 15px 30px;">Explore Now <i class="bi bi-arrow-right ms-2"></i></button>
+                <input type="text" name="q" id="siteSearch" class="form-control form-control-lg border-0 shadow-sm" placeholder="Search everything - pages, projects, news, counties..." style="border-radius: 50px 0 0 50px; padding: 15px 25px;" onkeyup="const results = searchSite(this.value); showSearchResults(results);">
+                <button type="submit" class="btn btn-fancy" style="background: var(--turquoise); color: white; border-radius: 0 50px 50px 0; padding: 15px 30px;">Search <i class="bi bi-search ms-2"></i></button>
             </div>
+            <div id="searchResults" class="search-results-container"></div>
         </form>
     </div>
 </div>
@@ -797,50 +959,61 @@ document.addEventListener('DOMContentLoaded', function() {
 <section style="background: linear-gradient(135deg, var(--navy) 0%, var(--deep-blue) 100%); padding: 60px 0;" data-aos="fade-up">
     <div class="container">
         <div class="row align-items-start g-5">
-            <!-- Left side - Cards stacked vertically -->
+            <!-- Left side - Cards in stat-card-fancy style -->
             <div class="col-lg-6">
                 <div class="row g-4">
-                    <!-- Mission Card - Slightly higher -->
-                    <div class="col-12" style="transform: translateY(-20px);">
-                        <div class="fancy-card card h-100 border-0 p-4 text-center bg-white">
-                            <div class="mb-3">
-                                <i class="bi bi-bullseye" style="font-size: 3rem; color: var(--turquoise);"></i>
-                            </div>
-                            <h3 class="h5 fw-bold mb-3" style="color: var(--navy);">Our Mission</h3>
-                            <p class="small text-muted">Catalyze economic growth of Kenya's coast regional counties.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Vision Card -->
-                    <div class="col-12">
-                        <div class="fancy-card card h-100 border-0 p-4 text-center bg-white">
-                            <div class="mb-3">
-                                <i class="bi bi-eye" style="font-size: 3rem; color: var(--soft-blue);"></i>
-                            </div>
-                            <h3 class="h5 fw-bold mb-3" style="color: var(--navy);">Our Vision</h3>
-                            <p class="small text-muted">A regional economy that creates wealth and shared prosperity for its communities.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Aspirations Card -->
-                    <div class="col-12">
-                        <div class="fancy-card card h-100 border-0 p-4 text-center bg-white">
-                            <div class="mb-3">
-                                <i class="bi bi-stars" style="font-size: 3rem; color: var(--deep-blue);"></i>
-                            </div>
-                            <h3 class="h5 fw-bold mb-3" style="color: var(--navy);">Our Aspirations</h3>
-                            <p class="small text-muted">A social innovation network focused on enabling Workforce and MSMEs.</p>
-                        </div>
-                    </div>
-                    
                     <!-- Core Mandate Card -->
                     <div class="col-12">
-                        <div class="fancy-card card h-100 border-0 p-4 text-center bg-white">
-                            <div class="mb-3">
-                                <i class="bi bi-briefcase" style="font-size: 3rem; color: var(--navy);"></i>
+                        <div class="stat-card-fancy text-center">
+                            <div class="stat-icon-fancy">
+                                <i class="bi bi-briefcase"></i>
                             </div>
-                            <h3 class="h5 fw-bold mb-3" style="color: var(--navy);">Core Mandate</h3>
-                            <p class="small text-muted">Creating an enabling platform for socio-economic development.</p>
+                            <h5 class="fw-bold mb-2" style="color: var(--deep-blue);">Jumuiya's Core Mandate</h5>
+                            <p class="small text-muted mb-0">Creating an enabling platform for socio-economic development.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Coordination Card -->
+                    <div class="col-md-6">
+                        <div class="stat-card-fancy text-center">
+                            <div class="stat-icon-fancy">
+                                <i class="bi bi-diagram-3"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2" style="color: var(--deep-blue);">Coordination</h5>
+                            <p class="small text-muted mb-0">Socio-political & regional policy harmonization across six coastal counties</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Policy Harmonization Card -->
+                    <div class="col-md-6">
+                        <div class="stat-card-fancy text-center">
+                            <div class="stat-icon-fancy">
+                                <i class="bi bi-file-earmark-text"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2" style="color: var(--deep-blue);">Policy Harmonization</h5>
+                            <p class="small text-muted mb-0">Jumuiya 2030 Regional Economic Blueprint driving sustainable development</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Promotion Card -->
+                    <div class="col-md-6">
+                        <div class="stat-card-fancy text-center">
+                            <div class="stat-icon-fancy">
+                                <i class="bi bi-megaphone"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2" style="color: var(--deep-blue);">Promotion</h5>
+                            <p class="small text-muted mb-0">Showcasing Sea-Land of Opportunities to local and international investors</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Investments Card -->
+                    <div class="col-md-6">
+                        <div class="stat-card-fancy text-center">
+                            <div class="stat-icon-fancy">
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2" style="color: var(--deep-blue);">Investments</h5>
+                            <p class="small text-muted mb-0">Unlocking value chains to boost agribusiness and blue economy</p>
                         </div>
                     </div>
                 </div>
@@ -1173,8 +1346,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                             <div>
                                 <h5 class="fw-bold mb-2">Head Office</h5>
-                                <p class="small opacity-75 mb-0">Bustani Close, Links Road – Nyali, Mombasa, Kenya</p>
-                                <p class="small opacity-75">Mon – Fri: 8:30am – 5:00pm</p>
+                                <a href="https://maps.google.com/?q=Bustani+Close,+Links+Road+–+Nyali,+Mombasa,+Kenya" target="_blank" class="clickable-location">
+                                    <p class="small opacity-75 mb-0">Bustani Close, Links Road – Nyali, Mombasa, Kenya</p>
+                                    <p class="small opacity-75">Mon – Fri: 8:30am – 5:00pm</p>
+                                </a>
                             </div>
                         </div>
                     </div>
