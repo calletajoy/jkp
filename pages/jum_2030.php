@@ -208,7 +208,7 @@ include __DIR__ . '/../partials/page-hero.php';
     font-size: 1.1rem;
 }
 
-/* Pillar Cards - 2 per row */
+/* Pillar Cards - 2 per row - Using stat-card-fancy styling */
 .pillars-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -223,48 +223,57 @@ include __DIR__ . '/../partials/page-hero.php';
     }
 }
 
-.pillar-card {
-    background: white;
-    border-radius: 15px;
-    padding: 30px 25px;
-    box-shadow: 0 15px 35px -15px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
+/* stat-card-fancy styling from home page */
+.stat-card-fancy {
     position: relative;
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px -15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
     overflow: hidden;
-    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.stat-card-fancy::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: var(--turquoise);
+    opacity: 0.1;
+    border-radius: 50%;
+    transform: translate(30px, 30px);
+    transition: all 0.4s ease;
+}
+
+.stat-card-fancy:hover::after {
+    transform: translate(20px, 20px) scale(1.2);
+    opacity: 0.15;
+}
+
+.stat-card-fancy:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -15px rgba(0,206,209,0.3);
+}
+
+/* Pillar card specific styles */
+.pillar-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    height: 100%;
 }
 
-.pillar-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 25px 45px -15px var(--turquoise);
-}
-
-.pillar-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--turquoise), var(--soft-blue));
-    transform: scaleX(0);
-    transition: transform 0.4s ease;
-}
-
-.pillar-card:hover::before {
-    transform: scaleX(1);
-}
-
-/* For image icons - you'll add your own images here */
 .pillar-icon-image {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 20px;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
     transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
 }
 
 .pillar-icon-image img {
@@ -278,59 +287,31 @@ include __DIR__ . '/../partials/page-hero.php';
     transform: scale(1.1) rotate(5deg);
 }
 
-/* Keep Bootstrap icons as fallback or alternative */
-.pillar-icon {
-    width: 70px;
-    height: 70px;
-    background: linear-gradient(135deg, rgba(0,206,209,0.1), rgba(92,126,192,0.1));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    font-size: 2.2rem;
-    color: var(--turquoise);
-    transition: all 0.3s ease;
-}
-
-.pillar-card:hover .pillar-icon {
-    transform: scale(1.1) rotate(5deg);
-    color: var(--deep-blue);
-}
-
 .pillar-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--navy);
-    margin-bottom: 12px;
+    margin-bottom: 0.75rem;
     font-family: 'Playfair Display', serif;
     line-height: 1.4;
+    position: relative;
+    z-index: 2;
 }
 
 .pillar-card p {
-    color: #666;
-    font-family: 'Montserrat', sans-serif;
+    color: #6c757d;
+    font-size: 0.9rem;
     line-height: 1.6;
-    font-size: 0.95rem;
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    z-index: 2;
 }
 
 /* Empty pillars get centered with just title */
 .pillar-card p:empty {
     display: none;
 }
-
-/* Different icon colors for Bootstrap icons */
-.pillar-card:nth-child(1) .pillar-icon { color: #00CED1; background: rgba(0,206,209,0.1); }
-.pillar-card:nth-child(2) .pillar-icon { color: #5C7EC0; background: rgba(92,126,192,0.1); }
-.pillar-card:nth-child(3) .pillar-icon { color: #3B5B9A; background: rgba(59,91,154,0.1); }
-.pillar-card:nth-child(4) .pillar-icon { color: #273C67; background: rgba(39,60,103,0.1); }
-.pillar-card:nth-child(5) .pillar-icon { color: #4A6FA5; background: rgba(74,111,165,0.1); }
-.pillar-card:nth-child(6) .pillar-icon { color: #6B8CBE; background: rgba(107,140,190,0.1); }
-.pillar-card:nth-child(7) .pillar-icon { color: #8AA9D9; background: rgba(138,169,217,0.1); }
-.pillar-card:nth-child(8) .pillar-icon { color: #00CED1; background: rgba(0,206,209,0.1); }
-.pillar-card:nth-child(9) .pillar-icon { color: #5C7EC0; background: rgba(92,126,192,0.1); }
-.pillar-card:nth-child(10) .pillar-icon { color: #3B5B9A; background: rgba(59,91,154,0.1); }
 
 /* Download Section - Single file */
 .download-section {
@@ -524,102 +505,96 @@ include __DIR__ . '/../partials/page-hero.php';
         </div>
 
         <div class="pillars-grid">
-            <!-- Pillar 1 - Using Bootstrap icon (replace with your image if needed) -->
-            <div class="pillar-card" data-aos="fade-up">
-                <div class="pillar-icon">
-                    <i class="bi bi-tree"></i>
+            <!-- Pillar 1 -->
+            <div class="stat-card-fancy pillar-card" data-aos="fade-up">
+                <div class="pillar-icon-image">
+                    <img src="/assets/icons/pillar-agribusiness.png" alt="Agribusiness">
                 </div>
                 <h3>Agribusiness, Food & Nutrition Security</h3>
                 <p>Focuses on the advancement of agricultural initiatives to promote food security and value added products in the region</p>
             </div>
             
             <!-- Pillar 2 -->
-            <div class="pillar-card" data-aos="fade-up" data-aos-delay="50">
-                <div class="pillar-icon">
-                    <i class="bi bi-shop"></i>
+            <div class="stat-card-fancy pillar-card" data-aos="fade-up" data-aos-delay="50">
+                <div class="pillar-icon-image">
+                    <img src="/assets/icons/pillar-trade.png" alt="Trade & Industries">
                 </div>
                 <h3>Trade & Industries</h3>
                 <p>Special economic zones in the region have been earmarked to promote trade, textiles, logistics and manufacturing</p>
             </div>
             
             <!-- Pillar 3 -->
-            <div class="pillar-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="pillar-icon">
-                    <i class="bi bi-water"></i>
+            <div class="stat-card-fancy pillar-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="pillar-icon-image">
+                    <img src="/assets/icons/pillar-blue-economy.png" alt="Blue Economy">
                 </div>
                 <h3>Blue Economy Value Chains</h3>
                 <p>With the 500km coastline, vast marine species, 2 major ports, and pristine beaches, JKP seeks to advance projects in the maritime sector.</p>
             </div>
             
             <!-- Pillar 4 -->
-            <div class="pillar-card" data-aos="fade-up" data-aos-delay="150">
-                <div class="pillar-icon">
-                    <i class="bi bi-globe"></i>
+            <div class="stat-card-fancy pillar-card" data-aos="fade-up" data-aos-delay="150">
+                <div class="pillar-icon-image">
+                    <img src="/assets/icons/pillar-natural-resources.png" alt="Natural Resources">
                 </div>
                 <h3>Natural Resources & Environment</h3>
                 <p>JKP seeks to promote climate action initiatives to provide for a better future for its communities.</p>
             </div>
             
             <!-- Pillar 5 -->
-            <div class="pillar-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="pillar-icon">
-                    <i class="bi bi-building"></i>
+            <div class="stat-card-fancy pillar-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="pillar-icon-image">
+                    <img src="/assets/icons/pillar-urbanization.png" alt="Coastal Urbanization">
                 </div>
                 <h3>Coastal Urbanization</h3>
                 <p></p>
             </div>
             
             <!-- Pillar 6 -->
-            <div class="pillar-card" data-aos="fade-up" data-aos-delay="250">
-                <div class="pillar-icon">
-                    <i class="bi bi-heart-pulse"></i>
+            <div class="stat-card-fancy pillar-card" data-aos="fade-up" data-aos-delay="250">
+                <div class="pillar-icon-image">
+                    <img src="/assets/icons/pillar-health.png" alt="Health & Education">
                 </div>
                 <h3>Health & Education</h3>
                 <p></p>
             </div>
             
             <!-- Pillar 7 -->
-            <div class="pillar-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="pillar-icon">
-                    <i class="bi bi-bank"></i>
+            <div class="stat-card-fancy pillar-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="pillar-icon-image">
+                    <img src="/assets/icons/pillar-governance.png" alt="Governance">
                 </div>
                 <h3>Governance</h3>
                 <p></p>
             </div>
             
             <!-- Pillar 8 -->
-            <div class="pillar-card" data-aos="fade-up" data-aos-delay="350">
-                <div class="pillar-icon">
-                    <i class="bi bi-pc-display"></i>
+            <div class="stat-card-fancy pillar-card" data-aos="fade-up" data-aos-delay="350">
+                <div class="pillar-icon-image">
+                    <img src="/assets/icons/pillar-infrastructure.png" alt="Infrastructure">
                 </div>
                 <h3>Infrastructure</h3>
                 <p></p>
             </div>
             
             <!-- Pillar 9 -->
-            <div class="pillar-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="pillar-icon">
-                    <i class="bi bi-map"></i>
+            <div class="stat-card-fancy pillar-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="pillar-icon-image">
+                    <img src="/assets/icons/pillar-land.png" alt="Land Resource Development">
                 </div>
                 <h3>Land Resource Development</h3>
                 <p></p>
             </div>
             
             <!-- Pillar 10 -->
-            <div class="pillar-card" data-aos="fade-up" data-aos-delay="450">
-                <div class="pillar-icon">
-                    <i class="bi bi-piggy-bank"></i>
+            <div class="stat-card-fancy pillar-card" data-aos="fade-up" data-aos-delay="450">
+                <div class="pillar-icon-image">
+                    <img src="/assets/icons/pillar-investment.png" alt="Investment Fund">
                 </div>
                 <h3>Jumuiya Investment Fund</h3>
                 <p></p>
             </div>
         </div>
-        
-        <!-- Note for you: If you want to use image icons instead, replace each .pillar-icon div with this structure:
-        <div class="pillar-icon-image">
-            <img src="/assets/icons/your-icon-name.png" alt="Icon">
-        </div>
-        -->
     </div>
 </section>
 
