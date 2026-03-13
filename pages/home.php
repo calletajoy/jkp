@@ -1170,22 +1170,26 @@ document.addEventListener('DOMContentLoaded', function() {
             [
                 'img' => '/assets/images/she stands.png', 
                 'title' => 'She Stands Project', 
-                'desc' => 'A faith-based collaborative initiative equipping and inspiring Kenyan women with biblical principles for everyday living and community leadership.'
+                'desc' => 'A faith-based collaborative initiative equipping and inspiring Kenyan women with biblical principles for everyday living and community leadership.',
+                'link' => '/she-stands'
             ],
             [
                 'img' => '/assets/images/goo-blu.png', 
                 'title' => 'The Go Blue Project', 
-                'desc' => 'A four-year EU-funded project supporting Kenya\'s coastal economic development and blue economy strategy through sustainable marine resource utilization.'
+                'desc' => 'A four-year EU-funded project supporting Kenya\'s coastal economic development and blue economy strategy through sustainable marine resource utilization.',
+                'link' => '/go-blue'
             ],
             [
                 'img' => '/assets/images/inno-lab.png', 
                 'title' => 'Jumuiya Innovation Lab', 
-                'desc' => 'Six innovation labs established as flagship projects to transform the region\'s economic landscape under the Jumuiya 2030 framework.'
+                'desc' => 'Six innovation labs established as flagship projects to transform the region\'s economic landscape under the Jumuiya 2030 framework.',
+                'link' => '/innovation-lab'
             ],
             [
                 'img' => '/assets/images/jum 2030.png', 
                 'title' => 'Jumuiya 2030', 
-                'desc' => 'The regional economic development strategy for 2020-2030, outlining the blueprint for sustainable growth and shared prosperity across coastal counties.'
+                'desc' => 'The regional economic development strategy for 2020-2030, outlining the blueprint for sustainable growth and shared prosperity across coastal counties.',
+                'link' => '/jum_2030'
             ],
         ];
         ?>
@@ -1200,7 +1204,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="project-content">
                             <h4 class="project-title"><?php echo $project['title']; ?></h4>
                             <p class="project-desc"><?php echo $project['desc']; ?></p>
-                            <a href="/projects" class="read-more">
+                            <a href="<?php echo $project['link']; ?>" class="read-more">
                                 Read More <i class="bi bi-arrow-up-right"></i>
                             </a>
                         </div>
