@@ -1,6 +1,6 @@
 <?php
 /**
- * pages/projects/go-blue.php
+ * pages/go-blue.php
  * Go Blue Project Page - EU Funded Blue Economy Initiative
  */
 
