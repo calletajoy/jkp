@@ -984,14 +984,25 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                     
-                    <!-- Aspirations Card (full width) -->
-                    <div class="col-12">
-                        <div class="stat-card-fancy text-center">
+                    <!-- Aspirations Card -->
+                    <div class="col-md-6">
+                        <div class="stat-card-fancy text-center h-100">
                             <div class="stat-icon-fancy">
                                 <i class="bi bi-stars"></i>
                             </div>
                             <h3 class="fw-bold mb-2" style="color: var(--navy);">Our Aspirations</h3>
                             <p class="small text-muted mb-0">A social innovation network focused on enabling Workforce and MSMEs.</p>
+                        </div>
+                    </div>
+
+                    <!-- Core Mandate Card -->
+                    <div class="col-md-6">
+                        <div class="stat-card-fancy text-center h-100">
+                            <div class="stat-icon-fancy">
+                                <i class="bi bi-building"></i>
+                            </div>
+                            <h3 class="fw-bold mb-2" style="color: var(--navy);">JKP Core Mandate</h3>
+                            <p class="small text-muted mb-0">The Secretariat's role is to have a broad understanding of the region and create the enabling environment that will ensure a platform for the socio-economic development of the region, thereby changing the story of the region.</p>
                         </div>
                     </div>
                 </div>
