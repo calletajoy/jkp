@@ -16,6 +16,7 @@ $routes = [
     'home'     => 'pages/home.php',
     'about'    => 'pages/about.php',
     'services' => 'pages/services.php',
+    'projects' => 'pages/projects.php',
     'photos-video-gallery'     => 'pages/photos-video-gallery.php',
     'news-updates'     => 'pages/news-updates.php',
     'newsletter-archive'     => 'pages/newsletter-archive.php',
@@ -26,10 +27,10 @@ $routes = [
     'blueprint'   => 'pages/blueprint.php',
     'local-tender'   => 'pages/local-tender.php',
     'event-details'   => 'pages/event-details.php',
-    'go-blue'   => 'pages/projects/go-blue.php',
-    'innovation-lab'   => 'pages/projects/innovation-lab.php',
-    'jum_2030'   => 'pages/projects/jum_2030.php',
-    'she-stands'   => 'pages/projects/she-stands.php',
+    'go-blue'   => 'pages/go-blue.php',
+    'innovation-lab'   => 'pages/innovation-lab.php',
+    'jum_2030'   => 'pages/jum_2030.php',
+    'she-stands'   => 'pages/she-stands.php',
 ];
 
 $pageFile = $routes[$requestPath] ?? null;
