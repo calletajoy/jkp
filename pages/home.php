@@ -956,42 +956,42 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
 <!-- ===== Mission, Vision, Aspiration & Core Mandate Section with Map ===== -->
-<section style="background: linear-gradient(135deg, var(--navy) 0%, var(--deep-blue) 100%); padding: 60px 0;" data-aos="fade-up">
+<section style="background: linear-gradient(135deg, var(--navy) 0%, var(--light-bg) 100%); padding: 60px 0;" data-aos="fade-up">
     <div class="container">
         <div class="row align-items-start g-5">
-            <!-- Left side - Cards stacked vertically (ORIGINAL CONTENT RESTORED) -->
+            <!-- Left side - Cards in grid layout (matching Impacts section style) -->
             <div class="col-lg-6">
                 <div class="row g-4">
-                    <!-- Mission Card - Slightly higher -->
-                    <div class="col-12" style="transform: translateY(-20px);">
-                        <div class="fancy-card card h-100 border-0 p-4 text-center bg-white">
-                            <div class="mb-3">
-                                <i class="bi bi-bullseye" style="font-size: 3rem; color: var(--turquoise);"></i>
+                    <!-- Mission Card -->
+                    <div class="col-md-6">
+                        <div class="stat-card-fancy text-center h-100">
+                            <div class="stat-icon-fancy">
+                                <i class="bi bi-bullseye"></i>
                             </div>
-                            <h3 class="h5 fw-bold mb-3" style="color: var(--navy);">Our Mission</h3>
-                            <p class="small text-muted">Catalyze economic growth of Kenya's coast regional counties.</p>
+                            <h3 class="fw-bold mb-2" style="color: var(--navy);">Our Mission</h3>
+                            <p class="small text-muted mb-0">Catalyze economic growth of Kenya's coast regional counties.</p>
                         </div>
                     </div>
                     
                     <!-- Vision Card -->
-                    <div class="col-12">
-                        <div class="fancy-card card h-100 border-0 p-4 text-center bg-white">
-                            <div class="mb-3">
-                                <i class="bi bi-eye" style="font-size: 3rem; color: var(--soft-blue);"></i>
+                    <div class="col-md-6">
+                        <div class="stat-card-fancy text-center h-100">
+                            <div class="stat-icon-fancy">
+                                <i class="bi bi-eye"></i>
                             </div>
-                            <h3 class="h5 fw-bold mb-3" style="color: var(--navy);">Our Vision</h3>
-                            <p class="small text-muted">A regional economy that creates wealth and shared prosperity for its communities.</p>
+                            <h3 class="fw-bold mb-2" style="color: var(--navy);">Our Vision</h3>
+                            <p class="small text-muted mb-0">A regional economy that creates wealth and shared prosperity for its communities.</p>
                         </div>
                     </div>
                     
-                    <!-- Aspirations Card -->
+                    <!-- Aspirations Card (full width) -->
                     <div class="col-12">
-                        <div class="fancy-card card h-100 border-0 p-4 text-center bg-white">
-                            <div class="mb-3">
-                                <i class="bi bi-stars" style="font-size: 3rem; color: var(--deep-blue);"></i>
+                        <div class="stat-card-fancy text-center">
+                            <div class="stat-icon-fancy">
+                                <i class="bi bi-stars"></i>
                             </div>
-                            <h3 class="h5 fw-bold mb-3" style="color: var(--navy);">Our Aspirations</h3>
-                            <p class="small text-muted">A social innovation network focused on enabling Workforce and MSMEs.</p>
+                            <h3 class="fw-bold mb-2" style="color: var(--navy);">Our Aspirations</h3>
+                            <p class="small text-muted mb-0">A social innovation network focused on enabling Workforce and MSMEs.</p>
                         </div>
                     </div>
                 </div>
