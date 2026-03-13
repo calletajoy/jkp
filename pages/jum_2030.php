@@ -41,38 +41,20 @@ include __DIR__ . '/../partials/page-hero.php';
     min-width: 300px;
 }
 
-.intro-left h2 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 25px;
-    font-family: 'Playfair Display', serif;
-    position: relative;
-    padding-bottom: 15px;
+.intro-left img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px -15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
 }
 
-.intro-left h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--turquoise), var(--soft-blue));
-    border-radius: 3px;
-}
-
-.intro-left p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #444;
-    font-family: 'Montserrat', sans-serif;
+.intro-left img:hover {
+    transform: scale(1.02);
 }
 
 .intro-right {
     flex: 0.8;
     min-width: 300px;
-    text-align: right;
 }
 
 .intro-right h1 {
@@ -87,16 +69,15 @@ include __DIR__ . '/../partials/page-hero.php';
     background: linear-gradient(135deg, rgba(0,206,209,0.08) 0%, rgba(92,126,192,0.08) 100%);
     padding: 30px;
     border-radius: 20px;
-    border-right: 4px solid var(--turquoise);
+    border-left: 4px solid var(--turquoise);
     text-align: left;
 }
 
 .intro-right .highlight-box p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.8;
     color: var(--navy);
     font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
     margin: 0;
 }
 
@@ -156,22 +137,25 @@ include __DIR__ . '/../partials/page-hero.php';
 }
 
 .blueprint-image {
-    flex: 0.8;
-    min-width: 300px;
+    flex: 1;
+    min-width: 400px;
 }
 
 .blueprint-image img {
     width: 100%;
+    max-width: 600px;
     border-radius: 20px;
     box-shadow: 0 20px 40px -15px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
+    display: block;
+    margin: 0 auto;
 }
 
 .blueprint-image img:hover {
     transform: scale(1.02);
 }
 
-/* Pillars Section */
+/* Pillars Section - 2 cards per row */
 .pillars-section {
     padding: 80px 0;
     background: white;
@@ -224,12 +208,19 @@ include __DIR__ . '/../partials/page-hero.php';
     font-size: 1.1rem;
 }
 
-/* Pillar Cards */
+/* Pillar Cards - 2 per row */
 .pillars-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    margin-top: 50px;
+    max-width: 1000px;
+    margin: 50px auto 0;
+}
+
+@media (max-width: 768px) {
+    .pillars-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .pillar-card {
@@ -241,6 +232,10 @@ include __DIR__ . '/../partials/page-hero.php';
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .pillar-card:hover {
@@ -264,16 +259,36 @@ include __DIR__ . '/../partials/page-hero.php';
     transform: scaleX(1);
 }
 
+/* For image icons - you'll add your own images here */
+.pillar-icon-image {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.pillar-icon-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+}
+
+.pillar-card:hover .pillar-icon-image {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Keep Bootstrap icons as fallback or alternative */
 .pillar-icon {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     background: linear-gradient(135deg, rgba(0,206,209,0.1), rgba(92,126,192,0.1));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: var(--turquoise);
     transition: all 0.3s ease;
 }
@@ -300,12 +315,12 @@ include __DIR__ . '/../partials/page-hero.php';
     margin: 0;
 }
 
-/* Empty pillars (those without description) get a subtle style */
+/* Empty pillars get centered with just title */
 .pillar-card p:empty {
     display: none;
 }
 
-/* Different icon colors for each pillar - using nth-child */
+/* Different icon colors for Bootstrap icons */
 .pillar-card:nth-child(1) .pillar-icon { color: #00CED1; background: rgba(0,206,209,0.1); }
 .pillar-card:nth-child(2) .pillar-icon { color: #5C7EC0; background: rgba(92,126,192,0.1); }
 .pillar-card:nth-child(3) .pillar-icon { color: #3B5B9A; background: rgba(59,91,154,0.1); }
@@ -317,7 +332,7 @@ include __DIR__ . '/../partials/page-hero.php';
 .pillar-card:nth-child(9) .pillar-icon { color: #5C7EC0; background: rgba(92,126,192,0.1); }
 .pillar-card:nth-child(10) .pillar-icon { color: #3B5B9A; background: rgba(59,91,154,0.1); }
 
-/* Download Section - Rectangle Style */
+/* Download Section - Single file */
 .download-section {
     padding: 60px 0;
     background: #f8f9fa;
@@ -339,27 +354,24 @@ include __DIR__ . '/../partials/page-hero.php';
 .download-header p {
     color: #666;
     font-family: 'Montserrat', sans-serif;
-    max-width: 600px;
-    margin: 0 auto;
+    font-size: 1.1rem;
 }
 
-.download-items {
+.download-single {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    max-width: 1000px;
+    max-width: 400px;
     margin: 0 auto;
 }
 
-.download-item {
-    width: 200px;
+.download-item-large {
+    width: 100%;
     background: white;
-    border-radius: 12px;
-    padding: 20px 15px;
+    border-radius: 16px;
+    padding: 30px 25px;
     transition: all 0.3s ease;
     cursor: pointer;
-    box-shadow: 0 10px 20px -10px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 35px -15px rgba(0,0,0,0.15);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -367,35 +379,35 @@ include __DIR__ . '/../partials/page-hero.php';
     border: 1px solid rgba(0,0,0,0.05);
 }
 
-.download-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px -10px var(--turquoise);
+.download-item-large:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 45px -15px var(--turquoise);
     border-color: var(--turquoise);
 }
 
-.download-item .download-icons {
+.download-item-large .download-icons {
     display: flex;
-    gap: 15px;
-    margin-bottom: 15px;
+    gap: 20px;
+    margin-bottom: 20px;
 }
 
-.download-item .download-icons img {
-    width: 30px;
-    height: 30px;
+.download-item-large .download-icons img {
+    width: 40px;
+    height: 40px;
     object-fit: contain;
 }
 
-.download-item h4 {
+.download-item-large h4 {
     color: var(--navy);
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 5px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
     font-family: 'Playfair Display', serif;
 }
 
-.download-item p {
+.download-item-large p {
     color: #666;
-    font-size: 0.8rem;
+    font-size: 0.95rem;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
@@ -434,40 +446,37 @@ include __DIR__ . '/../partials/page-hero.php';
     box-shadow: 0 10px 20px -5px rgba(0,0,0,0.2);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .intro-wrapper, .blueprint-wrapper {
-        flex-direction: column;
-    }
-    
-    .intro-right {
-        text-align: left;
-    }
-    
-    .pillars-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .download-items {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .download-item {
-        width: 100%;
-        max-width: 300px;
-    }
+/* Animation delays */
+[data-aos="fade-right"] {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.6s ease;
+}
+
+[data-aos="fade-right"].aos-animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+[data-aos="fade-left"] {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.6s ease;
+}
+
+[data-aos="fade-left"].aos-animate {
+    opacity: 1;
+    transform: translateX(0);
 }
 </style>
 
-<!-- ===== Intro Section - Title on Right ===== -->
+<!-- ===== Intro Section - Image on Left, Content on Right ===== -->
 <section class="intro-section">
     <div class="container">
         <div class="intro-wrapper">
-            <!-- Left side - Additional content  -->
-             <div class="blueprint-image" data-aos="fade-left">
-                <img src="/assets/images/2030int (1).png" alt="JKP Economic Potential">
-                <!-- Replace with your actual image path -->
+            <!-- Left side - Image -->
+            <div class="intro-left" data-aos="fade-right">
+                <img src="/assets/images/2030int (1).png" alt="Jumuiya 2030">
             </div>
             
             <!-- Right side - Main intro content -->
@@ -481,7 +490,7 @@ include __DIR__ . '/../partials/page-hero.php';
     </div>
 </section>
 
-<!-- ===== Blueprint Section - Image on Right ===== -->
+<!-- ===== Blueprint Section - Content on Left, Image on Right ===== -->
 <section class="blueprint-section">
     <div class="container">
         <div class="blueprint-wrapper">
@@ -497,10 +506,9 @@ include __DIR__ . '/../partials/page-hero.php';
                 </div>
             </div>
             
-            <!-- Right side - Image -->
+            <!-- Right side - Image (Larger) -->
             <div class="blueprint-image" data-aos="fade-left">
                 <img src="/assets/images/pillars.png" alt="JKP Economic Potential">
-                <!-- Replace with your actual image path -->
             </div>
         </div>
     </div>
@@ -516,7 +524,7 @@ include __DIR__ . '/../partials/page-hero.php';
         </div>
 
         <div class="pillars-grid">
-            <!-- Pillar 1 -->
+            <!-- Pillar 1 - Using Bootstrap icon (replace with your image if needed) -->
             <div class="pillar-card" data-aos="fade-up">
                 <div class="pillar-icon">
                     <i class="bi bi-tree"></i>
@@ -606,10 +614,16 @@ include __DIR__ . '/../partials/page-hero.php';
                 <p></p>
             </div>
         </div>
+        
+        <!-- Note for you: If you want to use image icons instead, replace each .pillar-icon div with this structure:
+        <div class="pillar-icon-image">
+            <img src="/assets/icons/your-icon-name.png" alt="Icon">
+        </div>
+        -->
     </div>
 </section>
 
-<!-- ===== Download Section ===== -->
+<!-- ===== Download Section - Single File ===== -->
 <section class="download-section">
     <div class="container">
         <div class="download-header" data-aos="fade-up">
@@ -617,50 +631,20 @@ include __DIR__ . '/../partials/page-hero.php';
             <p>Just download brochure...</p>
         </div>
 
-        <div class="download-items">
-            <!-- Jumuiya 2030 Brochure -->
-            <div class="download-item" data-aos="fade-up" onclick="document.getElementById('download-jumuiya-2030').click();">
+        <div class="download-single">
+            <!-- Single Brochure -->
+            <div class="download-item-large" data-aos="fade-up" onclick="document.getElementById('download-brochure').click();">
                 <div class="download-icons">
                     <img src="/assets/images/icons8-eye.gif" alt="Preview">
                     <img src="/assets/images/icons8-downloads-folder.gif" alt="Download">
                 </div>
-                <h4>Jumuiya 2030 Strategy</h4>
+                <h4>Jumuiya 2030 Development Blueprint</h4>
                 <p>Complete Strategy Document</p>
-            </div>
-            
-            <!-- Executive Summary -->
-            <div class="download-item" data-aos="fade-up" data-aos-delay="50" onclick="document.getElementById('download-executive-summary').click();">
-                <div class="download-icons">
-                    <img src="/assets/images/icons8-eye.gif" alt="Preview">
-                    <img src="/assets/images/icons8-downloads-folder.gif" alt="Download">
-                </div>
-                <h4>Executive Summary</h4>
-                <p>Key Highlights</p>
-            </div>
-            
-            <!-- Pillars Overview -->
-            <div class="download-item" data-aos="fade-up" data-aos-delay="100" onclick="document.getElementById('download-pillars').click();">
-                <div class="download-icons">
-                    <img src="/assets/images/icons8-eye.gif" alt="Preview">
-                    <img src="/assets/images/icons8-downloads-folder.gif" alt="Download">
-                </div>
-                <h4>10 Pillars Overview</h4>
-                <p>Detailed Pillar Descriptions</p>
-            </div>
-            
-            <!-- Investment Opportunities -->
-            <div class="download-item" data-aos="fade-up" data-aos-delay="150" onclick="document.getElementById('download-investment').click();">
-                <div class="download-icons">
-                    <img src="/assets/images/icons8-eye.gif" alt="Preview">
-                    <img src="/assets/images/icons8-downloads-folder.gif" alt="Download">
-                </div>
-                <h4>Investment Opportunities</h4>
-                <p>Sector Investment Brief</p>
             </div>
         </div>
 
-        <!-- Hidden Download Links - Add your PDF paths here -->
-    
+        <!-- Hidden Download Link - Single PDF file -->
+        <div class="download-links">
             <a id="download-brochure" href="/assets/content-files/JUMUIYA YA KAUNTI ZA PWANI 2030 DEVELOPMENT BLUEPRINT.pdf" download></a>
         </div>
     </div>
@@ -671,7 +655,6 @@ include __DIR__ . '/../partials/page-hero.php';
     <div class="container">
         <div class="text-center" data-aos="fade-up">
             <img src="/assets/images/Screenshot 2026-03-08 214011.png" alt="Jumuiya 2030 Partners" class="partners-image">
-            <!-- Replace with your actual partners image path -->
         </div>
     </div>
 </section>
@@ -694,7 +677,7 @@ include __DIR__ . '/../partials/page-hero.php';
                 </p>
                 <div class="cityWall-btn d-inline-flex gap-3 justify-content-center flex-wrap">
                     <a href="/contact" style="background: var(--turquoise);">Contact Us <i class="bi bi-arrow-right"></i></a>
-                    <a href="#" onclick="document.getElementById('download-jumuiya-2030').click(); return false;" style="background: var(--navy);">Download Strategy <i class="bi bi-download"></i></a>
+                    <a href="#" onclick="document.getElementById('download-brochure').click(); return false;" style="background: var(--navy);">Download Strategy <i class="bi bi-download"></i></a>
                 </div>
             </div>
         </div>
