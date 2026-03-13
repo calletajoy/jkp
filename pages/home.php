@@ -1216,37 +1216,37 @@ document.addEventListener('DOMContentLoaded', function() {
 <section class="best-city-government remove-div one-second" data-aos="fade-up" style="padding: 0; overflow-x: hidden;">
     <div class="position-relative">
         <img class="img-fluid w-100" src="/assets/images/jum house.webp" alt="Jumuiya Hub" style="height: 600px; object-fit: cover;">
-        <div class="overlay" style="background: linear-gradient(135deg, rgba(2,168,209,0.9) 0%, rgba(2,168,209,0.7) 100%);"></div>
+        <div class="overlay" style="background: linear-gradient(135deg, rgba(135,206,235,0.9) 0%, rgba(135,206,235,0.7) 100%);"></div>
         <div class="container position-relative" style="margin-top: -400px;">
             <div class="city-content text-center text-white">
-                <h2 class="display-3 fw-bold mb-5" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="display-3 fw-bold mb-5 text-white" data-aos="fade-up" data-aos-duration="1000">
                     <span class="cssanimation lePopUp sequence">Jumuiya Hub</span>
                 </h2>
                 <div class="row g-4">
                     <!-- First card - comes from left -->
                     <div class="col-md-6 col-lg-3" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="300">
-                        <div class="p-4 rounded-4" style="background: #02a8d1; color: white;">
+                        <div class="p-4 rounded-4" style="background: #87ceeb; color: white;">
                             <h5 class="fw-bold mb-3 text-white">Agriculture & Agribusiness</h5>
                             <p class="small text-white" style="opacity: 0.9;">Promoting sustainable farming, value addition, and market access for coastal farmers.</p>
                         </div>
                     </div>
                     <!-- Second card - comes from left with delay -->
                     <div class="col-md-6 col-lg-3" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200" data-aos-offset="300">
-                        <div class="p-4 rounded-4" style="background: #02a8d1; color: white;">
+                        <div class="p-4 rounded-4" style="background: ##87ceeb; color: white;">
                             <h5 class="fw-bold mb-3 text-white">Blue Economy</h5>
                             <p class="small text-white" style="opacity: 0.9;">Sustainable use of ocean resources for economic growth, jobs, and healthy marine ecosystems.</p>
                         </div>
                     </div>
                     <!-- Third card - comes from right -->
                     <div class="col-md-6 col-lg-3" data-aos="fade-left" data-aos-duration="1000" data-aos-offset="300">
-                        <div class="p-4 rounded-4" style="background: #02a8d1; color: white;">
+                        <div class="p-4 rounded-4" style="background: #87ceeb; color: white;">
                             <h5 class="fw-bold mb-3 text-white">Tourism</h5>
                             <p class="small text-white" style="opacity: 0.9;">Showcasing the beautiful beaches, culture, and heritage of Kenya's coast.</p>
                         </div>
                     </div>
                     <!-- Fourth card - comes from right with delay -->
                     <div class="col-md-6 col-lg-3" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" data-aos-offset="300">
-                        <div class="p-4 rounded-4" style="background: #02a8d1; color: white;">
+                        <div class="p-4 rounded-4" style="background: #87ceeb; color: white;">
                             <h5 class="fw-bold mb-3 text-white">Education & Academia</h5>
                             <p class="small text-white" style="opacity: 0.9;">Investing in quality education, research, and skills development for youth.</p>
                         </div>
