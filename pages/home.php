@@ -956,7 +956,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
 <!-- ===== Mission, Vision, Aspiration & Core Mandate Section with Map ===== -->
-<section style="background: linear-gradient(135deg, var(--navy) 0%, var(--deep-blue) 100%); padding: 60px 0;" data-aos="fade-up">
+<section style="background: var(--light-bg)"; data-aos="fade-up">
     <div class="container">
         <div class="row align-items-start g-5">
             <!-- Left side - Cards in grid layout (matching Impacts section style) -->
