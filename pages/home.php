@@ -1200,7 +1200,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="project-content">
                             <h4 class="project-title"><?php echo $project['title']; ?></h4>
                             <p class="project-desc"><?php echo $project['desc']; ?></p>
-                            <a href="/services" class="read-more">
+                            <a href="/projects" class="read-more">
                                 Read More <i class="bi bi-arrow-up-right"></i>
                             </a>
                         </div>
