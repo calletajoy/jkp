@@ -464,9 +464,10 @@ include __DIR__ . '/../partials/page-hero.php';
 <section class="intro-section">
     <div class="container">
         <div class="intro-wrapper">
-            <!-- Left side - Additional content (empty but maintains layout) -->
-            <div class="intro-left" data-aos="fade-right">
-                <!-- This space intentionally left blank for layout balance -->
+            <!-- Left side - Additional content  -->
+             <div class="blueprint-image" data-aos="fade-left">
+                <img src="/assets/images/2030int (1).png" alt="JKP Economic Potential">
+                <!-- Replace with your actual image path -->
             </div>
             
             <!-- Right side - Main intro content -->
@@ -498,7 +499,7 @@ include __DIR__ . '/../partials/page-hero.php';
             
             <!-- Right side - Image -->
             <div class="blueprint-image" data-aos="fade-left">
-                <img src="/assets/images/jumuiya-2030-potential.jpg" alt="JKP Economic Potential">
+                <img src="/assets/images/pillars.png" alt="JKP Economic Potential">
                 <!-- Replace with your actual image path -->
             </div>
         </div>
@@ -659,12 +660,8 @@ include __DIR__ . '/../partials/page-hero.php';
         </div>
 
         <!-- Hidden Download Links - Add your PDF paths here -->
-        <div class="download-links">
-            <a id="download-jumuiya-2030" href="/assets/content-files/jumuiya-2030-strategy.pdf" download></a>
-            <a id="download-executive-summary" href="/assets/content-files/jumuiya-2030-executive-summary.pdf" download></a>
-            <a id="download-pillars" href="/assets/content-files/jumuiya-2030-pillars.pdf" download></a>
-            <a id="download-investment" href="/assets/content-files/jumuiya-2030-investment.pdf" download></a>
-            <a id="download-brochure" href="/assets/content-files/jumuiya-2030-brochure.pdf" download></a>
+    
+            <a id="download-brochure" href="/assets/content-files/JUMUIYA YA KAUNTI ZA PWANI 2030 DEVELOPMENT BLUEPRINT.pdf" download></a>
         </div>
     </div>
 </section>
@@ -673,7 +670,7 @@ include __DIR__ . '/../partials/page-hero.php';
 <section class="partners-container">
     <div class="container">
         <div class="text-center" data-aos="fade-up">
-            <img src="/assets/images/jumuiya-2030-partners.png" alt="Jumuiya 2030 Partners" class="partners-image">
+            <img src="/assets/images/Screenshot 2026-03-08 214011.png" alt="Jumuiya 2030 Partners" class="partners-image">
             <!-- Replace with your actual partners image path -->
         </div>
     </div>
