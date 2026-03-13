@@ -956,7 +956,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
 <!-- ===== Mission, Vision, Aspiration & Core Mandate Section with Map ===== -->
-<section style="background: var(--light-bg);" data-aos="fade-up">
+<section style="background: linear-gradient(135deg, var(--navy) 0%, var(--deep-blue) 100%); padding: 60px 0;" data-aos="fade-up">
     <div class="container">
         <div class="row align-items-start g-5">
             <!-- Left side - Cards in grid layout (matching Impacts section style) -->
@@ -1008,45 +1008,46 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
             
-            <!-- Right side - Map positioned slightly lower -->
+            <!-- Right side - Map positioned slightly lower (white background removed) -->
             <div class="col-lg-6" style="transform: translateY(40px);">
-                <div class="map-container">
-                    <h4 class="text-center fw-bold mb-4" style="color: var(--navy);">Our Six Coastal Counties</h4>
+                <!-- Removed map-container class and white background -->
+                <div class="text-center">
+                    <h4 class="text-center fw-bold mb-4 text-white">Our Six Coastal Counties</h4>
                     
                     <!-- SVG Map - Using your existing path -->
                     <div class="kenya-map text-center">
-                        <img src="/assets/images/ke.svg" alt="Kenya Map with Coastal Counties" class="img-fluid" style="max-height: 400px; width: auto;">
+                        <img src="/assets/images/ke.svg" alt="Kenya Map with Coastal Counties" class="img-fluid" style="max-height: 400px; width: auto; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));">
                     </div>
                     
-                    <!-- County Legend -->
-                    <div class="county-legend">
+                    <!-- County Legend - Updated for better visibility on blue background -->
+                    <div class="county-legend mt-4">
                         <div class="legend-item">
                             <span class="legend-color" style="background: var(--turquoise);"></span>
-                            <span>Mombasa</span>
+                            <span class="text-white">Mombasa</span>
                         </div>
                         <div class="legend-item">
                             <span class="legend-color" style="background: var(--soft-blue);"></span>
-                            <span>Kwale</span>
+                            <span class="text-white">Kwale</span>
                         </div>
                         <div class="legend-item">
                             <span class="legend-color" style="background: var(--deep-blue);"></span>
-                            <span>Kilifi</span>
+                            <span class="text-white">Kilifi</span>
                         </div>
                         <div class="legend-item">
                             <span class="legend-color" style="background: var(--navy);"></span>
-                            <span>Tana River</span>
+                            <span class="text-white">Tana River</span>
                         </div>
                         <div class="legend-item">
                             <span class="legend-color" style="background: #4A6FA5;"></span>
-                            <span>Lamu</span>
+                            <span class="text-white">Lamu</span>
                         </div>
                         <div class="legend-item">
                             <span class="legend-color" style="background: #6B8CBE;"></span>
-                            <span>Taita Taveta</span>
+                            <span class="text-white">Taita Taveta</span>
                         </div>
                     </div>
                     
-                    <p class="text-muted small text-center mt-4 mb-0">
+                    <p class="small text-center mt-4 mb-0 text-white-50">
                         <i class="bi bi-info-circle me-1" style="color: var(--turquoise);"></i>
                         Hover over counties to highlight
                     </p>
