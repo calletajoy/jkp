@@ -65,7 +65,7 @@ include __DIR__ . '/../partials/page-hero.php';
     width: 30px;
     height: 30px;
     object-fit: contain;
-    filter: brightness(0) invert(1);
+    /* Removed the white filter - GIFs now visible in original colors */
 }
 
 .download-rectangle h4 {
@@ -102,6 +102,28 @@ include __DIR__ . '/../partials/page-hero.php';
     text-align: center;
     position: relative;
     overflow: hidden;
+    animation: float 3s ease-in-out infinite;
+}
+
+.result-card:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.result-card:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 45px -15px var(--turquoise);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .result-card::before {
@@ -117,6 +139,7 @@ include __DIR__ . '/../partials/page-hero.php';
 }
 
 .result-card:hover {
+    animation: none;
     transform: translateY(-10px);
     box-shadow: 0 25px 45px -15px var(--turquoise);
 }
@@ -155,44 +178,6 @@ include __DIR__ . '/../partials/page-hero.php';
 .result-card .read-more:hover {
     color: var(--navy);
     gap: 10px;
-}
-
-/* Navigation breadcrumb */
-.breadcrumb-nav {
-    padding: 15px 0;
-    background: #f8f9fa;
-    margin-bottom: 30px;
-}
-
-.breadcrumb {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.breadcrumb li {
-    font-size: 0.9rem;
-}
-
-.breadcrumb li:not(:last-child)::after {
-    content: '/';
-    margin: 0 10px;
-    color: #999;
-}
-
-.breadcrumb a {
-    color: var(--turquoise);
-    text-decoration: none;
-}
-
-.breadcrumb a:hover {
-    text-decoration: underline;
-}
-
-.breadcrumb .active {
-    color: #666;
 }
 
 /* Intro section */
@@ -288,16 +273,6 @@ include __DIR__ . '/../partials/page-hero.php';
 }
 </style>
 
-<!-- Breadcrumb Navigation -->
-<div class="breadcrumb-nav">
-    <div class="container">
-        <ul class="breadcrumb">
-            <li><a href="/">Home</a></li>
-            <li class="active">Go Blue Project</li>
-        </ul>
-    </div>
-</div>
-
 <!-- ===== Go Blue Introduction ===== -->
 <section class="go-blue-intro">
     <div class="container">
@@ -322,21 +297,21 @@ include __DIR__ . '/../partials/page-hero.php';
 
         <div class="result-cards">
             <!-- Component 1 -->
-            <div class="result-card" data-aos="fade-right">
+            <div class="result-card">
                 <h3>GoBlue Component 1</h3>
                 <p>Kenya Coastal Counties - Mombasa, Kilifi, Kwale, Tana River, Lamu & Taita Taveta</p>
                 <a href="#" class="read-more">Read more <i class="bi bi-arrow-right"></i></a>
             </div>
             
             <!-- Component 2 -->
-            <div class="result-card" data-aos="fade-up">
+            <div class="result-card">
                 <h3>GoBlue Component 2</h3>
                 <p>Kenya Coastal Counties - Mombasa, Kilifi, Kwale, Tana River, Lamu & Taita Taveta</p>
                 <a href="#" class="read-more">Read more <i class="bi bi-arrow-right"></i></a>
             </div>
             
             <!-- Component 3 -->
-            <div class="result-card" data-aos="fade-left">
+            <div class="result-card">
                 <h3>GoBlue Component 3</h3>
                 <p>Kenya Coastal Counties - Mombasa, Kilifi, Kwale, Tana River, Lamu & Taita Taveta</p>
                 <a href="#" class="read-more">Read more <i class="bi bi-arrow-right"></i></a>
