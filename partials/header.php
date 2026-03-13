@@ -30,10 +30,6 @@ function navActive(string $key): string
                             <a href="mailto:info@jumuiya.org">
                                 <i class="bi bi-envelope email"></i> info@jumuiya.org
                             </a>
-                            <!-- Added clickable location in top bar -->
-                            <a href="https://maps.google.com/?q=Bustani+Close,+Links+Road+–+Nyali,+Mombasa,+Kenya" target="_blank" class="text-white d-none d-xl-flex align-items-center gap-1">
-                                <i class="bi bi-geo-alt"></i> Bustani Close, Links Road – Nyali, Mombasa
-                            </a>
                             <span class="text-white d-none d-xl-flex align-items-center gap-1">
                                 <i class="bi bi-clock"></i> Mon – Fri: 8:30am – 5:00pm
                             </span>
@@ -227,8 +223,7 @@ function navActive(string $key): string
                                     <div class="con-info">
                                         <h4 class="text-white">Contact Info</h4>
                                         <ul>
-                                            <!-- Made location clickable -->
-                                            <li><a href="https://maps.google.com/?q=Bustani+Close,+Links+Road+–+Nyali,+Mombasa,+Kenya" target="_blank"><i class="bi bi-geo-alt"></i> Bustani Close, Links Road – Nyali, Mombasa, Kenya</a></li>
+                                            <li><a href="https://maps.google.com/?q=Jumuiya+House+Bustani+Close+Off+Links+Road+Nyali+Mombasa+Kenya" target="_blank"><i class="bi bi-geo-alt"></i> Jumuiya House, Bustani Close, Off Links Road, Nyali, Mombasa</a></li>
                                             <li><a href="tel:+254777101115"><i class="bi bi-telephone phone"></i> +254 777 101 115</a></li>
                                             <li><a href="mailto:info@jumuiya.org"><i class="bi bi-envelope email"></i> info@jumuiya.org</a></li>
                                             <li><a href="mailto:secretariat@jumuiya.org"><i class="bi bi-envelope email"></i> secretariat@jumuiya.org</a></li>
