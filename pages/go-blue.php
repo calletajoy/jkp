@@ -15,7 +15,14 @@ include __DIR__ . '/../partials/page-hero.php';
 ?>
 
 <style>
-/* Download Section Styles - Same as stakeholders page */
+/* Download Section Styles - Using JKP Color Palette */
+:root {
+    --turquoise: #00CED1;
+    --soft-blue: #5C7EC0;
+    --deep-blue: #3B5B9A;
+    --navy: #273C67;
+}
+
 .download-rectangles {
     display: flex;
     flex-wrap: wrap;
@@ -26,23 +33,25 @@ include __DIR__ . '/../partials/page-hero.php';
 
 .download-rectangle {
     width: 180px;
-    background: linear-gradient(135deg, #0d6efd, #0a58ca);
+    background: var(--turquoise);
     border-radius: 12px;
     padding: 20px 15px;
     transition: all 0.3s ease;
     cursor: pointer;
+    box-shadow: 0 10px 20px -10px rgba(0,0,0,0.2);
 }
 
-.download-rectangle:nth-child(2) { background: linear-gradient(135deg, #198754, #146c43); }
-.download-rectangle:nth-child(3) { background: linear-gradient(135deg, #ffc107, #cc9a06); }
-.download-rectangle:nth-child(4) { background: linear-gradient(135deg, #dc3545, #b02a37); }
-.download-rectangle:nth-child(5) { background: linear-gradient(135deg, #0dcaf0, #0aa2c0); }
-.download-rectangle:nth-child(6) { background: linear-gradient(135deg, #6f42c1, #5936a2); }
-.download-rectangle:nth-child(7) { background: linear-gradient(135deg, #fd7e14, #cc6600); }
+/* Different shades from your palette */
+.download-rectangle:nth-child(2) { background: var(--soft-blue); }
+.download-rectangle:nth-child(3) { background: var(--deep-blue); }
+.download-rectangle:nth-child(4) { background: var(--navy); }
+.download-rectangle:nth-child(5) { background: #4A6FA5; }
+.download-rectangle:nth-child(6) { background: #6B8CBE; }
+.download-rectangle:nth-child(7) { background: #8AA9D9; }
 
 .download-rectangle:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 30px -10px rgba(0,206,209,0.4);
 }
 
 .download-header {
@@ -56,6 +65,7 @@ include __DIR__ . '/../partials/page-hero.php';
     width: 30px;
     height: 30px;
     object-fit: contain;
+    filter: brightness(0) invert(1);
 }
 
 .download-rectangle h4 {
@@ -63,12 +73,14 @@ include __DIR__ . '/../partials/page-hero.php';
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: 5px;
+    font-family: 'Playfair Display', serif;
 }
 
 .download-rectangle p {
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.9);
     font-size: 0.75rem;
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* Result Cards - Simple cards with read more */
@@ -85,21 +97,40 @@ include __DIR__ . '/../partials/page-hero.php';
     background: white;
     border-radius: 15px;
     padding: 30px 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 35px -15px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.result-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--turquoise), var(--soft-blue));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
 }
 
 .result-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 25px 45px -15px var(--turquoise);
+}
+
+.result-card:hover::before {
+    transform: scaleX(1);
 }
 
 .result-card h3 {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 15px;
-    color: #333;
+    color: var(--navy);
+    font-family: 'Playfair Display', serif;
 }
 
 .result-card p {
@@ -107,20 +138,22 @@ include __DIR__ . '/../partials/page-hero.php';
     line-height: 1.6;
     margin-bottom: 20px;
     font-size: 0.95rem;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .result-card .read-more {
-    color: #0d6efd;
+    color: var(--turquoise);
     text-decoration: none;
     font-weight: 500;
     display: inline-flex;
     align-items: center;
     gap: 5px;
     transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .result-card .read-more:hover {
-    color: #0a58ca;
+    color: var(--navy);
     gap: 10px;
 }
 
@@ -136,6 +169,7 @@ include __DIR__ . '/../partials/page-hero.php';
     list-style: none;
     padding: 0;
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .breadcrumb li {
@@ -149,7 +183,7 @@ include __DIR__ . '/../partials/page-hero.php';
 }
 
 .breadcrumb a {
-    color: #0d6efd;
+    color: var(--turquoise);
     text-decoration: none;
 }
 
@@ -177,7 +211,8 @@ include __DIR__ . '/../partials/page-hero.php';
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 20px;
-    color: #333;
+    color: var(--navy);
+    font-family: 'Playfair Display', serif;
 }
 
 .intro-content p {
@@ -185,14 +220,18 @@ include __DIR__ . '/../partials/page-hero.php';
     line-height: 1.8;
     color: #666;
     margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .steering-committee {
-    background: #f8f9fa;
-    padding: 15px 20px;
+    background: linear-gradient(135deg, rgba(0,206,209,0.1) 0%, rgba(92,126,192,0.1) 100%);
+    padding: 20px 30px;
     border-radius: 10px;
     margin-top: 30px;
     font-weight: 500;
+    border-left: 4px solid var(--turquoise);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--navy);
 }
 
 /* Components section */
@@ -209,14 +248,16 @@ include __DIR__ . '/../partials/page-hero.php';
 .section-title h2 {
     font-size: 2rem;
     font-weight: 700;
-    color: #333;
+    color: var(--navy);
     margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
 }
 
 .section-title p {
     color: #666;
     max-width: 700px;
     margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* Counties Resources section */
@@ -228,6 +269,22 @@ include __DIR__ . '/../partials/page-hero.php';
 /* Hidden downloads */
 .download-links {
     display: none;
+}
+
+/* Section title fancy */
+.section-title-fancy {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title-fancy .subtitle {
+    color: var(--turquoise);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
 }
 </style>
 
@@ -291,9 +348,10 @@ include __DIR__ . '/../partials/page-hero.php';
 <!-- ===== Counties Resources Section (Same as Stakeholders) ===== -->
 <section class="counties-resources">
     <div class="container">
-        <div class="section-title" data-aos="fade-up">
-            <h2>Counties Resources</h2>
-            <p>View JKP Counties Resources below</p>
+        <div class="section-title-fancy" data-aos="fade-up">
+            <div class="subtitle">Resources</div>
+            <h2 style="font-family: 'Playfair Display', serif; color: var(--navy);">Counties Resources</h2>
+            <p style="font-family: 'Montserrat', sans-serif; color: #666;">View JKP Counties Resources below</p>
         </div>
 
         <div class="download-rectangles">
@@ -385,21 +443,21 @@ include __DIR__ . '/../partials/page-hero.php';
 <section class="best-city-government remove-div one-second" data-aos="fade-up" style="margin-top: 0;">
     <div class="images-and-overlay">
         <img class="img-fluid" src="/assets/images/01_home/best-city/image-footer.png" alt="Jumuiya Coast Region">
-        <div class="overlay"></div>
+        <div class="overlay" style="background: linear-gradient(135deg, rgba(39,60,103,0.9) 0%, rgba(0,206,209,0.7) 100%);"></div>
     </div>
     <div class="container">
         <div class="city-content text-center">
             <div class="city-title" data-aos="fade-up">
-                <h2 class="text-white">
+                <h2 class="text-white" style="font-family: 'Playfair Display', serif;">
                     <span class="cssanimation lePopUp sequence">Learn More About</span><br>
                     <span class="cssanimation lePopUp sequence">Go Blue Components</span>
                 </h2>
-                <p class="text-white-50 mt-3 mb-4" style="max-width:600px; margin:0 auto;">
+                <p class="text-white-50 mt-3 mb-4" style="max-width:600px; margin:0 auto; font-family: 'Montserrat', sans-serif;">
                     Explore the three components of the Go Blue project and their impact across the six coastal counties.
                 </p>
                 <div class="cityWall-btn d-inline-flex gap-3 justify-content-center flex-wrap">
-                    <a href="/contact">Contact Us <i class="bi bi-arrow-right"></i></a>
-                    <a href="#" onclick="document.getElementById('download-jkp').click(); return false;">Download Resources <i class="bi bi-download"></i></a>
+                    <a href="/contact" style="background: var(--turquoise);">Contact Us <i class="bi bi-arrow-right"></i></a>
+                    <a href="#" onclick="document.getElementById('download-jkp').click(); return false;" style="background: var(--navy);">Download Resources <i class="bi bi-download"></i></a>
                 </div>
             </div>
         </div>
