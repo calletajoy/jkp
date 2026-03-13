@@ -236,7 +236,7 @@ include __DIR__ . '/../../partials/page-hero.php';
     <div class="container">
         <ul class="breadcrumb">
             <li><a href="/">Home</a></li>
-            <li><a href="/services">Services</a></li>
+            
             <li class="active">Go Blue Project</li>
         </ul>
     </div>
