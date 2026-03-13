@@ -11,7 +11,7 @@ $heroSubtitle = 'EU-Funded Coastal Development Initiative';
 
 ob_start();
 
-include __DIR__ . '/../../partials/page-hero.php';
+include __DIR__ . '/../partials/page-hero.php';
 ?>
 
 <style>
@@ -236,7 +236,6 @@ include __DIR__ . '/../../partials/page-hero.php';
     <div class="container">
         <ul class="breadcrumb">
             <li><a href="/">Home</a></li>
-            
             <li class="active">Go Blue Project</li>
         </ul>
     </div>
@@ -431,4 +430,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <?php
 $pageContent = ob_get_clean();
-require __DIR__ . '/../../layout.php';
+require __DIR__ . '/../layout.php';
+?>
