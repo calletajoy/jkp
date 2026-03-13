@@ -239,7 +239,7 @@ include __DIR__ . '/../partials/page-hero.php';
     gap: 10px;
 }
 
-/* Intro section - New Layout */
+/* Intro section */
 .go-blue-intro {
     padding: 60px 0;
     background: white;
@@ -330,10 +330,105 @@ include __DIR__ . '/../partials/page-hero.php';
     font-family: 'Montserrat', sans-serif;
 }
 
+/* Project Description Section */
+.project-description {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.description-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+}
+
+.description-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.description-content h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 30px;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.description-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--turquoise), var(--soft-blue));
+    border-radius: 3px;
+}
+
+.description-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, rgba(0,206,209,0.1), rgba(92,126,192,0.1));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--turquoise);
+    border: 1px solid rgba(0,206,209,0.3);
+}
+
+.stat-text h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 5px;
+    font-family: 'Playfair Display', serif;
+}
+
+.stat-text p {
+    color: #666;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+}
+
+.description-image {
+    flex: 0.8;
+    min-width: 300px;
+}
+
+.partners-image {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px -15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.partners-image:hover {
+    transform: scale(1.02);
+}
+
 /* Components section */
 .components-section {
     padding: 80px 0;
-    background: #f8f9fa;
+    background: white;
 }
 
 .section-title {
@@ -484,6 +579,65 @@ include __DIR__ . '/../partials/page-hero.php';
     </div>
 </section>
 
+<!-- ===== Project Description Section ===== -->
+<section class="project-description">
+    <div class="container">
+        <div class="description-wrapper">
+            <div class="description-content" data-aos="fade-right">
+                <h2>Project Description</h2>
+                <p style="font-family: 'Montserrat', sans-serif; color: #666; line-height: 1.8; margin-bottom: 30px;">Go Blue is a four-year (2021–2024) project funded by the European Union (EU) to support sustainable coastal urban development across Kenya's six coastal counties.</p>
+                
+                <div class="description-stats">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="bi bi-calendar-check"></i>
+                        </div>
+                        <div class="stat-text">
+                            <h4>Project Duration</h4>
+                            <p>2021 – 2024 | Four-year implementation phase</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="bi bi-flag"></i>
+                        </div>
+                        <div class="stat-text">
+                            <h4>Funded By</h4>
+                            <p>European Union (EU) through the Go Blue Action</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <div class="stat-text">
+                            <h4>JKP Counties</h4>
+                            <p>Mombasa, Kwale, Kilifi, Tana River, Lamu, Taita Taveta</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="bi bi-bullseye"></i>
+                        </div>
+                        <div class="stat-text">
+                            <h4>Overall Objective</h4>
+                            <p>To contribute to coastal urban development through sustainable blue economy initiatives</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="description-image" data-aos="fade-left">
+                <img src="/assets/images/go-blue-partners.png" alt="Go Blue Project Partners" class="partners-image">
+                <!-- Note: Replace with your actual partners image path -->
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ===== Go Blue Components ===== -->
 <section class="components-section">
     <div class="container">
@@ -493,21 +647,21 @@ include __DIR__ . '/../partials/page-hero.php';
         </div>
 
         <div class="result-cards">
-            <!-- Component 1 - Fades in from left, then continuous float -->
+            <!-- Component 1 -->
             <div class="result-card">
                 <h3>GoBlue Component 1</h3>
                 <p>Kenya Coastal Counties - Mombasa, Kilifi, Kwale, Tana River, Lamu & Taita Taveta</p>
                 <a href="#" class="read-more">Read more <i class="bi bi-arrow-right"></i></a>
             </div>
             
-            <!-- Component 2 - Fades in from bottom, then continuous float -->
+            <!-- Component 2 -->
             <div class="result-card">
                 <h3>GoBlue Component 2</h3>
                 <p>Kenya Coastal Counties - Mombasa, Kilifi, Kwale, Tana River, Lamu & Taita Taveta</p>
                 <a href="#" class="read-more">Read more <i class="bi bi-arrow-right"></i></a>
             </div>
             
-            <!-- Component 3 - Fades in from right, then continuous float -->
+            <!-- Component 3 -->
             <div class="result-card">
                 <h3>GoBlue Component 3</h3>
                 <p>Kenya Coastal Counties - Mombasa, Kilifi, Kwale, Tana River, Lamu & Taita Taveta</p>
