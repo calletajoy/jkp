@@ -1218,37 +1218,49 @@ document.addEventListener('DOMContentLoaded', function() {
         <img class="img-fluid w-100" src="/assets/images/jum house.webp" alt="Jumuiya Hub" style="height: 600px; object-fit: cover;">
         <div class="overlay" style="background: linear-gradient(135deg, rgba(135,206,235,0.9) 0%, rgba(135,206,235,0.7) 100%);"></div>
         <div class="container position-relative" style="margin-top: -400px;">
-            <div class="city-content text-center text-white">
-                <h2 class="display-3 fw-bold mb-5 text-white" data-aos="fade-up" data-aos-duration="1000">
+            <div class="city-content text-center">
+                <h2 class="display-3 fw-bold mb-5" data-aos="fade-up" data-aos-duration="1000" style="color: white;">
                     <span class="cssanimation lePopUp sequence">Jumuiya Hub</span>
                 </h2>
                 <div class="row g-4">
                     <!-- First card - comes from left -->
                     <div class="col-md-6 col-lg-3" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="300">
-                        <div class="p-4 rounded-4" style="background: #87ceeb; color: white;">
-                            <h5 class="fw-bold mb-3 text-white">Agriculture & Agribusiness</h5>
-                            <p class="small text-white" style="opacity: 0.9;">Promoting sustainable farming, value addition, and market access for coastal farmers.</p>
+                        <div class="stat-card-fancy text-center h-100 p-4">
+                            <div class="stat-icon-fancy mb-3">
+                                <i class="bi bi-tree"></i>
+                            </div>
+                            <h5 class="fw-bold mb-3" style="color: var(--navy);">Agriculture & Agribusiness</h5>
+                            <p class="small text-muted">Promoting sustainable farming, value addition, and market access for coastal farmers.</p>
                         </div>
                     </div>
                     <!-- Second card - comes from left with delay -->
                     <div class="col-md-6 col-lg-3" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200" data-aos-offset="300">
-                        <div class="p-4 rounded-4" style="background: ##87ceeb; color: white;">
-                            <h5 class="fw-bold mb-3 text-white">Blue Economy</h5>
-                            <p class="small text-white" style="opacity: 0.9;">Sustainable use of ocean resources for economic growth, jobs, and healthy marine ecosystems.</p>
+                        <div class="stat-card-fancy text-center h-100 p-4">
+                            <div class="stat-icon-fancy mb-3">
+                                <i class="bi bi-water"></i>
+                            </div>
+                            <h5 class="fw-bold mb-3" style="color: var(--navy);">Blue Economy</h5>
+                            <p class="small text-muted">Sustainable use of ocean resources for economic growth, jobs, and healthy marine ecosystems.</p>
                         </div>
                     </div>
                     <!-- Third card - comes from right -->
                     <div class="col-md-6 col-lg-3" data-aos="fade-left" data-aos-duration="1000" data-aos-offset="300">
-                        <div class="p-4 rounded-4" style="background: #87ceeb; color: white;">
-                            <h5 class="fw-bold mb-3 text-white">Tourism</h5>
-                            <p class="small text-white" style="opacity: 0.9;">Showcasing the beautiful beaches, culture, and heritage of Kenya's coast.</p>
+                        <div class="stat-card-fancy text-center h-100 p-4">
+                            <div class="stat-icon-fancy mb-3">
+                                <i class="bi bi-sun"></i>
+                            </div>
+                            <h5 class="fw-bold mb-3" style="color: var(--navy);">Tourism</h5>
+                            <p class="small text-muted">Showcasing the beautiful beaches, culture, and heritage of Kenya's coast.</p>
                         </div>
                     </div>
                     <!-- Fourth card - comes from right with delay -->
                     <div class="col-md-6 col-lg-3" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" data-aos-offset="300">
-                        <div class="p-4 rounded-4" style="background: #87ceeb; color: white;">
-                            <h5 class="fw-bold mb-3 text-white">Education & Academia</h5>
-                            <p class="small text-white" style="opacity: 0.9;">Investing in quality education, research, and skills development for youth.</p>
+                        <div class="stat-card-fancy text-center h-100 p-4">
+                            <div class="stat-icon-fancy mb-3">
+                                <i class="bi bi-book"></i>
+                            </div>
+                            <h5 class="fw-bold mb-3" style="color: var(--navy);">Education & Academia</h5>
+                            <p class="small text-muted">Investing in quality education, research, and skills development for youth.</p>
                         </div>
                     </div>
                 </div>
