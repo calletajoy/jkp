@@ -146,7 +146,7 @@ include __DIR__ . '/../partials/page-hero.php';
 /* Continuous gentle movement while in view */
 .result-card {
     animation: gentleFloat 4s ease-in-out infinite;
-    animation-delay: 1s; /* Start after initial fade */
+    animation-delay: 1s;
 }
 
 .result-card:nth-child(1) {
@@ -241,7 +241,7 @@ include __DIR__ . '/../partials/page-hero.php';
 
 /* Intro section */
 .go-blue-intro {
-    padding: 60px 0;
+    padding: 60px 0 40px;
     background: white;
 }
 
@@ -249,6 +249,7 @@ include __DIR__ . '/../partials/page-hero.php';
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
+    margin-bottom: 40px;
 }
 
 .intro-left {
@@ -289,7 +290,7 @@ include __DIR__ . '/../partials/page-hero.php';
     background: linear-gradient(135deg, rgba(0,206,209,0.08) 0%, rgba(92,126,192,0.08) 100%);
     padding: 25px 30px;
     border-radius: 10px;
-    margin-top: 30px;
+    margin-top: 20px;
     border-left: 4px solid var(--turquoise);
     font-family: 'Montserrat', sans-serif;
     color: var(--navy);
@@ -300,6 +301,24 @@ include __DIR__ . '/../partials/page-hero.php';
 .steering-committee p {
     margin-bottom: 0;
     font-size: 1rem;
+}
+
+/* Partners Image - Below Intro */
+.partners-image-container {
+    width: 100%;
+    margin: 30px 0 50px;
+    text-align: center;
+}
+
+.partners-image {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px -15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.partners-image:hover {
+    transform: scale(1.02);
 }
 
 /* Right side - Resources */
@@ -414,15 +433,10 @@ include __DIR__ . '/../partials/page-hero.php';
     min-width: 300px;
 }
 
-.partners-image {
+.description-image img {
     width: 100%;
     border-radius: 20px;
     box-shadow: 0 20px 40px -15px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
-}
-
-.partners-image:hover {
-    transform: scale(1.02);
 }
 
 /* Components section */
@@ -576,6 +590,12 @@ include __DIR__ . '/../partials/page-hero.php';
                 </div>
             </div>
         </div>
+        
+        <!-- Partners Image - Placed below the intro text and resources -->
+        <div class="partners-image-container" data-aos="fade-up">
+            <img src="/assets/images/go-blue-partners.png" alt="Go Blue Project Partners" class="partners-image">
+            <!-- Replace with your actual partners image path -->
+        </div>
     </div>
 </section>
 
@@ -631,8 +651,8 @@ include __DIR__ . '/../partials/page-hero.php';
             </div>
             
             <div class="description-image" data-aos="fade-left">
-                <img src="/assets/images/go-blue-partners.png" alt="Go Blue Project Partners" class="partners-image">
-                <!-- Note: Replace with your actual partners image path -->
+                <img src="/assets/images/go-blue-stats.jpg" alt="Go Blue Project Statistics">
+                <!-- Replace with your actual image path -->
             </div>
         </div>
     </div>
