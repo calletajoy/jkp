@@ -26,6 +26,10 @@ $routes = [
     'blueprint'   => 'pages/blueprint.php',
     'local-tender'   => 'pages/local-tender.php',
     'event-details'   => 'pages/event-details.php',
+    'go-blue'   => 'pages/projects/go-blue.php',
+    'innovation-lab'   => 'pages/projects/innovation-lab.php',
+    'jum_2030'   => 'pages/projects/jum_2030.php',
+    'she-stands'   => 'pages/projects/she-stands.php',
 ];
 
 $pageFile = $routes[$requestPath] ?? null;
