@@ -43,10 +43,10 @@
                             <h4 class="ms-3 text-white">Follow Us</h4>
                         </div>
                         <ul class="d-flex mt-2 gap-3 ms-3">
-                            <li><a class="text-white" href="#"><i class="link-icons fa-brands fa-facebook-f"></i></a></li>
-                            <li><a class="text-white" href="#"><i class="link-icons fa-brands fa-twitter"></i></a></li>
-                            <li><a class="text-white" href="#"><i class="link-icons fa-brands fa-linkedin-in"></i></a></li>
-                            <li><a class="text-white" href="#"><i class="link-icons fa-brands fa-instagram"></i></a></li>
+                            <li><a class="text-white" href="https://www.facebook.com/JKPKE/" target="_blank"><i class="link-icons fa-brands fa-facebook-f"></i></a></li>
+                            <li><a class="text-white" href="https://x.com/JumuiyaBloc" target="_blank"><i class="link-icons fa-brands fa-twitter"></i></a></li>
+                            <li><a class="text-white" href="https://www.linkedin.com/company/jumuiya-ya-kaunti-za-pwani-economic-development-bloc/?originalSubdomain=ke" target="_blank"><i class="link-icons fa-brands fa-linkedin-in"></i></a></li>
+                            <li><a class="text-white" href="https://www.instagram.com/jumuiyapwani/" target="_blank"><i class="link-icons fa-brands fa-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -81,9 +81,11 @@
                             <h4 class="ms-3 text-white">Get In Touch</h4>
                         </div>
                         <ul class="d-flex flex-column mt-3 row-gap-2 ms-3">
-                            <li class="text-white mb-2">
-                                <i class="bi bi-geo-alt me-1"></i>
-                                Bustani Close, Links Road – Nyali, Mombasa, Kenya
+                            <li>
+                                <a class="text-white" href="https://maps.google.com/?q=Bustani+Close,+Links+Road+–+Nyali,+Mombasa,+Kenya" target="_blank">
+                                    <i class="bi bi-geo-alt me-1"></i>
+                                    Bustani Close, Links Road – Nyali, Mombasa, Kenya
+                                </a>
                             </li>
                             <li>
                                 <a class="text-white" href="tel:+254777101115">

@@ -30,6 +30,10 @@ function navActive(string $key): string
                             <a href="mailto:info@jumuiya.org">
                                 <i class="bi bi-envelope email"></i> info@jumuiya.org
                             </a>
+                            <!-- Added clickable location in top bar -->
+                            <a href="https://maps.google.com/?q=Bustani+Close,+Links+Road+–+Nyali,+Mombasa,+Kenya" target="_blank" class="text-white d-none d-xl-flex align-items-center gap-1">
+                                <i class="bi bi-geo-alt"></i> Bustani Close, Links Road – Nyali, Mombasa
+                            </a>
                             <span class="text-white d-none d-xl-flex align-items-center gap-1">
                                 <i class="bi bi-clock"></i> Mon – Fri: 8:30am – 5:00pm
                             </span>
@@ -38,10 +42,10 @@ function navActive(string $key): string
                             <div class="socialLink d-flex">
                                 <p class="d-inline-block text-white">Follow on:</p>
                                 <ul class="d-flex">
-                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="https://www.facebook.com/JKPKE/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="https://x.com/JumuiyaBloc" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/company/jumuiya-ya-kaunti-za-pwani-economic-development-bloc/?originalSubdomain=ke" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://www.instagram.com/jumuiyapwani/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -223,7 +227,8 @@ function navActive(string $key): string
                                     <div class="con-info">
                                         <h4 class="text-white">Contact Info</h4>
                                         <ul>
-                                            <li><a href="#"><i class="bi bi-geo-alt"></i> Bustani Close, Links Road – Nyali, Mombasa, Kenya</a></li>
+                                            <!-- Made location clickable -->
+                                            <li><a href="https://maps.google.com/?q=Bustani+Close,+Links+Road+–+Nyali,+Mombasa,+Kenya" target="_blank"><i class="bi bi-geo-alt"></i> Bustani Close, Links Road – Nyali, Mombasa, Kenya</a></li>
                                             <li><a href="tel:+254777101115"><i class="bi bi-telephone phone"></i> +254 777 101 115</a></li>
                                             <li><a href="mailto:info@jumuiya.org"><i class="bi bi-envelope email"></i> info@jumuiya.org</a></li>
                                             <li><a href="mailto:secretariat@jumuiya.org"><i class="bi bi-envelope email"></i> secretariat@jumuiya.org</a></li>
@@ -231,10 +236,10 @@ function navActive(string $key): string
                                     </div>
                                     <div class="social-link">
                                         <ul>
-                                            <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
-                                            <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-                                            <li><a href="#"><i class="bi bi-instagram"></i></a></li>
-                                            <li><a href="#"><i class="bi bi-twitter-x"></i></a></li>
+                                            <li><a href="https://www.linkedin.com/company/jumuiya-ya-kaunti-za-pwani-economic-development-bloc/?originalSubdomain=ke" target="_blank"><i class="bi bi-linkedin"></i></a></li>
+                                            <li><a href="https://www.facebook.com/JKPKE/" target="_blank"><i class="bi bi-facebook"></i></a></li>
+                                            <li><a href="https://www.instagram.com/jumuiyapwani/" target="_blank"><i class="bi bi-instagram"></i></a></li>
+                                            <li><a href="https://x.com/JumuiyaBloc" target="_blank"><i class="bi bi-twitter-x"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
