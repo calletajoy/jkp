@@ -15,7 +15,7 @@ include __DIR__ . '/../partials/page-hero.php';
 ?>
 
 <style>
-/* Download Section Styles - Using JKP Color Palette */
+/* JKP Color Palette */
 :root {
     --turquoise: #00CED1;
     --soft-blue: #5C7EC0;
@@ -23,19 +23,19 @@ include __DIR__ . '/../partials/page-hero.php';
     --navy: #273C67;
 }
 
+/* Download Section Styles */
 .download-rectangles {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 40px;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 .download-rectangle {
-    width: 180px;
+    width: 160px;
     background: var(--turquoise);
     border-radius: 12px;
-    padding: 20px 15px;
+    padding: 15px 12px;
     transition: all 0.3s ease;
     cursor: pointer;
     box-shadow: 0 10px 20px -10px rgba(0,0,0,0.2);
@@ -58,38 +58,37 @@ include __DIR__ . '/../partials/page-hero.php';
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .download-header img {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     object-fit: contain;
-    /* Removed the white filter - GIFs now visible in original colors */
 }
 
 .download-rectangle h4 {
     color: white;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     font-family: 'Playfair Display', serif;
 }
 
 .download-rectangle p {
     color: rgba(255,255,255,0.9);
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Result Cards - Simple cards with read more */
+/* Result Cards */
 .result-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 .result-card {
@@ -98,35 +97,32 @@ include __DIR__ . '/../partials/page-hero.php';
     border-radius: 15px;
     padding: 30px 25px;
     box-shadow: 0 15px 35px -15px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
     text-align: center;
     position: relative;
     overflow: hidden;
-    animation: float 3s ease-in-out infinite;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Different animations for each card */
+.result-card:nth-child(1) {
+    animation-name: fadeInLeft;
 }
 
 .result-card:nth-child(2) {
-    animation-delay: 0.5s;
+    animation-name: fadeInUp;
 }
 
 .result-card:nth-child(3) {
-    animation-delay: 1s;
+    animation-name: fadeInRight;
 }
 
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-10px);
-        box-shadow: 0 25px 45px -15px var(--turquoise);
-    }
-    100% {
-        transform: translateY(0px);
-    }
+/* Continuous floating after initial fade-in */
+.result-card {
+    animation-iteration-count: 1;
 }
 
-.result-card::before {
+.result-card::after {
     content: '';
     position: absolute;
     top: 0;
@@ -139,13 +135,76 @@ include __DIR__ . '/../partials/page-hero.php';
 }
 
 .result-card:hover {
-    animation: none;
     transform: translateY(-10px);
     box-shadow: 0 25px 45px -15px var(--turquoise);
 }
 
-.result-card:hover::before {
+.result-card:hover::after {
     transform: scaleX(1);
+}
+
+/* Continuous gentle movement while in view */
+.result-card {
+    animation: gentleFloat 4s ease-in-out infinite;
+    animation-delay: 1s; /* Start after initial fade */
+}
+
+.result-card:nth-child(1) {
+    animation-delay: 1.2s;
+}
+
+.result-card:nth-child(2) {
+    animation-delay: 1.4s;
+}
+
+.result-card:nth-child(3) {
+    animation-delay: 1.6s;
+}
+
+@keyframes gentleFloat {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px -15px var(--turquoise);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .result-card h3 {
@@ -180,48 +239,100 @@ include __DIR__ . '/../partials/page-hero.php';
     gap: 10px;
 }
 
-/* Intro section */
+/* Intro section - New Layout */
 .go-blue-intro {
-    padding: 40px 0;
+    padding: 60px 0;
     background: white;
 }
 
-.intro-content {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
+.intro-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
 }
 
-.intro-content h1 {
+.intro-left {
+    flex: 1;
+    min-width: 300px;
+}
+
+.intro-left h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     color: var(--navy);
     font-family: 'Playfair Display', serif;
+    position: relative;
+    padding-bottom: 15px;
 }
 
-.intro-content p {
+.intro-left h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--turquoise), var(--soft-blue));
+    border-radius: 3px;
+}
+
+.intro-left p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #666;
+    color: #444;
     margin-bottom: 20px;
     font-family: 'Montserrat', sans-serif;
 }
 
 .steering-committee {
-    background: linear-gradient(135deg, rgba(0,206,209,0.1) 0%, rgba(92,126,192,0.1) 100%);
-    padding: 20px 30px;
+    background: linear-gradient(135deg, rgba(0,206,209,0.08) 0%, rgba(92,126,192,0.08) 100%);
+    padding: 25px 30px;
     border-radius: 10px;
     margin-top: 30px;
-    font-weight: 500;
     border-left: 4px solid var(--turquoise);
     font-family: 'Montserrat', sans-serif;
     color: var(--navy);
+    font-weight: 500;
+    box-shadow: 0 10px 25px -10px rgba(0,0,0,0.1);
+}
+
+.steering-committee p {
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+/* Right side - Resources */
+.intro-right {
+    flex: 0.8;
+    min-width: 350px;
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px -15px rgba(0,0,0,0.15);
+}
+
+.intro-right h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+.intro-right .subtitle {
+    color: var(--turquoise);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* Components section */
 .components-section {
-    padding: 60px 0;
+    padding: 80px 0;
     background: #f8f9fa;
 }
 
@@ -231,57 +342,143 @@ include __DIR__ . '/../partials/page-hero.php';
 }
 
 .section-title h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
     color: var(--navy);
     margin-bottom: 15px;
     font-family: 'Playfair Display', serif;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--turquoise), var(--soft-blue));
+    border-radius: 3px;
 }
 
 .section-title p {
     color: #666;
-    max-width: 700px;
-    margin: 0 auto;
+    max-width: 800px;
+    margin: 20px auto 0;
     font-family: 'Montserrat', sans-serif;
-}
-
-/* Counties Resources section */
-.counties-resources {
-    padding: 60px 0;
-    background: white;
+    line-height: 1.7;
 }
 
 /* Hidden downloads */
 .download-links {
     display: none;
 }
-
-/* Section title fancy */
-.section-title-fancy {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.section-title-fancy .subtitle {
-    color: var(--turquoise);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    font-family: 'Montserrat', sans-serif;
-}
 </style>
 
-<!-- ===== Go Blue Introduction ===== -->
+<!-- ===== Go Blue Introduction with Resources on Right ===== -->
 <section class="go-blue-intro">
     <div class="container">
-        <div class="intro-content" data-aos="fade-up">
-            <h1>The Go Blue Project</h1>
-            <p>Go Blue is a four-year project funded by the European Union (EU) to support Kenya's Coastal Economic Development agenda and Blue Economy strategy through coastal urban actions. Development and implementation of the Go Blue project is a deliberate bottom-up partnership and inclusive organizational formation of the Kenya Coastal communities, County Governments, the National Government of Kenya, and the European Union.</p>
+        <div class="intro-wrapper">
+            <!-- Left side - Text Content -->
+            <div class="intro-left" data-aos="fade-right">
+                <h1>The Go Blue Project</h1>
+                <p>Go Blue is a four-year project funded by the European Union (EU) to support Kenya's Coastal Economic Development agenda and Blue Economy strategy through coastal urban actions. Development and implementation of the Go Blue project is a deliberate bottom-up partnership and inclusive organizational formation of the Kenya Coastal communities, County Governments, the National Government of Kenya, and the European Union.</p>
+                
+                <div class="steering-committee">
+                    <p>A joint steering committee manages the Go Blue Implementation with a technical committee of experts from the following member states (Germany, France, Portugal, Italy) and the United Nations.</p>
+                </div>
+            </div>
             
-            <div class="steering-committee" data-aos="fade-up" data-aos-delay="100">
-                <p class="mb-0">A joint steering committee manages the Go Blue Implementation with a technical committee of experts from the following member states (Germany, France, Portugal, Italy) and the United Nations.</p>
+            <!-- Right side - Resources -->
+            <div class="intro-right" data-aos="fade-left">
+                <div class="subtitle">Resources</div>
+                <h3>Counties Resources</h3>
+                <p style="font-family: 'Montserrat', sans-serif; color: #666; margin-bottom: 25px;">View JKP Counties Resources below</p>
+
+                <div class="download-rectangles">
+                    <!-- JKP Counties Resources (Complete Pack) -->
+                    <div class="download-rectangle">
+                        <div class="download-header">
+                            <img src="/assets/images/icons8-eye.gif" alt="Preview">
+                            <img src="/assets/images/icons8-downloads-folder.gif" alt="Download">
+                        </div>
+                        <h4>JKP Counties</h4>
+                        <p>Complete Resource Pack</p>
+                    </div>
+                    
+                    <!-- GoBlue Mombasa -->
+                    <div class="download-rectangle">
+                        <div class="download-header">
+                            <img src="/assets/images/icons8-eye.gif" alt="Preview">
+                            <img src="/assets/images/icons8-downloads-folder.gif" alt="Download">
+                        </div>
+                        <h4>GoBlue Mombasa</h4>
+                        <p>County Documentation</p>
+                    </div>
+                    
+                    <!-- GoBlue Kwale -->
+                    <div class="download-rectangle">
+                        <div class="download-header">
+                            <img src="/assets/images/icons8-eye.gif" alt="Preview">
+                            <img src="/assets/images/icons8-downloads-folder.gif" alt="Download">
+                        </div>
+                        <h4>GoBlue Kwale</h4>
+                        <p>County Documentation</p>
+                    </div>
+                    
+                    <!-- GoBlue Kilifi -->
+                    <div class="download-rectangle">
+                        <div class="download-header">
+                            <img src="/assets/images/icons8-eye.gif" alt="Preview">
+                            <img src="/assets/images/icons8-downloads-folder.gif" alt="Download">
+                        </div>
+                        <h4>GoBlue Kilifi</h4>
+                        <p>County Documentation</p>
+                    </div>
+                    
+                    <!-- GoBlue Tana River -->
+                    <div class="download-rectangle">
+                        <div class="download-header">
+                            <img src="/assets/images/icons8-eye.gif" alt="Preview">
+                            <img src="/assets/images/icons8-downloads-folder.gif" alt="Download">
+                        </div>
+                        <h4>GoBlue Tana River</h4>
+                        <p>County Documentation</p>
+                    </div>
+                    
+                    <!-- GoBlue Lamu -->
+                    <div class="download-rectangle">
+                        <div class="download-header">
+                            <img src="/assets/images/icons8-eye.gif" alt="Preview">
+                            <img src="/assets/images/icons8-downloads-folder.gif" alt="Download">
+                        </div>
+                        <h4>GoBlue Lamu</h4>
+                        <p>County Documentation</p>
+                    </div>
+                    
+                    <!-- GoBlue Taita Taveta -->
+                    <div class="download-rectangle">
+                        <div class="download-header">
+                            <img src="/assets/images/icons8-eye.gif" alt="Preview">
+                            <img src="/assets/images/icons8-downloads-folder.gif" alt="Download">
+                        </div>
+                        <h4>GoBlue Taita Taveta</h4>
+                        <p>County Documentation</p>
+                    </div>
+                </div>
+                
+                <!-- Hidden Download Links -->
+                <div class="download-links">
+                    <a id="download-jkp" href="/assets/content-files/jkp-counties-complete-resources.pdf" download></a>
+                    <a id="download-mombasa" href="/assets/content-files/Brochure-Mombasa.pdf" download></a>
+                    <a id="download-kwale" href="/assets/content-files/Brochure-Kwale.pdf" download></a>
+                    <a id="download-kilifi" href="/assets/content-files/Brochure-Kilifi.pdf" download></a>
+                    <a id="download-tana" href="/assets/content-files/Brochure-Tana-River.pdf" download></a>
+                    <a id="download-lamu" href="/assets/content-files/Brochure-Lamu.pdf" download></a>
+                    <a id="download-taita" href="/assets/content-files/Brochure-Taita-Taveta.pdf" download></a>
+                </div>
             </div>
         </div>
     </div>
@@ -290,126 +487,32 @@ include __DIR__ . '/../partials/page-hero.php';
 <!-- ===== Go Blue Components ===== -->
 <section class="components-section">
     <div class="container">
-        <div class="section-title" data-aos="fade-up">
+        <div class="section-title">
             <h2>Go Blue Components</h2>
             <p>Enhancing sustained, inclusive and sustainable economic growth with job creation and employment impact. Indirect management with Italian Agency for Development Cooperation, German Cooperation, Portuguese Camões (AICS)</p>
         </div>
 
         <div class="result-cards">
-            <!-- Component 1 -->
+            <!-- Component 1 - Fades in from left, then continuous float -->
             <div class="result-card">
                 <h3>GoBlue Component 1</h3>
                 <p>Kenya Coastal Counties - Mombasa, Kilifi, Kwale, Tana River, Lamu & Taita Taveta</p>
                 <a href="#" class="read-more">Read more <i class="bi bi-arrow-right"></i></a>
             </div>
             
-            <!-- Component 2 -->
+            <!-- Component 2 - Fades in from bottom, then continuous float -->
             <div class="result-card">
                 <h3>GoBlue Component 2</h3>
                 <p>Kenya Coastal Counties - Mombasa, Kilifi, Kwale, Tana River, Lamu & Taita Taveta</p>
                 <a href="#" class="read-more">Read more <i class="bi bi-arrow-right"></i></a>
             </div>
             
-            <!-- Component 3 -->
+            <!-- Component 3 - Fades in from right, then continuous float -->
             <div class="result-card">
                 <h3>GoBlue Component 3</h3>
                 <p>Kenya Coastal Counties - Mombasa, Kilifi, Kwale, Tana River, Lamu & Taita Taveta</p>
                 <a href="#" class="read-more">Read more <i class="bi bi-arrow-right"></i></a>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== Counties Resources Section (Same as Stakeholders) ===== -->
-<section class="counties-resources">
-    <div class="container">
-        <div class="section-title-fancy" data-aos="fade-up">
-            <div class="subtitle">Resources</div>
-            <h2 style="font-family: 'Playfair Display', serif; color: var(--navy);">Counties Resources</h2>
-            <p style="font-family: 'Montserrat', sans-serif; color: #666;">View JKP Counties Resources below</p>
-        </div>
-
-        <div class="download-rectangles">
-            <!-- JKP Counties Resources (Complete Pack) -->
-            <div class="download-rectangle" data-aos="fade-up">
-                <div class="download-header">
-                    <img src="/assets/images/icons8-eye.gif" alt="Preview">
-                    <img src="/assets/images/icons8-downloads-folder.gif" alt="Download">
-                </div>
-                <h4>JKP Counties</h4>
-                <p>Complete Resource Pack</p>
-            </div>
-            
-            <!-- GoBlue Mombasa -->
-            <div class="download-rectangle" data-aos="fade-up" data-aos-delay="50">
-                <div class="download-header">
-                    <img src="/assets/images/icons8-eye.gif" alt="Preview">
-                    <img src="/assets/images/icons8-downloads-folder.gif" alt="Download">
-                </div>
-                <h4>GoBlue Mombasa</h4>
-                <p>County Documentation</p>
-            </div>
-            
-            <!-- GoBlue Kwale -->
-            <div class="download-rectangle" data-aos="fade-up" data-aos-delay="100">
-                <div class="download-header">
-                    <img src="/assets/images/icons8-eye.gif" alt="Preview">
-                    <img src="/assets/images/icons8-downloads-folder.gif" alt="Download">
-                </div>
-                <h4>GoBlue Kwale</h4>
-                <p>County Documentation</p>
-            </div>
-            
-            <!-- GoBlue Kilifi -->
-            <div class="download-rectangle" data-aos="fade-up" data-aos-delay="150">
-                <div class="download-header">
-                    <img src="/assets/images/icons8-eye.gif" alt="Preview">
-                    <img src="/assets/images/icons8-downloads-folder.gif" alt="Download">
-                </div>
-                <h4>GoBlue Kilifi</h4>
-                <p>County Documentation</p>
-            </div>
-            
-            <!-- GoBlue Tana River -->
-            <div class="download-rectangle" data-aos="fade-up" data-aos-delay="200">
-                <div class="download-header">
-                    <img src="/assets/images/icons8-eye.gif" alt="Preview">
-                    <img src="/assets/images/icons8-downloads-folder.gif" alt="Download">
-                </div>
-                <h4>GoBlue Tana River</h4>
-                <p>County Documentation</p>
-            </div>
-            
-            <!-- GoBlue Lamu -->
-            <div class="download-rectangle" data-aos="fade-up" data-aos-delay="250">
-                <div class="download-header">
-                    <img src="/assets/images/icons8-eye.gif" alt="Preview">
-                    <img src="/assets/images/icons8-downloads-folder.gif" alt="Download">
-                </div>
-                <h4>GoBlue Lamu</h4>
-                <p>County Documentation</p>
-            </div>
-            
-            <!-- GoBlue Taita Taveta -->
-            <div class="download-rectangle" data-aos="fade-up" data-aos-delay="300">
-                <div class="download-header">
-                    <img src="/assets/images/icons8-eye.gif" alt="Preview">
-                    <img src="/assets/images/icons8-downloads-folder.gif" alt="Download">
-                </div>
-                <h4>GoBlue Taita Taveta</h4>
-                <p>County Documentation</p>
-            </div>
-        </div>
-        
-        <!-- Hidden Download Links (Same paths as stakeholders) -->
-        <div class="download-links">
-            <a id="download-jkp" href="/assets/content-files/jkp-counties-complete-resources.pdf" download></a>
-            <a id="download-mombasa" href="/assets/content-files/Brochure-Mombasa.pdf" download></a>
-            <a id="download-kwale" href="/assets/content-files/Brochure-Kwale.pdf" download></a>
-            <a id="download-kilifi" href="/assets/content-files/Brochure-Kilifi.pdf" download></a>
-            <a id="download-tana" href="/assets/content-files/Brochure-Tana-River.pdf" download></a>
-            <a id="download-lamu" href="/assets/content-files/Brochure-Lamu.pdf" download></a>
-            <a id="download-taita" href="/assets/content-files/Brochure-Taita-Taveta.pdf" download></a>
         </div>
     </div>
 </section>
@@ -440,7 +543,7 @@ include __DIR__ . '/../partials/page-hero.php';
 </section>
 
 <script>
-// Add click handlers for download rectangles (same as stakeholders)
+// Add click handlers for download rectangles
 document.addEventListener('DOMContentLoaded', function() {
     const rectangles = document.querySelectorAll('.download-rectangle');
     const downloads = [
