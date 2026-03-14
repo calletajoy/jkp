@@ -29,26 +29,22 @@ include __DIR__ . '/../partials/page-hero.php';
     background: white;
 }
 
-.project-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 50px;
+.project-container {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .project-image {
-    flex: 1;
-    min-width: 300px;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .project-image img {
-    width: 100%;
-    max-width: 500px;
+    max-width: 100%;
+    max-height: 500px;
     border-radius: 20px;
     box-shadow: 0 20px 40px -15px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
-    display: block;
-    margin: 0 auto;
 }
 
 .project-image img:hover {
@@ -56,25 +52,26 @@ include __DIR__ . '/../partials/page-hero.php';
 }
 
 .project-content {
-    flex: 1;
-    min-width: 300px;
+    text-align: center;
 }
 
 .project-content h1 {
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--navy);
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     font-family: 'Playfair Display', serif;
     position: relative;
     padding-bottom: 15px;
+    display: inline-block;
 }
 
 .project-content h1::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 80px;
     height: 3px;
     background: linear-gradient(90deg, var(--turquoise), var(--soft-blue));
@@ -83,10 +80,11 @@ include __DIR__ . '/../partials/page-hero.php';
 
 .project-description {
     background: linear-gradient(135deg, rgba(0,206,209,0.05) 0%, rgba(92,126,192,0.05) 100%);
-    padding: 30px;
+    padding: 40px;
     border-radius: 20px;
     border-left: 4px solid var(--turquoise);
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    text-align: left;
 }
 
 .project-description p {
@@ -99,37 +97,46 @@ include __DIR__ . '/../partials/page-hero.php';
 }
 
 .project-details {
-    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
 }
 
 .detail-item {
+    flex: 1;
+    min-width: 200px;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: 15px;
-    margin-bottom: 15px;
 }
 
 .detail-icon {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     background: linear-gradient(135deg, rgba(0,206,209,0.1), rgba(92,126,192,0.1));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--turquoise);
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .detail-text {
     font-family: 'Montserrat', sans-serif;
     color: #666;
-    font-size: 1rem;
+    font-size: 0.95rem;
 }
 
 .detail-text strong {
     color: var(--navy);
     font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
 }
 
 /* Download Section */
@@ -235,28 +242,6 @@ include __DIR__ . '/../partials/page-hero.php';
 }
 
 /* Animation */
-[data-aos="fade-right"] {
-    opacity: 0;
-    transform: translateX(-30px);
-    transition: all 0.6s ease;
-}
-
-[data-aos="fade-right"].aos-animate {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-[data-aos="fade-left"] {
-    opacity: 0;
-    transform: translateX(30px);
-    transition: all 0.6s ease;
-}
-
-[data-aos="fade-left"].aos-animate {
-    opacity: 1;
-    transform: translateX(0);
-}
-
 [data-aos="fade-up"] {
     opacity: 0;
     transform: translateY(30px);
@@ -270,12 +255,17 @@ include __DIR__ . '/../partials/page-hero.php';
 
 /* Responsive */
 @media (max-width: 768px) {
-    .project-wrapper {
+    .project-details {
         flex-direction: column;
+        gap: 20px;
     }
     
     .project-content h1 {
         font-size: 2rem;
+    }
+    
+    .project-description {
+        padding: 25px;
     }
 }
 </style>
@@ -283,14 +273,14 @@ include __DIR__ . '/../partials/page-hero.php';
 <!-- ===== Project Section ===== -->
 <section class="project-section">
     <div class="container">
-        <div class="project-wrapper">
-            <!-- Left side - Image -->
-            <div class="project-image" data-aos="fade-right">
+        <div class="project-container">
+            <!-- Image at the top -->
+            <div class="project-image" data-aos="fade-up">
                 <img src="/assets/images/she stands.png" alt="She Stands Project">
             </div>
             
-            <!-- Right side - Content -->
-            <div class="project-content" data-aos="fade-left">
+            <!-- Content below the image -->
+            <div class="project-content" data-aos="fade-up" data-aos-delay="100">
                 <h1>She Stands Project</h1>
                 
                 <div class="project-description">
@@ -303,7 +293,8 @@ include __DIR__ . '/../partials/page-hero.php';
                             <i class="bi bi-people"></i>
                         </div>
                         <div class="detail-text">
-                            <strong>Target Audience:</strong> Kenyan women across the coastal region
+                            <strong>Target Audience</strong>
+                            Kenyan women across the coastal region
                         </div>
                     </div>
                     
@@ -312,7 +303,8 @@ include __DIR__ . '/../partials/page-hero.php';
                             <i class="bi bi-heart"></i>
                         </div>
                         <div class="detail-text">
-                            <strong>Focus Areas:</strong> Faith-based empowerment, leadership development, community building
+                            <strong>Focus Areas</strong>
+                            Faith-based empowerment, leadership development, community building
                         </div>
                     </div>
                     
@@ -321,7 +313,8 @@ include __DIR__ . '/../partials/page-hero.php';
                             <i class="bi bi-geo-alt"></i>
                         </div>
                         <div class="detail-text">
-                            <strong>Region:</strong> All six coastal counties - Mombasa, Kwale, Kilifi, Tana River, Lamu, Taita Taveta
+                            <strong>Region</strong>
+                            All six coastal counties
                         </div>
                     </div>
                 </div>
@@ -350,7 +343,7 @@ include __DIR__ . '/../partials/page-hero.php';
             </div>
         </div>
 
-        <!-- Hidden Download Link (optional - can use the onclick above instead) -->
+        <!-- Hidden Download Link -->
         <div class="download-links">
             <a id="download-brochure" href="/assets/content-files/SHE STANDS KENYA - Concept sharable version-1.pdf" download></a>
         </div>
@@ -375,7 +368,7 @@ include __DIR__ . '/../partials/page-hero.php';
                 </p>
                 <div class="cityWall-btn d-inline-flex gap-3 justify-content-center flex-wrap">
                     <a href="/contact" style="background: var(--turquoise);">Contact Us <i class="bi bi-arrow-right"></i></a>
-                    <a href="#" onclick="window.open('assets/content-files/SHE STANDS KENYA - Concept sharable version-1.pdf', '_blank'); return false;" style="background: var(--navy);">Download Brochure <i class="bi bi-download"></i></a>
+                    <a href="#" onclick="window.open('/assets/content-files/SHE STANDS KENYA - Concept sharable version-1.pdf', '_blank'); return false;" style="background: var(--navy);">Download Brochure <i class="bi bi-download"></i></a>
                 </div>
             </div>
         </div>
