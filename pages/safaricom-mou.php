@@ -6,7 +6,7 @@
 
 $pageTitle    = 'Jumuiya and Safaricom PLC signed a Memorandum of Understanding';
 $currentPage  = 'news';
-$heroTitle    = 'Jumuiya & Safaricom MOU';
+$heroTitle    = 'Jumuiya and Safaricom PLC signed a Memorandum of Understanding';
 $heroSubtitle = 'Digital Transformation Partnership';
 
 // Add Open Graph and Twitter Card meta tags for social sharing
@@ -110,34 +110,55 @@ include __DIR__ . '/../partials/page-hero.php';
     margin-right: 0.5rem;
 }
 
-/* MOU Badge */
+/* MOU Badge - UPDATED to match blue theme */
 .mou-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.8rem;
-    background: linear-gradient(135deg, var(--safaricom-green), var(--safaricom-teal));
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
     color: white;
-    padding: 0.5rem 1.5rem;
+    padding: 0.7rem 2rem;
     border-radius: 50px;
     font-weight: 600;
     margin-bottom: 2rem;
+    box-shadow: 0 5px 15px -5px rgba(36, 64, 128, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.mou-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -5px rgba(36, 64, 128, 0.5);
 }
 
 .mou-badge i {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    color: white;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
 }
 
-/* Featured Image */
+/* Featured Image - IMPROVED for better image display */
 .featured-image {
     margin-bottom: 2.5rem;
+    background: #f5f5f5;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .featured-image img {
     width: 100%;
+    height: auto;
     max-height: 500px;
-    object-fit: cover;
+    object-fit: contain; /* Changed from 'cover' to 'contain' to show full image */
     border-radius: 20px;
     box-shadow: 0 20px 40px -15px rgba(0,0,0,0.2);
+    background-color: #f5f5f5;
 }
 
 /* Article Content */
@@ -183,7 +204,7 @@ include __DIR__ . '/../partials/page-hero.php';
     border-radius: 3px;
 }
 
-/* Partner Cards */
+/* Partner Cards - UPDATED to use blue theme */
 .partner-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -203,14 +224,14 @@ include __DIR__ . '/../partials/page-hero.php';
 
 .partner-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 25px 40px -15px var(--safaricom-green);
-    border-color: var(--safaricom-green);
+    box-shadow: 0 25px 40px -15px var(--primary-blue);
+    border-color: var(--primary-blue);
 }
 
 .partner-logo {
     width: 100px;
     height: 100px;
-    background: linear-gradient(135deg, var(--safaricom-green), var(--safaricom-teal));
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -230,8 +251,8 @@ include __DIR__ . '/../partials/page-hero.php';
 
 .partner-card .partner-type {
     display: inline-block;
-    background: rgba(0,169,79,0.1);
-    color: var(--safaricom-green);
+    background: rgba(110,193,228,0.1);
+    color: var(--primary-blue);
     padding: 0.3rem 1rem;
     border-radius: 50px;
     font-size: 0.8rem;
@@ -239,7 +260,7 @@ include __DIR__ . '/../partials/page-hero.php';
     margin-bottom: 1rem;
 }
 
-/* Image Grid - 2 images */
+/* Image Grid - IMPROVED for better image display */
 .image-grid {
     margin: 3rem 0;
 }
@@ -266,26 +287,31 @@ include __DIR__ . '/../partials/page-hero.php';
     box-shadow: 0 10px 20px -10px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
     aspect-ratio: 16/9;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .grid-item:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 30px -10px var(--safaricom-green);
+    box-shadow: 0 20px 30px -10px var(--primary-blue);
     z-index: 2;
 }
 
 .grid-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Changed from 'cover' to 'contain' */
     transition: transform 0.5s ease;
+    background-color: #f5f5f5;
 }
 
 .grid-item:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
-/* Digital Solutions Grid */
+/* Digital Solutions Grid - UPDATED to use blue theme */
 .solutions-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -294,25 +320,25 @@ include __DIR__ . '/../partials/page-hero.php';
 }
 
 .solution-card {
-    background: linear-gradient(135deg, rgba(0,169,79,0.05) 0%, rgba(27,124,124,0.05) 100%);
+    background: linear-gradient(135deg, rgba(110,193,228,0.05) 0%, rgba(36,64,128,0.05) 100%);
     padding: 1.8rem;
     border-radius: 15px;
     text-align: center;
     transition: all 0.3s ease;
-    border: 1px solid rgba(0,169,79,0.1);
+    border: 1px solid rgba(110,193,228,0.1);
 }
 
 .solution-card:hover {
     transform: translateY(-8px);
     background: white;
-    box-shadow: 0 20px 30px -10px var(--safaricom-green);
-    border-color: var(--safaricom-green);
+    box-shadow: 0 20px 30px -10px var(--primary-blue);
+    border-color: var(--primary-blue);
 }
 
 .solution-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, var(--safaricom-green), var(--safaricom-teal));
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -337,7 +363,7 @@ include __DIR__ . '/../partials/page-hero.php';
     font-size: 0.95rem;
 }
 
-/* Objectives List */
+/* Objectives List - UPDATED to use blue theme */
 .objectives-list {
     list-style: none;
     padding: 0;
@@ -356,14 +382,14 @@ include __DIR__ . '/../partials/page-hero.php';
 }
 
 .objective-item:hover {
-    background: linear-gradient(135deg, rgba(0,169,79,0.05), rgba(27,124,124,0.05));
+    background: linear-gradient(135deg, rgba(110,193,228,0.05), rgba(36,64,128,0.05));
     transform: translateX(5px);
 }
 
 .objective-icon {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, var(--safaricom-green), var(--safaricom-teal));
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -380,9 +406,9 @@ include __DIR__ . '/../partials/page-hero.php';
     font-weight: 500;
 }
 
-/* Stats Highlight */
+/* Stats Highlight - UPDATED to use blue theme */
 .stats-highlight {
-    background: linear-gradient(135deg, rgba(0,169,79,0.1) 0%, rgba(27,124,124,0.1) 100%);
+    background: linear-gradient(135deg, rgba(110,193,228,0.1) 0%, rgba(36,64,128,0.1) 100%);
     padding: 2rem;
     border-radius: 15px;
     margin: 2rem 0;
@@ -399,7 +425,7 @@ include __DIR__ . '/../partials/page-hero.php';
 .stat-number {
     font-size: 2.2rem;
     font-weight: 800;
-    color: var(--safaricom-green);
+    color: var(--primary-blue);
     font-family: 'Playfair Display', serif;
     line-height: 1;
 }
@@ -411,7 +437,7 @@ include __DIR__ . '/../partials/page-hero.php';
     font-size: 0.9rem;
 }
 
-/* County Tags */
+/* County Tags - UPDATED to use blue theme */
 .county-tags {
     display: flex;
     flex-wrap: wrap;
@@ -421,23 +447,23 @@ include __DIR__ . '/../partials/page-hero.php';
 }
 
 .county-tag {
-    background: rgba(0,169,79,0.1);
+    background: rgba(110,193,228,0.1);
     color: var(--dark-blue);
     padding: 0.6rem 1.5rem;
     border-radius: 50px;
     font-size: 0.95rem;
     font-weight: 500;
-    border: 1px solid rgba(0,169,79,0.3);
+    border: 1px solid rgba(110,193,228,0.3);
     transition: all 0.3s ease;
 }
 
 .county-tag:hover {
-    background: var(--safaricom-green);
+    background: var(--primary-blue);
     color: white;
     transform: translateY(-2px);
 }
 
-/* Partners Grid */
+/* Partners Grid - UPDATED to use blue theme */
 .partners-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -457,8 +483,8 @@ include __DIR__ . '/../partials/page-hero.php';
 .partner-item:hover {
     background: white;
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px -10px var(--safaricom-green);
-    border-color: var(--safaricom-green);
+    box-shadow: 0 10px 20px -10px var(--primary-blue);
+    border-color: var(--primary-blue);
 }
 
 .partner-item h5 {
@@ -468,13 +494,13 @@ include __DIR__ . '/../partials/page-hero.php';
     margin: 0;
 }
 
-/* Quote Card */
+/* Quote Card - UPDATED to use blue theme */
 .quote-card {
-    background: linear-gradient(135deg, rgba(0,169,79,0.05) 0%, rgba(27,124,124,0.05) 100%);
+    background: linear-gradient(135deg, rgba(110,193,228,0.05) 0%, rgba(36,64,128,0.05) 100%);
     padding: 2rem;
     border-radius: 15px;
     margin: 2rem 0;
-    border-left: 4px solid var(--safaricom-green);
+    border-left: 4px solid var(--primary-blue);
     font-style: italic;
 }
 
@@ -487,7 +513,7 @@ include __DIR__ . '/../partials/page-hero.php';
 
 .quote-author {
     font-weight: 600;
-    color: var(--safaricom-green);
+    color: var(--primary-blue);
 }
 
 /* Share Buttons */
@@ -789,7 +815,7 @@ include __DIR__ . '/../partials/page-hero.php';
     font-weight: 600;
 }
 
-/* Previous News */
+/* Previous News - IMPROVED image display */
 .prev-news-item {
     display: flex;
     align-items: center;
@@ -811,12 +837,21 @@ include __DIR__ . '/../partials/page-hero.php';
     min-width: 70px;
     border-radius: 8px;
     overflow: hidden;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .prev-news-thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.prev-news-thumb img:hover {
+    transform: scale(1.1);
 }
 
 .prev-news-info h6 {
@@ -904,6 +939,38 @@ include __DIR__ . '/../partials/page-hero.php';
     transform: translateX(-5px);
 }
 
+/* Image error handling */
+img[src=""], 
+img:not([src]) {
+    opacity: 0;
+}
+
+/* Image loading animation */
+.image-loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
     .solutions-grid,
@@ -950,6 +1017,19 @@ include __DIR__ . '/../partials/page-hero.php';
     .share-buttons {
         justify-content: center;
     }
+    
+    .featured-image {
+        max-height: 300px;
+    }
+    
+    .featured-image img {
+        max-height: 300px;
+    }
+    
+    .mou-badge {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
+    }
 }
 </style>
 
@@ -974,15 +1054,18 @@ include __DIR__ . '/../partials/page-hero.php';
                     </div>
                 </header>
 
-                <!-- MOU Badge -->
+                <!-- MOU Badge - Now in blue theme -->
                 <div class="mou-badge" data-aos="fade-up">
                     <i class="bi bi-file-earmark-text"></i>
                     Memorandum of Understanding
                 </div>
 
-                <!-- Featured Image -->
+                <!-- Featured Image - IMPROVED with error handling -->
                 <div class="featured-image" data-aos="fade-up" data-aos-delay="50">
-                    <img src="/assets/images/saf-plc.png" alt="Jumuiya and Safaricom PLC Signing Ceremony">
+                    <img src="/assets/images/saf-plc.png" 
+                         alt="Jumuiya and Safaricom PLC Signing Ceremony"
+                         onerror="this.onerror=null; this.src='/assets/images/placeholder.png'; this.classList.add('error');"
+                         loading="lazy">
                 </div>
 
                 <!-- Article Content -->
@@ -1007,15 +1090,21 @@ include __DIR__ . '/../partials/page-hero.php';
                     </div>
                 </div>
 
-                <!-- Image Grid - 2 images -->
+                <!-- Image Grid - 2 images - IMPROVED with error handling -->
                 <div class="image-grid" data-aos="fade-up">
                     <h3>Signing Ceremony</h3>
                     <div class="grid-container-2col">
                         <div class="grid-item">
-                            <img src="/assets/images/safaricom-1.jpg" alt="Signing Ceremony 1">
+                            <img src="/assets/images/saf-plc (1).png" 
+                                 alt="Signing Ceremony 1"
+                                 onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+                                 loading="lazy">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/safaricom-2.jpg" alt="Signing Ceremony 2">
+                            <img src="/assets/images/saf-plc (2).png" 
+                                 alt="Signing Ceremony 2"
+                                 onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+                                 loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -1238,12 +1327,15 @@ include __DIR__ . '/../partials/page-hero.php';
                     </ul>
                 </div>
 
-                <!-- Previous News Widget -->
+                <!-- Previous News Widget - IMPROVED image display -->
                 <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="150">
                     <h4 class="widget-title">Previous News</h4>
                     <div class="prev-news-item">
                         <div class="prev-news-thumb">
-                            <img src="/assets/images/rege.png" alt="ReFaCE Forum">
+                            <img src="/assets/images/rege.png" 
+                                 alt="ReFaCE Forum"
+                                 onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+                                 loading="lazy">
                         </div>
                         <div class="prev-news-info">
                             <h6>Regenerative Fashion Collective Exchange (ReFaCE) Forum 2023</h6>
@@ -1252,7 +1344,10 @@ include __DIR__ . '/../partials/page-hero.php';
                     </div>
                     <div class="prev-news-item">
                         <div class="prev-news-thumb">
-                            <img src="/assets/images/jum-eco.png" alt="Italy Mission">
+                            <img src="/assets/images/jum-eco.png" 
+                                 alt="Italy Mission"
+                                 onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+                                 loading="lazy">
                         </div>
                         <div class="prev-news-info">
                             <h6>Jumuiya Blue Economy Mission to Italy</h6>
@@ -1261,7 +1356,10 @@ include __DIR__ . '/../partials/page-hero.php';
                     </div>
                     <div class="prev-news-item">
                         <div class="prev-news-thumb">
-                            <img src="/assets/images/eth-oromia.png" alt="Ethiopia Visit">
+                            <img src="/assets/images/eth-oromia.png" 
+                                 alt="Ethiopia Visit"
+                                 onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+                                 loading="lazy">
                         </div>
                         <div class="prev-news-info">
                             <h6>Ethiopian Oromia Tourism Commission courtesy visit</h6>
@@ -1319,6 +1417,20 @@ document.addEventListener('DOMContentLoaded', function() {
         // Here you would normally send the comment to your server
         alert('Thank you for your comment! (This is a demo - comment would be saved to database)');
         this.reset();
+    });
+    
+    // Add loading animation to images
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        if (!img.complete) {
+            img.parentElement?.classList.add('image-loading');
+            img.addEventListener('load', function() {
+                this.parentElement?.classList.remove('image-loading');
+            });
+            img.addEventListener('error', function() {
+                this.parentElement?.classList.remove('image-loading');
+            });
+        }
     });
 });
 </script>

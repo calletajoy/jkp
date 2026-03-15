@@ -6,7 +6,7 @@
 
 $pageTitle    = 'European Union Heads of Mission visit to the Coast Region on Blue Economy';
 $currentPage  = 'news';
-$heroTitle    = 'EU Heads of Mission Visit';
+$heroTitle    = 'European Union Heads of Mission visit to the Coast Region on Blue Economy';
 $heroSubtitle = 'Blue Economy Tour of Coast Region';
 
 // Add Open Graph and Twitter Card meta tags for social sharing

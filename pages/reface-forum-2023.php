@@ -111,34 +111,55 @@ include __DIR__ . '/../partials/page-hero.php';
     margin-right: 0.5rem;
 }
 
-/* Forum Badge */
+/* Forum Badge - UPDATED to match blue theme */
 .forum-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.8rem;
-    background: linear-gradient(135deg, var(--fashion-purple), var(--fashion-pink));
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
     color: white;
-    padding: 0.5rem 1.5rem;
+    padding: 0.7rem 2rem;
     border-radius: 50px;
     font-weight: 600;
     margin-bottom: 2rem;
+    box-shadow: 0 5px 15px -5px rgba(36, 64, 128, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.forum-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -5px rgba(36, 64, 128, 0.5);
 }
 
 .forum-badge i {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    color: white;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
 }
 
-/* Featured Image */
+/* Featured Image - IMPROVED for better image display */
 .featured-image {
     margin-bottom: 2.5rem;
+    background: #f5f5f5;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .featured-image img {
     width: 100%;
+    height: auto;
     max-height: 500px;
-    object-fit: cover;
+    object-fit: contain; /* Changed from 'cover' to 'contain' to show full image */
     border-radius: 20px;
     box-shadow: 0 20px 40px -15px rgba(0,0,0,0.2);
+    background-color: #f5f5f5;
 }
 
 /* Article Content */
@@ -184,7 +205,7 @@ include __DIR__ . '/../partials/page-hero.php';
     border-radius: 3px;
 }
 
-/* C3 Model */
+/* C3 Model - UPDATED to use blue theme */
 .c3-container {
     display: flex;
     justify-content: space-between;
@@ -209,8 +230,8 @@ include __DIR__ . '/../partials/page-hero.php';
 
 .c3-step:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 30px -10px var(--fashion-purple);
-    border-color: var(--fashion-purple);
+    box-shadow: 0 20px 30px -10px var(--primary-blue);
+    border-color: var(--primary-blue);
 }
 
 .c3-step:not(:last-child)::after {
@@ -220,7 +241,7 @@ include __DIR__ . '/../partials/page-hero.php';
     top: 50%;
     transform: translateY(-50%);
     font-size: 2rem;
-    color: var(--fashion-purple);
+    color: var(--primary-blue);
     font-weight: 300;
     z-index: 2;
 }
@@ -228,7 +249,7 @@ include __DIR__ . '/../partials/page-hero.php';
 .c3-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, var(--fashion-purple), var(--fashion-pink));
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -251,7 +272,7 @@ include __DIR__ . '/../partials/page-hero.php';
     margin: 0;
 }
 
-/* Stakeholders Grid */
+/* Stakeholders Grid - UPDATED to use blue theme */
 .stakeholders-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -271,14 +292,14 @@ include __DIR__ . '/../partials/page-hero.php';
 .stakeholder-card:hover {
     background: white;
     transform: translateY(-5px);
-    box-shadow: 0 15px 25px -10px var(--fashion-purple);
-    border-color: var(--fashion-purple);
+    box-shadow: 0 15px 25px -10px var(--primary-blue);
+    border-color: var(--primary-blue);
 }
 
 .stakeholder-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--fashion-purple), var(--fashion-pink));
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -295,7 +316,7 @@ include __DIR__ . '/../partials/page-hero.php';
     margin: 0;
 }
 
-/* Image Grid - 6 images (3x2) */
+/* Image Grid - IMPROVED for better image display */
 .image-grid {
     margin: 3rem 0;
 }
@@ -323,26 +344,31 @@ include __DIR__ . '/../partials/page-hero.php';
     box-shadow: 0 10px 20px -10px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
     aspect-ratio: 4/3;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .grid-item:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 30px -10px var(--fashion-purple);
+    box-shadow: 0 20px 30px -10px var(--primary-blue);
     z-index: 2;
 }
 
 .grid-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Changed from 'cover' to 'contain' */
     transition: transform 0.5s ease;
+    background-color: #f5f5f5;
 }
 
 .grid-item:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
-/* Value Chain Tags */
+/* Value Chain Tags - UPDATED to use blue theme */
 .value-chain {
     display: flex;
     flex-wrap: wrap;
@@ -351,25 +377,25 @@ include __DIR__ . '/../partials/page-hero.php';
 }
 
 .chain-tag {
-    background: linear-gradient(135deg, rgba(155,89,182,0.1), rgba(232,62,140,0.1));
+    background: rgba(110,193,228,0.1);
     color: var(--dark-blue);
     padding: 0.6rem 1.5rem;
     border-radius: 50px;
     font-size: 0.95rem;
     font-weight: 500;
-    border: 1px solid rgba(155,89,182,0.3);
+    border: 1px solid rgba(110,193,228,0.3);
     transition: all 0.3s ease;
 }
 
 .chain-tag:hover {
-    background: linear-gradient(135deg, var(--fashion-purple), var(--fashion-pink));
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
     color: white;
     transform: translateY(-2px);
 }
 
-/* Stats Highlight */
+/* Stats Highlight - UPDATED to use blue theme */
 .stats-highlight {
-    background: linear-gradient(135deg, rgba(155,89,182,0.1) 0%, rgba(232,62,140,0.1) 100%);
+    background: linear-gradient(135deg, rgba(110,193,228,0.1) 0%, rgba(36,64,128,0.1) 100%);
     padding: 2rem;
     border-radius: 15px;
     margin: 2rem 0;
@@ -386,7 +412,7 @@ include __DIR__ . '/../partials/page-hero.php';
 .stat-number {
     font-size: 2.2rem;
     font-weight: 800;
-    color: var(--fashion-purple);
+    color: var(--primary-blue);
     font-family: 'Playfair Display', serif;
     line-height: 1;
 }
@@ -398,15 +424,15 @@ include __DIR__ . '/../partials/page-hero.php';
     font-size: 0.9rem;
 }
 
-/* Quote Card */
+/* Quote Card - UPDATED to use blue theme */
 .quote-card {
-    background: linear-gradient(135deg, rgba(155,89,182,0.05) 0%, rgba(232,62,140,0.05) 100%);
+    background: linear-gradient(135deg, rgba(110,193,228,0.05) 0%, rgba(36,64,128,0.05) 100%);
     padding: 2.5rem;
     border-radius: 20px;
     margin: 3rem 0;
     text-align: center;
     position: relative;
-    border: 1px solid rgba(155,89,182,0.2);
+    border: 1px solid rgba(110,193,228,0.2);
 }
 
 .quote-card::before {
@@ -416,7 +442,7 @@ include __DIR__ . '/../partials/page-hero.php';
     left: 50%;
     transform: translateX(-50%);
     font-size: 6rem;
-    color: rgba(155,89,182,0.2);
+    color: rgba(110,193,228,0.2);
     font-family: serif;
     line-height: 1;
 }
@@ -433,14 +459,14 @@ include __DIR__ . '/../partials/page-hero.php';
 
 .quote-author {
     font-weight: 600;
-    color: var(--fashion-purple);
+    color: var(--primary-blue);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
 }
 
-/* Forum Objectives */
+/* Forum Objectives - UPDATED to use blue theme */
 .objectives-list {
     list-style: none;
     padding: 0;
@@ -459,14 +485,14 @@ include __DIR__ . '/../partials/page-hero.php';
 }
 
 .objective-item:hover {
-    background: linear-gradient(135deg, rgba(155,89,182,0.05), rgba(232,62,140,0.05));
+    background: linear-gradient(135deg, rgba(110,193,228,0.05), rgba(36,64,128,0.05));
     transform: translateX(5px);
 }
 
 .objective-icon {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, var(--fashion-purple), var(--fashion-pink));
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -781,7 +807,7 @@ include __DIR__ . '/../partials/page-hero.php';
     font-weight: 600;
 }
 
-/* Previous News */
+/* Previous News - IMPROVED image display */
 .prev-news-item {
     display: flex;
     align-items: center;
@@ -803,12 +829,21 @@ include __DIR__ . '/../partials/page-hero.php';
     min-width: 70px;
     border-radius: 8px;
     overflow: hidden;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .prev-news-thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.prev-news-thumb img:hover {
+    transform: scale(1.1);
 }
 
 .prev-news-info h6 {
@@ -896,6 +931,38 @@ include __DIR__ . '/../partials/page-hero.php';
     transform: translateX(-5px);
 }
 
+/* Image error handling */
+img[src=""], 
+img:not([src]) {
+    opacity: 0;
+}
+
+/* Image loading animation */
+.image-loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
     .stakeholders-grid {
@@ -963,6 +1030,19 @@ include __DIR__ . '/../partials/page-hero.php';
     .share-buttons {
         justify-content: center;
     }
+    
+    .featured-image {
+        max-height: 300px;
+    }
+    
+    .featured-image img {
+        max-height: 300px;
+    }
+    
+    .forum-badge {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
+    }
 }
 </style>
 
@@ -987,15 +1067,18 @@ include __DIR__ . '/../partials/page-hero.php';
                     </div>
                 </header>
 
-                <!-- Forum Badge -->
+                <!-- Forum Badge - Now in blue theme -->
                 <div class="forum-badge" data-aos="fade-up">
                     <i class="bi bi-stars"></i>
                     ReFaCE Forum 2023
                 </div>
 
-                <!-- Featured Image -->
+                <!-- Featured Image - IMPROVED with error handling -->
                 <div class="featured-image" data-aos="fade-up" data-aos-delay="50">
-                    <img src="/assets/images/rege.png" alt="ReFaCE Forum 2023">
+                    <img src="/assets/images/rege.png" 
+                         alt="ReFaCE Forum 2023"
+                         onerror="this.onerror=null; this.src='/assets/images/placeholder.png'; this.classList.add('error');"
+                         loading="lazy">
                 </div>
 
                 <!-- Article Content -->
@@ -1060,33 +1143,51 @@ include __DIR__ . '/../partials/page-hero.php';
                     </div>
                 </div>
 
-                <!-- Image Grid - 6 images (3x2) -->
+                <!-- Image Grid - 6 images (3x2) - IMPROVED with error handling -->
                 <div class="image-grid" data-aos="fade-up">
                     <h3>Forum Highlights</h3>
                     
                     <!-- Row 1 -->
                     <div class="grid-container-3col">
                         <div class="grid-item">
-                            <img src="/assets/images/reface (1).png" alt="ReFaCE Forum Session 1">
+                            <img src="/assets/images/reface (1).png" 
+                                 alt="ReFaCE Forum Session 1"
+                                 onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+                                 loading="lazy">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/reface (2).png" alt="ReFaCE Forum Session 2">
+                            <img src="/assets/images/reface (2).png" 
+                                 alt="ReFaCE Forum Session 2"
+                                 onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+                                 loading="lazy">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/reface (3).png" alt="ReFaCE Forum Session 3">
+                            <img src="/assets/images/reface (3).png" 
+                                 alt="ReFaCE Forum Session 3"
+                                 onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+                                 loading="lazy">
                         </div>
                     </div>
                     
                     <!-- Row 2 -->
                     <div class="grid-container-3col">
                         <div class="grid-item">
-                            <img src="/assets/images/reface (4).png" alt="ReFaCE Forum Session 4">
+                            <img src="/assets/images/reface (4).png" 
+                                 alt="ReFaCE Forum Session 4"
+                                 onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+                                 loading="lazy">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/reface (5).png" alt="ReFaCE Forum Session 5">
+                            <img src="/assets/images/reface (5).png" 
+                                 alt="ReFaCE Forum Session 5"
+                                 onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+                                 loading="lazy">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/reface (6).png" alt="ReFaCE Forum Session 6">
+                            <img src="/assets/images/reface (6).png" 
+                                 alt="ReFaCE Forum Session 6"
+                                 onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+                                 loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -1150,9 +1251,6 @@ include __DIR__ . '/../partials/page-hero.php';
                         <i class="bi bi-mic"></i> ReFaCE Forum Organizers
                     </div>
                 </div>
-
-                <!-- Duplicate content note - appears only once in the actual page -->
-                <!-- The second instance of the content in your request appears to be a duplicate, so I've omitted it -->
 
                 <!-- Share Buttons -->
                 <div class="share-section" data-aos="fade-up">
@@ -1272,12 +1370,15 @@ include __DIR__ . '/../partials/page-hero.php';
                     </ul>
                 </div>
 
-                <!-- Previous News Widget -->
+                <!-- Previous News Widget - IMPROVED image display -->
                 <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="150">
                     <h4 class="widget-title">Previous News</h4>
                     <div class="prev-news-item">
                         <div class="prev-news-thumb">
-                            <img src="/assets/images/jum-eco.png" alt="Italy Mission">
+                            <img src="/assets/images/jum-eco.png" 
+                                 alt="Italy Mission"
+                                 onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+                                 loading="lazy">
                         </div>
                         <div class="prev-news-info">
                             <h6>Jumuiya Blue Economy Mission to Italy</h6>
@@ -1286,7 +1387,10 @@ include __DIR__ . '/../partials/page-hero.php';
                     </div>
                     <div class="prev-news-item">
                         <div class="prev-news-thumb">
-                            <img src="/assets/images/eth-oromia.png" alt="Ethiopia Visit">
+                            <img src="/assets/images/eth-oromia.png" 
+                                 alt="Ethiopia Visit"
+                                 onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+                                 loading="lazy">
                         </div>
                         <div class="prev-news-info">
                             <h6>Ethiopian Oromia Tourism Commission courtesy visit</h6>
@@ -1295,7 +1399,10 @@ include __DIR__ . '/../partials/page-hero.php';
                     </div>
                     <div class="prev-news-item">
                         <div class="prev-news-thumb">
-                            <img src="/assets/images/trade mission.png" alt="Trade Mission">
+                            <img src="/assets/images/trade mission.png" 
+                                 alt="Trade Mission"
+                                 onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+                                 loading="lazy">
                         </div>
                         <div class="prev-news-info">
                             <h6>Jumuiya conducts Trade Mission to the USA</h6>
@@ -1353,6 +1460,20 @@ document.addEventListener('DOMContentLoaded', function() {
         // Here you would normally send the comment to your server
         alert('Thank you for your comment! (This is a demo - comment would be saved to database)');
         this.reset();
+    });
+    
+    // Add loading animation to images
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        if (!img.complete) {
+            img.parentElement?.classList.add('image-loading');
+            img.addEventListener('load', function() {
+                this.parentElement?.classList.remove('image-loading');
+            });
+            img.addEventListener('error', function() {
+                this.parentElement?.classList.remove('image-loading');
+            });
+        }
     });
 });
 </script>

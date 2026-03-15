@@ -109,24 +109,59 @@ include __DIR__ . '/../partials/page-hero.php';
     margin-right: 0.5rem;
 }
 
-/* Press Release Badge */
+/* Press Release Badge - UPDATED to match blue theme */
 .press-release-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.8rem;
-    background: linear-gradient(135deg, var(--usa-red), var(--usa-blue));
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
     color: white;
-    padding: 0.5rem 1.5rem;
+    padding: 0.7rem 2rem;
     border-radius: 50px;
     font-weight: 600;
     margin-bottom: 2rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 0.9rem;
+    box-shadow: 0 5px 15px -5px rgba(36, 64, 128, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.press-release-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -5px rgba(36, 64, 128, 0.5);
 }
 
 .press-release-badge i {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    color: white;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+}
+
+/* Optional: Alternative blue theme variations */
+
+/* Option 2: Solid blue with subtle gradient */
+.press-release-badge.solid-blue {
+    background: linear-gradient(to right, var(--primary-blue), var(--soft-blue));
+}
+
+/* Option 3: Darker blue for more contrast */
+.press-release-badge.darker-blue {
+    background: linear-gradient(135deg, var(--dark-blue), #1a2e5c);
+}
+
+/* Option 4: With turquoise accent */
+.press-release-badge.turquoise-accent {
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue), var(--turquoise));
+    background-size: 200% 200%;
+    animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* Featured Image */
@@ -488,7 +523,7 @@ include __DIR__ . '/../partials/page-hero.php';
 
 /* Regional Stats */
 .region-stats {
-    background: linear-gradient(135deg, var(--usa-blue), var(--dark-blue));
+    background: linear-gradient(135deg, var(--dark-blue), #1a2e5c);
     color: white;
     padding: 2rem;
     border-radius: 15px;
@@ -1104,6 +1139,11 @@ include __DIR__ . '/../partials/page-hero.php';
     .stats-row {
         grid-template-columns: 1fr;
     }
+    
+    .press-release-badge {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.8rem;
+    }
 }
 </style>
 
@@ -1128,7 +1168,7 @@ include __DIR__ . '/../partials/page-hero.php';
                     </div>
                 </header>
 
-                <!-- Press Release Badge -->
+                <!-- Press Release Badge - Now in blue theme -->
                 <div class="press-release-badge" data-aos="fade-up">
                     <i class="bi bi-file-earmark-text"></i>
                     Press Release
