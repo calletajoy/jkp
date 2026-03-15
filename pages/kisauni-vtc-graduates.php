@@ -6,7 +6,7 @@
 
 $pageTitle    = 'Kisauni VTC Graduates 513 Students in Blue Economy Courses';
 $currentPage  = 'news';
-$heroTitle    = 'Kisauni VTC Graduates 513 Students in Blue Economy Courses';
+$heroTitle    = 'Kisauni VTC Graduates Article';
 $heroSubtitle = 'Kisauni VTC Graduation';
 
 ob_start();
