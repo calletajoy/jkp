@@ -493,7 +493,7 @@ include __DIR__ . '/../partials/page-hero.php';
             
             <!-- Right side - Image -->
             <div class="background-image" data-aos="fade-left">
-                <img src="/assets/images/innovation-lab-bg.jpg" alt="Jumuiya Innovation Lab">
+                <img src="/assets/images/inno lab 2.png" alt="Jumuiya Innovation Lab">
                 <!-- Replace with your actual image path -->
             </div>
         </div>
@@ -636,7 +636,7 @@ include __DIR__ . '/../partials/page-hero.php';
             
             <!-- Right side - Image (positioned slightly lower) -->
             <div class="structure-image" data-aos="fade-left">
-                <img src="/assets/images/innovation-lab-structure.jpg" alt="Innovation Lab Structure">
+                <img src="/assets/images/inno lab.png" alt="Innovation Lab Structure">
                 <!-- Replace with your actual image path -->
             </div>
         </div>
