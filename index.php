@@ -32,6 +32,19 @@ $routes = [
     'jum_2030'   => 'pages/jum_2030.php',
     'she-stands'   => 'pages/she-stands.php',
     'kisauni-vtc-graduates'   => 'pages/kisauni-vtc-graduates.php',
+    'blue-economy-training'   => 'pages/blue-economy-training.php',
+    'townhall-climate-change'   => 'pages/townhall-climate-change.php',
+    'supply-contract-cold-rooms'   => 'pages/supply-contract-cold-rooms.php',
+    'partnerships-coastal-development'   => 'pages/partnerships-coastal-development.php',
+    'jkp-governors-deliberations'   => 'pages/jkp-governors-deliberations.php',
+    'iowa-state-scholarships'   => 'pages/iowa-state-scholarships.php',
+    'collaborative-framework-agreement'   => 'pages/collaborative-framework-agreement.php',
+    'blue-economy-training'   => 'pages/blue-economy-training.php',
+    'australian-diplomat-visit'   => 'pages/australian-diplomat-visit.php',
+    'advocating-4th-generation'   => 'pages/advocating-4th-generation.php',
+    'jkp-tourism-blueprint'   => 'pages/jkp-tourism-blueprint.php',
+    'eurometal-mic-collaboration'   => 'pages/eurometal-mic-collaboration.php',
+    
 ];
 
 $pageFile = $routes[$requestPath] ?? null;
