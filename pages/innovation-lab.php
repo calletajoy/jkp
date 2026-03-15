@@ -13,7 +13,6 @@ ob_start();
 
 include __DIR__ . '/../partials/page-hero.php';
 ?>
-
 <style>
 /* JKP Color Palette */
 :root {
@@ -202,7 +201,7 @@ include __DIR__ . '/../partials/page-hero.php';
 }
 
 .folded-card.active .folded-card-content {
-    max-height: 300px;
+    max-height: 500px;
     opacity: 1;
     margin-top: 15px;
     padding-top: 15px;
@@ -224,6 +223,7 @@ include __DIR__ . '/../partials/page-hero.php';
     flex-wrap: wrap;
     align-items: center;
     gap: 50px;
+    margin-bottom: 60px;
 }
 
 .structure-content {
@@ -252,6 +252,83 @@ include __DIR__ . '/../partials/page-hero.php';
     border-radius: 3px;
 }
 
+/* New styles for Structure Points 1 & 2 */
+.structure-points {
+    margin-top: 20px;
+}
+
+.structure-point {
+    margin-bottom: 35px;
+}
+
+.structure-point h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 12px;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    padding-left: 20px;
+}
+
+.structure-point h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background: var(--turquoise);
+    border-radius: 50%;
+}
+
+.structure-point p {
+    color: #666;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* New grid for Structure Cards 3-7 */
+.structure-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+    .structure-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Card List Styling for folded cards */
+.card-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.card-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.card-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--turquoise);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Original structure list styles (keep if needed elsewhere) */
 .structure-list {
     list-style: none;
     padding: 0;
@@ -536,53 +613,106 @@ include __DIR__ . '/../partials/page-hero.php';
 <!-- ===== Structure Section ===== -->
 <section class="structure-section">
     <div class="container">
+        <!-- Top part - Points 1 & 2 with image -->
         <div class="structure-wrapper">
-            <!-- Left side - Content -->
+            <!-- Left side - Points 1 & 2 -->
             <div class="structure-content" data-aos="fade-right">
                 <h2>Structure of the Project</h2>
                 
-                <ul class="structure-list">
-                    <li>
-                        <strong>1. The Hub and Spoke Model</strong>
+                <div class="structure-points">
+                    <!-- Point 1 -->
+                    <div class="structure-point">
+                        <h3>1. The Hub and Spoke Model</h3>
                         <p>The Establishment of six (6) Jumuiya Innovation Labs will be under a hub and spoke model. With 6 spokes in each of the 6 coastal counties and the Jumuiya innovation hub located in Mombasa.</p>
-                    </li>
+                    </div>
                     
-                    <li>
-                        <strong>2. Centre for Workforce Skilling</strong>
+                    <!-- Point 2 -->
+                    <div class="structure-point">
+                        <h3>2. Centre for Workforce Skilling</h3>
                         <p>The 6 Innovation labs will be a centre for work force skilling providing: Guidance to youth in helping them find a potential career path; Vocational training to be tailor made for entering into specific/niche career paths; Connecting youth empowerment organizations for relevant job placements.</p>
-                    </li>
-                    
-                    <li>
-                        <strong>3. Business Enablement</strong>
-                        <p>Administrative support towards seeking required approvals; Market linkage solutions; Innovation centres/hubs for industry specific sectors.</p>
-                    </li>
-                    
-                    <li>
-                        <strong>4. Landing Pad for International Entrepreneurs</strong>
-                        <p></p>
-                    </li>
-                    
-                    <li>
-                        <strong>5. Access to Finance</strong>
-                        <p></p>
-                    </li>
-                    
-                    <li>
-                        <strong>6. Centre for MSME Incubation and Skilling</strong>
-                        <p></p>
-                    </li>
-                    
-                    <li>
-                        <strong>7. Knowledge Management</strong>
-                        <p></p>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
             
             <!-- Right side - Image (positioned slightly lower) -->
             <div class="structure-image" data-aos="fade-left">
                 <img src="/assets/images/innovation-lab-structure.jpg" alt="Innovation Lab Structure">
                 <!-- Replace with your actual image path -->
+            </div>
+        </div>
+        
+        <!-- Bottom part - Points 3-7 as folded corner cards -->
+        <div class="structure-cards-grid" data-aos="fade-up" data-aos-delay="100">
+            <!-- Point 3 -->
+            <div class="folded-card" onclick="this.classList.toggle('active')">
+                <div class="folded-card-header">
+                    <h3>3. Business Enablement</h3>
+                </div>
+                <div class="folded-card-content">
+                    <ul class="card-list">
+                        <li>Administrative support towards seeking required approvals</li>
+                        <li>Market linkage solutions</li>
+                        <li>Innovation centres/hubs for industry specific sectors</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Point 4 -->
+            <div class="folded-card" onclick="this.classList.toggle('active')">
+                <div class="folded-card-header">
+                    <h3>4. Landing Pad for International Entrepreneurs</h3>
+                </div>
+                <div class="folded-card-content">
+                    <ul class="card-list">
+                        <li>Dedicated Help Desk - providing expert information on Jumuiya Market, industries, regulations, legal systems by dedicated experts</li>
+                        <li>Incubation (Seats on reservation basis) in Jumuiya innovation labs offering temporary office space</li>
+                        <li>Invest Jumuiya – One stop centre for foreign business establishment to help complete procedures for starting a company</li>
+                        <li>Networking – Introducing local government, business partners, experts, investors interested in partnership with foreign affiliated companies</li>
+                        <li>Mentoring services – providing business counselling and mentoring to MSMES for business management in Jumuiya</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Point 5 -->
+            <div class="folded-card" onclick="this.classList.toggle('active')">
+                <div class="folded-card-header">
+                    <h3>5. Access to Finance</h3>
+                </div>
+                <div class="folded-card-content">
+                    <ul class="card-list">
+                        <li>Assistance towards linkages with financial institutions for credit</li>
+                        <li>Linkages with prospective investors/agencies</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Point 6 -->
+            <div class="folded-card" onclick="this.classList.toggle('active')">
+                <div class="folded-card-header">
+                    <h3>6. Centre for MSME Incubation and Skilling</h3>
+                </div>
+                <div class="folded-card-content">
+                    <ul class="card-list">
+                        <li>Skill and incubate 1000 MSMES across various sectors such as agriculture, blue economy, trade and logistics</li>
+                        <li>Providing assistance to entrepreneurs on filling applications through the required approaches</li>
+                        <li>Capacity building training on starting and maintaining a business</li>
+                        <li>Training programs for youth entrepreneurs</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Point 7 -->
+            <div class="folded-card" onclick="this.classList.toggle('active')">
+                <div class="folded-card-header">
+                    <h3>7. Knowledge Management</h3>
+                </div>
+                <div class="folded-card-content">
+                    <ul class="card-list">
+                        <li>Information on Government schemes and incentives</li>
+                        <li>MSME specific knowledge and project shelves</li>
+                        <li>Assistance in the preparation of project reports/business plans</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
