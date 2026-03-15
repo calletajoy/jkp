@@ -31,6 +31,7 @@ $routes = [
     'innovation-lab'   => 'pages/innovation-lab.php',
     'jum_2030'   => 'pages/jum_2030.php',
     'she-stands'   => 'pages/she-stands.php',
+    'kisauni-vtc-graduates'   => 'pages/kisauni-vtc-graduates.php',
 ];
 
 $pageFile = $routes[$requestPath] ?? null;
