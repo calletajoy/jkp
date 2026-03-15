@@ -109,36 +109,56 @@ include __DIR__ . '/../partials/page-hero.php';
     margin-right: 0.5rem;
 }
 
-/* EU Badge */
+/* EU Badge - UPDATED to match blue theme but preserve EU recognition */
 .eu-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.8rem;
-    background: linear-gradient(135deg, var(--eu-blue), #002060);
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
     color: white;
-    padding: 0.5rem 1.5rem;
+    padding: 0.7rem 2rem;
     border-radius: 50px;
     font-weight: 600;
     margin-bottom: 2rem;
-    border-left: 4px solid var(--eu-yellow);
+    box-shadow: 0 5px 15px -5px rgba(36, 64, 128, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--eu-yellow); /* Keeping yellow accent for EU recognition */
+}
+
+.eu-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -5px rgba(36, 64, 128, 0.5);
 }
 
 .eu-badge i {
-    font-size: 1.1rem;
-    color: var(--eu-yellow);
+    font-size: 1.2rem;
+    color: var(--eu-yellow); /* Keeping stars yellow for EU theme */
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
 }
 
-/* Featured Image */
+/* Featured Image - IMPROVED for better image display */
 .featured-image {
     margin-bottom: 2.5rem;
+    background: #f5f5f5;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .featured-image img {
     width: 100%;
+    height: auto;
     max-height: 500px;
-    object-fit: cover;
+    object-fit: contain; /* Changed from 'cover' to 'contain' to show full image */
     border-radius: 20px;
     box-shadow: 0 20px 40px -15px rgba(0,0,0,0.2);
+    background-color: #f5f5f5;
 }
 
 /* Article Content */
@@ -184,7 +204,7 @@ include __DIR__ . '/../partials/page-hero.php';
     border-radius: 3px;
 }
 
-/* Component Cards */
+/* Component Cards - UPDATED to use blue theme */
 .component-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -203,12 +223,12 @@ include __DIR__ . '/../partials/page-hero.php';
 
 .component-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 25px 40px -15px var(--eu-blue);
-    border-color: var(--eu-blue);
+    box-shadow: 0 25px 40px -15px var(--primary-blue);
+    border-color: var(--primary-blue);
 }
 
 .component-header {
-    background: linear-gradient(135deg, var(--eu-blue), var(--eu-yellow));
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
     color: white;
     padding: 1.2rem;
     text-align: center;
@@ -247,11 +267,11 @@ include __DIR__ . '/../partials/page-hero.php';
 }
 
 .partner-list li i {
-    color: var(--eu-yellow);
+    color: var(--primary-blue);
     font-size: 0.8rem;
 }
 
-/* Achievement Cards */
+/* Achievement Cards - UPDATED to use blue theme */
 .achievement-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -263,20 +283,20 @@ include __DIR__ . '/../partials/page-hero.php';
     background: #f8f9fa;
     padding: 1.5rem;
     border-radius: 12px;
-    border-left: 4px solid var(--eu-yellow);
+    border-left: 4px solid var(--primary-blue);
     transition: all 0.3s ease;
 }
 
 .achievement-card:hover {
     background: white;
     transform: translateX(5px);
-    box-shadow: 0 10px 20px -10px var(--eu-blue);
+    box-shadow: 0 10px 20px -10px var(--primary-blue);
 }
 
 .achievement-number {
     font-size: 2.2rem;
     font-weight: 800;
-    color: var(--eu-blue);
+    color: var(--primary-blue);
     font-family: 'Playfair Display', serif;
     line-height: 1;
     margin-bottom: 0.5rem;
@@ -295,9 +315,9 @@ include __DIR__ . '/../partials/page-hero.php';
     line-height: 1.5;
 }
 
-/* Stats Highlight */
+/* Stats Highlight - UPDATED to use blue theme */
 .stats-highlight {
-    background: linear-gradient(135deg, rgba(0,51,153,0.1) 0%, rgba(255,215,0,0.1) 100%);
+    background: linear-gradient(135deg, rgba(110,193,228,0.1) 0%, rgba(36,64,128,0.1) 100%);
     padding: 2rem;
     border-radius: 15px;
     margin: 2rem 0;
@@ -314,7 +334,7 @@ include __DIR__ . '/../partials/page-hero.php';
 .stat-number {
     font-size: 2.2rem;
     font-weight: 800;
-    color: var(--eu-blue);
+    color: var(--primary-blue);
     font-family: 'Playfair Display', serif;
     line-height: 1;
 }
@@ -326,13 +346,13 @@ include __DIR__ . '/../partials/page-hero.php';
     font-size: 0.9rem;
 }
 
-/* Quote Card */
+/* Quote Card - UPDATED to use blue theme but preserve EU yellow accent */
 .quote-card {
-    background: linear-gradient(135deg, rgba(0,51,153,0.05) 0%, rgba(255,215,0,0.05) 100%);
+    background: linear-gradient(135deg, rgba(110,193,228,0.05) 0%, rgba(36,64,128,0.05) 100%);
     padding: 2rem;
     border-radius: 15px;
     margin: 2rem 0;
-    border-left: 4px solid var(--eu-yellow);
+    border-left: 4px solid var(--eu-yellow); /* Keeping yellow for EU connection */
     font-style: italic;
 }
 
@@ -345,17 +365,17 @@ include __DIR__ . '/../partials/page-hero.php';
 
 .quote-author {
     font-weight: 600;
-    color: var(--eu-blue);
+    color: var(--primary-blue);
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
 
 .quote-author i {
-    color: var(--eu-yellow);
+    color: var(--eu-yellow); /* Keeping yellow for EU connection */
 }
 
-/* BMU List */
+/* BMU List - UPDATED to use blue theme */
 .bmu-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -376,12 +396,12 @@ include __DIR__ . '/../partials/page-hero.php';
 }
 
 .bmu-item:hover {
-    background: var(--eu-blue);
+    background: var(--primary-blue);
     color: white;
     transform: translateY(-3px);
 }
 
-/* Partner Logos */
+/* Partner Logos - UPDATED to use blue theme */
 .partner-logos {
     display: flex;
     flex-wrap: wrap;
@@ -399,23 +419,24 @@ include __DIR__ . '/../partials/page-hero.php';
     align-items: center;
     justify-content: center;
     box-shadow: 0 10px 20px -10px rgba(0,0,0,0.1);
-    border: 2px solid var(--eu-yellow);
+    border: 2px solid var(--primary-blue);
     transition: all 0.3s ease;
 }
 
 .partner-logo:hover {
     transform: scale(1.1);
-    border-color: var(--eu-blue);
+    border-color: var(--dark-blue);
+    box-shadow: 0 15px 25px -10px var(--primary-blue);
 }
 
 .partner-logo i {
     font-size: 2.5rem;
-    color: var(--eu-blue);
+    color: var(--primary-blue);
 }
 
 .partner-logo span {
     font-weight: 700;
-    color: var(--eu-blue);
+    color: var(--primary-blue);
 }
 
 /* Share Buttons */
@@ -717,7 +738,7 @@ include __DIR__ . '/../partials/page-hero.php';
     font-weight: 600;
 }
 
-/* Previous News */
+/* Previous News - IMPROVED image display */
 .prev-news-item {
     display: flex;
     align-items: center;
@@ -739,12 +760,21 @@ include __DIR__ . '/../partials/page-hero.php';
     min-width: 70px;
     border-radius: 8px;
     overflow: hidden;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .prev-news-thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.prev-news-thumb img:hover {
+    transform: scale(1.1);
 }
 
 .prev-news-info h6 {
@@ -832,6 +862,38 @@ include __DIR__ . '/../partials/page-hero.php';
     transform: translateX(-5px);
 }
 
+/* Image error handling */
+img[src=""], 
+img:not([src]) {
+    opacity: 0;
+}
+
+/* Image loading animation */
+.image-loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
     .component-grid,
@@ -877,6 +939,19 @@ include __DIR__ . '/../partials/page-hero.php';
     .share-buttons {
         justify-content: center;
     }
+    
+    .featured-image {
+        max-height: 300px;
+    }
+    
+    .featured-image img {
+        max-height: 300px;
+    }
+    
+    .eu-badge {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
+    }
 }
 </style>
 
@@ -901,15 +976,18 @@ include __DIR__ . '/../partials/page-hero.php';
                     </div>
                 </header>
 
-                <!-- EU Badge -->
+                <!-- EU Badge - Now in blue theme with yellow accent -->
                 <div class="eu-badge" data-aos="fade-up">
                     <i class="bi bi-star"></i>
                     EU Heads of Mission | 15th - 19th May 2023
                 </div>
 
-                <!-- Featured Image -->
+                <!-- Featured Image - IMPROVED with error handling -->
                 <div class="featured-image" data-aos="fade-up" data-aos-delay="50">
-                    <img src="/assets/images/eu-heads.png" alt="EU Heads of Mission Visit">
+                    <img src="/assets/images/eu-heads.png" 
+                         alt="EU Heads of Mission Visit"
+                         onerror="this.onerror=null; this.src='/assets/images/placeholder.png'; this.classList.add('error');"
+                         loading="lazy">
                 </div>
 
                 <!-- Article Content -->
@@ -1266,12 +1344,15 @@ include __DIR__ . '/../partials/page-hero.php';
                     </ul>
                 </div>
 
-                <!-- Previous News Widget -->
+                <!-- Previous News Widget - IMPROVED image display -->
                 <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="150">
                     <h4 class="widget-title">Previous News</h4>
                     <div class="prev-news-item">
                         <div class="prev-news-thumb">
-                            <img src="/assets/images/saf-plc.png" alt="Safaricom MOU">
+                            <img src="/assets/images/saf-plc.png" 
+                                 alt="Safaricom MOU"
+                                 onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+                                 loading="lazy">
                         </div>
                         <div class="prev-news-info">
                             <h6>Jumuiya and Safaricom PLC signed an MOU</h6>
@@ -1280,7 +1361,10 @@ include __DIR__ . '/../partials/page-hero.php';
                     </div>
                     <div class="prev-news-item">
                         <div class="prev-news-thumb">
-                            <img src="/assets/images/rege.png" alt="ReFaCE Forum">
+                            <img src="/assets/images/rege.png" 
+                                 alt="ReFaCE Forum"
+                                 onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+                                 loading="lazy">
                         </div>
                         <div class="prev-news-info">
                             <h6>Regenerative Fashion Collective Exchange (ReFaCE) Forum 2023</h6>
@@ -1289,7 +1373,10 @@ include __DIR__ . '/../partials/page-hero.php';
                     </div>
                     <div class="prev-news-item">
                         <div class="prev-news-thumb">
-                            <img src="/assets/images/jum-eco.png" alt="Italy Mission">
+                            <img src="/assets/images/jum-eco.png" 
+                                 alt="Italy Mission"
+                                 onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+                                 loading="lazy">
                         </div>
                         <div class="prev-news-info">
                             <h6>Jumuiya Blue Economy Mission to Italy</h6>
@@ -1347,6 +1434,20 @@ document.addEventListener('DOMContentLoaded', function() {
         // Here you would normally send the comment to your server
         alert('Thank you for your comment! (This is a demo - comment would be saved to database)');
         this.reset();
+    });
+    
+    // Add loading animation to images
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        if (!img.complete) {
+            img.parentElement?.classList.add('image-loading');
+            img.addEventListener('load', function() {
+                this.parentElement?.classList.remove('image-loading');
+            });
+            img.addEventListener('error', function() {
+                this.parentElement?.classList.remove('image-loading');
+            });
+        }
     });
 });
 </script>
