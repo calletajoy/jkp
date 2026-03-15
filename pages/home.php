@@ -1016,41 +1016,38 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     <!-- SVG Map - Using your existing path -->
                     <div class="kenya-map text-center">
-                        <img src="/assets/images/ke.svg" alt="Kenya Map with Coastal Counties" class="img-fluid" style="max-height: 400px; width: auto; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));">
+                        <img src="/assets/images/map backup.png" alt="Kenya Map with Coastal Counties" class="img-fluid" style="max-height: 400px; width: auto; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));">
                     </div>
                     
                     <!-- County Legend - Updated for better visibility on blue background -->
                     <div class="county-legend mt-4">
                         <div class="legend-item">
                             <span class="legend-color" style="background: var(--turquoise);"></span>
-                            <span class="text-white">Mombasa</span>
+                            <span class="text-black">Mombasa</span>
                         </div>
                         <div class="legend-item">
                             <span class="legend-color" style="background: var(--soft-blue);"></span>
-                            <span class="text-white">Kwale</span>
+                            <span class="text-black">Kwale</span>
                         </div>
                         <div class="legend-item">
                             <span class="legend-color" style="background: var(--deep-blue);"></span>
-                            <span class="text-white">Kilifi</span>
+                            <span class="text-black">Kilifi</span>
                         </div>
                         <div class="legend-item">
                             <span class="legend-color" style="background: var(--navy);"></span>
-                            <span class="text-white">Tana River</span>
+                            <span class="text-black">Tana River</span>
                         </div>
                         <div class="legend-item">
                             <span class="legend-color" style="background: #4A6FA5;"></span>
-                            <span class="text-white">Lamu</span>
+                            <span class="text-black">Lamu</span>
                         </div>
                         <div class="legend-item">
                             <span class="legend-color" style="background: #6B8CBE;"></span>
-                            <span class="text-white">Taita Taveta</span>
+                            <span class="text-black">Taita Taveta</span>
                         </div>
                     </div>
                     
-                    <p class="small text-center mt-4 mb-0 text-white-50">
-                        <i class="bi bi-info-circle me-1" style="color: var(--turquoise);"></i>
-                        Hover over counties to highlight
-                    </p>
+                    
                 </div>
             </div>
         </div>
