@@ -43,7 +43,14 @@ $routes = [
     'australian-diplomat-visit'   => 'pages/australian-diplomat-visit.php',
     'advocating-4th-generation'   => 'pages/advocating-4th-generation.php',
     'jkp-tourism-blueprint'   => 'pages/jkp-tourism-blueprint.php',
-    'eurometal-mic-collaboration'   => 'pages/eurometal-mic-collaboration.php',
+    'ethiopia-oromia-visit'   => 'pages/ethiopia-oromia-visit.php',
+    'support-fisher-communities'   => 'pages/support-fisher-communities.php',
+    'safaricom-mou'   => 'pages/safaricom-mou.php',
+    'reface-forum-2023'   => 'pages/reface-forum-2023.php',
+    'eu-heads-mission'   => 'pages/eu-heads-mission.php',
+    'ethiopia-oromia-visit'   => 'pages/ethiopia-oromia-visit.php',
+    'blue-economy-mission-italy'   => 'pages/blue-economy-mission-italy.php',
+    'trade-mission-usa'   => 'pages/trade-mission-usa.php',
     
 ];
 
