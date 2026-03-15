@@ -9,6 +9,26 @@ $currentPage  = 'news';
 $heroTitle    = 'Kisauni VTC Graduates Article';
 $heroSubtitle = 'Kisauni VTC Graduation';
 
+// Add Open Graph and Twitter Card meta tags for social sharing
+$ogImage = 'https://www.jumuiya.org/assets/images/kisauni.png';
+$ogDescription = 'On Saturday, May 25, 2024, Kisauni VTC celebrated its 8th graduation ceremony. Out of 813 graduates, 513 completed blue economy-related courses, namely Maritime Plumbing, Maritime Tourism & Hospitality, and Maritime Security. 60% secured job placements after their industrial attachments, and 25% transitioned to entrepreneurship.';
+$ogUrl = 'https://www.jumuiya.org/kisauni-vtc-graduates';
+
+$extraMeta = '
+<meta property="og:title" content="' . $pageTitle . '" />
+<meta property="og:description" content="' . $ogDescription . '" />
+<meta property="og:image" content="' . $ogImage . '" />
+<meta property="og:url" content="' . $ogUrl . '" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Jumuiya ya Kaunti za Pwani" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="' . $pageTitle . '" />
+<meta name="twitter:description" content="' . $ogDescription . '" />
+<meta name="twitter:image" content="' . $ogImage . '" />
+<meta name="twitter:site" content="@JumuiyaBloc" />
+';
+
 ob_start();
 
 include __DIR__ . '/../partials/page-hero.php';
@@ -33,41 +53,6 @@ include __DIR__ . '/../partials/page-hero.php';
 
 .article-sidebar {
     padding-left: 1rem;
-}
-
-/* Breadcrumb */
-.breadcrumb-nav {
-    margin-bottom: 2rem;
-    background: #f8f9fa;
-    padding: 1rem 0;
-}
-
-.breadcrumb {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.9rem;
-}
-
-.breadcrumb li:not(:last-child)::after {
-    content: '/';
-    margin: 0 10px;
-    color: #999;
-}
-
-.breadcrumb a {
-    color: var(--primary-blue);
-    text-decoration: none;
-}
-
-.breadcrumb a:hover {
-    text-decoration: underline;
-}
-
-.breadcrumb .active {
-    color: #666;
 }
 
 /* Article Header */
@@ -618,18 +603,6 @@ include __DIR__ . '/../partials/page-hero.php';
     }
 }
 </style>
-
-<!-- Breadcrumb Navigation -->
-<div class="breadcrumb-nav">
-    <div class="container">
-        <ul class="breadcrumb">
-            <li><a href="/">Home</a></li>
-            <li><a href="/news-updates">News & Updates</a></li>
-            <li><a href="/news-updates?category=JKP News Updates">JKP News Updates</a></li>
-            <li class="active">Kisauni VTC Graduates 513 Students</li>
-        </ul>
-    </div>
-</div>
 
 <section class="article-wrapper">
     <div class="container">
