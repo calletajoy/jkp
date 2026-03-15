@@ -819,18 +819,140 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <!-- ===== Banner Carousel ===== -->
+<style>
+    /* Left-to-right panning animation only - no zoom */
+    @keyframes panLeftToRight {
+        0% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(-3%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+    
+    .carousel-item {
+        overflow: hidden;
+    }
+    
+    .carousel-item img {
+        animation: panLeftToRight 20s infinite alternate ease-in-out;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* Typing animation styles */
+    .typing-container {
+        display: inline-block;
+        max-width: 100%;
+    }
+    
+    .typing-text {
+        font-size: 1.3rem;
+        line-height: 1.6;
+        margin: 2rem 0;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        overflow: hidden;
+        white-space: normal;
+        border-right: 3px solid var(--turquoise);
+        animation: blink-cursor 0.75s step-end infinite;
+    }
+    
+    @keyframes blink-cursor {
+        from, to { border-color: transparent; }
+        50% { border-color: var(--turquoise); }
+    }
+    
+    /* Ensure text stays readable */
+    .banner-content {
+        position: relative;
+        z-index: 10;
+        max-width: 800px;
+        padding: 2rem 0;
+    }
+    
+    @media (max-width: 768px) {
+        .typing-text {
+            font-size: 1rem;
+        }
+    }
+</style>
+
+<!-- ===== Typing Animation Script ===== -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Typing animation for banner description
+    const typingElements = document.querySelectorAll('.typing-text');
+    
+    if (typingElements.length > 0) {
+        typingElements.forEach(element => {
+            const text = element.getAttribute('data-text');
+            element.textContent = '';
+            
+            let i = 0;
+            function typeWriter() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 30); // Typing speed
+                } else {
+                    // Keep cursor blinking at the end
+                    element.style.borderRight = '3px solid var(--turquoise)';
+                }
+            }
+            
+            // Start typing when slide becomes active
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(typeWriter, 500); // Delay before starting
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(element);
+        });
+    }
+});
+</script>
+
 <div class="banner">
     <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
             <?php
             $slides = [
-                ['img' => '/assets/images/fort jesus mbs.jpg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani', 'title1' => 'Fort Jesus', 'title2' => 'Mombasa County'],
-                ['img' => '/assets/images/kilifi creek.jpg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani', 'title1' => 'Kilifi Creek', 'title2' => 'Kilifi County'],
-                ['img' => '/assets/images/red el taita.jpeg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani', 'title1' => 'Red Elephants', 'title2' => 'Taita Taveta County'],
-                ['img' => '/assets/images/diani beach.jpg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani', 'title1' => 'Diani Beach', 'title2' => 'Kwale County'],
-                ['img' => '/assets/images/tana river delta.jpeg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani', 'title1' => 'Tana River Delta', 'title2' => 'Tana River County'],
-                ['img' => '/assets/images/Lamu_Island.jpg', 'subtitle' => 'Jumuiya ya Kaunti za Pwani', 'title1' => 'Lamu Island', 'title2' => 'Lamu County'],
+                [
+                    'img' => '/assets/images/fort jesus mbs.jpg', 
+                    'county' => 'Mombasa County'
+                ],
+                [
+                    'img' => '/assets/images/kilifi creek.jpg', 
+                    'county' => 'Kilifi County'
+                ],
+                [
+                    'img' => '/assets/images/red el taita.jpeg', 
+                    'county' => 'Taita Taveta County'
+                ],
+                [
+                    'img' => '/assets/images/diani beach.jpg', 
+                    'county' => 'Kwale County'
+                ],
+                [
+                    'img' => '/assets/images/tana river delta.jpeg', 
+                    'county' => 'Tana River County'
+                ],
+                [
+                    'img' => '/assets/images/Lamu_Island.jpg', 
+                    'county' => 'Lamu County'
+                ],
             ];
+            
+            // Same description for all slides
+            $description = "A Kenya Coast economic bloc that creates wealth for its community. JKP is focused on championing the region's economic development initiatives through innovation and partnership with the public, industry and academia. With the vast shared resources, a unique common historic foundation in culture and heritage; the mission of Jumuiya ya Kaunti za Pwani is to catalyze economic growth of Kenya's coast regional counties.";
+            
             foreach ($slides as $i => $slide):
             ?>
                 <div class="carousel-item <?php echo $i === 0 ? 'active' : ''; ?>">
@@ -840,13 +962,20 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="container">
                                 <div class="banner-content text-center text-lg-start">
                                     <div class="sentence-underline">
-                                        <div class="text-white banner-semi-title" style="letter-spacing: 3px; font-weight: 300;"><?php echo $slide['subtitle']; ?></div>
+                                        <div class="text-white banner-semi-title" style="letter-spacing: 3px; font-weight: 300;">Jumuiya ya Kaunti za Pwani</div>
                                     </div>
-                                    <h1 class="text-white my-4 display-3 fw-bold">
-                                        <span class="cssanimation lePopUp sequence"><?php echo $slide['title1']; ?></span><br>
-                                        <span class="cssanimation lePopUp sequence" style="color: var(--turquoise);"><?php echo $slide['title2']; ?></span>
+                                    
+                                    <!-- Typing animation container -->
+                                    <div class="typing-container">
+                                        <div class="typing-text text-white" data-text="<?php echo htmlspecialchars($description); ?>"></div>
+                                    </div>
+                                    
+                                    <!-- County name -->
+                                    <h1 class="text-white display-3 fw-bold">
+                                        <span class="cssanimation lePopUp sequence" style="color: var(--turquoise);"><?php echo $slide['county']; ?></span>
                                     </h1>
-                                    <div class="buttons">
+                                    
+                                    <div class="buttons mt-4">
                                         <div class="cityWall-btn" role="search">
                                             <a href="/about" class="btn-fancy" style="background: var(--turquoise);">Discover More <i class="bi bi-arrow-right"></i></a>
                                             <a href="/contact" class="btn-fancy" style="background: var(--navy);">Contact Us <i class="bi bi-arrow-right"></i></a>
