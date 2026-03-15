@@ -803,7 +803,7 @@ include __DIR__ . '/../partials/page-hero.php';
 
                 <!-- Secondary Image -->
                 <div class="secondary-image" data-aos="fade-up">
-                    <img src="/assets/images/iowa-state-campus.jpg" alt="Iowa State University Campus">
+                    <img src="/assets/images/iowa state.png" alt="Iowa State University Campus">
                 </div>
 
                 <!-- Eligibility Section -->

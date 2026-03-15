@@ -953,10 +953,10 @@ include __DIR__ . '/../partials/page-hero.php';
                     <h3>Signing Ceremony Highlights</h3>
                     <div class="grid-container">
                         <div class="grid-item">
-                            <img src="/assets/images/collabo-1.png" alt="Signing Ceremony">
+                            <img src="/assets/images/bi-sign (1).png" alt="Signing Ceremony">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/collabo-2.png" alt="Group Photo">
+                            <img src="/assets/images/bi-sign (2).png" alt="Group Photo">
                         </div>
                     </div>
                 </div>
