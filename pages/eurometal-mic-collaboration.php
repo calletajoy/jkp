@@ -109,17 +109,41 @@ include __DIR__ . '/../partials/page-hero.php';
     margin-right: 0.5rem;
 }
 
-/* Featured Image */
+/* Featured Image - IMPROVED */
 .featured-image {
     margin-bottom: 2.5rem;
+    background: #f5f5f5;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .featured-image img {
     width: 100%;
+    height: auto;
     max-height: 500px;
-    object-fit: cover;
+    object-fit: contain; /* Changed from 'cover' to 'contain' to show full image */
     border-radius: 20px;
     box-shadow: 0 20px 40px -15px rgba(0,0,0,0.2);
+    background-color: #f5f5f5; /* Background for any transparent areas */
+}
+
+/* Optional: Add a loading placeholder */
+.featured-image.loading {
+    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+    background-size: 200% 100%;
+    animation: 1.5s shine linear infinite;
+}
+
+@keyframes shine {
+    to {
+        background-position-x: -200%;
+    }
 }
 
 /* Article Content */
@@ -740,7 +764,7 @@ include __DIR__ . '/../partials/page-hero.php';
     font-weight: 600;
 }
 
-/* Previous News */
+/* Previous News - IMPROVED */
 .prev-news-item {
     display: flex;
     align-items: center;
@@ -762,12 +786,27 @@ include __DIR__ . '/../partials/page-hero.php';
     min-width: 70px;
     border-radius: 8px;
     overflow: hidden;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .prev-news-thumb img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* This ensures thumbnails fill the space nicely */
+    transition: transform 0.3s ease;
+}
+
+.prev-news-thumb img:hover {
+    transform: scale(1.1);
+}
+
+/* Optional: Add a fallback for images that don't load */
+.prev-news-thumb img.error {
+    object-fit: contain;
+    padding: 10px;
 }
 
 .prev-news-info h6 {
@@ -855,6 +894,16 @@ include __DIR__ . '/../partials/page-hero.php';
     transform: translateX(-5px);
 }
 
+/* Image Error Handling */
+img {
+    display: block;
+}
+
+img[src=""], 
+img:not([src]) {
+    opacity: 0;
+}
+
 /* Responsive */
 @media (max-width: 992px) {
     .article-main {
@@ -894,6 +943,40 @@ include __DIR__ . '/../partials/page-hero.php';
         flex-direction: column;
         text-align: center;
     }
+    
+    .featured-image {
+        max-height: 300px;
+    }
+    
+    .featured-image img {
+        max-height: 300px;
+    }
+}
+
+/* Image Loading Animation */
+.image-loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
 }
 </style>
 
@@ -918,9 +1001,12 @@ include __DIR__ . '/../partials/page-hero.php';
                     </div>
                 </header>
 
-                <!-- Featured Image -->
+                <!-- Featured Image - IMPROVED with error handling -->
                 <div class="featured-image" data-aos="fade-up" data-aos-delay="50">
-                    <img src="/assets/images/eurometal.png" alt="Eurometal and MIC Meeting">
+                    <img src="/assets/images/eurometal.png" 
+                         alt="Eurometal and MIC Meeting"
+                         onerror="this.onerror=null; this.src='/assets/images/placeholder.png'; this.classList.add('error');"
+                         loading="lazy">
                 </div>
 
                 <!-- Article Content -->
@@ -1171,12 +1257,15 @@ include __DIR__ . '/../partials/page-hero.php';
                     </ul>
                 </div>
 
-                <!-- Previous News Widget -->
+                <!-- Previous News Widget - IMPROVED with error handling -->
                 <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="150">
                     <h4 class="widget-title">Previous News</h4>
                     <div class="prev-news-item">
                         <div class="prev-news-thumb">
-                            <img src="/assets/images/tourism.png" alt="Tourism Blueprint">
+                            <img src="/assets/images/tourism.png" 
+                                 alt="Tourism Blueprint"
+                                 onerror="this.onerror=null; this.src='/assets/images/placeholder.png'; this.classList.add('error');"
+                                 loading="lazy">
                         </div>
                         <div class="prev-news-info">
                             <h6>JKP Tourism and Cultural Heritage Blueprint 2030 Validation</h6>
@@ -1185,7 +1274,10 @@ include __DIR__ . '/../partials/page-hero.php';
                     </div>
                     <div class="prev-news-item">
                         <div class="prev-news-thumb">
-                            <img src="/assets/images/partnerships.png" alt="Partnerships">
+                            <img src="/assets/images/partnerships.png" 
+                                 alt="Partnerships"
+                                 onerror="this.onerror=null; this.src='/assets/images/placeholder.png'; this.classList.add('error');"
+                                 loading="lazy">
                         </div>
                         <div class="prev-news-info">
                             <h6>Partnerships for Coastal Development and Blue Economy Investment</h6>
@@ -1194,7 +1286,10 @@ include __DIR__ . '/../partials/page-hero.php';
                     </div>
                     <div class="prev-news-item">
                         <div class="prev-news-thumb">
-                            <img src="/assets/images/iowa state.png" alt="Iowa State">
+                            <img src="/assets/images/iowa state.png" 
+                                 alt="Iowa State"
+                                 onerror="this.onerror=null; this.src='/assets/images/placeholder.png'; this.classList.add('error');"
+                                 loading="lazy">
                         </div>
                         <div class="prev-news-info">
                             <h6>Iowa State University announces $25,000 scholarships</h6>
@@ -1252,6 +1347,20 @@ document.addEventListener('DOMContentLoaded', function() {
         // Here you would normally send the comment to your server
         alert('Thank you for your comment! (This is a demo - comment would be saved to database)');
         this.reset();
+    });
+    
+    // Add loading animation to images
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        if (!img.complete) {
+            img.parentElement?.classList.add('image-loading');
+            img.addEventListener('load', function() {
+                this.parentElement?.classList.remove('image-loading');
+            });
+            img.addEventListener('error', function() {
+                this.parentElement?.classList.remove('image-loading');
+            });
+        }
     });
 });
 </script>

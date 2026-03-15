@@ -110,22 +110,55 @@ include __DIR__ . '/../partials/page-hero.php';
     margin-right: 0.5rem;
 }
 
-/* Country Badge */
+/* Country Badge - UPDATED to match blue theme */
 .country-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.8rem;
-    background: linear-gradient(135deg, var(--ethiopia-green), var(--ethiopia-yellow), var(--ethiopia-red));
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
     color: white;
-    padding: 0.5rem 1.5rem;
+    padding: 0.7rem 2rem;
     border-radius: 50px;
     font-weight: 600;
     margin-bottom: 2rem;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px -5px rgba(36, 64, 128, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.country-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -5px rgba(36, 64, 128, 0.5);
 }
 
 .country-badge i {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+}
+
+/* Optional: Alternative blue theme variations - choose one */
+
+/* Option 2: Solid blue with subtle gradient */
+.country-badge.solid-blue {
+    background: linear-gradient(to right, var(--primary-blue), var(--soft-blue));
+}
+
+/* Option 3: Darker blue for more contrast */
+.country-badge.darker-blue {
+    background: linear-gradient(135deg, var(--dark-blue), #1a2e5c);
+}
+
+/* Option 4: With turquoise accent */
+.country-badge.turquoise-accent {
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue), var(--turquoise));
+    background-size: 200% 200%;
+    animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* Featured Image */
@@ -426,7 +459,7 @@ include __DIR__ . '/../partials/page-hero.php';
     font-size: 0.9rem;
 }
 
-/* Region Tags */
+/* Region Tags - UPDATED to keep Ethiopian flag colors for the Ethiopia tag */
 .region-tags {
     display: flex;
     flex-wrap: wrap;
@@ -456,6 +489,7 @@ include __DIR__ . '/../partials/page-hero.php';
     background: linear-gradient(135deg, var(--ethiopia-green), var(--ethiopia-yellow), var(--ethiopia-red));
     color: white;
     text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    border: none;
 }
 
 /* Share Buttons */
@@ -925,6 +959,11 @@ include __DIR__ . '/../partials/page-hero.php';
     .quote-text {
         font-size: 1.2rem;
     }
+    
+    .country-badge {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
+    }
 }
 </style>
 
@@ -949,7 +988,7 @@ include __DIR__ . '/../partials/page-hero.php';
                     </div>
                 </header>
 
-                <!-- Country Badge -->
+                <!-- Country Badge - Now in blue theme -->
                 <div class="country-badge" data-aos="fade-up">
                     <i class="bi bi-flag"></i>
                     Ethiopia | Oromia Tourism Commission
@@ -957,7 +996,7 @@ include __DIR__ . '/../partials/page-hero.php';
 
                 <!-- Featured Image -->
                 <div class="featured-image" data-aos="fade-up" data-aos-delay="50">
-                    <img src="/assets/images/eth-oromia.png" alt="Ethiopian Oromia Tourism Commission visit to JKP">
+                    <img src="/assets/images/jum2.jpg" alt="Ethiopian Oromia Tourism Commission visit to JKP">
                 </div>
 
                 <!-- Article Content -->
@@ -987,26 +1026,26 @@ include __DIR__ . '/../partials/page-hero.php';
                     <!-- Row 1 -->
                     <div class="grid-container-3col">
                         <div class="grid-item">
-                            <img src="/assets/images/ethiopia-1.jpg" alt="Ethiopian delegation at JKP">
+                            <img src="/assets/images/eth-oromia (1).png" alt="Ethiopian delegation at JKP">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/ethiopia-2.jpg" alt="Meeting discussions">
+                            <img src="/assets/images/eth-oromia (2).png" alt="Meeting discussions">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/ethiopia-3.jpg" alt="Tourism collaboration talks">
+                            <img src="/assets/images/eth-oromia (3).png" alt="Tourism collaboration talks">
                         </div>
                     </div>
                     
                     <!-- Row 2 -->
                     <div class="grid-container-3col">
                         <div class="grid-item">
-                            <img src="/assets/images/ethiopia-4.jpg" alt="Group photo">
+                            <img src="/assets/images/eth-oromia (4).png" alt="Group photo">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/ethiopia-5.jpg" alt="Exchange of ideas">
+                            <img src="/assets/images/eth-oromia (5).png" alt="Exchange of ideas">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/ethiopia-6.jpg" alt="Delegation合影">
+                            <img src="/assets/images/jum2.jpg" alt="Delegation合影">
                         </div>
                     </div>
                 </div>

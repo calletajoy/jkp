@@ -6,7 +6,7 @@
 
 $pageTitle    = 'Regenerative Fashion Collective Exchange (ReFaCE) Forum 2023';
 $currentPage  = 'news';
-$heroTitle    = 'ReFaCE Forum 2023';
+$heroTitle    = 'Regenerative Fashion Collective Exchange (ReFaCE) Forum 2023';
 $heroSubtitle = 'Regenerative Fashion Collective Exchange';
 
 // Add Open Graph and Twitter Card meta tags for social sharing
@@ -1067,26 +1067,26 @@ include __DIR__ . '/../partials/page-hero.php';
                     <!-- Row 1 -->
                     <div class="grid-container-3col">
                         <div class="grid-item">
-                            <img src="/assets/images/reface-1.jpg" alt="ReFaCE Forum Session 1">
+                            <img src="/assets/images/reface (1).png" alt="ReFaCE Forum Session 1">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/reface-2.jpg" alt="ReFaCE Forum Session 2">
+                            <img src="/assets/images/reface (2).png" alt="ReFaCE Forum Session 2">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/reface-3.jpg" alt="ReFaCE Forum Session 3">
+                            <img src="/assets/images/reface (3).png" alt="ReFaCE Forum Session 3">
                         </div>
                     </div>
                     
                     <!-- Row 2 -->
                     <div class="grid-container-3col">
                         <div class="grid-item">
-                            <img src="/assets/images/reface-4.jpg" alt="ReFaCE Forum Session 4">
+                            <img src="/assets/images/reface (4).png" alt="ReFaCE Forum Session 4">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/reface-5.jpg" alt="ReFaCE Forum Session 5">
+                            <img src="/assets/images/reface (5).png" alt="ReFaCE Forum Session 5">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/reface-6.jpg" alt="ReFaCE Forum Session 6">
+                            <img src="/assets/images/reface (6).png" alt="ReFaCE Forum Session 6">
                         </div>
                     </div>
                 </div>

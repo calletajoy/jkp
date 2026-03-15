@@ -110,23 +110,56 @@ include __DIR__ . '/../partials/page-hero.php';
     margin-right: 0.5rem;
 }
 
-/* Country Badge */
+/* Country Badge - UPDATED to match blue theme */
 .country-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.8rem;
-    background: linear-gradient(135deg, var(--italy-green), var(--italy-white), var(--italy-red));
-    color: #333;
-    padding: 0.5rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+    color: white;
+    padding: 0.7rem 2rem;
     border-radius: 50px;
     font-weight: 600;
     margin-bottom: 2rem;
-    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px -5px rgba(36, 64, 128, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.country-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -5px rgba(36, 64, 128, 0.5);
 }
 
 .country-badge i {
-    font-size: 1.1rem;
-    color: var(--italy-red);
+    font-size: 1.2rem;
+    color: white;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+}
+
+/* Optional: Alternative blue theme variations */
+
+/* Option 2: Solid blue with subtle gradient */
+.country-badge.solid-blue {
+    background: linear-gradient(to right, var(--primary-blue), var(--soft-blue));
+}
+
+/* Option 3: Darker blue for more contrast */
+.country-badge.darker-blue {
+    background: linear-gradient(135deg, var(--dark-blue), #1a2e5c);
+}
+
+/* Option 4: With turquoise accent */
+.country-badge.turquoise-accent {
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue), var(--turquoise));
+    background-size: 200% 200%;
+    animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* Featured Image */
@@ -1002,6 +1035,11 @@ include __DIR__ . '/../partials/page-hero.php';
     .share-buttons {
         justify-content: center;
     }
+    
+    .country-badge {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
+    }
 }
 </style>
 
@@ -1026,7 +1064,7 @@ include __DIR__ . '/../partials/page-hero.php';
                     </div>
                 </header>
 
-                <!-- Country Badge -->
+                <!-- Country Badge - Now in blue theme -->
                 <div class="country-badge" data-aos="fade-up">
                     <i class="bi bi-flag"></i>
                     Italy | Blue Economy Mission
