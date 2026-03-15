@@ -9,6 +9,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php echo isset($pageTitle) ? htmlspecialchars($pageTitle) . ' | Jumuiya' : 'Jumuiya'; ?></title>
 
+<!-- Open Graph / Social Media Meta Tags -->
+<?php if (isset($extraMeta)) echo $extraMeta; ?>
+
 <!-- Favicon -->
 <link rel="shortcut icon" href="/assets/images/fav-icon/fav-logo.png" type="image/x-icon">
 
