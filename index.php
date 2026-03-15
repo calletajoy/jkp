@@ -21,6 +21,7 @@ $routes = [
     'news-updates'     => 'pages/news-updates.php',
     'newsletter-archive'     => 'pages/newsletter-archive.php',
     'contact'  => 'pages/contact.php',
+    'partner' => 'pages/partner-with-us.php',
     'events'   => 'pages/events.php',
     'core-mandate'   => 'pages/core-mandate.php',
     'stakeholders'   => 'pages/stakeholders.php',
