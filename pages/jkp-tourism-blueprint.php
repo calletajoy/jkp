@@ -1104,48 +1104,48 @@ include __DIR__ . '/../partials/page-hero.php';
                     <!-- Row 1 -->
                     <div class="grid-container-4col">
                         <div class="grid-item">
-                            <img src="/assets/images/tourism-1.jpg" alt="Tourism Blueprint Meeting">
+                            <img src="/assets/images/jkp tour (1).png" alt="Tourism Blueprint Meeting">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/tourism-2.jpg" alt="Stakeholders Discussion">
+                            <img src="/assets/images/jkp tour (2).png" alt="Stakeholders Discussion">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/tourism-3.jpg" alt="Technical Session">
+                            <img src="/assets/images/jkp tour (3).png" alt="Technical Session">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/tourism-4.jpg" alt="Group Photo">
+                            <img src="/assets/images/jkp tour (4).png" alt="Group Photo">
                         </div>
                     </div>
                     
                     <!-- Row 2 -->
                     <div class="grid-container-4col">
                         <div class="grid-item">
-                            <img src="/assets/images/tourism-5.jpg" alt="Presentation">
+                            <img src="/assets/images/jkp tour (5).png" alt="Presentation">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/tourism-6.jpg" alt="Breakout Session">
+                            <img src="/assets/images/jkp tour (6).png" alt="Breakout Session">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/tourism-7.jpg" alt="Networking">
+                            <img src="/assets/images/jkp tour (7).png" alt="Networking">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/tourism-8.jpg" alt="Workshop">
+                            <img src="/assets/images/jkp tour (8).png" alt="Workshop">
                         </div>
                     </div>
                     
                     <!-- Row 3 -->
                     <div class="grid-container-4col">
                         <div class="grid-item">
-                            <img src="/assets/images/tourism-9.jpg" alt="Panel Discussion">
+                            <img src="/assets/images/jkp tour (9).png" alt="Panel Discussion">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/tourism-10.jpg" alt="Q&A Session">
+                            <img src="/assets/images/jkp tour (10).png" alt="Q&A Session">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/tourism-11.jpg" alt="Closing Remarks">
+                            <img src="/assets/images/jkp tour (11).png" alt="Closing Remarks">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/tourism-12.jpg" alt="Group Photo">
+                            <img src="/assets/images/jkp tour (12).png" alt="Group Photo">
                         </div>
                     </div>
                 </div>

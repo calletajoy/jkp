@@ -938,7 +938,7 @@ include __DIR__ . '/../partials/page-hero.php';
 
                 <!-- Featured Image -->
                 <div class="featured-image" data-aos="fade-up" data-aos-delay="50">
-                    <img src="/assets/images/partnerships.png" alt="Partnerships Meeting">
+                    <img src="/assets/images/q4-reports.jpg" alt="Partnerships Meeting">
                 </div>
 
                 <!-- Article Content -->
@@ -993,7 +993,7 @@ include __DIR__ . '/../partials/page-hero.php';
 
                 <!-- Secondary Image -->
                 <div class="secondary-image" data-aos="fade-up">
-                    <img src="/assets/images/partnerships-meeting.jpg" alt="Partnerships Meeting Discussion">
+                    <img src="/assets/images/patners meet.png" alt="Partnerships Meeting Discussion">
                 </div>
 
                 <!-- Article Content Continued -->
