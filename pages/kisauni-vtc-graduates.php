@@ -686,16 +686,16 @@ include __DIR__ . '/../partials/page-hero.php';
                     <h3>Graduation Ceremony Highlights</h3>
                     <div class="grid-container">
                         <div class="grid-item">
-                            <img src="/assets/images/kisauni-grad-1.jpg" alt="Graduation Ceremony">
+                            <img src="/assets/images/kisauni 1.png" alt="Graduation Ceremony">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/kisauni-grad-2.jpg" alt="Students Receiving Certificates">
+                            <img src="/assets/images/kisauni 2.png" alt="Students Receiving Certificates">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/kisauni-grad-3.jpg" alt="Maritime Plumbing Class">
+                            <img src="/assets/images/kisauni 3.png" alt="Maritime Plumbing Class">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/kisauni-grad-4.jpg" alt="Hospitality Students">
+                            <img src="/assets/images/kisauni.png" alt="Hospitality Students">
                         </div>
                     </div>
                 </div>

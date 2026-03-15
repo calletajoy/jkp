@@ -349,6 +349,29 @@ function buildQueryString($exclude = []) {
     }
     return http_build_query($params);
 }
+
+// Map news IDs to page filenames
+$newsPages = [
+    1 => 'kisauni-vtc-graduates',
+    2 => 'blue-economy-training',
+    3 => 'jkp-governors-deliberations',
+    4 => 'australian-diplomat-visit',
+    5 => 'advocating-4th-generation',
+    6 => 'townhall-climate-change',
+    7 => 'supply-contract-cold-rooms',
+    8 => 'collaborative-framework-agreement',
+    9 => 'iowa-state-scholarships',
+    10 => 'partnerships-coastal-development',
+    11 => 'jkp-tourism-blueprint',
+    12 => 'eurometal-mic-collaboration',
+    13 => 'trade-mission-usa',
+    14 => 'ethiopia-oromia-visit',
+    15 => 'blue-economy-mission-italy',
+    16 => 'reface-forum-2023',
+    17 => 'safaricom-mou',
+    18 => 'eu-heads-mission',
+    19 => 'support-fisher-communities'
+];
 ?>
 
 <style>
@@ -905,6 +928,10 @@ function buildQueryString($exclude = []) {
                 <!-- News Posts -->
                 <?php if (count($currentPagePosts) > 0): ?>
                     <?php foreach ($currentPagePosts as $post): ?>
+                    <?php 
+                    // Get the page filename for this news item
+                    $pageFile = isset($newsPages[$post['id']]) ? $newsPages[$post['id']] : 'news-updates';
+                    ?>
                     <article class="news-card" data-aos="fade-up">
                         <div class="news-card-image">
                             <img src="<?php echo $post['image']; ?>" alt="<?php echo htmlspecialchars($post['title']); ?>">
@@ -927,7 +954,7 @@ function buildQueryString($exclude = []) {
                                 <a href="/news-updates?category=<?php echo urlencode(getMainCategory($post['category'], $categoryMapping)); ?>" class="news-category">
                                     <?php echo $post['category']; ?>
                                 </a>
-                                <a href="/news/<?php echo $post['id']; ?>" class="read-more">
+                                <a href="/<?php echo $pageFile; ?>" class="read-more">
                                     Read More <i class="bi bi-arrow-right"></i>
                                 </a>
                             </div>
