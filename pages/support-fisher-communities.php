@@ -110,34 +110,56 @@ include __DIR__ . '/../partials/page-hero.php';
     margin-right: 0.5rem;
 }
 
-/* Safety Badge */
+/* Safety Badge - UPDATED to use blue theme with safety accent */
 .safety-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.8rem;
-    background: linear-gradient(135deg, var(--safety-orange), #F24C3F);
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
     color: white;
-    padding: 0.5rem 1.5rem;
+    padding: 0.7rem 2rem;
     border-radius: 50px;
     font-weight: 600;
     margin-bottom: 2rem;
+    box-shadow: 0 5px 15px -5px rgba(36, 64, 128, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--safety-orange); /* Keep orange for safety recognition */
+}
+
+.safety-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -5px rgba(36, 64, 128, 0.5);
 }
 
 .safety-badge i {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    color: var(--safety-orange); /* Keep orange icon for safety */
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
 }
 
-/* Featured Image */
+/* Featured Image - IMPROVED for better image display */
 .featured-image {
     margin-bottom: 2.5rem;
+    background: #f5f5f5;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .featured-image img {
     width: 100%;
+    height: auto;
     max-height: 500px;
-    object-fit: cover;
+    object-fit: contain; /* Changed from 'cover' to 'contain' to show full image */
     border-radius: 20px;
     box-shadow: 0 20px 40px -15px rgba(0,0,0,0.2);
+    background-color: #f5f5f5;
 }
 
 /* Article Content */
@@ -183,9 +205,9 @@ include __DIR__ . '/../partials/page-hero.php';
     border-radius: 3px;
 }
 
-/* Safety Stats */
+/* Safety Stats - UPDATED to use blue theme */
 .stats-highlight {
-    background: linear-gradient(135deg, var(--ocean-blue), var(--wave-blue));
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
     padding: 2.5rem;
     border-radius: 20px;
     margin: 2rem 0;
@@ -215,7 +237,7 @@ include __DIR__ . '/../partials/page-hero.php';
     opacity: 0.9;
 }
 
-/* Training Cards */
+/* Training Cards - UPDATED to use blue theme with safety orange accents */
 .training-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -235,14 +257,14 @@ include __DIR__ . '/../partials/page-hero.php';
 
 .training-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 25px 40px -15px var(--safety-orange);
-    border-color: var(--safety-orange);
+    box-shadow: 0 25px 40px -15px var(--primary-blue);
+    border-color: var(--primary-blue);
 }
 
 .training-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--safety-orange), #F24C3F);
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -263,7 +285,7 @@ include __DIR__ . '/../partials/page-hero.php';
 .training-card .count {
     font-size: 2rem;
     font-weight: 800;
-    color: var(--safety-orange);
+    color: var(--primary-blue);
     line-height: 1;
     margin: 1rem 0;
 }
@@ -274,7 +296,7 @@ include __DIR__ . '/../partials/page-hero.php';
     margin: 0;
 }
 
-/* Safety Tips */
+/* Safety Tips - UPDATED to use blue theme */
 .tips-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -290,19 +312,19 @@ include __DIR__ . '/../partials/page-hero.php';
     align-items: flex-start;
     gap: 1rem;
     transition: all 0.3s ease;
-    border-left: 4px solid var(--safety-orange);
+    border-left: 4px solid var(--primary-blue);
 }
 
 .tip-card:hover {
     background: white;
     transform: translateX(5px);
-    box-shadow: 0 10px 20px -10px var(--safety-orange);
+    box-shadow: 0 10px 20px -10px var(--primary-blue);
 }
 
 .tip-icon {
     width: 40px;
     height: 40px;
-    background: var(--safety-orange);
+    background: var(--primary-blue);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -325,7 +347,7 @@ include __DIR__ . '/../partials/page-hero.php';
     margin: 0;
 }
 
-/* Partners Section */
+/* Partners Section - UPDATED to use blue theme */
 .partners-row {
     display: flex;
     flex-wrap: wrap;
@@ -348,13 +370,13 @@ include __DIR__ . '/../partials/page-hero.php';
 
 .partner-badge:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 25px -10px var(--ocean-blue);
-    border-color: var(--ocean-blue);
+    box-shadow: 0 15px 25px -10px var(--primary-blue);
+    border-color: var(--primary-blue);
 }
 
 .partner-badge i {
     font-size: 1.5rem;
-    color: var(--ocean-blue);
+    color: var(--primary-blue);
 }
 
 .partner-badge span {
@@ -362,7 +384,7 @@ include __DIR__ . '/../partials/page-hero.php';
     color: var(--dark-blue);
 }
 
-/* County Tags */
+/* County Tags - UPDATED to use blue theme */
 .county-tags {
     display: flex;
     flex-wrap: wrap;
@@ -372,29 +394,29 @@ include __DIR__ . '/../partials/page-hero.php';
 }
 
 .county-tag {
-    background: rgba(0,51,102,0.1);
+    background: rgba(110,193,228,0.1);
     color: var(--dark-blue);
     padding: 0.6rem 1.5rem;
     border-radius: 50px;
     font-size: 0.95rem;
     font-weight: 500;
-    border: 1px solid rgba(0,51,102,0.2);
+    border: 1px solid rgba(110,193,228,0.3);
     transition: all 0.3s ease;
 }
 
 .county-tag:hover {
-    background: var(--ocean-blue);
+    background: var(--primary-blue);
     color: white;
     transform: translateY(-2px);
 }
 
-/* Quote Card */
+/* Quote Card - UPDATED to use blue theme */
 .quote-card {
-    background: linear-gradient(135deg, rgba(255,107,53,0.05) 0%, rgba(44,125,160,0.05) 100%);
+    background: linear-gradient(135deg, rgba(110,193,228,0.05) 0%, rgba(36,64,128,0.05) 100%);
     padding: 2rem;
     border-radius: 15px;
     margin: 2rem 0;
-    border-left: 4px solid var(--safety-orange);
+    border-left: 4px solid var(--primary-blue);
     font-style: italic;
     position: relative;
 }
@@ -405,7 +427,7 @@ include __DIR__ . '/../partials/page-hero.php';
     top: -10px;
     left: 20px;
     font-size: 4rem;
-    color: rgba(255,107,53,0.2);
+    color: rgba(110,193,228,0.2);
     font-family: serif;
 }
 
@@ -420,13 +442,13 @@ include __DIR__ . '/../partials/page-hero.php';
 
 .quote-author {
     font-weight: 600;
-    color: var(--ocean-blue);
+    color: var(--primary-blue);
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
 
-/* Training Progress */
+/* Training Progress - UPDATED to use blue theme */
 .progress-card {
     background: white;
     padding: 2rem;
@@ -451,7 +473,7 @@ include __DIR__ . '/../partials/page-hero.php';
 }
 
 .progress-date {
-    color: var(--safety-orange);
+    color: var(--primary-blue);
     font-weight: 600;
 }
 
@@ -465,7 +487,7 @@ include __DIR__ . '/../partials/page-hero.php';
 
 .progress-bar {
     height: 100%;
-    background: linear-gradient(90deg, var(--safety-orange), var(--ocean-blue));
+    background: linear-gradient(90deg, var(--primary-blue), var(--dark-blue));
     border-radius: 10px;
     transition: width 1s ease;
 }
@@ -777,7 +799,7 @@ include __DIR__ . '/../partials/page-hero.php';
     font-weight: 600;
 }
 
-/* Previous News */
+/* Previous News - IMPROVED image display */
 .prev-news-item {
     display: flex;
     align-items: center;
@@ -799,12 +821,21 @@ include __DIR__ . '/../partials/page-hero.php';
     min-width: 70px;
     border-radius: 8px;
     overflow: hidden;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .prev-news-thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.prev-news-thumb img:hover {
+    transform: scale(1.1);
 }
 
 .prev-news-info h6 {
@@ -892,6 +923,38 @@ include __DIR__ . '/../partials/page-hero.php';
     transform: translateX(-5px);
 }
 
+/* Image error handling */
+img[src=""], 
+img:not([src]) {
+    opacity: 0;
+}
+
+/* Image loading animation */
+.image-loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
     .training-grid,
@@ -941,6 +1004,19 @@ include __DIR__ . '/../partials/page-hero.php';
         flex-direction: column;
         gap: 20px;
     }
+    
+    .featured-image {
+        max-height: 300px;
+    }
+    
+    .featured-image img {
+        max-height: 300px;
+    }
+    
+    .safety-badge {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
+    }
 }
 </style>
 
@@ -965,22 +1041,25 @@ include __DIR__ . '/../partials/page-hero.php';
                     </div>
                 </header>
 
-                <!-- Safety Badge -->
+                <!-- Safety Badge - Now in blue theme with orange accent -->
                 <div class="safety-badge" data-aos="fade-up">
                     <i class="bi bi-shield-check"></i>
                     World Day for Safety and Health at Work
                 </div>
 
-                <!-- Featured Image -->
+                <!-- Featured Image - IMPROVED with error handling -->
                 <div class="featured-image" data-aos="fade-up" data-aos-delay="50">
-                    <img src="/assets/images/fishermen.png" alt="Fisher communities along Kenyan coast">
+                    <img src="/assets/images/fishermen.png" 
+                         alt="Fisher communities along Kenyan coast"
+                         onerror="this.onerror=null; this.src='/assets/images/placeholder.png'; this.classList.add('error');"
+                         loading="lazy">
                 </div>
 
                 <!-- Article Content -->
                 <div class="article-content" data-aos="fade-up" data-aos-delay="100">
                     <p class="lead">How to support fisher communities along the Kenyan coast. Fishing is one of the most dangerous job in the world with many accidents resulting in fatalities. But proper safety measures save lives. Today we celebrate World Day for Safety and Health at Work, which promotes the prevention of occupational accidents and diseases globally.</p>
                     
-                    <!-- Stats Highlight -->
+                    <!-- Stats Highlight - Now in blue theme -->
                     <div class="stats-highlight">
                         <div class="stat-item">
                             <div class="stat-number">95</div>
@@ -1264,12 +1343,15 @@ include __DIR__ . '/../partials/page-hero.php';
                     </ul>
                 </div>
 
-                <!-- Previous News Widget -->
+                <!-- Previous News Widget - IMPROVED image display -->
                 <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="150">
                     <h4 class="widget-title">Previous News</h4>
                     <div class="prev-news-item">
                         <div class="prev-news-thumb">
-                            <img src="/assets/images/eu-heads.png" alt="EU Heads Mission">
+                            <img src="/assets/images/eu-heads.png" 
+                                 alt="EU Heads Mission"
+                                 onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+                                 loading="lazy">
                         </div>
                         <div class="prev-news-info">
                             <h6>European Union Heads of Mission visit on Blue Economy</h6>
@@ -1278,7 +1360,10 @@ include __DIR__ . '/../partials/page-hero.php';
                     </div>
                     <div class="prev-news-item">
                         <div class="prev-news-thumb">
-                            <img src="/assets/images/saf-plc.png" alt="Safaricom MOU">
+                            <img src="/assets/images/saf-plc.png" 
+                                 alt="Safaricom MOU"
+                                 onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+                                 loading="lazy">
                         </div>
                         <div class="prev-news-info">
                             <h6>Jumuiya and Safaricom PLC signed an MOU</h6>
@@ -1287,7 +1372,10 @@ include __DIR__ . '/../partials/page-hero.php';
                     </div>
                     <div class="prev-news-item">
                         <div class="prev-news-thumb">
-                            <img src="/assets/images/rege.png" alt="ReFaCE Forum">
+                            <img src="/assets/images/rege.png" 
+                                 alt="ReFaCE Forum"
+                                 onerror="this.onerror=null; this.src='/assets/images/placeholder.png';"
+                                 loading="lazy">
                         </div>
                         <div class="prev-news-info">
                             <h6>Regenerative Fashion Collective Exchange Forum 2023</h6>
@@ -1345,6 +1433,20 @@ document.addEventListener('DOMContentLoaded', function() {
         // Here you would normally send the comment to your server
         alert('Thank you for your comment! (This is a demo - comment would be saved to database)');
         this.reset();
+    });
+    
+    // Add loading animation to images
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        if (!img.complete) {
+            img.parentElement?.classList.add('image-loading');
+            img.addEventListener('load', function() {
+                this.parentElement?.classList.remove('image-loading');
+            });
+            img.addEventListener('error', function() {
+                this.parentElement?.classList.remove('image-loading');
+            });
+        }
     });
 });
 </script>
