@@ -198,7 +198,7 @@ function navActive(string $key): string
                     <!-- CTA + Sidebar toggle -->
                     <div class="getStart-sideMenu d-flex align-items-center gap-2">
                         <div class="d-flex align-items-center cityWall-btn" role="search">
-                            <a href="/contact">Contact Us <i class="bi bi-arrow-right"></i></a>
+                            <a href="/partner">Partner With Us<i class="bi bi-arrow-right"></i></a>
                         </div>
                         <div class="said-navbar ms-2">
                             <a href="#" class="navSidebar-button" onclick="openNav()">
