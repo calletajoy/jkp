@@ -9,10 +9,10 @@ $currentPage  = 'news';
 $heroTitle    = 'Kisauni VTC Graduates Article';
 $heroSubtitle = 'Kisauni VTC Graduation';
 
-// Add Open Graph and Twitter Card meta tags for social sharing
-$ogImage = 'https://www.jumuiya.org/assets/images/kisauni.png';
+// Add Open Graph and Twitter Card meta tags for social sharing (localhost version for testing)
+$ogImage = 'http://localhost:8000/assets/images/kisauni.png';
 $ogDescription = 'On Saturday, May 25, 2024, Kisauni VTC celebrated its 8th graduation ceremony. Out of 813 graduates, 513 completed blue economy-related courses, namely Maritime Plumbing, Maritime Tourism & Hospitality, and Maritime Security. 60% secured job placements after their industrial attachments, and 25% transitioned to entrepreneurship.';
-$ogUrl = 'https://www.jumuiya.org/kisauni-vtc-graduates';
+$ogUrl = 'http://localhost:8000/kisauni-vtc-graduates';
 
 $extraMeta = '
 <meta property="og:title" content="' . $pageTitle . '" />
@@ -678,7 +678,7 @@ include __DIR__ . '/../partials/page-hero.php';
                     <div class="share-title">Share this article</div>
                     <div class="share-buttons">
                         <?php 
-                        $articleUrl = urlencode('https://www.jumuiya.org/kisauni-vtc-graduates');
+                        $articleUrl = urlencode('http://localhost:8000/kisauni-vtc-graduates');
                         $articleTitle = urlencode('Kisauni VTC Graduates 513 Students in Blue Economy Courses');
                         ?>
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $articleUrl; ?>" target="_blank" class="share-btn facebook">
