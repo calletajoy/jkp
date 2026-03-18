@@ -407,14 +407,151 @@ ob_start();
         animation: countUp 0.6s ease forwards;
     }
     
-    /* Carousel zoom animation */
-    .carousel-item img {
-        animation: zoomInOut 12s infinite alternate ease-in-out;
+    /* Left-to-right panning animation only - no zoom */
+    @keyframes panLeftToRight {
+        0% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(-3%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+    
+    /* Split banner layout */
+    .split-banner {
+        display: flex;
+        height: 700px;
+    }
+    
+    .banner-left {
+        width: 50%;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .banner-left .carousel-item {
+        overflow: hidden;
+        height: 700px;
+    }
+    
+    .banner-left .carousel-item img {
+        animation: panLeftToRight 20s infinite alternate ease-in-out;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .banner-right {
+        width: 50%;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .banner-right img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation: zoomInOut 20s infinite alternate ease-in-out;
     }
     
     @keyframes zoomInOut {
         0% { transform: scale(1); }
-        100% { transform: scale(1.15); }
+        100% { transform: scale(1.1); }
+    }
+    
+    .banner-right .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0,206,209,0.3) 0%, rgba(39,60,103,0.5) 100%);
+        z-index: 1;
+    }
+    
+    .banner-right .anniversary-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 2;
+        width: 100%;
+        padding: 20px;
+    }
+    
+    .banner-right .anniversary-text h2 {
+        color: white;
+        font-size: 4rem;
+        font-weight: 800;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        margin-bottom: 1rem;
+        font-family: 'Playfair Display', serif;
+        animation: fadeInUp 1.5s ease;
+    }
+    
+    .banner-right .anniversary-text p {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 500;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        letter-spacing: 2px;
+        animation: fadeInUp 1.5s ease 0.3s both;
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Typing animation styles - now confined to left side */
+    .typing-container {
+        display: inline-block;
+        max-width: 90%;
+    }
+    
+    .typing-text {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        margin: 1.5rem 0;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        overflow: hidden;
+        white-space: normal;
+        border-right: 3px solid var(--turquoise);
+        animation: blink-cursor 0.75s step-end infinite;
+    }
+    
+    @keyframes blink-cursor {
+        from, to { border-color: transparent; }
+        50% { border-color: var(--turquoise); }
+    }
+    
+    /* Ensure text stays within left side */
+    .banner-content {
+        position: relative;
+        z-index: 10;
+        max-width: 90%;
+        padding: 2rem 0;
+    }
+    
+    /* Reduce font size for the subtitle */
+    .banner-semi-title {
+        font-size: 0.9rem !important;
+        letter-spacing: 2px !important;
+    }
+    
+    /* Adjust county name size to fit better */
+    .banner-content h1 {
+        font-size: 2.8rem !important;
     }
     
     /* Staircase timeline */
@@ -640,6 +777,29 @@ ob_start();
         .staircase-line {
             display: none;
         }
+        
+        .split-banner {
+            flex-direction: column;
+            height: auto;
+        }
+        
+        .banner-left,
+        .banner-right {
+            width: 100%;
+            height: 500px;
+        }
+        
+        .typing-text {
+            font-size: 1rem;
+        }
+        
+        .banner-right .anniversary-text h2 {
+            font-size: 3rem;
+        }
+        
+        .banner-right .anniversary-text p {
+            font-size: 1.2rem;
+        }
     }
 </style>
 
@@ -818,69 +978,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<!-- ===== Banner Carousel ===== -->
-<style>
-    /* Left-to-right panning animation only - no zoom */
-    @keyframes panLeftToRight {
-        0% {
-            transform: translateX(0);
-        }
-        50% {
-            transform: translateX(-3%);
-        }
-        100% {
-            transform: translateX(0);
-        }
-    }
-    
-    .carousel-item {
-        overflow: hidden;
-    }
-    
-    .carousel-item img {
-        animation: panLeftToRight 20s infinite alternate ease-in-out;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    /* Typing animation styles */
-    .typing-container {
-        display: inline-block;
-        max-width: 100%;
-    }
-    
-    .typing-text {
-        font-size: 1.3rem;
-        line-height: 1.6;
-        margin: 2rem 0;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-        overflow: hidden;
-        white-space: normal;
-        border-right: 3px solid var(--turquoise);
-        animation: blink-cursor 0.75s step-end infinite;
-    }
-    
-    @keyframes blink-cursor {
-        from, to { border-color: transparent; }
-        50% { border-color: var(--turquoise); }
-    }
-    
-    /* Ensure text stays readable */
-    .banner-content {
-        position: relative;
-        z-index: 10;
-        max-width: 800px;
-        padding: 2rem 0;
-    }
-    
-    @media (max-width: 768px) {
-        .typing-text {
-            font-size: 1rem;
-        }
-    }
-</style>
-
 <!-- ===== Typing Animation Script ===== -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -919,75 +1016,86 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<!-- ===== Split Banner with Carousel and Anniversary Image ===== -->
 <div class="banner">
-    <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <?php
-            $slides = [
-                [
-                    'img' => '/assets/images/fort jesus mbs.jpg', 
-                    'county' => 'Mombasa County'
-                ],
-                [
-                    'img' => '/assets/images/kilifi creek.jpg', 
-                    'county' => 'Kilifi County'
-                ],
-                [
-                    'img' => '/assets/images/red el taita.jpeg', 
-                    'county' => 'Taita Taveta County'
-                ],
-                [
-                    'img' => '/assets/images/diani beach.jpg', 
-                    'county' => 'Kwale County'
-                ],
-                [
-                    'img' => '/assets/images/tana river delta.jpeg', 
-                    'county' => 'Tana River County'
-                ],
-                [
-                    'img' => '/assets/images/Lamu_Island.jpg', 
-                    'county' => 'Lamu County'
-                ],
-            ];
-            
-            // Same description for all slides
-            $description = "A Kenya Coast economic bloc that creates wealth for its community. JKP is focused on championing the region's economic development initiatives through innovation and partnership with the public, industry and academia. With the vast shared resources, a unique common historic foundation in culture and heritage; the mission of Jumuiya ya Kaunti za Pwani is to catalyze economic growth of Kenya's coast regional counties.";
-            
-            foreach ($slides as $i => $slide):
-            ?>
-                <div class="carousel-item <?php echo $i === 0 ? 'active' : ''; ?>">
-                    <div class="images-optimization position-relative">
-                        <img src="<?php echo htmlspecialchars($slide['img']); ?>" class="d-block img-fluid" alt="Banner slide <?php echo $i + 1; ?>">
-                        <div class="cover-images-overlay" style="background: linear-gradient(135deg, rgba(39,60,103,0.7) 0%, rgba(0,206,209,0.3) 100%);">
-                            <div class="container">
-                                <div class="banner-content text-center text-lg-start">
-                                    <div class="sentence-underline">
-                                        <div class="text-white banner-semi-title" style="letter-spacing: 3px; font-weight: 300;">Jumuiya ya Kaunti za Pwani</div>
-                                    </div>
-                                    
-                                    <!-- Typing animation container -->
-                                    <div class="typing-container">
-                                        <div class="typing-text text-white" data-text="<?php echo htmlspecialchars($description); ?>"></div>
-                                    </div>
-                                    
-                                    <!-- County name -->
-                                    <h1 class="text-white display-3 fw-bold">
-                                        <span class="cssanimation lePopUp sequence" style="color: var(--turquoise);"><?php echo $slide['county']; ?></span>
-                                    </h1>
-                                    
-                                    <div class="buttons mt-4">
-                                        <div class="cityWall-btn" role="search">
-                                            <a href="/about" class="btn-fancy" style="background: var(--turquoise);">Discover More <i class="bi bi-arrow-right"></i></a>
-                                            <a href="/contact" class="btn-fancy" style="background: var(--navy);">Contact Us <i class="bi bi-arrow-right"></i></a>
+    <div class="split-banner">
+        <!-- Left side: Carousel -->
+        <div class="banner-left">
+            <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade h-100" data-bs-ride="carousel">
+                <div class="carousel-inner h-100">
+                    <?php
+                    $slides = [
+                        [
+                            'img' => '/assets/images/fort jesus mbs.jpg', 
+                            'county' => 'Mombasa County'
+                        ],
+                        [
+                            'img' => '/assets/images/kilifi creek.jpg', 
+                            'county' => 'Kilifi County'
+                        ],
+                        [
+                            'img' => '/assets/images/red el taita.jpeg', 
+                            'county' => 'Taita Taveta County'
+                        ],
+                        [
+                            'img' => '/assets/images/diani beach.jpg', 
+                            'county' => 'Kwale County'
+                        ],
+                        [
+                            'img' => '/assets/images/tana river delta.jpeg', 
+                            'county' => 'Tana River County'
+                        ],
+                        [
+                            'img' => '/assets/images/Lamu_Island.jpg', 
+                            'county' => 'Lamu County'
+                        ],
+                    ];
+                    
+                    // Same description for all slides
+                    $description = "A Kenya Coast economic bloc that creates wealth for its community. JKP is focused on championing the region's economic development initiatives through innovation and partnership with the public, industry and academia. With the vast shared resources, a unique common historic foundation in culture and heritage; the mission of Jumuiya ya Kaunti za Pwani is to catalyze economic growth of Kenya's coast regional counties.";
+                    
+                    foreach ($slides as $i => $slide):
+                    ?>
+                        <div class="carousel-item h-100 <?php echo $i === 0 ? 'active' : ''; ?>">
+                            <div class="images-optimization position-relative h-100">
+                                <img src="<?php echo htmlspecialchars($slide['img']); ?>" class="d-block img-fluid w-100 h-100" alt="Banner slide <?php echo $i + 1; ?>" style="object-fit: cover;">
+                                <div class="cover-images-overlay" style="background: linear-gradient(135deg, rgba(39,60,103,0.8) 0%, rgba(0,206,209,0.4) 100%); position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
+                                    <div class="container h-100">
+                                        <div class="banner-content text-center text-lg-start d-flex flex-column justify-content-center h-100">
+                                            <div class="sentence-underline">
+                                                <div class="text-white banner-semi-title" style="letter-spacing: 2px; font-weight: 300; font-size: 0.9rem;">Jumuiya ya Kaunti za Pwani</div>
+                                            </div>
+                                            
+                                            <!-- Typing animation container -->
+                                            <div class="typing-container">
+                                                <div class="typing-text text-white" data-text="<?php echo htmlspecialchars($description); ?>" style="font-size: 1.1rem;"></div>
+                                            </div>
+                                            
+                                            <!-- County name -->
+                                            <h1 class="text-white fw-bold" style="font-size: 2.8rem;">
+                                                <span class="cssanimation lePopUp sequence" style="color: var(--turquoise);"><?php echo $slide['county']; ?></span>
+                                            </h1>
+                                            
+                                            <div class="buttons mt-4">
+                                                <div class="cityWall-btn" role="search">
+                                                    <a href="/about" class="btn-fancy" style="background: var(--turquoise); padding: 12px 30px; display: inline-block; color: white; text-decoration: none; border-radius: 50px; margin-right: 15px;">Discover More <i class="bi bi-arrow-right"></i></a>
+                                                    <a href="/contact" class="btn-fancy" style="background: var(--navy); padding: 12px 30px; display: inline-block; color: white; text-decoration: none; border-radius: 50px;">Contact Us <i class="bi bi-arrow-right"></i></a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
-            <?php endforeach; ?>
+            </div>
         </div>
+        
+        <!-- Right side: 10 Years Anniversary Image -->
+        <div class="banner-right">
+            <img src="/assets/images/jummy-10.png" alt="10 Years Anniversary" onerror="this.src='/assets/images/jummy-10.png'">
+            
     </div>
 </div>
 
@@ -1049,13 +1157,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="semi-title mb-3">
                         <div class="animated-circles">
                             <div class="small-circle-start"></div>
-                            <span class="title" style="color: var(--turquoise); letter-spacing: 2px;">About Jumuiya</span>
+                            <span class="title" style="color: var(--turquoise); letter-spacing: 2px;">About JKP</span>
                         </div>
                     </div>
-                    <h2 class="display-4 fw-bold mb-4" style="color: var(--navy);">
-                        <span class="cssanimation lePopUp sequence">Jumuiya ya Kaunti za Pwani</span><br>
-                        <span class="cssanimation lePopUp sequence" style="color: var(--turquoise);">— Kenya's Coastal Economic Bloc</span>
-                    </h2>
+                    <h2 class="display-6 fw-bold mb-4" style="color: var(--navy);">
+    <span class="cssanimation lePopUp sequence">Jumuiya ya Kaunti za Pwani</span><br>
+    <span class="cssanimation lePopUp sequence" style="color: var(--turquoise);">— Kenya's Coastal Economic Bloc</span>
+</h2>
                     <p class="lead mb-4" style="color: var(--text-dark); line-height: 1.8;">The Jumuiya ya Kaunti za Pwani (JKP) serves as the regional economic development body for Kenya's coastal counties. Our primary goal is to foster a unified economic environment by bringing together regional leaders, county and national governments, development partners, the private sector, and academic institutions to drive economic growth.</p>
 
                     <div class="row g-3 mb-4">
@@ -1085,7 +1193,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
 <!-- ===== Mission, Vision, Aspiration & Core Mandate Section with Map ===== -->
-<section style="background: var(--light-bg)"; data-aos="fade-up">
+<section style="background: var(--light-bg);" data-aos="fade-up">
     <div class="container">
         <div class="row align-items-start g-5">
             <!-- Left side - Cards in grid layout (matching Impacts section style) -->
@@ -1137,46 +1245,43 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
             
-            <!-- Right side - Map positioned slightly lower (white background removed) -->
+            <!-- Right side - Map positioned slightly lower -->
             <div class="col-lg-6" style="transform: translateY(40px);">
-                <!-- Removed map-container class and white background -->
                 <div class="text-center">
-                    <h4 class="text-center fw-bold mb-4 text-white">Our Six Coastal Counties</h4>
+                    <h4 class="text-center fw-bold mb-4">Our Six Coastal Counties</h4>
                     
                     <!-- SVG Map - Using your existing path -->
                     <div class="kenya-map text-center">
                         <img src="/assets/images/map backup.png" alt="Kenya Map with Coastal Counties" class="img-fluid" style="max-height: 400px; width: auto; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));">
                     </div>
                     
-                    <!-- County Legend - Updated for better visibility on blue background -->
+                    <!-- County Legend -->
                     <div class="county-legend mt-4">
                         <div class="legend-item">
                             <span class="legend-color" style="background: var(--turquoise);"></span>
-                            <span class="text-black">Mombasa</span>
+                            <span>Mombasa</span>
                         </div>
                         <div class="legend-item">
                             <span class="legend-color" style="background: var(--soft-blue);"></span>
-                            <span class="text-black">Kwale</span>
+                            <span>Kwale</span>
                         </div>
                         <div class="legend-item">
                             <span class="legend-color" style="background: var(--deep-blue);"></span>
-                            <span class="text-black">Kilifi</span>
+                            <span>Kilifi</span>
                         </div>
                         <div class="legend-item">
                             <span class="legend-color" style="background: var(--navy);"></span>
-                            <span class="text-black">Tana River</span>
+                            <span>Tana River</span>
                         </div>
                         <div class="legend-item">
                             <span class="legend-color" style="background: #4A6FA5;"></span>
-                            <span class="text-black">Lamu</span>
+                            <span>Lamu</span>
                         </div>
                         <div class="legend-item">
                             <span class="legend-color" style="background: #6B8CBE;"></span>
-                            <span class="text-black">Taita Taveta</span>
+                            <span>Taita Taveta</span>
                         </div>
                     </div>
-                    
-                    
                 </div>
             </div>
         </div>
@@ -1188,7 +1293,6 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="container">
         <div class="section-title-fancy text-center mb-5">
             <div class="subtitle">Our Impacts</div>
-            
         </div>
 
         <?php
@@ -1350,7 +1454,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="container position-relative" style="margin-top: -400px;">
             <div class="city-content text-center">
                 <h2 class="display-3 fw-bold mb-5" data-aos="fade-up" data-aos-duration="1000" style="color: white;">
-                    <span class="cssanimation lePopUp sequence">Jumuiya Hub</span>
+                    <span class="cssanimation lePopUp sequence">Jumuiya House</span>
                 </h2>
                 <div class="row g-4">
                     <!-- First card - comes from left -->
@@ -1403,7 +1507,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <section class="newsroom" data-aos="fade-up">
     <div class="container">
         <div class="section-title-fancy text-center mb-5">
-            <div class="subtitle"> Updates</div>
+            <div class="subtitle">Updates</div>
             <h2>Latest Updates</h2>
         </div>
         
@@ -1472,7 +1576,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="col-lg-7">
                 <div class="section-title-fancy text-start mb-4">
                     <div class="subtitle" style="color: var(--turquoise);">Get In Touch</div>
-                    <h2 class="text-black">Contact the Jumuiya<br>Economic Development Secretariat</h2>
+                    <h2 class="text-black">Contact the JKP</h2>
                 </div>
                 
                 <div class="row g-4">
