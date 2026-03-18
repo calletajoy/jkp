@@ -353,7 +353,7 @@ include __DIR__ . '/../partials/page-hero.php';
 <!-- ===== CTA Section ===== -->
 <section class="best-city-government remove-div one-second" data-aos="fade-up" style="margin-top: 60px;">
     <div class="images-and-overlay">
-        <img class="img-fluid" src="/assets/images/01_home/best-city/image-footer.png" alt="Jumuiya Coast Region">
+        
         <div class="overlay" style="background: linear-gradient(135deg, rgba(39,60,103,0.9) 0%, rgba(0,206,209,0.7) 100%);"></div>
     </div>
     <div class="container">

@@ -53,6 +53,8 @@ $routes = [
     'blue-economy-mission-italy'   => 'pages/blue-economy-mission-italy.php',
     'trade-mission-usa'   => 'pages/trade-mission-usa.php',
     'eurometal-mic-collaboration'   => 'pages/eurometal-mic-collaboration.php',
+    'component-2'   => 'pages/component-2.php',
+    'unep-habitat'   => 'pages/unep-habitat.php',
     
 ];
 

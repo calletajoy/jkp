@@ -239,6 +239,87 @@ include __DIR__ . '/../partials/page-hero.php';
     gap: 10px;
 }
 
+/* NEW STYLES FOR INTERACTIVE COMPONENTS SECTION */
+.interactive-components {
+    padding: 60px 0;
+    background: #f0f7fa;
+}
+
+.component-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0 30px;
+}
+
+.component-item {
+    width: 280px;
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 10px 25px -10px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.component-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 35px -10px var(--turquoise);
+    border-color: var(--turquoise);
+}
+
+.component-item.active {
+    border-color: var(--navy);
+    background: linear-gradient(135deg, rgba(39,60,103,0.02) 0%, rgba(0,206,209,0.02) 100%);
+}
+
+.component-item h3 {
+    color: var(--navy);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.component-item p {
+    color: var(--soft-blue);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.component-description {
+    max-width: 900px;
+    margin: 30px auto 0;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+    border-left: 4px solid var(--turquoise);
+    display: none;
+}
+
+.component-description.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.component-description p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--navy);
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* END NEW STYLES */
+
 /* Intro section */
 .go-blue-intro {
     padding: 60px 0 40px;
@@ -593,7 +674,7 @@ include __DIR__ . '/../partials/page-hero.php';
         
         <!-- Partners Image - Placed below the intro text and resources -->
         <div class="partners-image-container" data-aos="fade-up">
-            <img src="/assets/images/go-blue-partners.png" alt="Go Blue Project Partners" class="partners-image">
+            <img src="/assets/images/go blue pic.png" alt="Go Blue Project Partners" class="partners-image">
             <!-- Replace with your actual partners image path -->
         </div>
     </div>
@@ -650,20 +731,62 @@ include __DIR__ . '/../partials/page-hero.php';
                 </div>
             </div>
             
-            <div class="description-image" data-aos="fade-left">
-                <img src="/assets/images/go-blue-stats.jpg" alt="Go Blue Project Statistics">
-                <!-- Replace with your actual image path -->
-            </div>
+           
         </div>
     </div>
 </section>
 
 <!-- ===== Go Blue Components ===== -->
-<section class="components-section">
+
+<!-- ===== NEW INTERACTIVE GO BLUE COMPONENTS SECTION ===== -->
+<section class="interactive-components">
     <div class="container">
         <div class="section-title">
             <h2>Go Blue Components</h2>
+             <p>Enhancing sustained, inclusive and sustainable economic growth with job creation and employment impact. Indirect management with Italian Agency for Development Cooperation, German Cooperation, Portuguese Camões (AICS)</p>
+            
+        </div>
+
+        <div class="component-grid">
+            <!-- Component 1 -->
+            <div class="component-item" onclick="showComponent(1)">
+                <h3>Component 1</h3>
+                <p>Economic Growth & Employment</p>
+            </div>
+            
+            <!-- Component 2 -->
+            <div class="component-item" onclick="showComponent(2)">
+                <h3>Component 2</h3>
+                <p>Sea-Land Planning & Management</p>
+            </div>
+            
+            <!-- Component 3 -->
+            <div class="component-item" onclick="showComponent(3)">
+                <h3>Component 3</h3>
+                <p>Maritime Governance</p>
+            </div>
+        </div>
+
+        <!-- Component Descriptions -->
+        <div id="comp1-description" class="component-description">
             <p>Enhancing sustained, inclusive and sustainable economic growth with job creation and employment impact. Indirect management with Italian Agency for Development Cooperation, German Cooperation, Portuguese Camões (AICS)</p>
+        </div>
+
+        <div id="comp2-description" class="component-description">
+            <p>Promoting the development and mainstreaming of a participatory, inclusive and integrated approach to sea-land planning and management. Indirect management with United Nations</p>
+        </div>
+
+        <div id="comp3-description" class="component-description">
+            <p>Strengthening maritime governance through effective and integrated maritime law enforcement. Indirect management with FRANCE</p>
+        </div>
+    </div>
+</section>
+
+<section class="components-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Results-</h2>
+           
         </div>
 
         <div class="result-cards">
@@ -671,14 +794,14 @@ include __DIR__ . '/../partials/page-hero.php';
             <div class="result-card">
                 <h3>GoBlue Component 1</h3>
                 <p>Kenya Coastal Counties - Mombasa, Kilifi, Kwale, Tana River, Lamu & Taita Taveta</p>
-                <a href="#" class="read-more">Read more <i class="bi bi-arrow-right"></i></a>
+                <a href="pages/component-1.php" class="read-more">Read more <i class="bi bi-arrow-right"></i></a>
             </div>
             
             <!-- Component 2 -->
             <div class="result-card">
                 <h3>GoBlue Component 2</h3>
                 <p>Kenya Coastal Counties - Mombasa, Kilifi, Kwale, Tana River, Lamu & Taita Taveta</p>
-                <a href="#" class="read-more">Read more <i class="bi bi-arrow-right"></i></a>
+                <a href="pages/component-2.php" class="read-more">Read more <i class="bi bi-arrow-right"></i></a>
             </div>
             
             <!-- Component 3 -->
@@ -691,10 +814,11 @@ include __DIR__ . '/../partials/page-hero.php';
     </div>
 </section>
 
+
 <!-- ===== CTA Section ===== -->
 <section class="best-city-government remove-div one-second" data-aos="fade-up" style="margin-top: 0;">
     <div class="images-and-overlay">
-        <img class="img-fluid" src="/assets/images/01_home/best-city/image-footer.png" alt="Jumuiya Coast Region">
+        
         <div class="overlay" style="background: linear-gradient(135deg, rgba(39,60,103,0.9) 0%, rgba(0,206,209,0.7) 100%);"></div>
     </div>
     <div class="container">
@@ -736,6 +860,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Function to show component descriptions
+function showComponent(compNumber) {
+    // Hide all descriptions
+    for (let i = 1; i <= 3; i++) {
+        const desc = document.getElementById('comp' + i + '-description');
+        const item = document.querySelectorAll('.component-item')[i-1];
+        if (desc) desc.classList.remove('active');
+        if (item) item.classList.remove('active');
+    }
+    
+    // Show selected description
+    const selectedDesc = document.getElementById('comp' + compNumber + '-description');
+    const selectedItem = document.querySelectorAll('.component-item')[compNumber-1];
+    if (selectedDesc) selectedDesc.classList.add('active');
+    if (selectedItem) selectedItem.classList.add('active');
+}
 </script>
 
 <?php
