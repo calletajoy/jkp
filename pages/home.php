@@ -1244,46 +1244,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
             </div>
-            
-            <!-- Right side - Map positioned slightly lower -->
-            <div class="col-lg-6" style="transform: translateY(40px);">
-                <div class="text-center">
-                    <h4 class="text-center fw-bold mb-4">Our Six Coastal Counties</h4>
-                    
-                    <!-- SVG Map - Using your existing path -->
-                    <div class="kenya-map text-center">
-                        <img src="/assets/images/map backup.png" alt="Kenya Map with Coastal Counties" class="img-fluid" style="max-height: 400px; width: auto; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));">
-                    </div>
-                    
-                    <!-- County Legend -->
-                    <div class="county-legend mt-4">
-                        <div class="legend-item">
-                            <span class="legend-color" style="background: var(--turquoise);"></span>
-                            <span>Mombasa</span>
-                        </div>
-                        <div class="legend-item">
-                            <span class="legend-color" style="background: var(--soft-blue);"></span>
-                            <span>Kwale</span>
-                        </div>
-                        <div class="legend-item">
-                            <span class="legend-color" style="background: var(--deep-blue);"></span>
-                            <span>Kilifi</span>
-                        </div>
-                        <div class="legend-item">
-                            <span class="legend-color" style="background: var(--navy);"></span>
-                            <span>Tana River</span>
-                        </div>
-                        <div class="legend-item">
-                            <span class="legend-color" style="background: #4A6FA5;"></span>
-                            <span>Lamu</span>
-                        </div>
-                        <div class="legend-item">
-                            <span class="legend-color" style="background: #6B8CBE;"></span>
-                            <span>Taita Taveta</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php include __DIR__ . '/components/coastal_counties.php'; ?>
         </div>
     </div>
 </section>
