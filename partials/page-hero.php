@@ -16,8 +16,8 @@ $heroSubtitle = $heroSubtitle ?? $pageTitle ?? '';
         <div class="cover-images-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
             <div class="container">
                 <div class="banner-content text-center">
-                    <h1 class="text-white my-2">
-                        <span class="cssanimation lePopUp sequence">
+                    <h1 class="my-2">
+                        <span class="cssanimation lePopUp sequence" style="color: #273C67;">
                             <?php echo htmlspecialchars($heroTitle ?? 'Page Title'); ?>
                         </span>
                     </h1>
@@ -26,9 +26,9 @@ $heroSubtitle = $heroSubtitle ?? $pageTitle ?? '';
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb justify-content-center mb-0">
                                 <li class="breadcrumb-item">
-                                    <a href="/" class="text-white">Home</a>
+                                    <a href="/" style="color: #273C67;">Home</a>
                                 </li>
-                                <li class="breadcrumb-item text-white active" aria-current="page">
+                                <li class="breadcrumb-item active" aria-current="page" style="color: #273C67;">
                                     <?php echo htmlspecialchars($heroSubtitle); ?>
                                 </li>
                             </ol>

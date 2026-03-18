@@ -42,28 +42,35 @@ include __DIR__ . '/../partials/page-hero.php';
                         <i class="bi bi-geo-alt-fill fs-4"></i>
                         <div>
                             <strong>Address</strong><br>
-                            Valentin, Street Road 24,<br>New York, USA - 67452
+                            Bustani Close, Links Road Nyali, <br> Mombasa, Kenya,
                         </div>
                     </li>
                     <li class="d-flex gap-3">
                         <i class="bi bi-telephone-fill fs-4"></i>
                         <div>
                             <strong>Phone</strong><br>
-                            <a href="tel:+1999806915">+199(980) 6915</a>
+                            <a href="tel:+254 777 101 115">+254 777 101 115</a>
                         </div>
                     </li>
                     <li class="d-flex gap-3">
                         <i class="bi bi-envelope-fill fs-4"></i>
                         <div>
                             <strong>Email</strong><br>
-                            <a href="mailto:info@citywall.gov">info@citywall.gov</a>
+                            <a href="mailto:secretariat@jumuiya.org">secretariat@jumuiya.org</a>
+                        </div>
+                    </li>
+                     <li class="d-flex gap-3">
+                        <i class="bi bi-envelope-fill fs-4"></i>
+                        <div>
+                            <strong>Email</strong><br>
+                            <a href="mailto: info@jumuiya.org"> info@jumuiya.org</a>
                         </div>
                     </li>
                     <li class="d-flex gap-3">
                         <i class="bi bi-clock-fill fs-4"></i>
                         <div>
                             <strong>Office Hours</strong><br>
-                            Mon–Fri: 10:00 – 18:00<br>
+                            Mon–Fri: 8:30am – 5:00pm<br>
                             Sat–Sun: Closed
                         </div>
                     </li>

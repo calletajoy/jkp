@@ -508,7 +508,7 @@ include __DIR__ . '/../partials/page-hero.php';
             <!-- Pillar 1 -->
             <div class="stat-card-fancy pillar-card" data-aos="fade-up">
                 <div class="pillar-icon-image">
-                    <img src="/assets/icons/pillar-agribusiness.png" alt="Agribusiness">
+                    <img src="/assets/images/agbusi.jpg" alt="Agribusiness">
                 </div>
                 <h3>Agribusiness, Food & Nutrition Security</h3>
                 <p>Focuses on the advancement of agricultural initiatives to promote food security and value added products in the region</p>
@@ -517,7 +517,7 @@ include __DIR__ . '/../partials/page-hero.php';
             <!-- Pillar 2 -->
             <div class="stat-card-fancy pillar-card" data-aos="fade-up" data-aos-delay="50">
                 <div class="pillar-icon-image">
-                    <img src="/assets/icons/pillar-trade.png" alt="Trade & Industries">
+                    <img src="/assets/images/trade industry.jpg" alt="Trade & Industries">
                 </div>
                 <h3>Trade & Industries</h3>
                 <p>Special economic zones in the region have been earmarked to promote trade, textiles, logistics and manufacturing</p>
@@ -526,7 +526,7 @@ include __DIR__ . '/../partials/page-hero.php';
             <!-- Pillar 3 -->
             <div class="stat-card-fancy pillar-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="pillar-icon-image">
-                    <img src="/assets/icons/pillar-blue-economy.png" alt="Blue Economy">
+                    <img src="/assets/images/blu anime.jpeg" alt="Blue Economy">
                 </div>
                 <h3>Blue Economy Value Chains</h3>
                 <p>With the 500km coastline, vast marine species, 2 major ports, and pristine beaches, JKP seeks to advance projects in the maritime sector.</p>
@@ -535,7 +535,7 @@ include __DIR__ . '/../partials/page-hero.php';
             <!-- Pillar 4 -->
             <div class="stat-card-fancy pillar-card" data-aos="fade-up" data-aos-delay="150">
                 <div class="pillar-icon-image">
-                    <img src="/assets/icons/pillar-natural-resources.png" alt="Natural Resources">
+                    <img src="/assets/images/natural res.webp" alt="Natural Resources">
                 </div>
                 <h3>Natural Resources & Environment</h3>
                 <p>JKP seeks to promote climate action initiatives to provide for a better future for its communities.</p>
@@ -544,7 +544,7 @@ include __DIR__ . '/../partials/page-hero.php';
             <!-- Pillar 5 -->
             <div class="stat-card-fancy pillar-card" data-aos="fade-up" data-aos-delay="200">
                 <div class="pillar-icon-image">
-                    <img src="/assets/icons/pillar-urbanization.png" alt="Coastal Urbanization">
+                    <img src="/assets/images/coast-ub.avif" alt="Coastal Urbanization">
                 </div>
                 <h3>Coastal Urbanization</h3>
                 <p></p>
@@ -553,7 +553,7 @@ include __DIR__ . '/../partials/page-hero.php';
             <!-- Pillar 6 -->
             <div class="stat-card-fancy pillar-card" data-aos="fade-up" data-aos-delay="250">
                 <div class="pillar-icon-image">
-                    <img src="/assets/icons/pillar-health.png" alt="Health & Education">
+                    <img src="/assets/images/H&ed.jpg" alt="Health & Education">
                 </div>
                 <h3>Health & Education</h3>
                 <p></p>
@@ -562,7 +562,7 @@ include __DIR__ . '/../partials/page-hero.php';
             <!-- Pillar 7 -->
             <div class="stat-card-fancy pillar-card" data-aos="fade-up" data-aos-delay="300">
                 <div class="pillar-icon-image">
-                    <img src="/assets/icons/pillar-governance.png" alt="Governance">
+                    <img src="/assets/images/governance.webp" alt="Governance">
                 </div>
                 <h3>Governance</h3>
                 <p></p>
@@ -571,7 +571,7 @@ include __DIR__ . '/../partials/page-hero.php';
             <!-- Pillar 8 -->
             <div class="stat-card-fancy pillar-card" data-aos="fade-up" data-aos-delay="350">
                 <div class="pillar-icon-image">
-                    <img src="/assets/icons/pillar-infrastructure.png" alt="Infrastructure">
+                    <img src="/assets/images/infrast.png" alt="Infrastructure">
                 </div>
                 <h3>Infrastructure</h3>
                 <p></p>
@@ -580,7 +580,7 @@ include __DIR__ . '/../partials/page-hero.php';
             <!-- Pillar 9 -->
             <div class="stat-card-fancy pillar-card" data-aos="fade-up" data-aos-delay="400">
                 <div class="pillar-icon-image">
-                    <img src="/assets/icons/pillar-land.png" alt="Land Resource Development">
+                    <img src="/assets/images/land-res.jpg" alt="Land Resource Development">
                 </div>
                 <h3>Land Resource Development</h3>
                 <p></p>
@@ -589,7 +589,7 @@ include __DIR__ . '/../partials/page-hero.php';
             <!-- Pillar 10 -->
             <div class="stat-card-fancy pillar-card" data-aos="fade-up" data-aos-delay="450">
                 <div class="pillar-icon-image">
-                    <img src="/assets/icons/pillar-investment.png" alt="Investment Fund">
+                    <img src="/assets/images/jfund.jpeg" alt="Investment Fund">
                 </div>
                 <h3>Jumuiya Investment Fund</h3>
                 <p></p>
@@ -637,7 +637,7 @@ include __DIR__ . '/../partials/page-hero.php';
 <!-- ===== CTA Section ===== -->
 <section class="best-city-government remove-div one-second" data-aos="fade-up" style="margin-top: 60px;">
     <div class="images-and-overlay">
-        <img class="img-fluid" src="/assets/images/01_home/best-city/image-footer.png" alt="Jumuiya Coast Region">
+       
         <div class="overlay" style="background: linear-gradient(135deg, rgba(39,60,103,0.9) 0%, rgba(0,206,209,0.7) 100%);"></div>
     </div>
     <div class="container">
