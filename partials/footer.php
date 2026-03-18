@@ -33,7 +33,7 @@
             <!-- About / Social -->
             <div class="col">
                 <div class="card h-100 bg-transparent border-0">
-                    <a href="/"><img src="/assets/images/logo/Jumuiya-Logo.svg" class="card-img-top img-fluid" alt="Jumuiya ya Kaunti za Pwani"></a>
+                    <a href="/"><img src="/assets/images/logo/Jumuiya-Logo.svg" class="card-img-top img-fluid" alt="Jumuiya ya Kaunti za Pwani" style="filter: brightness(0) invert(1); max-width: 200px;"></a>
                     <div class="card-body px-0 py-3">
                         <p class="card-text text-white">The Jumuiya ya Kaunti za Pwani (JKP) is the regional economic development body for Kenya's six coastal counties, driving shared prosperity and sustainable growth.</p>
                     </div>
@@ -122,13 +122,9 @@
                         </div>
                         <?php
                         $hours = [
-                            'Monday'    => '8:30am – 5:00pm',
-                            'Tuesday'   => '8:30am – 5:00pm',
-                            'Wednesday' => '8:30am – 5:00pm',
-                            'Thursday'  => '8:30am – 5:00pm',
-                            'Friday'    => '8:30am – 5:00pm',
-                            'Saturday'  => 'Closed',
-                            'Sunday'    => 'Closed',
+                            'Monday - Friday' => '8:30am – 5:00pm',
+                            'Saturday'        => 'Closed',
+                            'Sunday'          => 'Closed',
                         ];
                         ?>
                         <ul class="mt-3 ms-3 text-white">

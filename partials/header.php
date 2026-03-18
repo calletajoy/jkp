@@ -78,7 +78,7 @@ function navActive(string $key): string
                             <a class="nav-link fw-normal <?php echo navActive('home'); ?>" href="/">Home</a>
                         </li>
 
-                        <!-- About Us Mega Menu -->
+                        <!-- About Us Mega Menu - RESTRUCTURED for vertical layout -->
                         <li class="nav-item dropdown mega-dropdown">
                             <a class="nav-link dropdown-toggle <?php echo navActive('about'); ?>"
                                href="/about"
@@ -92,29 +92,24 @@ function navActive(string $key): string
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-md-4">
-                                           
                                             <ul class="list-unstyled">
                                                 <li><a class="dropdown-item px-0" href="/about">📊 About JKP Economic Bloc</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-4">
-                                           
-                                            <ul class="list-unstyled">
                                                 <li><a class="dropdown-item px-0" href="/core-mandate">🎯 Core Mandate</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-4">
-                                          
-                                            <ul class="list-unstyled">
                                                 <li><a class="dropdown-item px-0" href="/stakeholders">🤝 Stakeholders</a></li>
                                             </ul>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <!-- Empty column for future use or remove if not needed -->
+                                        </div>
+                                        <div class="col-md-4">
+                                            <!-- Empty column for future use or remove if not needed -->
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </li>
 
-                        <!-- Resources Mega Menu -->
+                        <!-- Resources Mega Menu - RESTRUCTURED for vertical layout -->
                         <li class="nav-item dropdown mega-dropdown">
                             <a class="nav-link dropdown-toggle <?php echo navActive('resources'); ?>"
                                href="/resources"
@@ -128,19 +123,19 @@ function navActive(string $key): string
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-md-6">
-                                        
                                             <ul class="list-unstyled">
                                                 <li><a class="dropdown-item px-0" href="/blueprint">📘Jumuiya-TCH Blueprint 2030</a></li>
-                                    
                                             </ul>
                                         </div>
-                                        
+                                        <div class="col-md-6">
+                                            <!-- Empty column for future use -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </li>
 
-                        <!-- Media Center Mega Menu -->
+                        <!-- Media Center Mega Menu - RESTRUCTURED for vertical layout -->
                         <li class="nav-item dropdown mega-dropdown">
                             <a class="nav-link dropdown-toggle <?php echo navActive('media'); ?>"
                                href="/media-center"
@@ -154,24 +149,17 @@ function navActive(string $key): string
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-md-4">
-
                                             <ul class="list-unstyled">
-                                                <li><a class="dropdown-item px-0" href="/news-updates">📰 News & updates </a></li>
-
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-4">
-                                            
-                                            <ul class="list-unstyled">
+                                                <li><a class="dropdown-item px-0" href="/news-updates">📰 News & updates</a></li>
                                                 <li><a class="dropdown-item px-0" href="/photos-video-gallery">📸 Photo & Video Gallery</a></li>
-                                                
+                                                <li><a class="dropdown-item px-0" href="/newsletter-archive">📧 Newsletter Archive</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-md-4">
-                                            
-                                            <ul class="list-unstyled">
-                                                <li><a class="dropdown-item px-0" href="/newsletter-archive">📧 Newsletter Archive </a></li>
-                                            </ul>
+                                            <!-- Empty column for future use -->
+                                        </div>
+                                        <div class="col-md-4">
+                                            <!-- Empty column for future use -->
                                         </div>
                                     </div>
                                 </div>
