@@ -420,10 +420,10 @@ ob_start();
         }
     }
     
-    /* Split banner layout */
+    /* Split banner layout - REDUCED HEIGHT */
     .split-banner {
         display: flex;
-        height: 700px;
+        height: 550px; /* Reduced from 700px */
     }
     
     .banner-left {
@@ -434,7 +434,7 @@ ob_start();
     
     .banner-left .carousel-item {
         overflow: hidden;
-        height: 700px;
+        height: 550px; /* Match reduced height */
     }
     
     .banner-left .carousel-item img {
@@ -480,22 +480,22 @@ ob_start();
         text-align: center;
         z-index: 2;
         width: 100%;
-        padding: 20px;
+        padding: 15px; /* Reduced padding */
     }
     
     .banner-right .anniversary-text h2 {
         color: white;
-        font-size: 4rem;
+        font-size: 3rem; /* Reduced from 4rem */
         font-weight: 800;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem; /* Reduced margin */
         font-family: 'Playfair Display', serif;
         animation: fadeInUp 1.5s ease;
     }
     
     .banner-right .anniversary-text p {
         color: white;
-        font-size: 1.5rem;
+        font-size: 1.2rem; /* Reduced from 1.5rem */
         font-weight: 500;
         text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         letter-spacing: 2px;
@@ -520,9 +520,9 @@ ob_start();
     }
     
     .typing-text {
-        font-size: 1.1rem;
-        line-height: 1.5;
-        margin: 1.5rem 0;
+        font-size: 0.95rem !important; /* Reduced from 1.1rem */
+        line-height: 1.4; /* Tighter line height */
+        margin: 0.8rem 0; /* Reduced margin */
         text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         overflow: hidden;
         white-space: normal;
@@ -540,18 +540,21 @@ ob_start();
         position: relative;
         z-index: 10;
         max-width: 90%;
-        padding: 2rem 0;
+        padding: 1rem 0; /* Reduced padding */
     }
     
-    /* Reduce font size for the subtitle */
-    .banner-semi-title {
-        font-size: 0.9rem !important;
-        letter-spacing: 2px !important;
-    }
+    /* Remove subtitle styles since we're removing that element */
     
-    /* Adjust county name size to fit better */
+    /* Adjust county name size to fit better - REDUCED FONT */
     .banner-content h1 {
-        font-size: 2.8rem !important;
+        font-size: 2.2rem !important; /* Reduced from 2.8rem */
+        margin-bottom: 0.5rem !important; /* Reduced margin */
+    }
+    
+    /* Make buttons smaller */
+    .buttons .btn-fancy {
+        padding: 8px 20px !important; /* Reduced from 12px 30px */
+        font-size: 0.9rem !important;
     }
     
     /* Staircase timeline */
@@ -760,6 +763,11 @@ ob_start();
         color: #6c757d;
     }
     
+    /* Adjust banner card negative margin to account for reduced height */
+    .banner-card {
+        margin-top: -50px !important; /* Adjusted from -80px */
+    }
+    
     @media (max-width: 768px) {
         .section-title-fancy h2 {
             font-size: 2rem;
@@ -786,19 +794,23 @@ ob_start();
         .banner-left,
         .banner-right {
             width: 100%;
-            height: 500px;
+            height: 400px; /* Adjusted for mobile */
         }
         
         .typing-text {
-            font-size: 1rem;
+            font-size: 0.9rem !important;
         }
         
         .banner-right .anniversary-text h2 {
-            font-size: 3rem;
+            font-size: 2.5rem; /* Adjusted for mobile */
         }
         
         .banner-right .anniversary-text p {
-            font-size: 1.2rem;
+            font-size: 1rem; /* Adjusted for mobile */
+        }
+        
+        .banner-content h1 {
+            font-size: 1.8rem !important; /* Adjusted for mobile */
         }
     }
 </style>
@@ -1062,24 +1074,22 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <div class="cover-images-overlay" style="background: linear-gradient(135deg, rgba(39,60,103,0.8) 0%, rgba(0,206,209,0.4) 100%); position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
                                     <div class="container h-100">
                                         <div class="banner-content text-center text-lg-start d-flex flex-column justify-content-center h-100">
-                                            <div class="sentence-underline">
-                                                <div class="text-white banner-semi-title" style="letter-spacing: 2px; font-weight: 300; font-size: 0.9rem;">Jumuiya ya Kaunti za Pwani</div>
-                                            </div>
+                                            <!-- REMOVED: Jumuiya ya Kaunti za Pwani text -->
                                             
                                             <!-- Typing animation container -->
                                             <div class="typing-container">
-                                                <div class="typing-text text-white" data-text="<?php echo htmlspecialchars($description); ?>" style="font-size: 1.1rem;"></div>
+                                                <div class="typing-text text-white" data-text="<?php echo htmlspecialchars($description); ?>" style="font-size: 0.95rem;"></div>
                                             </div>
                                             
-                                            <!-- County name -->
-                                            <h1 class="text-white fw-bold" style="font-size: 2.8rem;">
+                                            <!-- County name - REDUCED FONT SIZE -->
+                                            <h1 class="text-white fw-bold" style="font-size: 2.2rem; margin-bottom: 0.5rem;">
                                                 <span class="cssanimation lePopUp sequence" style="color: var(--turquoise);"><?php echo $slide['county']; ?></span>
                                             </h1>
                                             
-                                            <div class="buttons mt-4">
+                                            <div class="buttons mt-3"> <!-- Reduced margin-top -->
                                                 <div class="cityWall-btn" role="search">
-                                                    <a href="/about" class="btn-fancy" style="background: var(--turquoise); padding: 12px 30px; display: inline-block; color: white; text-decoration: none; border-radius: 50px; margin-right: 15px;">Discover More <i class="bi bi-arrow-right"></i></a>
-                                                    <a href="/contact" class="btn-fancy" style="background: var(--navy); padding: 12px 30px; display: inline-block; color: white; text-decoration: none; border-radius: 50px;">Contact Us <i class="bi bi-arrow-right"></i></a>
+                                                    <a href="/about" class="btn-fancy" style="background: var(--turquoise); padding: 8px 20px; display: inline-block; color: white; text-decoration: none; border-radius: 50px; margin-right: 10px; font-size: 0.9rem;">Discover More <i class="bi bi-arrow-right"></i></a>
+                                                    <a href="/contact" class="btn-fancy" style="background: var(--navy); padding: 8px 20px; display: inline-block; color: white; text-decoration: none; border-radius: 50px; font-size: 0.9rem;">Contact Us <i class="bi bi-arrow-right"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -1094,13 +1104,14 @@ document.addEventListener('DOMContentLoaded', function() {
         
         <!-- Right side: 10 Years Anniversary Image -->
         <div class="banner-right">
-            <img src="/assets/images/jummy-10.png" alt="10 Years Anniversary" onerror="this.src='/assets/images/jummy-10.png'">
-            
+            <img src="/assets/images/try.png" alt="10 Years Anniversary" onerror="this.src='/assets/images/jummy-10.png'">
+            <!-- Added overlay and text for anniversary if needed -->
+           
     </div>
 </div>
 
 <!-- ===== Core Mandate Cards ===== -->
-<div class="banner-card" style="margin-top: -80px; position: relative; z-index: 10;" data-aos="fade-up">
+<div class="banner-card" style="margin-top: -50px; position: relative; z-index: 10;" data-aos="fade-up">
     <div class="container">
         <?php
         $mandateCards = [

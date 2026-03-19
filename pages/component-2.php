@@ -328,7 +328,7 @@ include __DIR__ . '/../partials/page-hero.php';
                 <p>The Go Blue | UN-Habitat and UNEP objective is to establish a connection between people, cities, and the ocean via creative land-sea planning and management for a sustainable and resilient Kenyan coast.</p>
                 
                 <!-- Clickable Image Below Text - Links to UN-Habitat & UNEP -->
-                <a href="pages/unep-habitat.php" target="_blank" rel="noopener noreferrer" class="result-image" data-aos="fade-up">
+                <a href="unep-habitat.php" target="_blank" rel="noopener noreferrer" class="result-image" data-aos="fade-up">
                     <img src="/assets/images/un-habitat.png" alt="GoBlue Environment - UN-Habitat and UNEP">
                 </a>
                 <!-- Note: Update the image path above with your actual image -->
@@ -369,51 +369,7 @@ include __DIR__ . '/../partials/page-hero.php';
             </div>
         </div>
         
-        <!-- Characteristics Section (Below Both Columns) -->
-        <div class="characteristics-section" data-aos="fade-up">
-            <h3>Characteristics</h3>
-            
-            <div class="characteristics-grid">
-                <div class="characteristic-item">
-                    <h4>Land-Sea Planning</h4>
-                    <p>Integrated approach to coastal zone management connecting urban development with marine conservation</p>
-                </div>
-                
-                <div class="characteristic-item">
-                    <h4>Ecosystem Conservation</h4>
-                    <p>Protection and restoration of critical coastal and marine ecosystems including mangroves and coral reefs</p>
-                </div>
-                
-                <div class="characteristic-item">
-                    <h4>Community Engagement</h4>
-                    <p>Participatory approaches involving local communities in sustainable resource management</p>
-                </div>
-                
-                <div class="characteristic-item">
-                    <h4>Climate Resilience</h4>
-                    <p>Building adaptive capacity of coastal communities to climate change impacts</p>
-                </div>
-                
-                <div class="characteristic-item">
-                    <h4>Blue Economy</h4>
-                    <p>Sustainable economic activities including sustainable fisheries and eco-tourism</p>
-                </div>
-                
-                <div class="characteristic-item">
-                    <h4>Governance Framework</h4>
-                    <p>Strengthening institutional capacity for integrated maritime governance</p>
-                </div>
-            </div>
-        </div>
         
-        <!-- Hidden Download Link -->
-        <div class="download-links">
-            <a id="brochure-link" href="/assets/brochures/component-2-brochure.pdf" download></a>
-            <!-- Update with actual brochure path -->
-        </div>
-    </div>
-</section>
-
 <!-- ===== CTA Section ===== -->
 <section class="best-city-government remove-div one-second" data-aos="fade-up" style="margin-top: 0;">
     <div class="images-and-overlay">

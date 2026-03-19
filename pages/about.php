@@ -335,7 +335,7 @@ include __DIR__ . '/../partials/page-hero.php';
 <!-- ===== CTA Strip ===== -->
 <section class="best-city-government remove-div one-second" data-aos="fade-up">
     <div class="images-and-overlay">
-        <img class="img-fluid" src="/assets/images/01_home/best-city/image-footer.png" alt="Jumuiya Coast Region">
+
         <div class="overlay"></div>
     </div>
     <div class="container">

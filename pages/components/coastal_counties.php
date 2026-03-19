@@ -38,6 +38,37 @@
         font-family: sans-serif;
         letter-spacing: 0.2px;
         transition: background 0.15s;
+        /* Pulsating animation */
+        animation: pulse 2s infinite ease-in-out;
+        box-shadow: 0 0 0 0 rgba(26, 58, 143, 0.5);
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(26, 58, 143, 0.5);
+        }
+        50% {
+            transform: scale(1.05);
+            box-shadow: 0 0 0 8px rgba(26, 58, 143, 0);
+        }
+        100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(26, 58, 143, 0);
+        }
+    }
+
+    /* Pause animation on hover */
+    .hs-btn:hover {
+        animation: none;
+        background: #2B55C5;
+    }
+
+    /* Active state overrides animation */
+    .hs-btn.active {
+        background: #2B55C5;
+        animation: none;
+        box-shadow: 0 0 0 3px rgba(26, 58, 143, 0.3);
     }
 
     .hs-btn::after {
@@ -48,11 +79,6 @@
         transform: translateX(-50%);
         border: 6px solid transparent;
         border-top-color: #1A3A8F;
-    }
-
-    .hs-btn:hover,
-    .hs-btn.active {
-        background: #2B55C5;
     }
 
     .hs-btn.active::after {
@@ -153,6 +179,28 @@
         border-width: 2px;
         border-style: solid;
     }
+
+    /* Optional: Different pulse colors for each county (if you want) */
+    <?php foreach ($counties as $county): ?>
+    #btn-<?php echo $county['id']; ?>.pulse-<?php echo $county['id']; ?> {
+        animation: pulse<?php echo $county['id']; ?> 2s infinite ease-in-out;
+    }
+    
+    @keyframes pulse<?php echo $county['id']; ?> {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 <?php echo $county['color']; ?>80;
+        }
+        50% {
+            transform: scale(1.05);
+            box-shadow: 0 0 0 8px <?php echo $county['color']; ?>00;
+        }
+        100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 <?php echo $county['color']; ?>00;
+        }
+    }
+    <?php endforeach; ?>
 </style>
 <div class="col-lg-6" style="transform: translateY(40px);">
     <div class="text-center">
@@ -177,7 +225,7 @@
             id: "tana-river",
             name: "Tana River",
             color: "#C0392B",
-            tx: 55,
+            tx: 66 ,
             ty: 63,
             advantages: ["Agribusiness", "Textile", "Livestock Value Chain", "Blue Economy"]
         },
@@ -185,8 +233,8 @@
             id: "lamu",
             name: "Lamu",
             color: "#D4A017",
-            tx: 79,
-            ty: 66,
+            tx: 86,
+            ty: 71,
             advantages: ["Blue Economy", "Manufacturing & SEZs", "Tourism Resort City", "Off-shore Oil & Gas Exploration", "Port & Logistics"]
         },
         {
@@ -194,31 +242,31 @@
             name: "Kilifi",
             color: "#D4680A",
             tx: 68,
-            ty: 75,
+            ty: 83,
             advantages: ["Blue Economy", "Extractives", "Manufacturing & SEZs", "Tourism Resort City", "Agribusiness", "Pwani University"]
         },
         {
             id: "taita-taveta",
             name: "Taita Taveta",
             color: "#8B5E3C",
-            tx: 44,
-            ty: 80,
+            tx: 48,
+            ty: 87,
             advantages: ["Mining", "Agribusiness", "Livestock Value Chain", "Tourism (Tsavo)", "Taita Taveta University", "Blue Economy"]
         },
         {
             id: "kwale",
             name: "Kwale",
             color: "#27AE60",
-            tx: 52,
-            ty: 88,
+            tx: 64,
+            ty: 98,
             advantages: ["Blue Economy", "Manufacturing & SEZs", "Tourism Resort City", "Off-shore Oil & Gas Exploration", "Port & Logistics"]
         },
         {
             id: "mombasa",
             name: "Mombasa",
             color: "#1A3A8F",
-            tx: 68,
-            ty: 84,
+            tx: 74,
+            ty: 92,
             advantages: ["Blue Economy", "Manufacturing & SEZs", "Technical University of Mombasa", "Port & Logistics"]
         }
     ];
