@@ -1,20 +1,23 @@
 <?php
 
 /**
- * pages/townhall-climate-change.php
+ * pages/pages/townhall-climate-change.php
  * Townhall Page — Jumuiya ya Kaunti za Pwani
  * Climate Change Discussions - Coastal Edition
  */
 
+
 $pageTitle    = 'Townhall discussions on climate change, Coastal Edition';
 $currentPage  = 'news';
 $heroTitle    = 'Townhall discussions on climate change, Coastal Edition';
-$heroSubtitle = 'Climate Change Dialogue';
+$heroSubtitle = 'Home,Townhall Discussions';
+
+
 
 // Add Open Graph and Twitter Card meta tags for social sharing
-$ogImage = 'http://localhost:8000/assets/images/townhall-hero.jpg';
-$ogDescription = 'JKP hosted a series of townhall discussions bringing together coastal leaders, experts, and community members to address the urgent challenges of climate change and its impact on our region. Watch the recordings from our distinguished speakers below.';
-$ogUrl = 'http://localhost:8000/townhall-climate-change';
+$ogImage = 'http://localhost:8000/assets/images/tourism.png';
+$ogDescription = 'On Friday, 29th September 2023 at Muthu-Nyali Beach Hotel–Mombasa, Jumuiya ya Kaunti za Pwani (JKP) supported by Camões Institute – Portugal (Camões IP), held a validation meeting for the JKP Tourism Culture and Heritage (TCH) Blueprint 2030.';
+$ogUrl = 'http://localhost:8000/jkp-tourism-blueprint';
 
 $extraMeta = '
 <meta property="og:title" content="' . $pageTitle . '" />
@@ -36,217 +39,201 @@ ob_start();
 include __DIR__ . '/../partials/page-hero.php';
 ?>
 
+
+
+
+<!-- ===== Page Styles ===== -->
 <style>
-:root {
-    --primary-blue: #6EC1E4;
-    --dark-blue: #244080;
-    --turquoise: #00CED1;
-    --soft-blue: #5C7EC0;
-    --light-bg: #f8f9fa;
-    --text-dark: #1e2b3c;
-}
+    /* Hero Section */
+    .townhall-hero {
+        background: linear-gradient(135deg, var(--navy) 0%, var(--deep-blue) 100%);
+        padding: 100px 0 80px;
+        position: relative;
+        overflow: hidden;
+    }
 
-.article-wrapper {
-    padding: 3rem 0;
-}
+    .townhall-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('/assets/images/pattern-wave.png') repeat;
+        opacity: 0.1;
+        pointer-events: none;
+    }
 
-/* Main Layout */
-.article-main {
-    padding-right: 2rem;
-}
+    .townhall-hero h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: white;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
 
-.article-sidebar {
-    padding-left: 1rem;
-}
+    .townhall-hero .breadcrumb {
+        background: transparent;
+        padding: 0;
+        margin-bottom: 2rem;
+    }
 
-/* Category Tag */
-.category-tag {
-    margin-bottom: 1.5rem;
-}
+    .townhall-hero .breadcrumb-item,
+    .townhall-hero .breadcrumb-item a {
+        color: rgba(255,255,255,0.8);
+        text-decoration: none;
+        font-weight: 300;
+    }
 
-.category-badge {
-    display: inline-block;
-    background: var(--primary-blue);
-    color: white;
-    padding: 0.5rem 1.5rem;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
+    .townhall-hero .breadcrumb-item.active {
+        color: var(--turquoise);
+    }
 
-.category-badge:hover {
-    background: var(--dark-blue);
-    color: white;
-}
+    .townhall-hero .breadcrumb-item + .breadcrumb-item::before {
+        color: rgba(255,255,255,0.5);
+    }
 
-/* Article Header */
-.article-header {
-    margin-bottom: 2rem;
-}
+    .townhall-hero .lead {
+        font-size: 1.25rem;
+        color: rgba(255,255,255,0.9);
+        max-width: 800px;
+        margin: 2rem 0 0;
+        line-height: 1.8;
+    }
 
-.article-header h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--dark-blue);
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 1rem;
-    line-height: 1.3;
-}
+    /* Video Cards Section */
+    .video-cards-section {
+        padding: 80px 0;
+        background: var(--light-bg);
+    }
 
-.article-meta {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    color: #666;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.95rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #e0e0e0;
-}
+    .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
 
-.article-meta i {
-    color: var(--primary-blue);
-    margin-right: 0.5rem;
-}
+    .section-title h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 1rem;
+    }
 
-/* Featured Image */
-.featured-image {
-    margin-bottom: 2.5rem;
-}
+    .section-title p {
+        color: #6c757d;
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin: 0 auto;
+    }
 
-.featured-image img {
-    width: 100%;
-    max-height: 500px;
-    object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px -15px rgba(0,0,0,0.2);
-}
+    .video-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px -15px rgba(0,0,0,0.15);
+        transition: all 0.4s ease;
+        height: 100%;
+        cursor: pointer;
+    }
 
-/* Article Content */
-.article-content {
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.8;
-    color: #444;
-    margin-bottom: 3rem;
-}
+    .video-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 45px -15px var(--turquoise);
+    }
 
-.article-content p {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-}
+    .video-thumbnail {
+        position: relative;
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+    }
 
-.article-content .lead {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: var(--dark-blue);
-    border-left: 4px solid var(--primary-blue);
-    padding-left: 1.5rem;
-    margin: 2rem 0;
-}
+    .video-thumbnail img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
 
-/* Video Cards - Three across */
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin: 2rem 0;
-}
+    .video-card:hover .video-thumbnail img {
+        transform: scale(1.1);
+    }
 
-.video-card {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px -15px rgba(0,0,0,0.15);
-    transition: all 0.4s ease;
-    height: 100%;
-    cursor: pointer;
-}
+    .play-button-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
 
-.video-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 30px 45px -15px var(--primary-blue);
-}
+    .play-button-overlay i {
+        font-size: 4rem;
+        color: white;
+        background: rgba(0,206,209,0.8);
+        border-radius: 50%;
+        padding: 10px;
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
 
-.video-thumbnail {
-    position: relative;
-    width: 100%;
-    height: 180px;
-    overflow: hidden;
-}
+    .video-card:hover .play-button-overlay i {
+        transform: scale(1.15);
+        background: var(--turquoise);
+        box-shadow: 0 0 30px rgba(0,206,209,0.5);
+    }
 
-.video-thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-}
+    .video-content {
+        padding: 1.8rem;
+    }
 
-.video-card:hover .video-thumbnail img {
-    transform: scale(1.1);
-}
+    .video-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--navy);
+        margin-bottom: 1rem;
+        line-height: 1.5;
+    }
 
-.play-button-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
+    .video-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: #6c757d;
+        font-size: 0.9rem;
+    }
 
-.play-button-overlay i {
-    font-size: 3rem;
-    color: white;
-    background: rgba(0,206,209,0.8);
-    border-radius: 50%;
-    padding: 10px;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
+    .video-meta i {
+        color: var(--turquoise);
+        margin-right: 0.3rem;
+    }
 
-.video-card:hover .play-button-overlay i {
-    transform: scale(1.15);
-    background: var(--turquoise);
-    box-shadow: 0 0 30px rgba(0,206,209,0.5);
-}
+    @media (max-width: 768px) {
+        .townhall-hero h1 {
+            font-size: 2.5rem;
+        }
 
-.video-content {
-    padding: 1.5rem;
-}
+        .townhall-hero .lead {
+            font-size: 1.1rem;
+        }
 
-.video-title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--dark-blue);
-    margin-bottom: 1rem;
-    line-height: 1.5;
-}
+        .video-thumbnail {
+            height: 200px;
+        }
+    }
 
-.video-meta {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    color: #6c757d;
-    font-size: 0.85rem;
-}
-
-.video-meta i {
-    color: var(--primary-blue);
-    margin-right: 0.3rem;
-}
-
-/* Share Buttons */
+    /* Share Buttons */
 .share-section {
     margin: 3rem 0;
     padding: 2rem 0;
@@ -587,6 +574,64 @@ include __DIR__ . '/../partials/page-hero.php';
     font-size: 0.75rem;
 }
 
+/* Subscribe Section */
+.subscribe-section {
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+    padding: 3rem 0;
+    margin-top: 2rem;
+    border-radius: 20px;
+    color: white;
+}
+
+.subscribe-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.subscribe-content h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.subscribe-content p {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.subscribe-form {
+    display: flex;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.subscribe-form input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.subscribe-form button {
+    background: var(--dark-blue);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.subscribe-form button:hover {
+    background: #1a2e5c;
+    transform: translateY(-2px);
+}
+
 /* Back to News */
 .back-to-news {
     display: inline-block;
@@ -604,8 +649,8 @@ include __DIR__ . '/../partials/page-hero.php';
 
 /* Responsive */
 @media (max-width: 1200px) {
-    .video-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .grid-container-4col {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -619,6 +664,12 @@ include __DIR__ . '/../partials/page-hero.php';
         padding-left: 0;
     }
     
+    .grid-container-4col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stakeholders-grid,
+    .objectives-grid,
     .form-row {
         grid-template-columns: 1fr;
     }
@@ -630,91 +681,113 @@ include __DIR__ . '/../partials/page-hero.php';
 
 @media (max-width: 768px) {
     .article-header h1 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
     
-    .video-grid {
+    .grid-container-4col {
         grid-template-columns: 1fr;
+    }
+    
+    .subscribe-form {
+        flex-direction: column;
     }
     
     .share-buttons {
         justify-content: center;
     }
+    
+    .timeline {
+        padding-left: 1rem;
+    }
+    
+    .objective-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Minimize spacing */
+.townhall-hero {
+    padding: 10px  0 5px !important;
+}
+
+.video-cards-section {
+    padding: 5px 0 !important;
+}
+
+.section-title {
+    margin-bottom: 15px !important;
+}
+
+.section-title h2 {
+    margin-bottom: 5px !important;
+}
+
+.section-title p {
+    margin-bottom: 0 !important;
 }
 </style>
 
-<section class="article-wrapper">
+
+<!-- ===== Hero Section ===== -->
+<section class="townhall-hero">
     <div class="container">
+        
+        
+        
+    </div>
+</section>
+
+<!-- ===== Video Cards Section ===== -->
+<section class="video-cards-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Townhall discussions on climate change, Coastal Edition</h2>
+            <p>Watch the recordings from our expert panel discussions on climate change impacts and solutions for the coastal region</p>
+        </div>
+
         <div class="row">
-            <!-- Main Article Column -->
-            <div class="col-lg-8 article-main">
-                <!-- Category Tag (clickable) -->
-                <div class="category-tag" data-aos="fade-up">
-                    <a href="/news-updates?category=Go Blue Component 1" class="category-badge">
-                        <i class="bi bi-tag"></i> Go Blue Component 1
-                    </a>
-                </div>
+            <!-- Main Content Column (Left side - 8 columns) -->
+            <div class="col-lg-8">
+                <?php
+                $videos = [
+                    [
+                        'title' => "JKP's Chairman, H.E. Gideon Mung'aro, presented during KTN's Townhall discussions on climate change.",
+                        'youtube' => 'https://www.youtube.com/watch?v=d3tyYlEWvcc&t=7s',
+                        'thumbnail' => '/assets/images/townhall dis (3).png',
+                        'speaker' => 'H.E. Gideon Mung\'aro',
+                        'role' => 'JKP Chairman',
+                        'duration' => 'Full Recording'
+                    ],
+                    [
+                        'title' => "JKP's Gladys Mjama presents on climate change during Townhall discussions, Coast Edition.",
+                        'youtube' => 'https://www.youtube.com/watch?v=a3LI0x553C4&t=6s',
+                        'thumbnail' => '/assets/images/townhall dis (1).png',
+                        'speaker' => 'Gladys Mjama',
+                        'role' => 'JKP Climate Change Lead',
+                        'duration' => 'Full Recording'
+                    ],
+                    [
+                        'title' => "GoBlue Advisor Ali Mwanzei presents on climate change during Townhall discussions, Coast Edition.",
+                        'youtube' => 'https://www.youtube.com/watch?v=opwxAPKr_Pg&t=1s',
+                        'thumbnail' => '/assets/images/townhall dis (2).png',
+                        'speaker' => 'Ali Mwanzei',
+                        'role' => 'GoBlue Advisor',
+                        'duration' => 'Full Recording'
+                    ],
+                ];
 
-                <!-- Article Header -->
-                <header class="article-header" data-aos="fade-up">
-                    <h1>Townhall discussions on climate change, Coastal Edition</h1>
-                    <div class="article-meta">
-                        <span><i class="bi bi-calendar3"></i> March 15, 2024</span>
-                        <span><i class="bi bi-person"></i> Editorial Staff</span>
-                    </div>
-                </header>
+                // Fallback images if specific ones don't exist
+                $fallbackImages = [
+                    '/assets/images/placeholders/event-1.jpg',
+                    '/assets/images/placeholders/event-2.jpg',
+                    '/assets/images/placeholders/event-3.jpg',
+                ];
+                ?>
 
-                <!-- Featured Image -->
-                <div class="featured-image" data-aos="fade-up" data-aos-delay="50">
-                    <img src="/assets/images/townhall-hero.jpg" alt="Townhall discussions on climate change, Coastal Edition" onerror="this.src='/assets/images/placeholders/climate-hero.jpg'">
-                </div>
-
-                <!-- Article Content -->
-                <div class="article-content" data-aos="fade-up" data-aos-delay="100">
-                    <p class="lead">JKP hosted a series of townhall discussions bringing together coastal leaders, experts, and community members to address the urgent challenges of climate change and its impact on our region. Watch the recordings from our distinguished speakers below.</p>
-                    
-                    <!-- Video Recordings -->
-                    <h3 class="sub-heading">Watch the Recordings</h3>
-                    <p>Click on any video below to watch the full townhall discussion on our YouTube channel.</p>
-                    
-                    <?php
-                    $videos = [
-                        [
-                            'title' => "JKP's Chairman, H.E. Gideon Mung'aro, presented during KTN's Townhall discussions on climate change.",
-                            'youtube' => 'https://www.youtube.com/watch?v=d3tyYlEWvcc&t=7s',
-                            'thumbnail' => '/assets/images/townhall dis (3).png',
-                            'speaker' => 'H.E. Gideon Mung\'aro',
-                            'role' => 'JKP Chairman',
-                            'duration' => 'Full Recording'
-                        ],
-                        [
-                            'title' => "JKP's Gladys Mjama presents on climate change during Townhall discussions, Coast Edition.",
-                            'youtube' => 'https://www.youtube.com/watch?v=a3LI0x553C4&t=6s',
-                            'thumbnail' => '/assets/images/townhall dis (1).png',
-                            'speaker' => 'Gladys Mjama',
-                            'role' => 'JKP Climate Change Lead',
-                            'duration' => 'Full Recording'
-                        ],
-                        [
-                            'title' => "GoBlue Advisor Ali Mwanzei presents on climate change during Townhall discussions, Coast Edition.",
-                            'youtube' => 'https://www.youtube.com/watch?v=opwxAPKr_Pg&t=1s',
-                            'thumbnail' => '/assets/images/townhall dis (2).png',
-                            'speaker' => 'Ali Mwanzei',
-                            'role' => 'GoBlue Advisor',
-                            'duration' => 'Full Recording'
-                        ],
-                    ];
-
-                    // Fallback images if specific ones don't exist
-                    $fallbackImages = [
-                        '/assets/images/placeholders/event-1.jpg',
-                        '/assets/images/placeholders/event-2.jpg',
-                        '/assets/images/placeholders/event-3.jpg',
-                    ];
-                    ?>
-                    
-                    <div class="video-grid">
-                        <?php foreach ($videos as $index => $video): ?>
+                <div class="row g-4">
+                    <?php foreach ($videos as $index => $video): ?>
+                        <div class="col-md-6 col-lg-6">
                             <div class="video-card" onclick="window.open('<?php echo $video['youtube']; ?>', '_blank')">
                                 <div class="video-thumbnail">
                                     <img 
@@ -734,46 +807,8 @@ include __DIR__ . '/../partials/page-hero.php';
                                     </div>
                                 </div>
                             </div>
-                        <?php endforeach; ?>
-                    </div>
-                    
-                    <!-- Quote from Chairman -->
-                    <div class="quote-card">
-                        <div class="quote-text">
-                            "The coastal region is on the frontlines of climate change. These townhall discussions are crucial for bringing together our communities, experts, and leaders to develop practical solutions that protect our people, our economy, and our unique environment."
                         </div>
-                        <div class="quote-author">
-                            <i class="bi bi-chat-quote"></i>
-                            H.E. Gideon Mung'aro, JKP Chairman
-                        </div>
-                    </div>
-                    
-                    <!-- Discussion Highlights -->
-                    <h3 class="sub-heading">Discussion Highlights</h3>
-                    <p>The townhall discussions covered a wide range of topics including the impact of rising sea levels on coastal communities, sustainable fishing practices, mangrove restoration efforts, and community-based adaptation strategies. Speakers emphasized the need for collaborative approaches involving county governments, national agencies, development partners, and local communities.</p>
-                    
-                    <p>Key outcomes from the discussions include commitments to enhance coastal protection infrastructure, expand mangrove restoration programs, support alternative livelihoods for fishing communities, and strengthen early warning systems for extreme weather events.</p>
-                    
-                    <!-- Climate Impact Stats -->
-                    <h3 class="sub-heading">Climate Impact on Coastal Region</h3>
-                    <div class="quote-card" style="background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue)); color: white;">
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center;">
-                            <div>
-                                <div style="font-size: 2rem; font-weight: 800;">65%</div>
-                                <div style="font-size: 0.9rem;">of coastal communities affected by erosion</div>
-                            </div>
-                            <div>
-                                <div style="font-size: 2rem; font-weight: 800;">40%</div>
-                                <div style="font-size: 0.9rem;">decline in fish stocks</div>
-                            </div>
-                            <div>
-                                <div style="font-size: 2rem; font-weight: 800;">15+</div>
-                                <div style="font-size: 0.9rem;">mangrove restoration sites</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <p>The discussions also highlighted the importance of integrating traditional knowledge with scientific research, and the need for youth and women to be actively involved in climate action initiatives across the six coastal counties.</p>
+                    <?php endforeach; ?>
                 </div>
 
                 <!-- Share Buttons -->
@@ -781,8 +816,8 @@ include __DIR__ . '/../partials/page-hero.php';
                     <div class="share-title">Share this article</div>
                     <div class="share-buttons">
                         <?php 
-                        $articleUrl = urlencode('http://localhost:8000/townhall-climate-change');
-                        $articleTitle = urlencode('Townhall discussions on climate change, Coastal Edition');
+                        $articleUrl = urlencode('http://localhost:8000/jkp-tourism-blueprint');
+                        $articleTitle = urlencode('JKP Tourism and Cultural Heritage Blueprint 2030 Validation');
                         ?>
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $articleUrl; ?>" target="_blank" class="share-btn facebook">
                             <i class="bi bi-facebook"></i>
@@ -825,8 +860,8 @@ include __DIR__ . '/../partials/page-hero.php';
                 </a>
             </div>
 
-            <!-- Sidebar Column -->
-            <div class="col-lg-4 article-sidebar">
+            <!-- Sidebar Column (Right side - 4 columns) -->
+            <div class="col-lg-4">
                 <!-- Search Widget -->
                 <div class="sidebar-widget" data-aos="fade-up">
                     <h4 class="widget-title">Search News</h4>
@@ -863,13 +898,6 @@ include __DIR__ . '/../partials/page-hero.php';
                             </a>
                             <span class="category-count">7</span>
                         </li>
-                        <li class="category-item">
-                            <a href="/news-updates?category=Climate Change" class="category-link">
-                                <i class="bi bi-folder"></i>
-                                Climate Change
-                            </a>
-                            <span class="category-count">4</span>
-                        </li>
                     </ul>
                 </div>
 
@@ -878,57 +906,57 @@ include __DIR__ . '/../partials/page-hero.php';
                     <h4 class="widget-title">Archives</h4>
                     <ul class="archive-list">
                         <li class="archive-item">
-                            <a href="/news-updates?month=Mar 24" class="archive-link">
+                            <a href="/news-updates?month=Sep 23" class="archive-link">
                                 <i class="bi bi-calendar3"></i>
-                                March 2024
+                                September 2023
                             </a>
-                            <span class="archive-count">3</span>
+                            <span class="archive-count">4</span>
                         </li>
                         <li class="archive-item">
-                            <a href="/news-updates?month=Feb 24" class="archive-link">
+                            <a href="/news-updates?month=Aug 23" class="archive-link">
                                 <i class="bi bi-calendar3"></i>
-                                February 2024
+                                August 2023
                             </a>
                             <span class="archive-count">2</span>
                         </li>
                         <li class="archive-item">
-                            <a href="/news-updates?month=Jan 24" class="archive-link">
+                            <a href="/news-updates?month=Jul 23" class="archive-link">
                                 <i class="bi bi-calendar3"></i>
-                                January 2024
+                                July 2023
                             </a>
-                            <span class="archive-count">4</span>
+                            <span class="archive-count">3</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Previous News Widget -->
                 <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="150">
-                    <h4 class="widget-title">Related News</h4>
+                    <h4 class="widget-title">Previous News</h4>
                     <div class="prev-news-item">
                         <div class="prev-news-thumb">
-                            <img src="/assets/images/agri summit.jpeg" alt="Agriculture Summit">
+                            <img src="/assets/images/partnerships.png" alt="Partnerships">
                         </div>
                         <div class="prev-news-info">
-                            <h6>Jumuiya Ya Pwani Agriculture Revitalization Summit</h6>
-                            <small><i class="bi bi-calendar3"></i> Feb 24, 2026</small>
+                            <h6>Partnerships for Coastal Development and Blue Economy Investment</h6>
+                            <small><i class="bi bi-calendar3"></i> Oct 6, 2023</small>
                         </div>
                     </div>
                     <div class="prev-news-item">
                         <div class="prev-news-thumb">
-                            <img src="/assets/images/fauna.jpeg" alt="Ocean Conservation">
+                            <img src="/assets/images/iowa state.png" alt="Iowa State">
                         </div>
                         <div class="prev-news-info">
-                            <h6>Ocean Conservation and Sustainable Coastal Development Workshop</h6>
-                            <small><i class="bi bi-calendar3"></i> Feb 26, 2026</small>
+                            <h6>Iowa State University announces $25,000 scholarships</h6>
+                            <small><i class="bi bi-calendar3"></i> Nov 21, 2023</small>
                         </div>
                     </div>
                     <div class="prev-news-item">
                         <div class="prev-news-thumb">
-                            <img src="/assets/images/strength bi.png" alt="Australian Visit">
+                            <img src="/assets/images/signing collabo.png" alt="WCS Agreement">
                         </div>
                         <div class="prev-news-info">
-                            <h6>Strengthening Bilateral Relations — Australian Deputy High Commissioner Visits JKP Offices</h6>
-                            <small><i class="bi bi-calendar3"></i> Apr 19, 2024</small>
+                            <h6>Collaborative Framework Agreement for Marine Conservation</h6>
+                            <small><i class="bi bi-calendar3"></i> Jan 26, 2024</small>
                         </div>
                     </div>
                 </div>
@@ -938,14 +966,14 @@ include __DIR__ . '/../partials/page-hero.php';
 </section>
 
 <!-- Subscribe Section -->
-<section class="subscribe-section" style="background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue)); padding: 3rem 0; margin-top: 2rem; border-radius: 20px; color: white;">
+<section class="subscribe-section" data-aos="fade-up">
     <div class="container">
-        <div class="subscribe-content" style="text-align: center; max-width: 600px; margin: 0 auto;">
-            <h3 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; font-family: 'Playfair Display', serif;">Stay Updated</h3>
-            <p style="margin-bottom: 2rem; opacity: 0.9;">Subscribe to our newsletter to receive the latest news on climate action and coastal resilience initiatives from Jumuiya ya Kaunti za Pwani.</p>
-            <form class="subscribe-form" style="display: flex; gap: 1rem; max-width: 500px; margin: 0 auto;">
-                <input type="email" placeholder="Enter your email address" required style="flex: 1; padding: 1rem 1.5rem; border: none; border-radius: 50px; font-family: 'Montserrat', sans-serif;">
-                <button type="submit" style="background: var(--dark-blue); color: white; border: none; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Subscribe</button>
+        <div class="subscribe-content">
+            <h3>Stay Updated</h3>
+            <p>Subscribe to our newsletter to receive the latest news and updates on tourism and cultural heritage initiatives from Jumuiya ya Kaunti za Pwani.</p>
+            <form class="subscribe-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
             </form>
         </div>
     </div>

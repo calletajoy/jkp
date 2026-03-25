@@ -10,7 +10,7 @@ $heroTitle    = 'Kisauni VTC Graduates Article';
 $heroSubtitle = 'Kisauni VTC Graduation';
 
 // Add Open Graph and Twitter Card meta tags for social sharing (localhost version for testing)
-$ogImage = 'http://localhost:8000/assets/images/kisauni.png';
+$ogImage = 'https://dev.jumuiya.org/assets/images/kisauni.png';
 $ogDescription = 'On Saturday, May 25, 2024, Kisauni VTC celebrated its 8th graduation ceremony. Out of 813 graduates, 513 completed blue economy-related courses, namely Maritime Plumbing, Maritime Tourism & Hospitality, and Maritime Security. 60% secured job placements after their industrial attachments, and 25% transitioned to entrepreneurship.';
 $ogUrl = 'http://localhost:8000/kisauni-vtc-graduates';
 
