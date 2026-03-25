@@ -407,23 +407,21 @@ ob_start();
         animation: countUp 0.6s ease forwards;
     }
     
-    /* Left-to-right panning animation only - no zoom */
-    @keyframes panLeftToRight {
+    /* Gentle zoom animation for left carousel - no horizontal movement */
+    @keyframes gentleZoom {
         0% {
-            transform: translateX(0);
-        }
-        50% {
-            transform: translateX(-3%);
+            transform: scale(1);
         }
         100% {
-            transform: translateX(0);
+            transform: scale(1.08);
         }
     }
     
     /* Split banner layout - REDUCED HEIGHT */
     .split-banner {
         display: flex;
-        height: 550px; /* Reduced from 700px */
+        height: 550px;
+        overflow: hidden;
     }
     
     .banner-left {
@@ -434,14 +432,15 @@ ob_start();
     
     .banner-left .carousel-item {
         overflow: hidden;
-        height: 550px; /* Match reduced height */
+        height: 550px;
     }
     
     .banner-left .carousel-item img {
-        animation: panLeftToRight 20s infinite alternate ease-in-out;
+        animation: gentleZoom 20s infinite alternate ease-in-out;
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center center;
     }
     
     .banner-right {
@@ -480,22 +479,22 @@ ob_start();
         text-align: center;
         z-index: 2;
         width: 100%;
-        padding: 15px; /* Reduced padding */
+        padding: 15px;
     }
     
     .banner-right .anniversary-text h2 {
         color: white;
-        font-size: 3rem; /* Reduced from 4rem */
+        font-size: 3rem;
         font-weight: 800;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        margin-bottom: 0.5rem; /* Reduced margin */
+        margin-bottom: 0.5rem;
         font-family: 'Playfair Display', serif;
         animation: fadeInUp 1.5s ease;
     }
     
     .banner-right .anniversary-text p {
         color: white;
-        font-size: 1.2rem; /* Reduced from 1.5rem */
+        font-size: 1.2rem;
         font-weight: 500;
         text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         letter-spacing: 2px;
@@ -520,9 +519,9 @@ ob_start();
     }
     
     .typing-text {
-        font-size: 0.95rem !important; /* Reduced from 1.1rem */
-        line-height: 1.4; /* Tighter line height */
-        margin: 0.8rem 0; /* Reduced margin */
+        font-size: 0.95rem !important;
+        line-height: 1.4;
+        margin: 0.8rem 0;
         text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         overflow: hidden;
         white-space: normal;
@@ -540,20 +539,18 @@ ob_start();
         position: relative;
         z-index: 10;
         max-width: 90%;
-        padding: 1rem 0; /* Reduced padding */
+        padding: 1rem 0;
     }
-    
-    /* Remove subtitle styles since we're removing that element */
     
     /* Adjust county name size to fit better - REDUCED FONT */
     .banner-content h1 {
-        font-size: 2.2rem !important; /* Reduced from 2.8rem */
-        margin-bottom: 0.5rem !important; /* Reduced margin */
+        font-size: 2.2rem !important;
+        margin-bottom: 0.5rem !important;
     }
     
     /* Make buttons smaller */
     .buttons .btn-fancy {
-        padding: 8px 20px !important; /* Reduced from 12px 30px */
+        padding: 8px 20px !important;
         font-size: 0.9rem !important;
     }
     
@@ -765,7 +762,7 @@ ob_start();
     
     /* Adjust banner card negative margin to account for reduced height */
     .banner-card {
-        margin-top: -50px !important; /* Adjusted from -80px */
+        margin-top: -50px !important;
     }
     
     @media (max-width: 768px) {
@@ -794,7 +791,7 @@ ob_start();
         .banner-left,
         .banner-right {
             width: 100%;
-            height: 400px; /* Adjusted for mobile */
+            height: 400px;
         }
         
         .typing-text {
@@ -802,15 +799,15 @@ ob_start();
         }
         
         .banner-right .anniversary-text h2 {
-            font-size: 2.5rem; /* Adjusted for mobile */
+            font-size: 2.5rem;
         }
         
         .banner-right .anniversary-text p {
-            font-size: 1rem; /* Adjusted for mobile */
+            font-size: 1rem;
         }
         
         .banner-content h1 {
-            font-size: 1.8rem !important; /* Adjusted for mobile */
+            font-size: 1.8rem !important;
         }
     }
 </style>
@@ -824,44 +821,38 @@ const siteContent = [
     { title: "About Us", category: "Page", url: "/about", content: "Learn about Jumuiya, our history, mission, and the six coastal counties" },
     { title: "Services", category: "Page", url: "/services", content: "Our services and initiatives for regional development" },
     { title: "Projects", category: "Page", url: "/projects", content: "Current and past projects across the coastal region" },
-    { title: "Blog", category: "Page", url: "/blog", content: "Latest news, updates, and stories from Jumuiya" },
+    { title: "News & Updates", category: "Page", url: "/news-updates", content: "Latest news, updates, and stories from Jumuiya" },
     { title: "Contact", category: "Page", url: "/contact", content: "Get in touch with our secretariat" },
+    { title: "Partner With Us", category: "Page", url: "/partner", content: "Partner with Jumuiya for regional development" },
+    { title: "Events", category: "Page", url: "/events", content: "Upcoming and past events from Jumuiya" },
+    { title: "Core Mandate", category: "Page", url: "/core-mandate", content: "Our core mandate and strategic focus areas" },
+    { title: "Stakeholders", category: "Page", url: "/stakeholders", content: "Our partners and stakeholders in coastal development" },
+    { title: "Jumuiya Blueprint", category: "Resource", url: "/blueprint", content: "The Jumuiya 2030 Regional Economic Blueprint" },
+    { title: "Photo & Video Gallery", category: "Resource", url: "/photos-video-gallery", content: "Photos and videos from Jumuiya events and activities" },
+    { title: "Newsletter Archive", category: "Resource", url: "/newsletter-archive", content: "Past newsletters from Jumuiya" },
     
     // Core Mandate items
-    { title: "Coordination", category: "Core Mandate", url: "/services#coordination", content: "Socio-political & regional policy harmonization across six coastal counties" },
-    { title: "Policy Harmonization", category: "Core Mandate", url: "/services#policy", content: "Jumuiya 2030 Regional Economic Blueprint driving sustainable development" },
-    { title: "Promotion", category: "Core Mandate", url: "/services#promotion", content: "Showcasing Sea-Land of Opportunities to local and international investors" },
-    { title: "Investments", category: "Core Mandate", url: "/services#investments", content: "Unlocking value chains to boost agribusiness and blue economy" },
+    { title: "Coordination", category: "Core Mandate", url: "/core-mandate", content: "Socio-political & regional policy harmonization across six coastal counties" },
+    { title: "Policy Harmonization", category: "Core Mandate", url: "/core-mandate", content: "Jumuiya 2030 Regional Economic Blueprint driving sustainable development" },
+    { title: "Promotion", category: "Core Mandate", url: "/core-mandate", content: "Showcasing Sea-Land of Opportunities to local and international investors" },
+    { title: "Investments", category: "Core Mandate", url: "/core-mandate", content: "Unlocking value chains to boost agribusiness and blue economy" },
     
-    // Counties
-    { title: "Mombasa County", category: "County", url: "/counties/mombasa", content: "Coastal county with Fort Jesus, tourism, and port city" },
-    { title: "Kwale County", category: "County", url: "/counties/kwale", content: "Home to Diani Beach, tourism, and mining" },
-    { title: "Kilifi County", category: "County", url: "/counties/kilifi", content: "Kilifi Creek, tourism, and agricultural potential" },
-    { title: "Tana River County", category: "County", url: "/counties/tana-river", content: "Tana River Delta, agriculture, and biodiversity" },
-    { title: "Lamu County", category: "County", url: "/counties/lamu", content: "Lamu Island, UNESCO heritage site, and culture" },
-    { title: "Taita Taveta County", category: "County", url: "/counties/taita-taveta", content: "Red Elephants, Tsavo parks, and wildlife" },
-    
-    // Projects
-    { title: "She Stands Project", category: "Project", url: "/projects/she-stands", content: "A faith-based collaborative initiative equipping and inspiring Kenyan women with biblical principles for everyday living and community leadership." },
-    { title: "The Go Blue Project", category: "Project", url: "/projects/go-blue", content: "A four-year EU-funded project supporting Kenya's coastal economic development and blue economy strategy through sustainable marine resource utilization." },
-    { title: "Jumuiya Innovation Lab", category: "Project", url: "/projects/innovation-lab", content: "Six innovation labs established as flagship projects to transform the region's economic landscape under the Jumuiya 2030 framework." },
-    { title: "Jumuiya 2030", category: "Project", url: "/projects/jumuiya-2030", content: "The regional economic development strategy for 2020-2030, outlining the blueprint for sustainable growth and shared prosperity across coastal counties." },
+    // Individual Projects
+    { title: "She Stands Project", category: "Project", url: "/she-stands", content: "A faith-based collaborative initiative equipping and inspiring Kenyan women with biblical principles for everyday living and community leadership." },
+    { title: "The Go Blue Project", category: "Project", url: "/go-blue", content: "A four-year EU-funded project supporting Kenya's coastal economic development and blue economy strategy through sustainable marine resource utilization." },
+    { title: "Jumuiya Innovation Lab", category: "Project", url: "/innovation-lab", content: "Six innovation labs established as flagship projects to transform the region's economic landscape under the Jumuiya 2030 framework." },
+    { title: "Jumuiya 2030", category: "Project", url: "/jum_2030", content: "The regional economic development strategy for 2020-2030, outlining the blueprint for sustainable growth and shared prosperity across coastal counties." },
     
     // Impact stats
-    { title: "MSME Tourism Grants", category: "Impact", url: "/impact#grants", content: "16 MSME Tourism Grants supporting micro and small enterprises in the coastal tourism sector." },
-    { title: "Boats Delivered", category: "Impact", url: "/impact#boats", content: "26+ Boats Delivered to coastal fishing communities and cooperatives." },
-    { title: "Jobs Created", category: "Impact", url: "/impact#jobs", content: "2000+ Jobs Created through the Go Blue Project initiatives." },
-    { title: "Skills Trainings", category: "Impact", url: "/impact#training", content: "1900+ Skills Trainings completed across the region." },
+    { title: "MSME Tourism Grants", category: "Impact", url: "/projects", content: "16 MSME Tourism Grants supporting micro and small enterprises in the coastal tourism sector." },
+    { title: "Boats Delivered", category: "Impact", url: "/projects", content: "26+ Boats Delivered to coastal fishing communities and cooperatives." },
+    { title: "Jobs Created", category: "Impact", url: "/projects", content: "2000+ Jobs Created through the Go Blue Project initiatives." },
+    { title: "Skills Trainings", category: "Impact", url: "/projects", content: "1900+ Skills Trainings completed across the region." },
     
     // Mission/Vision
-    { title: "Our Mission", category: "Mission", url: "/#mission", content: "Catalyze economic growth of Kenya's coast regional counties." },
-    { title: "Our Vision", category: "Vision", url: "/#vision", content: "A regional economy that creates wealth and shared prosperity for its communities." },
-    { title: "Our Aspirations", category: "Aspirations", url: "/#aspirations", content: "A social innovation network focused on enabling Workforce and MSMEs." },
-    
-    // News
-    { title: "Agriculture Revitalization Summit", category: "News", url: "/blog/agriculture-summit", content: "Jumuiya Ya Pwani Agriculture Revitalization Summit - February 2026" },
-    { title: "Ocean Conservation Workshop", category: "News", url: "/blog/ocean-conservation", content: "Ocean Conservation and Sustainable Coastal Development Workshop" },
-    { title: "Australian Deputy High Commissioner Visit", category: "News", url: "/blog/australian-visit", content: "Strengthening Bilateral Relations — Australian Deputy High Commissioner Visits JKP Offices" },
+    { title: "Our Mission", category: "Mission", url: "/about", content: "Catalyze economic growth of Kenya's coast regional counties." },
+    { title: "Our Vision", category: "Vision", url: "/about", content: "A regional economy that creates wealth and shared prosperity for its communities." },
+    { title: "Our Aspirations", category: "Aspirations", url: "/about", content: "A social innovation network focused on enabling Workforce and MSMEs." }
 ];
 
 // Search function
@@ -1155,7 +1146,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="row align-items-center g-5">
             <div class="col-lg-5" data-aos="fade-right">
                 <div class="image-overlay position-relative">
-                    <img class="img-fluid rounded-4 shadow-lg" src="/assets/images/placeholders/oluwatobi-akindunjoye-bISd7DpFJWw-unsplash.jpg" alt="Jumuiya ya Kaunti za Pwani">
+                    <img class="img-fluid rounded-4 shadow-lg" src="assets/images/jum house.webp" alt="Jumuiya ya Kaunti za Pwani">
                     <div class="position-absolute bottom-0 end-0 p-4">
                         <div class="bg-white p-3 rounded-3 shadow" style="background: rgba(255,255,255,0.9); backdrop-filter: blur(10px);">
                             <span class="fw-bold" style="color: var(--turquoise);">Since 2015</span>
@@ -1421,12 +1412,12 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- ===== Jumuiya Hub Section ===== -->
 <section class="best-city-government remove-div one-second" data-aos="fade-up" style="padding: 0; overflow-x: hidden;">
     <div class="position-relative">
-        <img class="img-fluid w-100" src="/assets/images/jum house.webp" alt="Jumuiya Hub" style="height: 600px; object-fit: cover;">
+        <img class="img-fluid w-100" src="assets/images/periwink.jpeg" alt="Jumuiya Hub" style="height: 600px; object-fit: cover;">
         <div class="overlay" style="background: linear-gradient(135deg, rgba(135,206,235,0.9) 0%, rgba(135,206,235,0.7) 100%);"></div>
         <div class="container position-relative" style="margin-top: -400px;">
             <div class="city-content text-center">
-                <h2 class="display-3 fw-bold mb-5" data-aos="fade-up" data-aos-duration="1000" style="color: white;">
-                    <span class="cssanimation lePopUp sequence">Jumuiya House</span>
+                <h2 class="display-3 fw-bold mb-5" data-aos="fade-up" data-aos-duration="1000" style="color: #273C67;">
+                    <span class="cssanimation lePopUp sequence">The Jumuiya Hub</span>
                 </h2>
                 <div class="row g-4">
                     <!-- First card - comes from left -->
