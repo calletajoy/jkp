@@ -120,7 +120,7 @@
 }
 
 .modal-container {
-    background: radial-gradient(circle at center, #5c7ec0 0%, #3B5B9A 100%);
+    background: white;
     border-radius: 24px;
     max-width: 700px;
     width: 90%;
@@ -167,7 +167,7 @@
     border: none;
     font-size: 2rem;
     cursor: pointer;
-    color: white;
+    color: #273c67;
     transition: 0.2s;
     width: 40px;
     height: 40px;
@@ -194,7 +194,7 @@
     display: block;
     margin-bottom: 8px;
     font-weight: 500;
-    color: white;
+    color: #0b0b42;
     font-size: 0.9rem;
 }
 
@@ -206,7 +206,7 @@
     border-radius: 12px;
     font-size: 1rem;
     background: rgba(255, 255, 255, 0.1);
-    color: white;
+    color: #00ced1;
     transition: 0.2s;
 }
 
@@ -253,7 +253,7 @@
 
 .nationality-card.selected {
     background: #00ced1;
-    border-color: #00ced1;
+    border-color: #0b0b42;
 }
 
 .nationality-card.selected .nationality-card-content h4,
@@ -274,7 +274,7 @@
 .nationality-card-content p {
     margin: 0;
     font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: #273c67;
 }
 
 /* Registration Cards */
@@ -324,7 +324,7 @@
 .reg-card-content p {
     margin: 0;
     font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: #0b0b42;
 }
 
 .tick-icon {
@@ -515,7 +515,7 @@ document.addEventListener('DOMContentLoaded', function() {
         formData.append('registeringAs', selectedType);
         formData.append('nationality', selectedNationality === 'kenyan' ? 'Kenyan' : 'Non-Kenyan');
         
-        fetch('/process-registration.php', {
+        fetch('/pages/process_registration.php', {
             method: 'POST',
             body: formData
         })
