@@ -10,9 +10,9 @@ $heroTitle    = 'Trade Mission to the USA';
 $heroSubtitle = 'Press Release';
 
 // Add Open Graph and Twitter Card meta tags for social sharing
-$ogImage = 'http://localhost:8000/assets/images/trade mission.png';
+$ogImage = 'https://dev.jumuiya.org/assets/images/trade mission.png';
 $ogDescription = 'The Kenya coastal counties (Mombasa, Kilifi, Kwale, Lamu, Tana River and Taita Taveta) working through their umbrella coordinating body, Jumuiya Ya Kaunti Za Pwani have successfully completed a TRADE INVESTMENTS EDUCATION EXCHANGE MISSION to the USA.';
-$ogUrl = 'http://localhost:8000/trade-mission-usa';
+$ogUrl = 'https://dev.jumuiya.org/trade-mission-usa';
 
 $extraMeta = '
 <meta property="og:title" content="' . $pageTitle . '" />
@@ -1456,10 +1456,11 @@ include __DIR__ . '/../partials/page-hero.php';
                 <div class="share-section" data-aos="fade-up">
                     <div class="share-title">Share this article</div>
                     <div class="share-buttons">
-                        <?php 
-                        $articleUrl = urlencode('http://localhost:8000/trade-mission-usa');
-                        $articleTitle = urlencode('Jumuiya ya Kaunti Za Pwani conducts a Trade Mission to the USA – Press Release');
-                        ?>
+                                              <?php 
+// Dynamic URL for sharing - works on any domain (localhost, dev, production)
+$articleUrl = urlencode($currentUrl);
+$articleTitle = urlencode($pageTitle);
+?>
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $articleUrl; ?>" target="_blank" class="share-btn facebook">
                             <i class="bi bi-facebook"></i>
                         </a>
