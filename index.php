@@ -55,6 +55,7 @@ $routes = [
     'eurometal-mic-collaboration'   => 'pages/eurometal-mic-collaboration.php',
     'component-2'   => 'pages/component-2.php',
     'unep-habitat'   => 'pages/unep-habitat.php',
+    'process-registration'   => 'pages/process-registration.php',
     
 ];
 

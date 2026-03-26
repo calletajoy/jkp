@@ -95,21 +95,22 @@
             background-size: 15px 15px;
             background-repeat: repeat;
         }
-.page-hero .hero-label,
-.page-hero h1,
-.page-hero p {
-    position: relative;
-    z-index: 1;
-}
 
-.page-hero .hero-label {
-    color: #fdfeffff;
-    letter-spacing: 2px;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    background: #3B5B9A;
-}
+        .page-hero .hero-label,
+        .page-hero h1,
+        .page-hero p {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-hero .hero-label {
+            color: #fdfeffff;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            background: transparent;
+        }
 
         .page-hero h1 {
             font-size: 3.5rem;
@@ -121,6 +122,52 @@
         .page-hero p {
             font-size: 1.2rem;
             color: rgba(255,255,255,0.9);
+        }
+
+        /* Hero Buttons */
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: flex-start;
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .register-btn,
+        .sponsor-btn {
+            padding: 12px 32px;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .register-btn {
+            background: #00ced1;
+            color: #0b0b42;
+            border: none;
+        }
+
+        .register-btn:hover {
+            background: #5C7EC0;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .sponsor-btn {
+            background: transparent;
+            color: white;
+            border: 2px solid #00ced1;
+        }
+
+        .sponsor-btn:hover {
+            background: #00ced1;
+            color: #0b0b42;
+            transform: translateY(-2px);
         }
 
         /* Filter Bar - background and buttons */
@@ -772,6 +819,9 @@
             .event-card:last-child {
                 grid-column: auto;
             }
+            .hero-buttons {
+                justify-content: center;
+            }
         }
 
         /* Additional polish for strokes and hover states */
@@ -828,6 +878,10 @@
         <div class="hero-label">Upcoming &amp; Past Events</div>
         <h1> Jumuiya Events & Anniversaries </h1>
         <p>A Decade of Coastal Collaboration</p>
+        <div class="hero-buttons">
+            <button onclick="openRegistrationModal()" class="register-btn">Register Now</button>
+            <a href="#sponsor-section" class="sponsor-btn">Become a Sponsor</a>
+        </div>
     </div>
 
     <div class="filter-bar">
@@ -1041,6 +1095,7 @@
             });
         });
     </script>
+    <?php include 'components/registration-modal.php'; ?>
 </body>
 
 </html>
