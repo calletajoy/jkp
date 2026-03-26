@@ -515,7 +515,7 @@ document.addEventListener('DOMContentLoaded', function() {
         formData.append('registeringAs', selectedType);
         formData.append('nationality', selectedNationality === 'kenyan' ? 'Kenyan' : 'Non-Kenyan');
         
-        fetch('/pages/process_registration.php', {
+        fetch('process-registration.php', {
             method: 'POST',
             body: formData
         })
