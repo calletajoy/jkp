@@ -12,21 +12,104 @@
         /* OVERRIDE COLORS - matching shades of blue theme */
         /* #00CED1 , #5C7EC0 , #3B5B9A , #273C67 , #0b0b42 */
 
-        /* Hero section - radial gradient (#00ced1 and #0b0b42) */
+        /* Hero section - radial gradient with decorative elements */
         .page-hero {
-            background: radial-gradient(circle at center, #0b0b42 0%, #00ced1 100%);
+            background: radial-gradient(circle at center, #5c7ec0 0%, #3B5B9A 100%);
             padding: 80px 20px 60px;
-            text-align: center;
+            text-align: left;
             color: white;
+            position: relative;
+            overflow: hidden;
         }
 
-        .page-hero .hero-label {
-            color: #fdfeffff;
-            letter-spacing: 2px;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
+        /* Decorative circles for hero section */
+        .page-hero::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(165, 173, 189, 0.12);
+            z-index: 0;
+            pointer-events: none;
         }
+
+        .page-hero::after {
+            content: "";
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(165, 173, 189, 0.12);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Dots pattern for hero */
+        .page-hero .hero-dots-1 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 180px;
+            height: 150px;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.35;
+        }
+
+        .page-hero .hero-dots-1::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(165, 173, 189, 0.5) 2px, transparent 2px);
+            background-size: 18px 18px;
+            background-repeat: repeat;
+        }
+
+        .page-hero .hero-dots-2 {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 200px;
+            height: 160px;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.35;
+        }
+
+        .page-hero .hero-dots-2::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(165, 173, 189, 0.5) 2px, transparent 2px);
+            background-size: 15px 15px;
+            background-repeat: repeat;
+        }
+.page-hero .hero-label,
+.page-hero h1,
+.page-hero p {
+    position: relative;
+    z-index: 1;
+}
+
+.page-hero .hero-label {
+    color: #fdfeffff;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    background: #3B5B9A;
+}
 
         .page-hero h1 {
             font-size: 3.5rem;
@@ -42,7 +125,7 @@
 
         /* Filter Bar - background and buttons */
         .filter-bar {
-            background: #0b0b42;
+            background: #3B5B9A;
             padding: 16px 20px;
             display: flex;
             flex-wrap: wrap;
@@ -66,7 +149,7 @@
 
         .filter-btn.active,
         .filter-btn:hover {
-            background: #00ced1;
+            background: #0b0b42;
             border-color: #aff4f5ff;
             color: #0b0b42;
         }
@@ -88,7 +171,7 @@
         }
 
         .featured-card {
-            background: radial-gradient(circle at center, #0b0b42 0%, #00ced1 100%);
+            background: radial-gradient(circle at center, #5c7ec0 0%, #3B5B9A 100%);
             border-radius: 24px;
             overflow: hidden;
             display: flex;
@@ -98,71 +181,114 @@
             position: relative;
         }
 
-        /* Greyish circle at top right corner - more faded */
-        .featured-card::before {
-            content: "";
+        /* Multiple circles spread generously */
+        .featured-card .circle-1 {
             position: absolute;
-            top: -80px;
-            right: -80px;
-            width: 220px;
-            height: 220px;
+            top: -60px;
+            right: -60px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            background: rgba(165, 173, 189, 0.15);
+            background: rgba(165, 173, 189, 0.12);
             z-index: 0;
             pointer-events: none;
         }
 
-        /* Greyish circle at bottom left corner - more faded */
-        .featured-card::after {
-            content: "";
+        .featured-card .circle-2 {
             position: absolute;
             bottom: -80px;
             left: -80px;
-            width: 220px;
-            height: 220px;
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
-            background: rgba(165, 173, 189, 0.15);
+            background: rgba(165, 173, 189, 0.12);
             z-index: 0;
             pointer-events: none;
         }
 
-        /* Small dots forming a rectangle pattern - more faded */
-        .featured-card .dots-pattern {
+        .featured-card .circle-3 {
             position: absolute;
-            top: 40px;
-            right: 40px;
+            top: 30%;
+            left: -40px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: rgba(165, 173, 189, 0.1);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .featured-card .circle-4 {
+            position: absolute;
+            bottom: 20%;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: rgba(165, 173, 189, 0.1);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Dots patterns spread generously */
+        .featured-card .dots-1 {
+            position: absolute;
+            top: 20px;
+            right: 20px;
             width: 140px;
             height: 120px;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.4;
+            opacity: 0.35;
         }
 
-        .featured-card .dots-pattern::before {
+        .featured-card .dots-1::before {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: radial-gradient(circle, rgba(165, 173, 189, 0.4) 2px, transparent 2px);
+            background-image: radial-gradient(circle, rgba(165, 173, 189, 0.5) 2px, transparent 2px);
             background-size: 15px 15px;
             background-repeat: repeat;
         }
 
-        /* Additional dots pattern at bottom left - more faded */
-        .featured-card .dots-pattern-bottom {
+        .featured-card .dots-2 {
             position: absolute;
-            bottom: 40px;
-            left: 40px;
+            bottom: 30px;
+            left: 30px;
             width: 120px;
             height: 100px;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.4;
+            opacity: 0.35;
         }
 
-        .featured-card .dots-pattern-bottom::before {
+        .featured-card .dots-2::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(165, 173, 189, 0.5) 2px, transparent 2px);
+            background-size: 12px 12px;
+            background-repeat: repeat;
+        }
+
+        .featured-card .dots-3 {
+            position: absolute;
+            top: 50%;
+            right: 15%;
+            width: 100px;
+            height: 80px;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .featured-card .dots-3::before {
             content: "";
             position: absolute;
             top: 0;
@@ -170,7 +296,7 @@
             width: 100%;
             height: 100%;
             background-image: radial-gradient(circle, rgba(165, 173, 189, 0.4) 2px, transparent 2px);
-            background-size: 12px 12px;
+            background-size: 10px 10px;
             background-repeat: repeat;
         }
 
@@ -321,11 +447,60 @@
         }
 
         .event-card {
-            background: radial-gradient(circle at center, #0b0b42 0%, #00ced1 100%);
+            background: radial-gradient(circle at center, #5c7ec0 0%, #3B5B9A 100%);
             border-radius: 20px;
             overflow: hidden;
             transition: transform 0.2s, box-shadow 0.2s;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        /* Decorative elements for event cards */
+        .event-card .card-circle-1 {
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: rgba(165, 173, 189, 0.1);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .event-card .card-circle-2 {
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: rgba(165, 173, 189, 0.1);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .event-card .card-dots {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 80px;
+            height: 70px;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .event-card .card-dots::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(165, 173, 189, 0.4) 2px, transparent 2px);
+            background-size: 12px 12px;
+            background-repeat: repeat;
         }
 
         .event-card:hover {
@@ -337,6 +512,7 @@
             position: relative;
             height: 200px;
             overflow: hidden;
+            z-index: 1;
         }
 
         .card-image img {
@@ -366,6 +542,7 @@
             box-shadow: 0 3px 8px rgba(0,0,0,0.2);
             border: 1px solid #00ced1;
             backdrop-filter: blur(4px);
+            z-index: 2;
         }
 
         .card-date-badge .day {
@@ -383,6 +560,8 @@
             padding: 20px;
             color: white;
             background: transparent;
+            position: relative;
+            z-index: 1;
         }
 
         .event-tag {
@@ -437,7 +616,7 @@
 
         /* Newsletter Section */
         .newsletter {
-            background: radial-gradient(circle at center, #0b0b42 0%, #00ced1 100%);
+            background: radial-gradient(circle at center, #5c7ec0 0%, #3B5B9A 100%);
             border-radius: 32px;
             padding: 48px 40px;
             text-align: center;
@@ -447,15 +626,67 @@
             overflow: hidden;
         }
 
+        /* Decorative elements for newsletter */
+        .newsletter .nl-circle-1 {
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: rgba(165, 173, 189, 0.12);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .newsletter .nl-circle-2 {
+            position: absolute;
+            bottom: -60px;
+            left: -60px;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: rgba(165, 173, 189, 0.12);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .newsletter .nl-dots {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 140px;
+            height: 120px;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.35;
+        }
+
+        .newsletter .nl-dots::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(165, 173, 189, 0.5) 2px, transparent 2px);
+            background-size: 15px 15px;
+            background-repeat: repeat;
+        }
+
         .newsletter h3 {
             font-size: 2rem;
             margin-bottom: 12px;
             color: #00ced1;
+            position: relative;
+            z-index: 1;
         }
 
         .newsletter p {
             margin-bottom: 28px;
             opacity: 0.85;
+            position: relative;
+            z-index: 1;
         }
 
         .nl-form {
@@ -465,6 +696,8 @@
             gap: 12px;
             max-width: 550px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .nl-form input {
@@ -498,38 +731,6 @@
         .nl-form button:hover {
             background: #5C7EC0;
             color: white;
-        }
-
-        /* small circles in stay in the loop */
-        .newsletter::before,
-        .newsletter::after {
-            content: "";
-            position: absolute;
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            background: #a4adbd;
-            opacity: 0.15;
-            z-index: 0;
-        }
-
-        .newsletter::before {
-            top: -60px;
-            left: -60px;
-        }
-
-        .newsletter::after {
-            bottom: -60px;
-            right: -60px;
-            width: 220px;
-            height: 220px;
-        }
-
-        .newsletter h3,
-        .newsletter p,
-        .nl-form {
-            position: relative;
-            z-index: 1;
         }
 
         /* Responsive tweaks */
@@ -570,10 +771,6 @@
             }
             .event-card:last-child {
                 grid-column: auto;
-            }
-            .featured-card .dots-pattern,
-            .featured-card .dots-pattern-bottom {
-                display: none;
             }
         }
 
@@ -626,6 +823,8 @@
     ?>
 
     <div class="page-hero">
+        <div class="hero-dots-1"></div>
+        <div class="hero-dots-2"></div>
         <div class="hero-label">Upcoming &amp; Past Events</div>
         <h1> Jumuiya Events & Anniversaries </h1>
         <p>A Decade of Coastal Collaboration</p>
@@ -647,8 +846,13 @@
         <!-- FEATURED -->
         <div class="featured-label">Featured Event</div>
         <div class="featured-card">
-            <div class="dots-pattern"></div>
-            <div class="dots-pattern-bottom"></div>
+            <div class="circle-1"></div>
+            <div class="circle-2"></div>
+            <div class="circle-3"></div>
+            <div class="circle-4"></div>
+            <div class="dots-1"></div>
+            <div class="dots-2"></div>
+            <div class="dots-3"></div>
             <div class="featured-image">
                 <img src="assets/images/at10.png" alt="JABEIC 2024">
                 <div class="feat-date-badge">
@@ -702,6 +906,9 @@
         <div class="events-grid">
 
             <div class="event-card">
+                <div class="card-circle-1"></div>
+                <div class="card-circle-2"></div>
+                <div class="card-dots"></div>
                 <div class="card-image">
                     <img src="assets/images/agri summit.jpeg" alt="">
                     <div class="card-date-badge"><span class="day">24</span><span class="month">Feb</span></div>
@@ -727,6 +934,9 @@
             </div>
 
             <div class="event-card">
+                <div class="card-circle-1"></div>
+                <div class="card-circle-2"></div>
+                <div class="card-dots"></div>
                 <div class="card-image">
                     <img src="assets/images/fauna.jpeg" alt="">
                     <div class="card-date-badge"><span class="day">26</span><span class="month">Feb</span></div>
@@ -752,6 +962,9 @@
             </div>
 
             <div class="event-card">
+                <div class="card-circle-1"></div>
+                <div class="card-circle-2"></div>
+                <div class="card-dots"></div>
                 <div class="card-image">
                     <img src="assets/images/JUMGALA.png" alt="">
                     <div class="card-date-badge"><span class="day">02</span><span class="month">Apr</span></div>
@@ -777,6 +990,9 @@
             </div>
 
             <div class="event-card">
+                <div class="card-circle-1"></div>
+                <div class="card-circle-2"></div>
+                <div class="card-dots"></div>
                 <div class="card-image">
                     <img src="assets/images/jumy10.png" alt="">
                     <div class="card-date-badge"><span class="day">01</span><span class="month">Apr</span></div>
@@ -804,6 +1020,9 @@
 
         <!-- NEWSLETTER -->
         <div class="newsletter">
+            <div class="nl-circle-1"></div>
+            <div class="nl-circle-2"></div>
+            <div class="nl-dots"></div>
             <h3>Stay in the Loop</h3>
             <p>Get notified about upcoming regional conferences, forums, and investment events.</p>
             <div class="nl-form">
