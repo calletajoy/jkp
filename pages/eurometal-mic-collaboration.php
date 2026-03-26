@@ -10,9 +10,9 @@ $heroTitle    = 'Eurometal and MIC Collaboration';
 $heroSubtitle = 'Investment Partnership for Development Projects';
 
 // Add Open Graph and Twitter Card meta tags for social sharing
-$ogImage = 'http://localhost:8000/assets/images/eurometal.png';
+$ogImage = 'https://dev.jumuiya.org/assets/images/eurometal.png';
 $ogDescription = 'On Thursday, September 14, 2023, Jumuiya ya Kaunti za Pwani (JKP) introduced Eurometal, a metal and steel construction company based in Kosovo, to the Mombasa Investment Cooperation (MIC).';
-$ogUrl = 'http://localhost:8000/eurometal-mic-collaboration';
+$ogUrl = 'https://dev.jumuiya.org/eurometal-mic-collaboration';
 
 $extraMeta = '
 <meta property="og:title" content="' . $pageTitle . '" />
@@ -1143,10 +1143,11 @@ img:not([src]) {
                 <div class="share-section" data-aos="fade-up">
                     <div class="share-title">Share this article</div>
                     <div class="share-buttons">
-                        <?php 
-                        $articleUrl = urlencode('http://localhost:8000/eurometal-mic-collaboration');
-                        $articleTitle = urlencode('Eurometal and MIC to collaborate on development projects');
-                        ?>
+                                             <?php 
+// Dynamic URL for sharing - works on any domain (localhost, dev, production)
+$articleUrl = urlencode($currentUrl);
+$articleTitle = urlencode($pageTitle);
+?>
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $articleUrl; ?>" target="_blank" class="share-btn facebook">
                             <i class="bi bi-facebook"></i>
                         </a>

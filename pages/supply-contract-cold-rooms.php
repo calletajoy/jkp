@@ -10,9 +10,9 @@ $heroTitle    = 'Supply Contract';
 $heroSubtitle = 'Cold Rooms + Ice Flakes Production Machines';
 
 // Add Open Graph and Twitter Card meta tags for social sharing
-$ogImage = 'http://localhost:8000/assets/images/supply contract.png';
+$ogImage = 'https://dev.jumuiya.org/assets/images/supply contract.png';
 $ogDescription = 'AICS Nairobi Office intends to award a supply contract with ancillary services to supply, install and commission containerized cold rooms + ice flakes production machines for Beach Management Units in Kibuyuni and Uyombo.';
-$ogUrl = 'http://localhost:8000/supply-contract-cold-rooms';
+$ogUrl = 'https://dev.jumuiya.org/supply-contract-cold-rooms';
 
 $extraMeta = '
 <meta property="og:title" content="' . $pageTitle . '" />
@@ -784,10 +784,11 @@ include __DIR__ . '/../partials/page-hero.php';
                 <div class="share-section" data-aos="fade-up">
                     <div class="share-title">Share this article</div>
                     <div class="share-buttons">
-                        <?php 
-                        $articleUrl = urlencode('http://localhost:8000/supply-contract-cold-rooms');
-                        $articleTitle = urlencode('Supply contract for ancillary services: supply, install, commission two cold rooms + ice');
-                        ?>
+                                              <?php 
+// Dynamic URL for sharing - works on any domain (localhost, dev, production)
+$articleUrl = urlencode($currentUrl);
+$articleTitle = urlencode($pageTitle);
+?>
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $articleUrl; ?>" target="_blank" class="share-btn facebook">
                             <i class="bi bi-facebook"></i>
                         </a>

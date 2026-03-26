@@ -10,9 +10,9 @@ $heroTitle    = 'Advocating for 4th-Generation Basis';
 $heroSubtitle = 'Enhanced Revenue Sharing Fairness';
 
 // Add Open Graph and Twitter Card meta tags for social sharing (localhost version for testing)
-$ogImage = 'http://localhost:8000/assets/images/advo 4th gen.png';
+$ogImage = 'https://dev.jumuiya.org/assets/images/advo 4th gen.png';
 $ogDescription = 'In a proactive move towards equitable revenue allocation, the JKP secretariat led by the Chairman H.E. Governor Gideon Mungaro, alongside all six coastal governors and senators, convened to analyze the Third Generation Basis for revenue sharing.';
-$ogUrl = 'http://localhost:8000/advocating-4th-generation';
+$ogUrl = 'https://dev.jumuiya.org/advocating-4th-generation';
 
 $extraMeta = '
 <meta property="og:title" content="' . $pageTitle . '" />
@@ -826,10 +826,11 @@ include __DIR__ . '/../partials/page-hero.php';
                 <div class="share-section" data-aos="fade-up">
                     <div class="share-title">Share this article</div>
                     <div class="share-buttons">
-                        <?php 
-                        $articleUrl = urlencode('http://localhost:8000/advocating-4th-generation');
-                        $articleTitle = urlencode('Advocating for the 4th-Generation Basis for Enhanced Revenue Sharing Fairness');
-                        ?>
+                                             <?php 
+// Dynamic URL for sharing - works on any domain (localhost, dev, production)
+$articleUrl = urlencode($currentUrl);
+$articleTitle = urlencode($pageTitle);
+?>
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $articleUrl; ?>" target="_blank" class="share-btn facebook">
                             <i class="bi bi-facebook"></i>
                         </a>

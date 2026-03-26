@@ -10,9 +10,9 @@ $heroTitle    = 'Iowa State University Scholarships';
 $heroSubtitle = '$25,000 Annual Scholarships for Food Security Courses';
 
 // Add Open Graph and Twitter Card meta tags for social sharing
-$ogImage = 'http://localhost:8000/assets/images/iowa state.png';
+$ogImage = 'https://dev.jumuiya.org/assets/images/iowa state.png';
 $ogDescription = 'Iowa State University has announced its scholarship program for students from Sub-Saharan Africa to pursue graduate studies within its College of Agriculture and Life Science through the Borel Global Fellows Program.';
-$ogUrl = 'http://localhost:8000/iowa-state-scholarships';
+$ogUrl = 'https://dev.jumuiya.org/iowa-state-scholarships';
 
 $extraMeta = '
 <meta property="og:title" content="' . $pageTitle . '" />
@@ -938,10 +938,11 @@ include __DIR__ . '/../partials/page-hero.php';
                 <div class="share-section" data-aos="fade-up">
                     <div class="share-title">Share this opportunity</div>
                     <div class="share-buttons">
-                        <?php 
-                        $articleUrl = urlencode('http://localhost:8000/iowa-state-scholarships');
-                        $articleTitle = urlencode('Iowa State University announces $25,000 annual scholarships on food security courses for Sub-Saharan Africa students');
-                        ?>
+                                             <?php 
+// Dynamic URL for sharing - works on any domain (localhost, dev, production)
+$articleUrl = urlencode($currentUrl);
+$articleTitle = urlencode($pageTitle);
+?>
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $articleUrl; ?>" target="_blank" class="share-btn facebook">
                             <i class="bi bi-facebook"></i>
                         </a>

@@ -10,9 +10,9 @@ $heroTitle    = 'Jumuiya and Safaricom PLC signed a Memorandum of Understanding'
 $heroSubtitle = 'Digital Transformation Partnership';
 
 // Add Open Graph and Twitter Card meta tags for social sharing
-$ogImage = 'http://localhost:8000/assets/images/saf-plc.png';
+$ogImage = 'https://dev.jumuiya.org/assets/images/saf-plc.png';
 $ogDescription = 'On June 15, 2023, Jumuiya Ya Kaunti Za Pwani – JKP and Safaricom PLC signed a Memorandum of Understanding for the purpose of facilitating a collaborative framework in the provision of sustainable and transformative digital solutions to JKP counties.';
-$ogUrl = 'http://localhost:8000/safaricom-mou';
+$ogUrl = 'https://dev.jumuiya.org/safaricom-mou';
 
 $extraMeta = '
 <meta property="og:title" content="' . $pageTitle . '" />
@@ -1213,10 +1213,11 @@ img:not([src]) {
                 <div class="share-section" data-aos="fade-up">
                     <div class="share-title">Share this article</div>
                     <div class="share-buttons">
-                        <?php 
-                        $articleUrl = urlencode('http://localhost:8000/safaricom-mou');
-                        $articleTitle = urlencode('Jumuiya and Safaricom PLC signed a Memorandum of Understanding');
-                        ?>
+                                             <?php 
+// Dynamic URL for sharing - works on any domain (localhost, dev, production)
+$articleUrl = urlencode($currentUrl);
+$articleTitle = urlencode($pageTitle);
+?>
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $articleUrl; ?>" target="_blank" class="share-btn facebook">
                             <i class="bi bi-facebook"></i>
                         </a>

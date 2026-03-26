@@ -12,7 +12,7 @@ $heroSubtitle = 'Kisauni VTC Graduation';
 // Add Open Graph and Twitter Card meta tags for social sharing (localhost version for testing)
 $ogImage = 'https://dev.jumuiya.org/assets/images/kisauni.png';
 $ogDescription = 'On Saturday, May 25, 2024, Kisauni VTC celebrated its 8th graduation ceremony. Out of 813 graduates, 513 completed blue economy-related courses, namely Maritime Plumbing, Maritime Tourism & Hospitality, and Maritime Security. 60% secured job placements after their industrial attachments, and 25% transitioned to entrepreneurship.';
-$ogUrl = 'http://localhost:8000/kisauni-vtc-graduates';
+$ogUrl = 'https://dev.jumuiya.org/kisauni-vtc-graduates';
 
 $extraMeta = '
 <meta property="og:title" content="' . $pageTitle . '" />
@@ -677,10 +677,11 @@ include __DIR__ . '/../partials/page-hero.php';
                 <div class="share-section" data-aos="fade-up">
                     <div class="share-title">Share this article</div>
                     <div class="share-buttons">
-                        <?php 
-                        $articleUrl = urlencode('http://localhost:8000/kisauni-vtc-graduates');
-                        $articleTitle = urlencode('Kisauni VTC Graduates 513 Students in Blue Economy Courses');
-                        ?>
+                                              <?php 
+// Dynamic URL for sharing - works on any domain (localhost, dev, production)
+$articleUrl = urlencode($currentUrl);
+$articleTitle = urlencode($pageTitle);
+?>
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $articleUrl; ?>" target="_blank" class="share-btn facebook">
                             <i class="bi bi-facebook"></i>
                         </a>

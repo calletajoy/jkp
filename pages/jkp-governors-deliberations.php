@@ -10,9 +10,9 @@ $heroTitle    = 'JKP Governors Deliberations';
 $heroSubtitle = 'County Revenue Sharing Formula';
 
 // Add Open Graph and Twitter Card meta tags for social sharing (localhost version for testing)
-$ogImage = 'http://localhost:8000/assets/images/govs.png';
+$ogImage = 'https://dev.jumuiya.org/assets/images/govs.png';
 $ogDescription = 'Saturday, April 27, 2024, Mombasa Beach Hotel - The Jumuiya Economic Development Secretariat, led by Governors from all six coastal counties, concluded the final joint technical presentation and consultations on the 4th basis county revenue allocations (CRA) recommendations.';
-$ogUrl = 'http://localhost:8000/jkp-governors-deliberations';
+$ogUrl = 'https://dev.jumuiya.org/jkp-governors-deliberations';
 
 $extraMeta = '
 <meta property="og:title" content="' . $pageTitle . '" />
@@ -718,10 +718,11 @@ include __DIR__ . '/../partials/page-hero.php';
                 <div class="share-section" data-aos="fade-up">
                     <div class="share-title">Share this article</div>
                     <div class="share-buttons">
-                        <?php 
-                        $articleUrl = urlencode('http://localhost:8000/jkp-governors-deliberations');
-                        $articleTitle = urlencode('JKP Governors Deliberations on the CRA\'s 4th Edition of the County Revenue Sharing Formula');
-                        ?>
+                                             <?php 
+// Dynamic URL for sharing - works on any domain (localhost, dev, production)
+$articleUrl = urlencode($currentUrl);
+$articleTitle = urlencode($pageTitle);
+?>
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $articleUrl; ?>" target="_blank" class="share-btn facebook">
                             <i class="bi bi-facebook"></i>
                         </a>

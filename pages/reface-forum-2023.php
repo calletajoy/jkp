@@ -10,9 +10,9 @@ $heroTitle    = 'Regenerative Fashion Collective Exchange (ReFaCE) Forum 2023';
 $heroSubtitle = 'Regenerative Fashion Collective Exchange';
 
 // Add Open Graph and Twitter Card meta tags for social sharing
-$ogImage = 'http://localhost:8000/assets/images/rege.png';
+$ogImage = 'https://dev.jumuiya.org/assets/images/rege.png';
 $ogDescription = 'The ReFaCE Forum is a collaboration and network of textile "Crop-to-Closet-to-Compost" (C3) value chain stakeholders working together to uncover opportunities in regenerative fashion.';
-$ogUrl = 'http://localhost:8000/reface-forum-2023';
+$ogUrl = 'https://dev.jumuiya.org/reface-forum-2023';
 
 $extraMeta = '
 <meta property="og:title" content="' . $pageTitle . '" />
@@ -1256,10 +1256,11 @@ img:not([src]) {
                 <div class="share-section" data-aos="fade-up">
                     <div class="share-title">Share this article</div>
                     <div class="share-buttons">
-                        <?php 
-                        $articleUrl = urlencode('http://localhost:8000/reface-forum-2023');
-                        $articleTitle = urlencode('Regenerative Fashion Collective Exchange (ReFaCE) Forum 2023');
-                        ?>
+                                              <?php 
+// Dynamic URL for sharing - works on any domain (localhost, dev, production)
+$articleUrl = urlencode($currentUrl);
+$articleTitle = urlencode($pageTitle);
+?>
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $articleUrl; ?>" target="_blank" class="share-btn facebook">
                             <i class="bi bi-facebook"></i>
                         </a>

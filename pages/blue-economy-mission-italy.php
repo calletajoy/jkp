@@ -10,9 +10,9 @@ $heroTitle    = 'Blue Economy Mission to Italy';
 $heroSubtitle = 'Go Blue Project Engagements';
 
 // Add Open Graph and Twitter Card meta tags for social sharing
-$ogImage = 'http://localhost:8000/assets/images/jum-eco.png';
+$ogImage = 'https://dev.jumuiya.org/assets/images/jum-eco.png';
 $ogDescription = 'The Jumuiya ya Kaunti za Pwani (JKP) Delegation of the Blue Economy Sector Working Group closed their five day Go Blue Project engagements with a courtesy visit to the Kenyan Embassy in Rome Italy.';
-$ogUrl = 'http://localhost:8000/blue-economy-mission-italy';
+$ogUrl = 'https://dev.jumuiya.org/blue-economy-mission-italy';
 
 $extraMeta = '
 <meta property="og:title" content="' . $pageTitle . '" />
@@ -1312,10 +1312,11 @@ include __DIR__ . '/../partials/page-hero.php';
                 <div class="share-section" data-aos="fade-up">
                     <div class="share-title">Share this article</div>
                     <div class="share-buttons">
-                        <?php 
-                        $articleUrl = urlencode('http://localhost:8000/blue-economy-mission-italy');
-                        $articleTitle = urlencode('Jumuiya Blue Economy Mission to Italy');
-                        ?>
+                                             <?php 
+// Dynamic URL for sharing - works on any domain (localhost, dev, production)
+$articleUrl = urlencode($currentUrl);
+$articleTitle = urlencode($pageTitle);
+?>
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $articleUrl; ?>" target="_blank" class="share-btn facebook">
                             <i class="bi bi-facebook"></i>
                         </a>

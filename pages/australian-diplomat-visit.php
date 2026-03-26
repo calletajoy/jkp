@@ -10,9 +10,9 @@ $heroTitle    = 'Strengthening Bilateral Relations';
 $heroSubtitle = 'Australian Deputy High Commissioner Visits JKP Offices';
 
 // Add Open Graph and Twitter Card meta tags for social sharing (localhost version for testing)
-$ogImage = 'http://localhost:8000/assets/images/strength bi.png';
+$ogImage = 'https://dev.jumuiya.org/assets/images/strength bi.png';
 $ogDescription = 'On April 18, 2024, the Australian Deputy High Commissioner for East Africa, Chris Ellinger, paid a courtesy visit to the offices of Jumuiya Ya Kaunti Za Pwani (JKP), marking a significant step towards enhancing ties between Australia and Kenya.';
-$ogUrl = 'http://localhost:8000/australian-diplomat-visit';
+$ogUrl = 'https://dev.jumuiya.org/australian-diplomat-visit';
 
 $extraMeta = '
 <meta property="og:title" content="' . $pageTitle . '" />
@@ -717,10 +717,11 @@ include __DIR__ . '/../partials/page-hero.php';
                 <div class="share-section" data-aos="fade-up">
                     <div class="share-title">Share this article</div>
                     <div class="share-buttons">
-                        <?php 
-                        $articleUrl = urlencode('http://localhost:8000/australian-diplomat-visit');
-                        $articleTitle = urlencode('Strengthening Bilateral Relations – Australian Deputy High Commissioner Visits JKP Offices');
-                        ?>
+                                             <?php 
+// Dynamic URL for sharing - works on any domain (localhost, dev, production)
+$articleUrl = urlencode($currentUrl);
+$articleTitle = urlencode($pageTitle);
+?>
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $articleUrl; ?>" target="_blank" class="share-btn facebook">
                             <i class="bi bi-facebook"></i>
                         </a>

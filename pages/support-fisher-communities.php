@@ -10,9 +10,9 @@ $heroTitle    = 'Support Fisher Communities';
 $heroSubtitle = 'Safety Training for Coastal Fishers';
 
 // Add Open Graph and Twitter Card meta tags for social sharing
-$ogImage = 'http://localhost:8000/assets/images/fishermen.png';
+$ogImage = 'https://dev.jumuiya.org/assets/images/fishermen.png';
 $ogDescription = 'Fishing is one of the most dangerous job in the world with many accidents resulting in fatalities. The Go Blue maritime security project teaches Kenya Coast Guard Service trainers how to support fisher communities with basic survival techniques.';
-$ogUrl = 'http://localhost:8000/support-fisher-communities';
+$ogUrl = 'https://dev.jumuiya.org/support-fisher-communities';
 
 $extraMeta = '
 <meta property="og:title" content="' . $pageTitle . '" />
@@ -1229,10 +1229,11 @@ img:not([src]) {
                 <div class="share-section" data-aos="fade-up">
                     <div class="share-title">Share this article</div>
                     <div class="share-buttons">
-                        <?php 
-                        $articleUrl = urlencode('http://localhost:8000/support-fisher-communities');
-                        $articleTitle = urlencode('Support fisher communities along the Kenyan coast');
-                        ?>
+                                              <?php 
+// Dynamic URL for sharing - works on any domain (localhost, dev, production)
+$articleUrl = urlencode($currentUrl);
+$articleTitle = urlencode($pageTitle);
+?>
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $articleUrl; ?>" target="_blank" class="share-btn facebook">
                             <i class="bi bi-facebook"></i>
                         </a>

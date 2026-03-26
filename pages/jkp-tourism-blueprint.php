@@ -10,9 +10,9 @@ $heroTitle    = 'JKP Tourism Blueprint 2030';
 $heroSubtitle = 'Validation Meeting';
 
 // Add Open Graph and Twitter Card meta tags for social sharing
-$ogImage = 'http://localhost:8000/assets/images/tourism.png';
+$ogImage = 'https://dev.jumuiya.org/assets/images/tourism.png';
 $ogDescription = 'On Friday, 29th September 2023 at Muthu-Nyali Beach Hotel–Mombasa, Jumuiya ya Kaunti za Pwani (JKP) supported by Camões Institute – Portugal (Camões IP), held a validation meeting for the JKP Tourism Culture and Heritage (TCH) Blueprint 2030.';
-$ogUrl = 'http://localhost:8000/jkp-tourism-blueprint';
+$ogUrl = 'https://dev.jumuiya.org/jkp-tourism-blueprint';
 
 $extraMeta = '
 <meta property="og:title" content="' . $pageTitle . '" />
@@ -1250,10 +1250,11 @@ include __DIR__ . '/../partials/page-hero.php';
                 <div class="share-section" data-aos="fade-up">
                     <div class="share-title">Share this article</div>
                     <div class="share-buttons">
-                        <?php 
-                        $articleUrl = urlencode('http://localhost:8000/jkp-tourism-blueprint');
-                        $articleTitle = urlencode('JKP Tourism and Cultural Heritage Blueprint 2030 Validation');
-                        ?>
+                                              <?php 
+// Dynamic URL for sharing - works on any domain (localhost, dev, production)
+$articleUrl = urlencode($currentUrl);
+$articleTitle = urlencode($pageTitle);
+?>
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $articleUrl; ?>" target="_blank" class="share-btn facebook">
                             <i class="bi bi-facebook"></i>
                         </a>
