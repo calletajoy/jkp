@@ -9,10 +9,10 @@ $currentPage  = 'news';
 $heroTitle    = 'Ethiopian Oromia Tourism Commission';
 $heroSubtitle = 'Courtesy Visit to JKP';
 
-// Add Open Graph and Twitter Card meta tags for social sharing
-$ogImage = 'http://localhost:8000/assets/images/eth-oromia.png';
+// Change from localhost to live domain
+$ogImage = 'https://dev.jumuiya.org/assets/images/eth-oromia.png';
 $ogDescription = 'On 8th August 2023, the Oromia Tourism Commission team from Ethiopia paid a courtesy visit to the Jumuiya Ya Kaunti Za Pwani – JKP office to benchmark and explore the potential for collaboration.';
-$ogUrl = 'http://localhost:8000/ethiopia-oromia-visit';
+$ogUrl = 'https://dev.jumuiya.org/ethiopia-oromia-visit';
 
 $extraMeta = '
 <meta property="og:title" content="' . $pageTitle . '" />
@@ -1126,10 +1126,11 @@ include __DIR__ . '/../partials/page-hero.php';
                 <div class="share-section" data-aos="fade-up">
                     <div class="share-title">Share this article</div>
                     <div class="share-buttons">
-                        <?php 
-                        $articleUrl = urlencode('http://localhost:8000/ethiopia-oromia-visit');
-                        $articleTitle = urlencode('The Ethiopian Oromia Tourism Commission team courtesy visit');
-                        ?>
+                       <?php 
+// Dynamic URL for sharing - works on any domain (localhost, dev, production)
+$articleUrl = urlencode($currentUrl);
+$articleTitle = urlencode($pageTitle);
+?>
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $articleUrl; ?>" target="_blank" class="share-btn facebook">
                             <i class="bi bi-facebook"></i>
                         </a>

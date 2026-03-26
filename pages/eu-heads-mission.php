@@ -10,9 +10,9 @@ $heroTitle    = 'European Union Heads of Mission visit to the Coast Region on Bl
 $heroSubtitle = 'Blue Economy Tour of Coast Region';
 
 // Add Open Graph and Twitter Card meta tags for social sharing
-$ogImage = 'http://localhost:8000/assets/images/eu-heads.png';
+$ogImage = 'https://dev.jumuiya.org/assets/images/eu-heads.png';
 $ogDescription = 'The European Union Heads of Missions undertook a tour of the Jumuiya ya Kaunti za Pwani region from 15th to 19th May 2023 to highlight achievements and potential interests on Blue Economy.';
-$ogUrl = 'http://localhost:8000/eu-heads-mission';
+$ogUrl = 'https://dev.jumuiya.org/eu-heads-mission';
 
 $extraMeta = '
 <meta property="og:title" content="' . $pageTitle . '" />
@@ -1231,9 +1231,9 @@ img:not([src]) {
                     <div class="share-title">Share this article</div>
                     <div class="share-buttons">
                         <?php 
-                        $articleUrl = urlencode('http://localhost:8000/eu-heads-mission');
-                        $articleTitle = urlencode('European Union Heads of Mission visit to the Coast Region on Blue Economy');
-                        ?>
+$articleUrl = urlencode($currentUrl);
+$articleTitle = urlencode($pageTitle);
+?>
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $articleUrl; ?>" target="_blank" class="share-btn facebook">
                             <i class="bi bi-facebook"></i>
                         </a>
