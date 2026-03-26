@@ -20,80 +20,71 @@ include __DIR__ . '/../partials/page-hero.php';
     color: #0d6efd;
 }
 
-/* Partners Section Styles - Square Cards with Circular Logos */
+/* Partners Section Styles - Rectangular Images, Horizontal Grid */
 .partners-grid {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
     flex-wrap: wrap;
 }
 
-.partner-square-card {
-    width: 280px;
-    height: 280px;
+.partner-card {
+    flex: 1;
+    min-width: 280px;
+    max-width: 320px;
     background: white;
-    border-radius: 20px;
+    border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 30px 20px;
-    position: relative;
     overflow: hidden;
-    cursor: pointer;
     transition: all 0.3s ease;
+    text-align: center;
+    padding-bottom: 25px;
 }
 
-.partner-square-card:hover {
+.partner-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-.partner-logo-circle {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+/* Rectangular Image Container - No Circle */
+.partner-image {
+    width: 100%;
+    height: 200px;
     background: #f8f9fa;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    overflow: hidden;
     padding: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-bottom: 1px solid #eee;
 }
 
-.partner-logo-circle img {
-    max-width: 100%;
+/* Grayscale by default */
+.partner-image img {
+    max-width: 80%;
     max-height: 100%;
     object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.4s ease;
+}
+
+/* Full color on hover */
+.partner-card:hover .partner-image img {
+    filter: grayscale(0%);
 }
 
 .partner-name {
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.25rem;
+    font-weight: 700;
     color: #333;
-    margin-bottom: 10px;
-    text-align: center;
+    margin: 20px 20px 10px;
 }
 
-.partner-hover-description {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(13, 110, 253, 0.95);
-    color: white;
-    padding: 20px;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-    text-align: center;
-    font-size: 0.9rem;
-    border-radius: 20px 20px 0 0;
-}
-
-.partner-square-card:hover .partner-hover-description {
-    transform: translateY(0);
+.partner-description {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.5;
+    padding: 0 20px;
 }
 
 /* Projects Section Styles - Square Cards with Circular Logos */
@@ -367,9 +358,13 @@ include __DIR__ . '/../partials/page-hero.php';
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .partner-square-card {
-        width: 100%;
+    .partner-card {
+        min-width: 260px;
         max-width: 280px;
+    }
+    
+    .partner-image {
+        height: 180px;
     }
     
     .project-square-card {
@@ -416,70 +411,13 @@ include __DIR__ . '/../partials/page-hero.php';
             </div>
             
             <!-- Right side: SVG Map -->
-            <div class="col-lg-6 map-right" data-aos="fade-left">
-                <div class="county-map-container">
-                    <img src="/assets/images/ke.svg" alt="JKP Coastal Counties Map" class="map-svg img-fluid" style="filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));">
-                    
-                    <!-- Pulsating Markers with County Name Tags - Adjusted for Kenya SVG -->
-                    <!-- Mombasa (Coastal region) -->
-                    <div class="county-marker" data-county="mombasa" style="top: 78%; left: 82%;">
-                        <div class="pulsating-dot"></div>
-                        <div class="county-name-tag">Mombasa</div>
-                    </div>
-                    
-                    <!-- Kwale (South Coast) -->
-                    <div class="county-marker" data-county="kwale" style="top: 82%; left: 80%;">
-                        <div class="pulsating-dot"></div>
-                        <div class="county-name-tag">Kwale</div>
-                    </div>
-                    
-                    <!-- Kilifi (North of Mombasa) -->
-                    <div class="county-marker" data-county="kilifi" style="top: 70%; left: 81%;">
-                        <div class="pulsating-dot"></div>
-                        <div class="county-name-tag">Kilifi</div>
-                    </div>
-                    
-                    <!-- Tana River (Further north) -->
-                    <div class="county-marker" data-county="tana-river" style="top: 55%; left: 80%;">
-                        <div class="pulsating-dot"></div>
-                        <div class="county-name-tag">Tana River</div>
-                    </div>
-                    
-                    <!-- Lamu (Northern Coast) -->
-                    <div class="county-marker" data-county="lamu" style="top: 40%; left: 82%;">
-                        <div class="pulsating-dot"></div>
-                        <div class="county-name-tag">Lamu</div>
-                    </div>
-                    
-                    <!-- Taita Taveta (Inland, West of Mombasa) -->
-                    <div class="county-marker" data-county="taita-taveta" style="top: 68%; left: 70%;">
-                        <div class="pulsating-dot"></div>
-                        <div class="county-name-tag">Taita Taveta</div>
-                    </div>
-                </div>
-                
-                <!-- County List below map -->
-                <div class="row g-3 mt-4">
-                    <?php
-                    $counties = [
-                        'Mombasa', 'Kwale', 'Kilifi', 'Tana River', 'Lamu', 'Taita Taveta'
-                    ];
-                    $colors = ['#0d6efd', '#198754', '#ffc107', '#dc3545', '#0dcaf0', '#6f42c1'];
-                    ?>
-                    <?php foreach ($counties as $index => $county): ?>
-                    <div class="col-6" data-aos="fade-up" data-aos-delay="<?php echo $index * 50; ?>">
-                        <div class="p-2 bg-white rounded-3" style="box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid <?php echo $colors[$index]; ?>;">
-                            <h6 class="fw-bold mb-0 small"><i class="bi bi-geo-alt-fill me-2" style="color: <?php echo $colors[$index]; ?>;"></i><?php echo $county; ?></h6>
-                        </div>
-                    </div>
-                    <?php endforeach; ?>
-                </div>
-            </div>
+            <?php include __DIR__ . '/components/coastal_counties.php'; ?>
+            
         </div>
     </div>
 </section>
 
-<!-- ===== Partners Section with Square Cards and Circular Logos ===== -->
+<!-- ===== Partners Section with Rectangular Images (No Circles) ===== -->
 <section class="our-investigators py-5 bg-light">
     <div class="container">
         <div class="section-title text-center mb-5" data-aos="fade-up">
@@ -490,40 +428,40 @@ include __DIR__ . '/../partials/page-hero.php';
                     <div class="small-circle-end"></div>
                 </div>
             </div>
-            <h2 class="mt-2 cssanimation lePopUp sequence">Trusted Collaborators</h2>
-            <p class="text-muted mt-3">Working together for sustainable development across the coast</p>
+            <h2 class="mt-2 cssanimation lePopUp sequence">Our Partners in Focus</h2>
+            <p class="text-muted mt-3">Key Collaborators — Hover over images to see them in full color</p>
         </div>
 
         <div class="partners-grid">
             <!-- FAO -->
-            <div class="partner-square-card" data-aos="fade-up">
-                <div class="partner-logo-circle">
+            <div class="partner-card" data-aos="fade-up">
+                <div class="partner-image">
                     <img src="/assets/images/FAO-Logo.png" alt="FAO">
                 </div>
                 <div class="partner-name">FAO</div>
-                <div class="partner-hover-description">
+                <div class="partner-description">
                     Leads international efforts to defeat hunger and improve nutrition and food security
                 </div>
             </div>
             
             <!-- EU / Go Blue -->
-            <div class="partner-square-card" data-aos="fade-up" data-aos-delay="50">
-                <div class="partner-logo-circle">
+            <div class="partner-card" data-aos="fade-up" data-aos-delay="50">
+                <div class="partner-image">
                     <img src="/assets/images/eu-go blue.png" alt="European Union">
                 </div>
                 <div class="partner-name">Go Blue (EU)</div>
-                <div class="partner-hover-description">
+                <div class="partner-description">
                     Focus on creating growth, ensuring healthy waters and building sustainable communities
                 </div>
             </div>
             
             <!-- Trade Mark East Africa -->
-            <div class="partner-square-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="partner-logo-circle">
+            <div class="partner-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="partner-image">
                     <img src="/assets/images/trade mark EA.png" alt="Trade Mark East Africa">
                 </div>
                 <div class="partner-name">Trade Mark East Africa</div>
-                <div class="partner-hover-description">
+                <div class="partner-description">
                     Established with the aim of growing prosperity in Africa through increased trade
                 </div>
             </div>
@@ -675,14 +613,11 @@ include __DIR__ . '/../partials/page-hero.php';
     <div class="container">
         <div class="section-title text-center mb-5" data-aos="fade-up">
             <div class="semi-title">
-                <div class="animated-circles justify-content-center">
-                    <div class="small-circle-start"></div>
-                    <div class="title">Our Partners in Focus</div>
-                    <div class="small-circle-end"></div>
+                <div class="animated-rectangle justify-content-center">
+                    <div class="small-rectangle-start"></div>
+                    <div class="small-rectangle-end"></div>
                 </div>
             </div>
-            <h2 class="mt-2 cssanimation lePopUp sequence">Key Collaborators</h2>
-            <p class="text-muted mt-3">Hover over images to see them in full color</p>
         </div>
 
         <div class="merry-go-round" data-aos="zoom-in">
@@ -693,8 +628,8 @@ include __DIR__ . '/../partials/page-hero.php';
             
             <!-- Go Blue -->
             <div class="merry-image">
-                <img src="/assets/images/eu-go blue.png" alt="Go Blue">
-            </div>
+                <img src="/assets/images/assets/images/goo-blu.png" alt="Go Blue EU">
+            </div> 
             
             <!-- Jumuiya -->
             <div class="merry-image">
