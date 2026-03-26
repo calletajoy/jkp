@@ -9,349 +9,268 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/events.css">
     <style>
-        /* OVERRIDE COLORS - matching shades of blue theme */
-        /* #00CED1 , #5C7EC0 , #3B5B9A , #273C67 , #0b0b42 */
+        /* New Color Palette */
+        /* Primary: #2d93d6 (rich blue accent)
+           Secondary: #6db7e8 (medium blue)
+           Card background: #c4f4f5 (soft cyan)
+           Deep navy: #273C67 (hero, footer) */
 
-        /* Hero section - radial gradient with decorative elements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Hide global header and footer */
+        body > header,
+        body > footer:not(.events-footer) {
+            display: none;
+        }
+
+        body {
+            background: #f5f9ff;
+        }
+
+        /* Custom Navigation Bar */
+        .events-nav {
+            background: white;
+            padding: 15px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+            border-bottom: 1px solid rgba(45, 147, 214, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .nav-logo {
+            margin-left: 0;
+        }
+
+        .nav-logo img {
+            height: 55px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 48px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu li a {
+            color: #273C67;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: 0.3s;
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .nav-menu li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2d93d6;
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu li a:hover {
+            color: #2d93d6;
+        }
+
+        .nav-menu li a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section - Gradient with new colors */
         .page-hero {
-            background: radial-gradient(circle at center, #5c7ec0 0%, #3B5B9A 100%);
-            padding: 80px 20px 60px;
-            text-align: left;
-            color: white;
+            background: linear-gradient(135deg, #273C67 0%, #2d93d6 100%);
+            padding: 60px 20px 60px;
             position: relative;
             overflow: hidden;
         }
 
-        /* Decorative circles for hero section */
         .page-hero::before {
             content: "";
             position: absolute;
             top: -100px;
             right: -100px;
-            width: 300px;
-            height: 300px;
+            width: 400px;
+            height: 400px;
             border-radius: 50%;
-            background: rgba(165, 173, 189, 0.12);
+            background: rgba(196, 244, 245, 0.05);
             z-index: 0;
-            pointer-events: none;
         }
 
-        .page-hero::after {
-            content: "";
-            position: absolute;
-            bottom: -100px;
-            left: -100px;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: rgba(165, 173, 189, 0.12);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        /* Dots pattern for hero */
-        .page-hero .hero-dots-1 {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 180px;
-            height: 150px;
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.35;
-        }
-
-        .page-hero .hero-dots-1::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(circle, rgba(165, 173, 189, 0.5) 2px, transparent 2px);
-            background-size: 18px 18px;
-            background-repeat: repeat;
-        }
-
-        .page-hero .hero-dots-2 {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            width: 200px;
-            height: 160px;
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.35;
-        }
-
-        .page-hero .hero-dots-2::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(circle, rgba(165, 173, 189, 0.5) 2px, transparent 2px);
-            background-size: 15px 15px;
-            background-repeat: repeat;
-        }
-
-        .page-hero .hero-label,
-        .page-hero h1,
-        .page-hero p {
+        .hero-content {
+            max-width: 1280px;
+            margin: 0 auto;
             position: relative;
             z-index: 1;
+            padding-left: 40px;
         }
 
         .page-hero .hero-label {
-            color: #fdfeffff;
-            letter-spacing: 2px;
-            font-size: 0.85rem;
+            color: #c4f4f5;
+            letter-spacing: 4px;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            margin-bottom: 1rem;
-            background: transparent;
+            margin-bottom: 0.75rem;
+            display: inline-block;
         }
 
         .page-hero h1 {
             font-size: 3.5rem;
-            margin-bottom: 1rem;
-            color: #fafafaff;
+            margin-bottom: 0.75rem;
+            color: white;
             font-family: 'Playfair Display', serif;
+            line-height: 1.2;
+            max-width: 700px;
         }
 
         .page-hero p {
-            font-size: 1.2rem;
-            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 1.5rem;
+            max-width: 500px;
         }
 
-        /* Hero Buttons */
         .hero-buttons {
             display: flex;
             gap: 20px;
-            justify-content: flex-start;
-            margin-top: 30px;
-            position: relative;
-            z-index: 1;
+            flex-wrap: wrap;
         }
 
         .register-btn,
         .sponsor-btn {
-            padding: 12px 32px;
-            border-radius: 40px;
-            font-size: 1rem;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 0.9rem;
             font-weight: 600;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
         }
 
         .register-btn {
-            background: #00ced1;
-            color: #0b0b42;
+            background: #2d93d6;
+            color: white;
             border: none;
         }
 
         .register-btn:hover {
-            background: #5C7EC0;
-            color: white;
+            background: #6db7e8;
+            color: #273C67;
             transform: translateY(-2px);
         }
 
         .sponsor-btn {
             background: transparent;
             color: white;
-            border: 2px solid #00ced1;
+            border: 2px solid #c4f4f5;
         }
 
         .sponsor-btn:hover {
-            background: #00ced1;
-            color: #0b0b42;
+            background: #c4f4f5;
+            color: #273C67;
             transform: translateY(-2px);
         }
 
-        /* Filter Bar - background and buttons */
+        /* Filter Bar */
         .filter-bar {
-            background: #3B5B9A;
-            padding: 16px 20px;
+            background: #273C67;
+            padding: 18px 20px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
             margin: 0;
-            /* no spacing from hero */
         }
 
         .filter-btn {
             background: transparent;
-            border: 1.5px solid white;
+            border: 1px solid rgba(255,255,255,0.3);
             color: white;
-            padding: 8px 20px;
+            padding: 8px 24px;
             border-radius: 40px;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .filter-btn.active,
         .filter-btn:hover {
-            background: #0b0b42;
-            border-color: #aff4f5ff;
-            color: #0b0b42;
+            background: #c4f4f5;
+            border-color: #c4f4f5;
+            color: #273C67;
         }
 
-        /* Main container */
+        /* Main Container */
         .main {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 40px 24px;
+            padding: 70px 24px;
         }
 
-        /* Featured section */
+        /* Section Titles */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 48px;
+            color: #273C67;
+            font-family: 'Playfair Display', serif;
+            border-left: 4px solid #2d93d6;
+            padding-left: 24px;
+        }
+
+        /* Featured Section */
         .featured-label {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #5C7EC0;
+            letter-spacing: 3px;
+            color: #2d93d6;
             margin-bottom: 1rem;
+            font-weight: 500;
         }
 
         .featured-card {
-            background: radial-gradient(circle at center, #5c7ec0 0%, #3B5B9A 100%);
-            border-radius: 24px;
+            background: linear-gradient(135deg, #273C67 0%, #2d93d6 100%);
+            border-radius: 28px;
             overflow: hidden;
             display: flex;
             flex-wrap: wrap;
-            margin-bottom: 60px;
-            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.2);
-            position: relative;
+            margin-bottom: 80px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
         }
 
-        /* Multiple circles spread generously */
-        .featured-card .circle-1 {
-            position: absolute;
-            top: -60px;
-            right: -60px;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: rgba(165, 173, 189, 0.12);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .featured-card .circle-2 {
-            position: absolute;
-            bottom: -80px;
-            left: -80px;
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            background: rgba(165, 173, 189, 0.12);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .featured-card .circle-3 {
-            position: absolute;
-            top: 30%;
-            left: -40px;
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: rgba(165, 173, 189, 0.1);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .featured-card .circle-4 {
-            position: absolute;
-            bottom: 20%;
-            right: -50px;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: rgba(165, 173, 189, 0.1);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        /* Dots patterns spread generously */
-        .featured-card .dots-1 {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 140px;
-            height: 120px;
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.35;
-        }
-
-        .featured-card .dots-1::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(circle, rgba(165, 173, 189, 0.5) 2px, transparent 2px);
-            background-size: 15px 15px;
-            background-repeat: repeat;
-        }
-
-        .featured-card .dots-2 {
-            position: absolute;
-            bottom: 30px;
-            left: 30px;
-            width: 120px;
-            height: 100px;
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.35;
-        }
-
-        .featured-card .dots-2::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(circle, rgba(165, 173, 189, 0.5) 2px, transparent 2px);
-            background-size: 12px 12px;
-            background-repeat: repeat;
-        }
-
-        .featured-card .dots-3 {
-            position: absolute;
-            top: 50%;
-            right: 15%;
-            width: 100px;
-            height: 80px;
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.3;
-        }
-
-        .featured-card .dots-3::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(circle, rgba(165, 173, 189, 0.4) 2px, transparent 2px);
-            background-size: 10px 10px;
-            background-repeat: repeat;
+        .featured-card:hover {
+            transform: translateY(-5px);
         }
 
         .featured-image {
             flex: 1.2;
-            min-width: 280px;
+            min-width: 250px;
             position: relative;
-            z-index: 1;
         }
 
         .featured-image img {
@@ -362,22 +281,19 @@
             image-rendering: auto;
             image-rendering: crisp-edges;
             image-rendering: high-quality;
+            filter: none;
         }
 
         .feat-date-badge {
             position: absolute;
             top: 20px;
             left: 20px;
-            background: rgba(11, 11, 66, 0.9);
+            background: #2d93d6;
             border-radius: 16px;
             padding: 8px 14px;
             text-align: center;
             color: white;
             font-weight: bold;
-            box-shadow: 0 5px 12px rgba(0,0,0,0.2);
-            border: 1px solid #00ced1;
-            z-index: 2;
-            backdrop-filter: blur(4px);
         }
 
         .feat-date-badge .day {
@@ -388,50 +304,46 @@
         }
 
         .feat-date-badge .month {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
         }
 
         .featured-body {
             flex: 1;
-            padding: 32px 36px;
-            background: transparent;
-            color: white;
-            position: relative;
-            z-index: 1;
+            padding: 44px;
+            background: linear-gradient(135deg, #273C67 0%, #2d93d6 100%);
+            color: #f1f4faff;
         }
 
         .featured-body .event-tag {
             display: inline-block;
-            background: rgba(0, 206, 209, 0.2);
-            backdrop-filter: blur(4px);
-            color: #00ced1;
+            background: #2d93d6;
+            color: white;
             padding: 5px 14px;
             border-radius: 40px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            border: 1px solid #00ced1;
         }
 
         .featured-body h2 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-            color: #fafafaff;
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+            color: #f2f4f8ff;
             font-family: 'Playfair Display', serif;
         }
 
         .featured-body p {
             font-size: 1rem;
             margin-bottom: 1.5rem;
-            color: #fafafaff;
-            opacity: 0.9;
+            color: #f1f4faff;
+            line-height: 1.5;
         }
 
         .meta-row {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 24px;
             margin-bottom: 28px;
         }
 
@@ -440,133 +352,67 @@
             align-items: center;
             gap: 8px;
             font-size: 0.85rem;
-            color: #e0e0e0;
-            font-weight: 500;
+            color: #e5e7ebff;
         }
 
         .meta-item svg {
-            stroke: #00ced1;
+            stroke: #2d93d6;
         }
 
         .btn-primary {
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            background: #00ced1;
-            color: #0b0b42;
+            background: #2d93d6;
+            color: white;
             padding: 12px 28px;
             border-radius: 40px;
             text-decoration: none;
             font-weight: 600;
-            transition: 0.2s;
+            transition: 0.3s;
             border: none;
             cursor: pointer;
         }
 
         .btn-primary:hover {
-            background: #5C7EC0;
-            color: white;
+            background: #6db7e8;
+            color: #273C67;
             gap: 16px;
         }
 
-        /* Section Title */
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin: 40px 0 24px 0;
-            color: #0b0b42;
-            border-left: 5px solid #00ced1;
-            padding-left: 20px;
-        }
-
-        /* Events Grid - GRID LAYOUT (3 on top, 1 below) */
+        /* Events Grid - Clean 2x2 */
         .events-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-            margin-bottom: 70px;
-        }
-
-        /* Make the 4th card span across or position it below */
-        .event-card:last-child {
-            grid-column: 2 / 3;
-            max-width: 100%;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-bottom: 80px;
         }
 
         .event-card {
-            background: radial-gradient(circle at center, #5c7ec0 0%, #3B5B9A 100%);
-            border-radius: 20px;
+            background: #6db7e8;
+            border-radius: 24px;
             overflow: hidden;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            position: relative;
-        }
-
-        /* Decorative elements for event cards */
-        .event-card .card-circle-1 {
-            position: absolute;
-            top: -40px;
-            right: -40px;
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: rgba(165, 173, 189, 0.1);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .event-card .card-circle-2 {
-            position: absolute;
-            bottom: -30px;
-            left: -30px;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: rgba(165, 173, 189, 0.1);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .event-card .card-dots {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 80px;
-            height: 70px;
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.3;
-        }
-
-        .event-card .card-dots::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(circle, rgba(165, 173, 189, 0.4) 2px, transparent 2px);
-            background-size: 12px 12px;
-            background-repeat: repeat;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(83, 81, 81, 0.03);
         }
 
         .event-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 40px rgba(0, 0, 0, 0.08);
         }
 
         .card-image {
             position: relative;
-            height: 200px;
+            height: 250px;
             overflow: hidden;
-            z-index: 1;
         }
 
         .card-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s;
+            transition: transform 0.5s ease;
+            transform: scale(1);
             image-rendering: auto;
             image-rendering: crisp-edges;
             image-rendering: high-quality;
@@ -580,16 +426,12 @@
             position: absolute;
             top: 12px;
             left: 12px;
-            background: rgba(11, 11, 66, 0.9);
+            background: #2d93d6;
             border-radius: 14px;
             padding: 5px 12px;
             text-align: center;
             color: white;
             font-weight: bold;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-            border: 1px solid #00ced1;
-            backdrop-filter: blur(4px);
-            z-index: 2;
         }
 
         .card-date-badge .day {
@@ -599,54 +441,51 @@
         }
 
         .card-date-badge .month {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             text-transform: uppercase;
         }
 
         .card-body {
-            padding: 20px;
-            color: white;
-            background: transparent;
-            position: relative;
-            z-index: 1;
+            padding: 28px;
+            color: #f0f5ffff;
         }
 
         .event-tag {
             display: inline-block;
-            background: rgba(255,255,255,0.2);
+            background: rgba(45, 147, 214, 0.1);
             padding: 4px 12px;
             border-radius: 30px;
             font-size: 0.7rem;
             font-weight: 600;
             margin-bottom: 12px;
-            letter-spacing: 0.5px;
             color: white;
-            border: 1px solid white;
+            border: 1px solid #2d93d6;
         }
 
         .card-body h3 {
-            font-size: 1.25rem;
-            margin-bottom: 8px;
+            font-size: 1.35rem;
+            margin-bottom: 10px;
             line-height: 1.3;
-            color: white;
+            color: #0b0b42;
+            font-family: 'Playfair Display', serif;
         }
 
         .card-body p {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+            color: #0b0b42;
             margin-bottom: 16px;
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         .card-meta {
             display: flex;
             flex-wrap: wrap;
             gap: 16px;
-            font-size: 0.7rem;
-            color: rgba(255,255,255,0.7);
-            border-top: 1px solid rgba(255,255,255,0.2);
-            padding-top: 12px;
-            margin-top: 6px;
+            font-size: 0.75rem;
+            color: #6db7e8;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            padding-top: 14px;
+            margin-top: 8px;
         }
 
         .card-meta span {
@@ -656,84 +495,193 @@
         }
 
         .card-meta svg {
-            stroke: white;
+            stroke: #2d93d6;
             width: 12px;
             height: 12px;
         }
 
+        /* Sponsor Section - Unified Card */
+        .sponsor-section {
+            background: #f0fafa;
+            border-radius: 28px;
+            padding: 50px;
+            margin-bottom: 80px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .sponsor-image {
+            flex: 1;
+            min-width: 280px;
+            border-radius: 20px;
+        }
+
+        .sponsor-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            image-rendering: auto;
+            image-rendering: crisp-edges;
+            image-rendering: high-quality;
+        }
+
+        .sponsor-description {
+            flex: 1;
+            text-align: left;
+        }
+
+        .sponsor-description h3 {
+            font-size: 2rem;
+            color: #273C67;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+        }
+
+        .sponsor-description p {
+            color: #273C67;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .sponsor-tiers {
+            display: flex;
+            justify-content: flex-start;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .tier-card {
+            background: white;
+            padding: 24px 32px;
+            border-radius: 20px;
+            min-width: 140px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .tier-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tier-card h4 {
+            color: #2d93d6;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .tier-card p {
+            color: #6db7e8;
+            font-size: 0.85rem;
+            margin: 6px 0;
+        }
+
+        /* Contact Section - Left Aligned */
+        .contact-section {
+            background: #f0fafa;
+            border-radius: 28px;
+            padding: 50px;
+            margin-bottom: 80px;
+            text-align: left;
+        }
+
+        .contact-form-wrapper {
+            max-width: 550px;
+            margin: 0;
+        }
+
+        .contact-form-wrapper h3 {
+            font-size: 2rem;
+            color: #273C67;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 30px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px 20px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            font-size: 0.95rem;
+            background: white;
+            color: #273C67;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #2d93d6;
+            box-shadow: 0 0 0 3px rgba(45, 147, 214, 0.1);
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #a0aec0;
+        }
+
+        .contact-submit-btn {
+            background: #2d93d6;
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .contact-submit-btn:hover {
+            background: #6db7e8;
+            color: #273C67;
+            transform: translateY(-2px);
+        }
+
+        .contact-success {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            background: rgba(45, 147, 214, 0.1);
+            border-radius: 16px;
+        }
+
+        .contact-success p {
+            color: #2d93d6;
+            margin: 0;
+            font-weight: 500;
+        }
+
         /* Newsletter Section */
         .newsletter {
-            background: radial-gradient(circle at center, #5c7ec0 0%, #3B5B9A 100%);
-            border-radius: 32px;
-            padding: 48px 40px;
+            background: #273C67;
+            border-radius: 28px;
+            padding: 50px;
             text-align: center;
-            color: white;
-            margin-top: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Decorative elements for newsletter */
-        .newsletter .nl-circle-1 {
-            position: absolute;
-            top: -80px;
-            right: -80px;
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            background: rgba(165, 173, 189, 0.12);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .newsletter .nl-circle-2 {
-            position: absolute;
-            bottom: -60px;
-            left: -60px;
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            background: rgba(165, 173, 189, 0.12);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .newsletter .nl-dots {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 140px;
-            height: 120px;
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.35;
-        }
-
-        .newsletter .nl-dots::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(circle, rgba(165, 173, 189, 0.5) 2px, transparent 2px);
-            background-size: 15px 15px;
-            background-repeat: repeat;
+            margin-bottom: 0;
         }
 
         .newsletter h3 {
             font-size: 2rem;
-            margin-bottom: 12px;
-            color: #00ced1;
-            position: relative;
-            z-index: 1;
+            margin-bottom: 15px;
+            color: white;
+            font-family: 'Playfair Display', serif;
         }
 
         .newsletter p {
-            margin-bottom: 28px;
-            opacity: 0.85;
-            position: relative;
-            z-index: 1;
+            margin-bottom: 25px;
+            color: rgba(255,255,255,0.8);
         }
 
         .nl-form {
@@ -741,123 +689,194 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 12px;
-            max-width: 550px;
+            max-width: 500px;
             margin: 0 auto;
-            position: relative;
-            z-index: 1;
         }
 
         .nl-form input {
             flex: 2;
             min-width: 220px;
             padding: 14px 20px;
-            border-radius: 60px;
-            border: none;
-            font-size: 1rem;
-            background: white;
-            color: #0b0b42;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.95rem;
+            background: rgba(255,255,255,0.1);
+            color: white;
         }
 
         .nl-form input:focus {
             outline: none;
-            box-shadow: 0 0 0 2px #00ced1;
+            border-color: #2d93d6;
+        }
+
+        .nl-form input::placeholder {
+            color: rgba(255,255,255,0.5);
         }
 
         .nl-form button {
-            background: #00ced1;
+            background: #2d93d6;
             border: none;
             padding: 14px 32px;
-            border-radius: 60px;
+            border-radius: 50px;
             font-weight: 600;
-            color: #0b0b42;
+            color: white;
             cursor: pointer;
             transition: 0.2s;
-            font-size: 1rem;
         }
 
         .nl-form button:hover {
-            background: #5C7EC0;
-            color: white;
+            background: #6db7e8;
+            color: #273C67;
+            transform: translateY(-2px);
         }
 
-        /* Responsive tweaks */
+        /* Footer */
+        .events-footer {
+            background: #273C67;
+            padding: 60px 40px 40px;
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            text-align: left;
+        }
+
+        .footer-col-1 img {
+            max-width: 150px;
+            height: auto;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+            display: block;
+        }
+
+        .footer-col-2 p {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        .footer-col-3 {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-link {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-link:hover {
+            color: #2d93d6;
+            transform: translateX(5px);
+        }
+
+        .footer-copyright {
+            max-width: 1280px;
+            margin: 40px auto 0;
+            text-align: center;
+        }
+
+        .footer-copyright p {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+        }
+
+        /* Responsive */
         @media (max-width: 1024px) {
             .events-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
-            .event-card:last-child {
-                grid-column: auto;
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+            }
+            .footer-col-1,
+            .footer-col-2,
+            .footer-col-3 {
+                text-align: center;
+                align-items: center;
             }
         }
 
         @media (max-width: 768px) {
+            .events-nav {
+                padding: 15px 20px;
+            }
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-logo img {
+    height: 55px;
+    width: auto;
+    display: block;
+}
+            .nav-menu {
+                gap: 30px;
+            }
+            .hero-content {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
             .page-hero h1 {
-                font-size: 2.2rem;
-            }
-            .featured-body {
-                padding: 24px;
-            }
-            .featured-body h2 {
-                font-size: 1.6rem;
-            }
-            .filter-bar {
-                gap: 8px;
-            }
-            .filter-btn {
-                padding: 6px 14px;
-                font-size: 0.8rem;
-            }
-            .section-title {
-                font-size: 1.5rem;
-            }
-            .newsletter {
-                padding: 36px 24px;
-            }
-            .events-grid {
-                grid-template-columns: 1fr;
-            }
-            .event-card:last-child {
-                grid-column: auto;
+                font-size: 2.5rem;
             }
             .hero-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .featured-card {
+                flex-direction: column;
+            }
+            .featured-body {
+                padding: 28px;
+            }
+            .sponsor-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+            .sponsor-description {
+                text-align: center;
+            }
+            .sponsor-tiers {
                 justify-content: center;
             }
-        }
-
-        /* Additional polish for strokes and hover states */
-        .filter-btn {
-            border: 1.5px solid white;
-        }
-        .filter-btn:hover,
-        .filter-btn.active {
-            border-color: #00ced1;
-            background: #00ced1;
-            color: #0b0b42;
-        }
-
-        /* Card contents white stroke and hover to #00ced1 */
-        .event-card .event-tag {
-            border: 1px solid white;
-            transition: all 0.2s;
-        }
-        .event-card:hover .event-tag {
-            background: #00ced1;
-            border-color: #00ced1;
-            color: #0b0b42;
-        }
-
-        /* Hover effect for card titles */
-        .event-card:hover .card-body h3 {
-            color: #00ced1;
-        }
-
-        /* Date badges */
-        .feat-date-badge {
-            background: rgba(11, 11, 66, 0.9);
-            border: 1px solid #00ced1;
-        }
-        .card-date-badge {
-            background: rgba(11, 11, 66, 0.9);
+            .contact-section {
+                padding: 30px 20px;
+                text-align: center;
+            }
+            .contact-form-wrapper {
+                margin: 0 auto;
+                text-align: center;
+            }
+            .newsletter {
+                padding: 30px 20px;
+            }
+            .events-footer {
+                padding: 40px 20px 30px;
+            }
         }
     </style>
 </head>
@@ -872,23 +891,39 @@
     ob_start();
     ?>
 
+    <!-- Custom Navigation Bar -->
+    <nav class="events-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/images/jumi10.png" alt="Jumuiya at 10 Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="pdfs/programme.pdf" target="_blank">Programs</a></li>
+                <li><a href="pdfs/sponsorship.pdf" target="_blank">Sponsor</a></li>
+                <li><a href="#contact-section">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
     <div class="page-hero">
-        <div class="hero-dots-1"></div>
-        <div class="hero-dots-2"></div>
-        <div class="hero-label">Upcoming &amp; Past Events</div>
-        <h1> Jumuiya Events & Anniversaries </h1>
-        <p>A Decade of Coastal Collaboration</p>
-        <div class="hero-buttons">
-            <button onclick="openRegistrationModal()" class="register-btn">Register Now</button>
-            <a href="#sponsor-section" class="sponsor-btn">Become a Sponsor</a>
+        <div class="hero-content">
+            <span class="hero-label">UPCOMING & PAST EVENTS</span>
+            <h1>Jumuiya Events & Anniversaries</h1>
+            <p>A Decade of Coastal Collaboration</p>
+            <div class="hero-buttons">
+                <button onclick="openRegistrationModal()" class="register-btn">Register Now</button>
+                <a href="#sponsor-section" class="sponsor-btn">Become a Sponsor</a>
+            </div>
         </div>
     </div>
 
+    <!-- Filter Bar -->
     <div class="filter-bar">
         <button class="filter-btn active">All Events</button>
         <button class="filter-btn">Conferences</button>
         <button class="filter-btn">Forums</button>
-         <button class="filter-btn">Summits</button>
+        <button class="filter-btn">Summits</button>
         <button class="filter-btn">Exhibitions</button>
         <button class="filter-btn">Workshops</button>
         <button class="filter-btn">2024</button>
@@ -897,18 +932,11 @@
 
     <div class="main">
 
-        <!-- FEATURED -->
-        <div class="featured-label">Featured Event</div>
+        <!-- Featured Event -->
+        <div class="featured-label">FEATURED EVENT</div>
         <div class="featured-card">
-            <div class="circle-1"></div>
-            <div class="circle-2"></div>
-            <div class="circle-3"></div>
-            <div class="circle-4"></div>
-            <div class="dots-1"></div>
-            <div class="dots-2"></div>
-            <div class="dots-3"></div>
             <div class="featured-image">
-                <img src="assets/images/at10.png" alt="JABEIC 2024">
+                <img src="assets/images/at10-2.png" alt="10th Anniversary Celebration">
                 <div class="feat-date-badge">
                     <span class="day">01</span>
                     <span class="month">Apr</span>
@@ -955,128 +983,123 @@
             </div>
         </div>
 
-        <!-- GRID - 3 cards on top row, 1 card centered below -->
+        <!-- More Events - Clean 2x2 Grid -->
         <div class="section-title">More Events</div>
         <div class="events-grid">
-
             <div class="event-card">
-                <div class="card-circle-1"></div>
-                <div class="card-circle-2"></div>
-                <div class="card-dots"></div>
                 <div class="card-image">
-                    <img src="assets/images/agri summit.jpeg" alt="">
+                    <img src="assets/images/agri summit.jpeg" alt="Agriculture Summit">
                     <div class="card-date-badge"><span class="day">24</span><span class="month">Feb</span></div>
                 </div>
-
                 <div class="card-body">
                     <div class="event-tag">Summit</div>
                     <h3>Agriculture Revitalization Summit</h3>
-                    <p>a gathering poised to redifine the future of agriculture at the coast</p>
+                    <p>A gathering poised to redefine the future of agriculture at the coast</p>
                     <div class="card-meta">
-                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="4" width="18" height="18" rx="2" />
-                                <line x1="16" y1="2" x2="16" y2="6" />
-                                <line x1="8" y1="2" x2="8" y2="6" />
-                                <line x1="3" y1="10" x2="21" y2="10" />
-                            </svg>Feb 24, 2026</span>
-                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                                <circle cx="12" cy="10" r="3" />
-                            </svg>Kilifi</span>
+                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>Feb 24, 2026</span>
+                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>Kilifi</span>
                     </div>
                 </div>
             </div>
 
             <div class="event-card">
-                <div class="card-circle-1"></div>
-                <div class="card-circle-2"></div>
-                <div class="card-dots"></div>
                 <div class="card-image">
-                    <img src="assets/images/fauna.jpeg" alt="">
+                    <img src="assets/images/fauna.jpeg" alt="Ocean Conservation">
                     <div class="card-date-badge"><span class="day">26</span><span class="month">Feb</span></div>
                 </div>
-
                 <div class="card-body">
                     <div class="event-tag">Workshop</div>
-                    <h3>Ocean Conservation and Sustainable Coastal Development Workshop</h3>
-                    <p>Focused on Policy making and Advocacy paticularly in relation to ocean consevation and sustainable coastal development.</p>
+                    <h3>Ocean Conservation & Sustainable Coastal Development</h3>
+                    <p>Focused on policy making and advocacy for ocean conservation</p>
                     <div class="card-meta">
-                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="4" width="18" height="18" rx="2" />
-                                <line x1="16" y1="2" x2="16" y2="6" />
-                                <line x1="8" y1="2" x2="8" y2="6" />
-                                <line x1="3" y1="10" x2="21" y2="10" />
-                            </svg>Feb 26, 2026</span>
-                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                                <circle cx="12" cy="10" r="3" />
-                            </svg>Mombasa</span>
+                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>Feb 26, 2026</span>
+                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>Mombasa</span>
                     </div>
                 </div>
             </div>
 
             <div class="event-card">
-                <div class="card-circle-1"></div>
-                <div class="card-circle-2"></div>
-                <div class="card-dots"></div>
                 <div class="card-image">
-                    <img src="assets/images/JUMGALA.png" alt="">
+                    <img src="assets/images/JUMGALA.png" alt="Gala Dinner">
                     <div class="card-date-badge"><span class="day">02</span><span class="month">Apr</span></div>
                 </div>
-                
                 <div class="card-body">
                     <div class="event-tag">Exhibitions</div>
-                    <h3>gala dinner</h3>
-                    
+                    <h3>Gala Dinner</h3>
+                    <p>An evening of celebration, networking, and recognition</p>
                     <div class="card-meta">
-                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="4" width="18" height="18" rx="2" />
-                                <line x1="16" y1="2" x2="16" y2="6" />
-                                <line x1="8" y1="2" x2="8" y2="6" />
-                                <line x1="3" y1="10" x2="21" y2="10" />
-                            </svg>Apr 2, 2026</span>
-                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                                <circle cx="12" cy="10" r="3" />
-                            </svg>Pwani University, Kilifi</span>
+                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>Apr 2, 2026</span>
+                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>Pwani University, Kilifi</span>
                     </div>
                 </div>
             </div>
 
             <div class="event-card">
-                <div class="card-circle-1"></div>
-                <div class="card-circle-2"></div>
-                <div class="card-dots"></div>
                 <div class="card-image">
-                    <img src="assets/images/jumy10.png" alt="">
+                    <img src="assets/images/jumy10.png" alt="Sports & Networking">
                     <div class="card-date-badge"><span class="day">01</span><span class="month">Apr</span></div>
                 </div>
                 <div class="card-body">
                     <div class="event-tag">Forum</div>
-                    <h3> Sports, Networking & Awards </h3>
-                   
+                    <h3>Sports, Networking & Awards</h3>
+                    <p>Celebrating achievements and building connections</p>
                     <div class="card-meta">
-                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="4" width="18" height="18" rx="2" />
-                                <line x1="16" y1="2" x2="16" y2="6" />
-                                <line x1="8" y1="2" x2="8" y2="6" />
-                                <line x1="3" y1="10" x2="21" y2="10" />
-                            </svg>Apr 1, 2026</span>
-                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                                <circle cx="12" cy="10" r="3" />
-                            </svg>Vipingo Ridge, Kilifi</span>
+                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>Apr 1, 2026</span>
+                        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>Vipingo Ridge, Kilifi</span>
                     </div>
                 </div>
             </div>
-
         </div>
 
-        <!-- NEWSLETTER -->
+        <!-- Sponsor Section - Unified Card -->
+        <div id="sponsor-section" class="sponsor-section">
+            <div class="sponsor-image">
+                <img src="assets/images/sponspack.png" alt="Sponsor Packages">
+            </div>
+            <div class="sponsor-description">
+                <h3>Become a Partner</h3>
+                <p>Join us in celebrating a decade of regional unity and growth. Your partnership helps us continue building a stronger coastal community.</p>
+                <div class="sponsor-tiers">
+                    <div class="tier-card">
+                        <h4>Platinum</h4>
+                        <p>Premium visibility</p>
+                        <p>Keynote speaking</p>
+                        <p>VIP access</p>
+                    </div>
+                    <div class="tier-card">
+                        <h4>Gold</h4>
+                        <p>Brand exposure</p>
+                        <p>Exhibition space</p>
+                        <p>Networking access</p>
+                    </div>
+                    <div class="tier-card">
+                        <h4>Silver</h4>
+                        <p>Logo placement</p>
+                        <p>Social media mentions</p>
+                        <p>Event tickets</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section - Left Aligned -->
+        <div id="contact-section" class="contact-section">
+            <div class="contact-form-wrapper">
+                <h3>Contact Us</h3>
+                <form id="contactForm" class="contact-form">
+                    <input type="text" id="contactName" name="name" placeholder="Your Name" required>
+                    <input type="email" id="contactEmail" name="email" placeholder="Email Address" required>
+                    <textarea id="contactMessage" name="message" rows="4" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="contact-submit-btn">SEND</button>
+                </form>
+                <div id="contactSuccessMessage" style="display: none;" class="contact-success">
+                    <p>✓ Message sent successfully! We will get back to you soon.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Newsletter -->
         <div class="newsletter">
-            <div class="nl-circle-1"></div>
-            <div class="nl-circle-2"></div>
-            <div class="nl-dots"></div>
             <h3>Stay in the Loop</h3>
             <p>Get notified about upcoming regional conferences, forums, and investment events.</p>
             <div class="nl-form">
@@ -1087,13 +1110,87 @@
 
     </div>
 
+    <!-- Footer -->
+    <footer class="events-footer">
+        <div class="footer-container">
+            <div class="footer-col-1">
+                <img src="assets/images/jumi10.png" alt="Jumuiya at 10 Logo">
+            </div>
+            <div class="footer-col-2">
+                <p>Celebrating 10 Years of Regional Unity & Growth</p>
+            </div>
+            <div class="footer-col-3">
+                <a href="#anniversary-section" class="footer-link">The Anniversary</a>
+                <a href="pdfs/programme-overview.pdf" class="footer-link" target="_blank">Programme Overview</a>
+                <a href="#sponsor-section" class="footer-link">Partners & Sponsors</a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>Copyright © 2026 Jumuiya ya Kaunti za Pwani. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script>
+        // Filter buttons functionality
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
             });
         });
+
+        // Contact Form Submission
+        const contactForm = document.getElementById('contactForm');
+        const contactSuccessMessage = document.getElementById('contactSuccessMessage');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                formData.append('form_type', 'contact');
+                
+                fetch('process-contact.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        contactForm.style.display = 'none';
+                        contactSuccessMessage.style.display = 'block';
+                        contactForm.reset();
+                        
+                        setTimeout(() => {
+                            contactForm.style.display = 'block';
+                            contactSuccessMessage.style.display = 'none';
+                        }, 3000);
+                    } else {
+                        alert('Error sending message. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error sending message. Please try again.');
+                });
+            });
+        }
+
+        // Newsletter submission
+        const newsletterBtn = document.querySelector('.nl-form button');
+        const newsletterInput = document.querySelector('.nl-form input');
+        
+        if (newsletterBtn) {
+            newsletterBtn.addEventListener('click', function() {
+                const email = newsletterInput.value;
+                if (email && email.includes('@')) {
+                    alert('Thank you for subscribing! You will receive updates soon.');
+                    newsletterInput.value = '';
+                } else {
+                    alert('Please enter a valid email address.');
+                }
+            });
+        }
     </script>
     <?php include 'components/registration-modal.php'; ?>
 </body>
