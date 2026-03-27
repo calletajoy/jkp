@@ -2,6 +2,17 @@
 $heroSubtitle = $heroSubtitle ?? $pageTitle ?? '';
 ?>
 
+<!-- ADD THIS STYLE -->
+<style>
+.navbar {
+    margin-bottom: 0 !important;
+}
+
+.page-hero {
+    margin-top: 0 !important;
+}
+</style>
+
 <section class="page-hero position-relative">
     <div class="position-relative overflow-hidden" style="height: 280px;">
 
