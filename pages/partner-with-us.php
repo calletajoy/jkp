@@ -55,8 +55,8 @@ include __DIR__ . '/../partials/page-hero.php';
                     <li class="d-flex gap-3">
                         <i class="bi bi-person-lines-fill fs-4"></i>
                         <div>
-                            <strong>Partnerships Team</strong><br>
-                            <a href="mailto:partners@...gov">partners@...gov</a>
+                            <strong>mail</strong><br>
+                            <a href="mailto:secretariat@jumuiya.org">secretariat@jumuiya.org</a>
                         </div>
                     </li>
                     <li class="d-flex gap-3">
@@ -70,7 +70,7 @@ include __DIR__ . '/../partials/page-hero.php';
                         <i class="bi bi-clock-fill fs-4"></i>
                         <div>
                             <strong>Office Hours</strong><br>
-                            Mon–Fri: 10:00 – 18:00<br>
+                            Mon–Fri: 8:30am – 5:00pm<br>
                             Sat–Sun: Closed
                         </div>
                     </li>
@@ -78,7 +78,7 @@ include __DIR__ . '/../partials/page-hero.php';
                         <i class="bi bi-geo-alt-fill fs-4"></i>
                         <div>
                             <strong>Address</strong><br>
-                            Valentin, Street Road 24,<br>New York, USA - 67452
+                            Jumuiya House, Bustani Close, Off Links Road, Nyali, Mombasa
                         </div>
                     </li>
                 </ul>
