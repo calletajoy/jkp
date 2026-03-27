@@ -5,8 +5,8 @@
 
 $pageTitle    = 'TCH Blueprint 2030';
 $currentPage  = 'tch-blueprint';
-$heroTitle    = 'Go Blue Documents and Resources';
-$heroSubtitle = 'Go Blue Documents and Resources';
+$heroTitle    = 'Documents and Resources';
+$heroSubtitle = 'Documents and Resources';
 
 ob_start();
 
@@ -28,18 +28,23 @@ $darkBlue = '#244080';
     padding: 3rem 0;
 }
 
-/* Cover Image Section */
+/* Cover Section - Image on left, panel on right */
 .cover-section {
     margin-bottom: 3rem;
-    position: relative;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .cover-container {
-    position: relative;
+    flex: 0 0 45%;
+    max-width: 45%;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     background: white;
+    position: relative;
 }
 
 .cover-image {
@@ -48,43 +53,113 @@ $darkBlue = '#244080';
     display: block;
 }
 
+/* GIFs overlay positioned within the image container */
 .cover-gifs {
     position: absolute;
-    bottom: 30px;
-    right: 30px;
+    bottom: 20px;
+    right: 20px;
     display: flex;
-    gap: 20px;
+    gap: 15px;
     background: rgba(255,255,255,0.9);
-    padding: 15px 25px;
-    border-radius: 60px;
+    padding: 10px 20px;
+    border-radius: 40px;
     backdrop-filter: blur(5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     border: 1px solid rgba(255,255,255,0.3);
     z-index: 10;
 }
 
-.gif-item {
+/* Side panel for preview/download buttons - positioned to the right of image */
+.cover-side-panel {
+    flex: 0 0 45%;
+    max-width: 45%;
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.side-panel-title {
+    color: var(--dark-blue);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--primary-blue);
+    padding-left: 1rem;
+}
+
+.side-panel-description {
+    color: #495057;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.action-btn {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    background: white;
+    padding: 12px 25px;
+    border-radius: 50px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
 }
 
-.gif-item:hover {
-    transform: scale(1.05);
+.action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-.gif-item img {
-    width: 40px;
-    height: 40px;
+.action-btn img {
+    width: 30px;
+    height: 30px;
     object-fit: contain;
 }
 
-.gif-item span {
+.action-btn span {
     font-weight: 600;
     color: var(--dark-blue);
-    font-size: 1.1rem;
+    font-size: 1rem;
+}
+
+.action-btn.preview-btn {
+    background: white;
+}
+
+.action-btn.download-btn {
+    background: var(--primary-blue);
+    border: none;
+}
+
+.action-btn.download-btn span {
+    color: white;
+}
+
+.document-meta {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e0e0e0;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.document-meta p {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 /* Section Headers */
@@ -417,6 +492,15 @@ $darkBlue = '#244080';
     .vision-card .vision-text {
         font-size: 1.8rem;
     }
+    
+    .cover-container, .cover-side-panel {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .cover-section {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 768px) {
@@ -431,7 +515,7 @@ $darkBlue = '#244080';
     .cover-gifs {
         bottom: 15px;
         right: 15px;
-        padding: 10px 15px;
+        padding: 8px 12px;
     }
     
     .gif-item span {
@@ -451,42 +535,51 @@ $darkBlue = '#244080';
     .section-header h2 {
         font-size: 1.8rem;
     }
+    
+    .action-buttons {
+        justify-content: center;
+    }
 }
 </style>
 
 <section class="blueprint-wrapper">
     <div class="container">
-        <!-- Cover Image Section with GIFs -->
+        <!-- Cover Image Section - Image on left, preview/download panel on right -->
         <div class="cover-section" data-aos="fade-up">
             <div class="cover-container">
-                <!-- Cover Image - REPLACE THIS PATH WITH YOUR ACTUAL COVER IMAGE -->
+                <!-- Cover Image -->
                 <img src="/assets/images/blue-print-thc.png" alt="Jumuiya TCH Blueprint 2030 Cover" class="cover-image">
                 
-                <!-- Eye and Download GIFs -->
-                <div class="cover-gifs">
-                    <div class="gif-item" onclick="window.open('/assets/content-files/JKP-TCH-Blueprint-2030-1.pdf', '_blank')">
-                        <!-- REPLACE THESE PATHS WITH YOUR ACTUAL GIF PATHS -->
-                        <img src="/assets/images/icons8-eye.gif" alt="Preview" onerror="this.src='https://via.placeholder.com/40?text=👁'">
-                        <span>Preview</span>
+               
+            </div>
+            
+            <!-- Side panel with preview/download - positioned to the right of image -->
+            <div class="cover-side-panel">
+                <div class="side-panel-title">
+                    Jumuiya TCH Blueprint 2030
+                </div>
+                <div class="side-panel-description">
+                    The comprehensive Tourism, Culture & Heritage Blueprint for the Jumuiya ya Kaunti za Pwani region. A 187-page strategic document guiding sustainable development of coastal tourism and cultural heritage.
+                </div>
+                <div class="action-buttons">
+                    <div class="action-btn preview-btn" onclick="window.open('/assets/content-files/JKP-TCH-Blueprint-2030-1.pdf', '_blank')">
+                        <img src="/assets/images/icons8-eye.gif" alt="Preview" onerror="this.src='https://via.placeholder.com/30?text=👁'">
+                        <span>Preview Full Blueprint</span>
                     </div>
-                    <div class="gif-item" onclick="window.location.href='/assets/content-files/JKP-TCH-Blueprint-2030-1.pdf'">
-                        
-                        <img src="/assets/images/icons8-downloads-folder.gif" alt="Download" onerror="this.src='https://via.placeholder.com/40?text=⬇'">
+                    <div class="action-btn download-btn" onclick="window.location.href='/assets/content-files/JKP-TCH-Blueprint-2030-1.pdf'">
+                        <img src="/assets/images/icons8-downloads-folder.gif" alt="Download" onerror="this.src='https://via.placeholder.com/30?text=⬇'">
                         <span>Download Full Blueprint</span>
                     </div>
+                </div>
+                <div class="document-meta">
+                    <p><i class="bi bi-file-text"></i> 187 pages | October 2023</p>
+                    <p><i class="bi bi-building"></i> Jumuiya ya Kaunti za Pwani</p>
                 </div>
             </div>
         </div>
 
         <!-- Key Content from the PDF -->
-        
-        <!-- Vision Section -->
-        <div class="vision-card" data-aos="fade-up">
-            <h3>Our Vision 2030</h3>
-            <div class="vision-text">
-                "A globally competitive and sustainable Kenya coastal Tourism and Cultural Heritage destination by 2030"
-            </div>
-        </div>
+       
 
         <!-- Strategic Objectives -->
         <div class="section-header" data-aos="fade-up">
@@ -661,12 +754,10 @@ $darkBlue = '#244080';
                 
                 <div class="second-pdf-gifs">
                     <div class="gif-item" onclick="window.open('/assets/content-files/JUMUIYA YA KAUNTI ZA PWANI 2030 DEVELOPMENT BLUEPRINT.pdf', '_blank')">
-                        <!-- REPLACE THESE PATHS WITH YOUR ACTUAL GIF PATHS -->
                         <img src="/assets/images/icons8-eye.gif" alt="Preview" onerror="this.src='https://via.placeholder.com/40?text=👁'">
                         <span>Preview</span>
                     </div>
                     <div class="gif-item" onclick="window.location.href='/assets/content-files/JUMUIYA YA KAUNTI ZA PWANI 2030 DEVELOPMENT BLUEPRINT.pdf'">
-                        <!-- REPLACE THESE PATHS WITH YOUR ACTUAL GIF PATHS -->
                         <img src="/assets/images/icons8-downloads-folder.gif" alt="Download" onerror="this.src='https://via.placeholder.com/40?text=⬇'">
                         <span>Download Summary</span>
                     </div>

@@ -521,7 +521,7 @@ $archives = [
         <div class="newsletter-hero" data-aos="fade-up">
             <div class="pre-title">Jumuiya ya Kaunti za Pwani</div>
             <h1>NEWSLETTER</h1>
-            <div class="date">March 2026 Edition</div>
+            <div class="date">2026 Edition</div>
         </div>
 
         <!-- 2. Main Grid (Two Column) -->

@@ -3,11 +3,11 @@
  * pages/photos-video-gallery.php — Photos & Video Gallery page
  */
 
-$pageTitle    = 'Photo & Video Gallery';
+$pageTitle    = 'Gallery';
 $currentPage  = 'gallery';
-$heroTitle    = 'Photo & Video Gallery';
+$heroTitle    = 'Gallery';
 // Adding intro text to hero subtitle
-$heroSubtitle = 'A visual journey through Jumuiya ya Kaunti za Pwani initiatives, events, and community transformations across the six coastal counties with an explore gallery and watch video part.';
+$heroSubtitle = 'A visual journey through Jumuiya ya Kaunti za Pwani.';
 
 ob_start();
 
@@ -516,17 +516,6 @@ $recentEvents = [
 }
 </style>
 
-<!-- Navigation buttons -->
-<div class="container">
-    <div class="hero-nav-links" data-aos="fade-up">
-        <a href="#photos-section" class="hero-nav-link" onclick="document.getElementById('photos-section').scrollIntoView({behavior: 'smooth'}); return false;">
-            <i class="bi bi-images"></i> Explore Gallery
-        </a>
-        <a href="#videos-section" class="hero-nav-link" onclick="document.getElementById('videos-section').scrollIntoView({behavior: 'smooth'}); return false;">
-            <i class="bi bi-play-circle"></i> Watch Video
-        </a>
-    </div>
-</div>
 
 <!-- Full Width Connect with Us Section -->
 <div class="connect-wrapper">
@@ -537,6 +526,19 @@ $recentEvents = [
             <i class="bi bi-facebook"></i> Visit JKP Facebook Gallery
         </a>
     </div>
+    <!-- Navigation buttons -->
+    <div class="container">
+     <div class="hero-nav-links" data-aos="fade-up">
+        <a href="#photos-section" class="hero-nav-link" onclick="document.getElementById('photos-section').scrollIntoView({behavior: 'smooth'}); return false;">
+            <i class="bi bi-images"></i> Explore Gallery
+        </a>
+        <a href="#videos-section" class="hero-nav-link" onclick="document.getElementById('videos-section').scrollIntoView({behavior: 'smooth'}); return false;">
+            <i class="bi bi-play-circle"></i> Watch Video
+        </a>
+     </div>
+</div>
+
+
 </div>
 
 <!-- Our Collection / Featured Photos -->

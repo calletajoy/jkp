@@ -20,7 +20,12 @@ include __DIR__ . '/../partials/page-hero.php';
     color: #0d6efd;
 }
 
-/* Partners Section Styles - Rectangular Images, Horizontal Grid */
+/* Partners Section Styles - White Background */
+.partners-section {
+    background: white;
+    padding: 60px 0;
+}
+
 .partners-grid {
     display: flex;
     justify-content: center;
@@ -34,7 +39,7 @@ include __DIR__ . '/../partials/page-hero.php';
     max-width: 320px;
     background: white;
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     overflow: hidden;
     transition: all 0.3s ease;
     text-align: center;
@@ -43,7 +48,7 @@ include __DIR__ . '/../partials/page-hero.php';
 
 .partner-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
 /* Rectangular Image Container - No Circle */
@@ -59,18 +64,16 @@ include __DIR__ . '/../partials/page-hero.php';
     border-bottom: 1px solid #eee;
 }
 
-/* Grayscale by default */
+/* Full color by default - NO GRAYSCALE */
 .partner-image img {
     max-width: 80%;
     max-height: 100%;
     object-fit: contain;
-    filter: grayscale(100%);
-    transition: filter 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
-/* Full color on hover */
 .partner-card:hover .partner-image img {
-    filter: grayscale(0%);
+    transform: scale(1.05);
 }
 
 .partner-name {
@@ -99,7 +102,7 @@ include __DIR__ . '/../partials/page-hero.php';
     width: 350px;
     background: white;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     padding: 30px;
     text-align: center;
     transition: all 0.3s ease;
@@ -107,14 +110,14 @@ include __DIR__ . '/../partials/page-hero.php';
 
 .project-square-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
 .project-logo-circle {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border: 2px solid #666;
+    border: 2px solid #e0e0e0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -244,7 +247,12 @@ include __DIR__ . '/../partials/page-hero.php';
 .county-marker[data-county="lamu"] .pulsating-dot { background-color: #0dcaf0; }
 .county-marker[data-county="taita-taveta"] .pulsating-dot { background-color: #6f42c1; }
 
-/* Download Section Styles - Small Rectangles */
+/* Download Section Styles - White Background */
+.resources-section {
+    background: white;
+    padding: 60px 0;
+}
+
 .download-rectangles {
     display: flex;
     flex-wrap: wrap;
@@ -300,44 +308,43 @@ include __DIR__ . '/../partials/page-hero.php';
     margin: 0;
 }
 
-/* Merry-Go-Round Styles */
-.merry-go-round {
-    display: flex;
-    justify-content: center;
+/* Logo Grid Section - Grayscale, Grid Layout, Above Footer */
+.logo-grid-section {
+    background: white;
+    padding: 60px 0;
+    margin-top: 0;
+}
+
+.logo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-items: center;
     align-items: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    padding: 20px;
-    animation: slide 15s infinite linear;
 }
 
-@keyframes slide {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-20px); }
-    50% { transform: translateX(0); }
-    75% { transform: translateX(20px); }
-    100% { transform: translateX(0); }
+.logo-grid-item {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
 
-.merry-image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    overflow: hidden;
+.logo-grid-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
     filter: grayscale(100%);
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.merry-image:hover {
+.logo-grid-item:hover img {
     filter: grayscale(0%);
-    transform: scale(1.1);
-}
-
-.merry-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    transform: scale(1.05);
 }
 
 /* Layout adjustments */
@@ -375,6 +382,28 @@ include __DIR__ . '/../partials/page-hero.php';
     .download-rectangle {
         width: 100%;
         max-width: 180px;
+    }
+    
+    .logo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .logo-grid-item {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .logo-grid-item {
+        width: 100px;
+        height: 100px;
     }
 }
 </style>
@@ -417,8 +446,8 @@ include __DIR__ . '/../partials/page-hero.php';
     </div>
 </section>
 
-<!-- ===== Partners Section with Rectangular Images (No Circles) ===== -->
-<section class="our-investigators py-5 bg-light">
+<!-- ===== Partners Section with White Background ===== -->
+<section class="partners-section">
     <div class="container">
         <div class="section-title text-center mb-5" data-aos="fade-up">
             <div class="semi-title">
@@ -429,7 +458,7 @@ include __DIR__ . '/../partials/page-hero.php';
                 </div>
             </div>
             <h2 class="mt-2 cssanimation lePopUp sequence">Our Partners in Focus</h2>
-            <p class="text-muted mt-3">Key Collaborators — Hover over images to see them in full color</p>
+            <p class="text-muted mt-3">Key Collaborators — Full color display</p>
         </div>
 
         <div class="partners-grid">
@@ -508,8 +537,8 @@ include __DIR__ . '/../partials/page-hero.php';
     </div>
 </section>
 
-<!-- ===== Downloads Section - 7 Small Rectangles ===== -->
-<section class="our-investigators py-5 bg-light">
+<!-- ===== Resources Section with White Background ===== -->
+<section class="resources-section">
     <div class="container">
         <div class="section-title text-center mb-5" data-aos="fade-up">
             <div class="semi-title">
@@ -608,62 +637,28 @@ include __DIR__ . '/../partials/page-hero.php';
     </div>
 </section>
 
-<!-- ===== Merry-Go-Round Section (Just above CTA) ===== -->
-<section class="py-5">
+<!-- ===== Logo Grid Section - Grayscale, Grid Layout, Above Footer ===== -->
+<section class="logo-grid-section">
     <div class="container">
-        <div class="section-title text-center mb-5" data-aos="fade-up">
-            <div class="semi-title">
-                <div class="animated-rectangle justify-content-center">
-                    <div class="small-rectangle-start"></div>
-                    <div class="small-rectangle-end"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="merry-go-round" data-aos="zoom-in">
+        <div class="logo-grid" data-aos="zoom-in">
             <!-- Go Blue EU -->
-            <div class="merry-image">
+            <div class="logo-grid-item">
                 <img src="/assets/images/eu-go blue.png" alt="Go Blue EU">
             </div>
             
             <!-- Go Blue -->
-            <div class="merry-image">
-                <img src="/assets/images/assets/images/goo-blu.png" alt="Go Blue EU">
+            <div class="logo-grid-item">
+                <img src="/assets/images/goo-blu.png" alt="Go Blue">
             </div> 
             
             <!-- Jumuiya -->
-            <div class="merry-image">
+            <div class="logo-grid-item">
                 <img src="/assets/images/Jumuiya-Logo.svg" alt="Jumuiya">
             </div>
             
             <!-- Court of Arms -->
-            <div class="merry-image">
-                <img src="/assets/images/kenya-court-of-arms.png" alt="Court of Arms">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== CTA Strip ===== -->
-<section class="best-city-government remove-div one-second" data-aos="fade-up">
-    <div class="images-and-overlay">
-        <img class="img-fluid" src="/assets/images/01_home/best-city/image-footer.png" alt="Jumuiya Coast Region">
-        <div class="overlay"></div>
-    </div>
-    <div class="container">
-        <div class="city-content text-center">
-            <div class="city-title" data-aos="fade-up">
-                <h2 class="text-white">
-                    <span class="cssanimation lePopUp sequence">Partner With Us</span><br>
-                    <span class="cssanimation lePopUp sequence">for Coastal Development</span>
-                </h2>
-                <p class="text-white-50 mt-3 mb-4" style="max-width:600px; margin:0 auto;">
-                    Join our network of partners working to transform Kenya's coastal region through sustainable development initiatives.
-                </p>
-                <div class="cityWall-btn d-inline-flex gap-3 justify-content-center flex-wrap">
-                    <a href="/contact">Become a Partner <i class="bi bi-arrow-right"></i></a>
-                    <a href="#" onclick="document.getElementById('download-jkp').click(); return false;">Download Resources <i class="bi bi-download"></i></a>
-                </div>
+            <div class="logo-grid-item">
+                <img src="assets/images/court of arms.png" alt="Court of Arms">
             </div>
         </div>
     </div>
@@ -694,3 +689,4 @@ document.addEventListener('DOMContentLoaded', function() {
 <?php
 $pageContent = ob_get_clean();
 require __DIR__ . '/../layout.php';
+?>

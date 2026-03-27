@@ -26,10 +26,10 @@ include __DIR__ . '/../partials/page-hero.php';
                             <span class="title">About Us</span>
                         </div>
                     </div>
-                    <h2>
-                        <span class="cssanimation lePopUp sequence">The Jumuiya Economic Bloc is led by an</span><br>
-                        <span class="cssanimation lePopUp sequence">Exclusive and Competent Team</span>
-                    </h2>
+                    <h2 style="font-size: 1.6rem;">
+    <span class="cssanimation lePopUp sequence">The Jumuiya Economic Bloc is led by an</span><br>
+    <span class="cssanimation lePopUp sequence">exclusive and competent team</span>
+</h2>
                     <p>The JKP initiatives are overseen and orchestrated by a Secretariat, which consists of technical committees and specialists from the six-county governments, three universities, and the private sector. The Secretariat is based at <strong>Jumuiya House</strong>, situated in Bustani Close on Links Road in Nyali, Mombasa.</p>
                     <p>The extensive organizational framework of Jumuiya Ya Kaunti za Pwani includes a Board of Governors representing each member County (Mombasa, Kwale, Kilifi, Tana River, Lamu, and Taita Taveta).</p>
 
@@ -111,7 +111,7 @@ include __DIR__ . '/../partials/page-hero.php';
                 'name'  => 'H.E. Fatuma Achani',
                 'county' => 'Kwale County',
                 'role'  => 'Governor, Kwale County',
-                'desc'  => 'H.E. Fatuma Achani is a Kenyan advocate and politician currently serving as the governor of Kwale County following the August 9, 2022, general election. She amazed the hearts of many Kenyans after she was announced as the first female county boss since the 2010 constitution reforms.',
+                'desc'  => 'H.E. Fatuma Achani is a Kenyan advocate and politician currently serving as the governor of Kwale County following the August 9th, 2022, general election.',
                 'social' => ['fb' => '#', 'ig' => '#', 'twitter' => '#']
             ],
             [

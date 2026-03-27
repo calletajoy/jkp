@@ -31,15 +31,14 @@
             background: #f5f9ff;
         }
 
-        /* Custom Navigation Bar */
+        /* Custom Navigation Bar - Full Width with subtle shadow */
         .events-nav {
             background: white;
             padding: 15px 40px;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
-            border-bottom: 1px solid rgba(45, 147, 214, 0.2);
+            
         }
 
         .nav-container {
@@ -53,7 +52,9 @@
         }
 
         .nav-logo {
-            margin-left: 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
         .nav-logo img {
@@ -102,7 +103,8 @@
         /* Hero Section - Gradient with new colors */
         .page-hero {
             background: linear-gradient(135deg, #273C67 0%, #2d93d6 100%);
-            padding: 60px 20px 60px;
+            padding: 50px 20px 50px;
+            margin-top: 25px;
             position: relative;
             overflow: hidden;
         }
@@ -819,22 +821,25 @@
                 align-items: center;
             }
             .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.nav-logo img {
-    height: 55px;
-    width: auto;
-    display: block;
-}
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 10px;
+            }
+            .nav-logo img {
+                height: 55px;
+                width: auto;
+                display: block;
+            }
             .nav-menu {
                 gap: 30px;
             }
             .hero-content {
                 padding-left: 20px;
                 padding-right: 20px;
+            }
+            .page-hero {
+                margin-top: 15px;
             }
             .page-hero h1 {
                 font-size: 2.5rem;
@@ -891,15 +896,15 @@
     ob_start();
     ?>
 
-    <!-- Custom Navigation Bar -->
+    <!-- Custom Navigation Bar - Clean & Full Width -->
     <nav class="events-nav">
         <div class="nav-container">
             <div class="nav-logo">
                 <img src="assets/images/jumi10.png" alt="Jumuiya at 10 Logo">
             </div>
             <ul class="nav-menu">
-                <li><a href="pdfs/programme.pdf" target="_blank">Programs</a></li>
-                <li><a href="pdfs/sponsorship.pdf" target="_blank">Sponsor</a></li>
+                <li><a href="assets/content%20files/programme.pdf" target="_blank">Programs</a></li>
+                <li><a href="assets/content%20files/sponsorship.pdf" target="_blank">Sponsor</a></li>
                 <li><a href="#contact-section">Contact</a></li>
             </ul>
         </div>
@@ -1121,7 +1126,7 @@
             </div>
             <div class="footer-col-3">
                 <a href="#anniversary-section" class="footer-link">The Anniversary</a>
-                <a href="pdfs/programme-overview.pdf" class="footer-link" target="_blank">Programme Overview</a>
+                <a href="assets/content%20files/programme-overview.pdf" class="footer-link" target="_blank">Programme Overview</a>
                 <a href="#sponsor-section" class="footer-link">Partners & Sponsors</a>
             </div>
         </div>
