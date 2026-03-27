@@ -765,6 +765,91 @@ ob_start();
         margin-top: -50px !important;
     }
     
+    /* ===== OVERRIDE MEGA MENU STYLES ===== */
+    /* Make all navbar menus bold */
+    .navbar-nav .nav-link,
+    .navbar .nav-link,
+    nav .nav-link,
+    .dropdown-toggle {
+        font-weight: 700 !important;
+    }
+    
+    /* Remove white background from mega menu dropdowns */
+    .mega-dropdown .dropdown-menu,
+    .dropdown-menu,
+    .navbar .dropdown-menu {
+        
+        background-color: transparent !important;
+        border: none !important;
+    
+    }
+    
+    /* Style mega menu items */
+    .mega-menu .dropdown-item {
+        font-size: 17px !important;
+        padding: 8px 0 !important;
+        transition: 0.3s ease !important;
+        color: #0b0b42 !important;
+        font-weight: 550 !important;
+        background: transparent !important;
+    }
+    
+    .mega-menu .dropdown-item:hover {
+        color: var(--turquoise) !important;
+        background: transparent !important;
+        padding-left: 10px !important;
+        color: #00CED1 !important;
+    }
+    
+    /* Override Bootstrap's default dropdown item hover */
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+        background: transparent !important;
+    }
+    
+    /* Ensure the dropdown containers are transparent */
+    .mega-dropdown,
+    .dropdown {
+        background: transparent !important;
+    }
+    
+    /* Optional: Add a subtle divider between menu items if desired */
+    .mega-menu .dropdown-item:not(:last-child) {
+        
+    }
+    
+    /* ===== REMOVE BLUR FROM HERO SECTION ===== */
+    /* Remove all blur effects from hero section images */
+    .banner-left .carousel-item img,
+    .banner-right img,
+    .banner-left img,
+    .banner-right .overlay,
+    .cover-images-overlay,
+    .split-banner img {
+        filter: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+    
+    /* Remove the zoom animation from the anniversary image to maintain HD quality */
+    .banner-right img {
+        animation: none !important;
+        transform: none !important;
+    }
+    
+    /* Keep the left carousel zoom animation but without blur */
+    .banner-left .carousel-item img {
+        animation: gentleZoom 20s infinite alternate ease-in-out;
+        filter: none !important;
+    }
+    
+    /* Remove any backdrop filter from overlays */
+    .cover-images-overlay,
+    .banner-right .overlay {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+    
     @media (max-width: 768px) {
         .section-title-fancy h2 {
             font-size: 2rem;
