@@ -6,7 +6,7 @@
     border: none;
     border-radius: 0;
 
-    /* Make fully transparent */
+    /* Fully transparent */
     background: transparent !important;
     background-color: transparent !important;
     box-shadow: none !important;
@@ -23,16 +23,21 @@
     font-size: 14px;
     padding: 6px 0;
     
-    /* Transparent background and normal font weight */
+    /* Transparent background but bold text */
     background: transparent !important;
     color: inherit;
-    font-weight: 400 !important;
+    font-weight: 700 !important; /* bold */
     transition: 0.3s;
 }
 
 /* Hover effect for dropdown items */
 .mega-menu .dropdown-item:hover,
 .mega-menu .dropdown-item:focus {
-    color: #0d6efd; /* or any color you like */
+    color: #0d6efd; /* highlight color */
     background: transparent !important;
+}
+
+/* Make all top-level nav links bold too */
+.navbar .nav-link {
+    font-weight: 700 !important; /* bold */
 }

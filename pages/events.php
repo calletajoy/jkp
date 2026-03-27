@@ -879,7 +879,7 @@
             .newsletter {
                 padding: 30px 20px;
             }
-            .events-footer {
+            .footer-events {
                 padding: 40px 20px 30px;
             }
         }
@@ -903,8 +903,8 @@
                 <img src="assets/images/jumi10.png" alt="Jumuiya at 10 Logo">
             </div>
             <ul class="nav-menu">
-                <li><a href="assets/content%20files/programme.pdf" target="_blank">Programs</a></li>
-                <li><a href="assets/content%20files/sponsorship.pdf" target="_blank">Sponsor</a></li>
+                <li><a href="assets/content-files/JUMUIYA AT 10 - CONCEPT NOTE - 12-02-2026.pdf" target="_blank">Programs</a></li>
+                <li><a href="assets/content-files/Jumuiya @10 Prospectus.pdf" target="_blank">Sponsor</a></li>
                 <li><a href="#contact-section">Contact</a></li>
             </ul>
         </div>
@@ -1067,21 +1067,15 @@
                 <div class="sponsor-tiers">
                     <div class="tier-card">
                         <h4>Platinum</h4>
-                        <p>Premium visibility</p>
-                        <p>Keynote speaking</p>
-                        <p>VIP access</p>
+                       
                     </div>
                     <div class="tier-card">
                         <h4>Gold</h4>
-                        <p>Brand exposure</p>
-                        <p>Exhibition space</p>
-                        <p>Networking access</p>
+                        
                     </div>
                     <div class="tier-card">
                         <h4>Silver</h4>
-                        <p>Logo placement</p>
-                        <p>Social media mentions</p>
-                        <p>Event tickets</p>
+                        
                     </div>
                 </div>
             </div>
@@ -1116,7 +1110,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="events-footer">
+    <footer class="footer-events">
         <div class="footer-container">
             <div class="footer-col-1">
                 <img src="assets/images/jumi10.png" alt="Jumuiya at 10 Logo">

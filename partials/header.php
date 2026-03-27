@@ -166,6 +166,11 @@ function navActive(string $key): string
                             </div>
                         </li>
 
+                        <li class="nav-item">
+    <a class="nav-link" href="https://jabeic.jumuiya.org/" target="_blank" rel="noopener noreferrer">
+        Jabeic
+    </a>
+</li>
                         <!-- Events -->
                         <li class="nav-item">
                             <a class="nav-link fw-normal <?php echo navActive('events'); ?>" href="/events">Events</a>
