@@ -7,7 +7,7 @@
     <title>Events — JKP</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/events.css">
+    <link rel="stylesheet" href="assets/css/events.css">
     <style>
         /* New Color Palette */
         /* Primary: #2d93d6 (rich blue accent)
@@ -1109,25 +1109,31 @@
 
     </div>
 
-    <!-- Footer -->
-    <footer class="footer-events">
-        <div class="footer-container">
-            <div class="footer-col-1">
-                <img src="assets/images/jumi10.png" alt="Jumuiya at 10 Logo">
-            </div>
-            <div class="footer-col-2">
-                <p>Celebrating 10 Years of Regional Unity & Growth</p>
-            </div>
-            <div class="footer-col-3">
-                <a href="#anniversary-section" class="footer-link">The Anniversary</a>
-                <a href="assets/content%20files/programme-overview.pdf" class="footer-link" target="_blank">Programme Overview</a>
-                <a href="#sponsor-section" class="footer-link">Partners & Sponsors</a>
-            </div>
+   <!-- Footer -->
+<footer class="events-footer" style="background-color: #273C67; padding: 60px 20px; color: #fff; font-family: 'Arial', sans-serif;">
+    <div class="footer-container" style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px;">
+
+        
+
+        <!-- Text Column -->
+        <div class="footer-col-2" style="flex: 2 1 300px; text-align: center;">
+            <p style="font-size: 18px; margin: 0;">Celebrating 10 Years of Regional Unity & Growth</p>
         </div>
-        <div class="footer-copyright">
-            <p>Copyright © 2026 Jumuiya ya Kaunti za Pwani. All rights reserved.</p>
+
+        <!-- Links Column -->
+        <div class="footer-col-3" style="flex: 2 1 300px; text-align: center; display: flex; flex-direction: column; gap: 10px;">
+            <a href="#anniversary-section" class="footer-link" style="color: #c4f4f5; text-decoration: none;">The Anniversary</a>
+            <a href="assets/content%20files/programme-overview.pdf" class="footer-link" target="_blank" style="color: #c4f4f5; text-decoration: none;">Programme Overview</a>
+            <a href="#sponsor-section" class="footer-link" style="color: #c4f4f5; text-decoration: none;">Partners & Sponsors</a>
         </div>
-    </footer>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copyright" style="text-align: center; margin-top: 30px; font-size: 14px; color: #b0b0b0;">
+        <p>Copyright © 2026 Jumuiya ya Kaunti za Pwani. All rights reserved.</p>
+    </div>
+</footer>
 
     <script>
         // Filter buttons functionality
@@ -1192,6 +1198,7 @@
         }
     </script>
     <?php include 'components/registration-modal.php'; ?>
+    
 </body>
 
 </html>
