@@ -479,6 +479,55 @@ include __DIR__ . '/../partials/page-hero.php';
     opacity: 1;
     transform: translateY(0);
 }
+
+
+    /* jumuiya hub cards  */
+    .stat-card-fancy {
+        position: relative;
+        background: white;
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px -15px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        overflow: hidden;
+    }
+    
+    .stat-card-fancy::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 80px;
+        height: 80px;
+        background: var(--turquoise);
+        opacity: 0.1;
+        border-radius: 50%;
+        transform: translate(30px, 30px);
+        transition: all 0.4s ease;
+    }
+    
+    .stat-card-fancy:hover::after {
+        transform: translate(20px, 20px) scale(1.2);
+        opacity: 0.15;
+    }
+    
+    .stat-card-fancy:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px -15px rgba(0,206,209,0.3);
+    }
+    
+    .stat-icon-fancy {
+        font-size: 2.5rem;
+        color: var(--turquoise);
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+    }
+    
+    .stat-card-fancy:hover .stat-icon-fancy {
+        transform: scale(1.1) rotate(5deg);
+        color: var(--deep-blue);
+    }
+    
 </style>
 
 <!-- ===== Background Section ===== -->
@@ -593,22 +642,6 @@ include __DIR__ . '/../partials/page-hero.php';
     </div>
 </section>
 
-<!-- ===== Counties Tags ===== -->
-<section class="counties-section">
-    <div class="container">
-        <div class="counties-title" data-aos="fade-up">
-            <h3>The Six Coastal Counties</h3>
-        </div>
-        <div class="counties-grid" data-aos="fade-up">
-            <span class="county-tag">Mombasa</span>
-            <span class="county-tag">Kwale</span>
-            <span class="county-tag">Kilifi</span>
-            <span class="county-tag">Tana River</span>
-            <span class="county-tag">Lamu</span>
-            <span class="county-tag">Taita Taveta</span>
-        </div>
-    </div>
-</section>
 
 <!-- ===== Structure Section ===== -->
 <section class="structure-section">
@@ -712,6 +745,64 @@ include __DIR__ . '/../partials/page-hero.php';
                         <li>MSME specific knowledge and project shelves</li>
                         <li>Assistance in the preparation of project reports/business plans</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== Jumuiya Hub Section ===== -->
+<section class="best-city-government remove-div one-second" data-aos="fade-up" style="padding: 0; overflow-x: hidden;">
+    <div class="position-relative">
+        <img class="img-fluid w-100" src="assets/images/periwink.jpeg" alt="Jumuiya Hub" style="height: 600px; object-fit: cover;">
+        <div class="overlay" style="background: linear-gradient(135deg, rgba(135,206,235,0.9) 0%, rgba(135,206,235,0.7) 100%);"></div>
+        <div class="container position-relative" style="margin-top: -400px;">
+            <div class="city-content text-center">
+                <h2 class="display-3 fw-bold mb-5" data-aos="fade-up" data-aos-duration="1000" style="color: #273C67;">
+                    <span class="cssanimation lePopUp sequence">The Jumuiya Hub</span>
+                </h2>
+                <div class="row g-4">
+                    <!-- First card - comes from left -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="300">
+                        <div class="stat-card-fancy text-center h-100 p-4">
+                            <div class="stat-icon-fancy mb-3">
+                                <i class="bi bi-tree"></i>
+                            </div>
+                            <h5 class="fw-bold mb-3" style="color: var(--navy);">Agriculture & Agribusiness</h5>
+                            <p class="small text-muted">Promoting sustainable farming, value addition, and market access for coastal farmers.</p>
+                        </div>
+                    </div>
+                    <!-- Second card - comes from left with delay -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200" data-aos-offset="300">
+                        <div class="stat-card-fancy text-center h-100 p-4">
+                            <div class="stat-icon-fancy mb-3">
+                                <i class="bi bi-water"></i>
+                            </div>
+                            <h5 class="fw-bold mb-3" style="color: var(--navy);">Blue Economy</h5>
+                            <p class="small text-muted">Sustainable use of ocean resources for economic growth, jobs, and healthy marine ecosystems.</p>
+                        </div>
+                    </div>
+                    <!-- Third card - comes from right -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-left" data-aos-duration="1000" data-aos-offset="300">
+                        <div class="stat-card-fancy text-center h-100 p-4">
+                            <div class="stat-icon-fancy mb-3">
+                                <i class="bi bi-sun"></i>
+                            </div>
+                            <h5 class="fw-bold mb-3" style="color: var(--navy);">Tourism</h5>
+                            <p class="small text-muted">Showcasing the beautiful beaches, culture, and heritage of Kenya's coast.</p>
+                        </div>
+                    </div>
+                    <!-- Fourth card - comes from right with delay -->
+                    <div class="col-md-6 col-lg-3" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" data-aos-offset="300">
+                        <div class="stat-card-fancy text-center h-100 p-4">
+                            <div class="stat-icon-fancy mb-3">
+                                <i class="bi bi-book"></i>
+                            </div>
+                            <h5 class="fw-bold mb-3" style="color: var(--navy);">Education & Academia</h5>
+                            <p class="small text-muted">Investing in quality education, research, and skills development for youth.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

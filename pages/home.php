@@ -925,7 +925,7 @@ const siteContent = [
     // Individual Projects
     { title: "She Stands Project", category: "Project", url: "/she-stands", content: "A faith-based collaborative initiative equipping and inspiring Kenyan women with biblical principles for everyday living and community leadership." },
     { title: "The Go Blue Project", category: "Project", url: "/go-blue", content: "A four-year EU-funded project supporting Kenya's coastal economic development and blue economy strategy through sustainable marine resource utilization." },
-    { title: "Jumuiya Innovation Lab", category: "Project", url: "/innovation-lab", content: "Six innovation labs established as flagship projects to transform the region's economic landscape under the Jumuiya 2030 framework." },
+    { title: "Jumuiya Innovation Hub", category: "Project", url: "/innovation-lab", content: "Six innovation labs established as flagship projects to transform the region's economic landscape under the Jumuiya 2030 framework." },
     { title: "Jumuiya 2030", category: "Project", url: "/jum_2030", content: "The regional economic development strategy for 2020-2030, outlining the blueprint for sustainable growth and shared prosperity across coastal counties." },
     
     // Impact stats
@@ -1180,7 +1180,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         <!-- Right side: 10 Years Anniversary Image -->
         <div class="banner-right">
-            <img src="/assets/images/try.png" alt="10 Years Anniversary" onerror="this.src='/assets/images/jummy-10.png'">
+            <img src="assets/images/tenth-anny1.png" alt="10 Years Anniversary" onerror="this.src='/assets/images/jummy-10.png'">
             <!-- Added overlay and text for anniversary if needed -->
            
     </div>
@@ -1256,16 +1256,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="row g-3 mb-4">
                         <div class="col-6">
                             <ul class="list-unstyled">
-                                <li class="mb-2"><span class="me-2" style="color: var(--turquoise);">●</span> Mombasa County</li>
-                                <li class="mb-2"><span class="me-2" style="color: var(--turquoise);">●</span> Kwale County</li>
-                                <li class="mb-2"><span class="me-2" style="color: var(--turquoise);">●</span> Kilifi County</li>
+                                <li class="mb-2"><span class="me-2" style="color: var(--turquoise);">●</span> <a href="https://web.mombasa.go.ke/" target="_blank" rel="noopener noreferrer" style="color: var(--navy); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--turquoise)'" onmouseout="this.style.color='var(--navy)'">Mombasa County</a></li>
+                                <li class="mb-2"><span class="me-2" style="color: var(--turquoise);">●</span> <a href="https://kwalecountygov.com/" target="_blank" rel="noopener noreferrer" style="color: var(--navy); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--turquoise)'" onmouseout="this.style.color='var(--navy)'">Kwale County</a></li>
+                                <li class="mb-2"><span class="me-2" style="color: var(--turquoise);">●</span> <a href="https://kilifi.go.ke/" target="_blank" rel="noopener noreferrer" style="color: var(--navy); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--turquoise)'" onmouseout="this.style.color='var(--navy)'">Kilifi County</a></li>
                             </ul>
                         </div>
                         <div class="col-6">
                             <ul class="list-unstyled">
-                                <li class="mb-2"><span class="me-2" style="color: var(--turquoise);">●</span> Tana River County</li>
-                                <li class="mb-2"><span class="me-2" style="color: var(--turquoise);">●</span> Lamu County</li>
-                                <li class="mb-2"><span class="me-2" style="color: var(--turquoise);">●</span> Taita Taveta County</li>
+                                <li class="mb-2"><span class="me-2" style="color: var(--turquoise);">●</span> <a href="https://tanariver.go.ke/" target="_blank" rel="noopener noreferrer" style="color: var(--navy); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--turquoise)'" onmouseout="this.style.color='var(--navy)'">Tana River County</a></li>
+                                <li class="mb-2"><span class="me-2" style="color: var(--turquoise);">●</span> <a href="https://lamu.go.ke/" target="_blank" rel="noopener noreferrer" style="color: var(--navy); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--turquoise)'" onmouseout="this.style.color='var(--navy)'">Lamu County</a></li>
+                                <li class="mb-2"><span class="me-2" style="color: var(--turquoise);">●</span> <a href="https://taitataveta.go.ke/" target="_blank" rel="noopener noreferrer" style="color: var(--navy); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--turquoise)'" onmouseout="this.style.color='var(--navy)'">Taita Taveta County</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1459,7 +1459,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ],
             [
                 'img' => '/assets/images/inno-lab.png', 
-                'title' => 'Jumuiya Innovation Lab', 
+                'title' => 'Jumuiya Innovation Hub', 
                 'desc' => 'Six innovation labs established as flagship projects to transform the region\'s economic landscape under the Jumuiya 2030 framework.',
                 'link' => '/innovation-lab'
             ],
@@ -1489,64 +1489,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
             <?php endforeach; ?>
-        </div>
-    </div>
-</section>
-
-
-<!-- ===== Jumuiya Hub Section ===== -->
-<section class="best-city-government remove-div one-second" data-aos="fade-up" style="padding: 0; overflow-x: hidden;">
-    <div class="position-relative">
-        <img class="img-fluid w-100" src="assets/images/periwink.jpeg" alt="Jumuiya Hub" style="height: 600px; object-fit: cover;">
-        <div class="overlay" style="background: linear-gradient(135deg, rgba(135,206,235,0.9) 0%, rgba(135,206,235,0.7) 100%);"></div>
-        <div class="container position-relative" style="margin-top: -400px;">
-            <div class="city-content text-center">
-                <h2 class="display-3 fw-bold mb-5" data-aos="fade-up" data-aos-duration="1000" style="color: #273C67;">
-                    <span class="cssanimation lePopUp sequence">The Jumuiya Hub</span>
-                </h2>
-                <div class="row g-4">
-                    <!-- First card - comes from left -->
-                    <div class="col-md-6 col-lg-3" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="300">
-                        <div class="stat-card-fancy text-center h-100 p-4">
-                            <div class="stat-icon-fancy mb-3">
-                                <i class="bi bi-tree"></i>
-                            </div>
-                            <h5 class="fw-bold mb-3" style="color: var(--navy);">Agriculture & Agribusiness</h5>
-                            <p class="small text-muted">Promoting sustainable farming, value addition, and market access for coastal farmers.</p>
-                        </div>
-                    </div>
-                    <!-- Second card - comes from left with delay -->
-                    <div class="col-md-6 col-lg-3" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200" data-aos-offset="300">
-                        <div class="stat-card-fancy text-center h-100 p-4">
-                            <div class="stat-icon-fancy mb-3">
-                                <i class="bi bi-water"></i>
-                            </div>
-                            <h5 class="fw-bold mb-3" style="color: var(--navy);">Blue Economy</h5>
-                            <p class="small text-muted">Sustainable use of ocean resources for economic growth, jobs, and healthy marine ecosystems.</p>
-                        </div>
-                    </div>
-                    <!-- Third card - comes from right -->
-                    <div class="col-md-6 col-lg-3" data-aos="fade-left" data-aos-duration="1000" data-aos-offset="300">
-                        <div class="stat-card-fancy text-center h-100 p-4">
-                            <div class="stat-icon-fancy mb-3">
-                                <i class="bi bi-sun"></i>
-                            </div>
-                            <h5 class="fw-bold mb-3" style="color: var(--navy);">Tourism</h5>
-                            <p class="small text-muted">Showcasing the beautiful beaches, culture, and heritage of Kenya's coast.</p>
-                        </div>
-                    </div>
-                    <!-- Fourth card - comes from right with delay -->
-                    <div class="col-md-6 col-lg-3" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" data-aos-offset="300">
-                        <div class="stat-card-fancy text-center h-100 p-4">
-                            <div class="stat-icon-fancy mb-3">
-                                <i class="bi bi-book"></i>
-                            </div>
-                            <h5 class="fw-bold mb-3" style="color: var(--navy);">Education & Academia</h5>
-                            <p class="small text-muted">Investing in quality education, research, and skills development for youth.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
