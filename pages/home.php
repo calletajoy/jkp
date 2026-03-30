@@ -779,7 +779,7 @@ ob_start();
     .dropdown-menu,
     .navbar .dropdown-menu {
         
-        background-color: transparent !important;
+        background-color: white !important;
         border: none !important;
     
     }
@@ -895,6 +895,19 @@ ob_start();
             font-size: 1.8rem !important;
         }
     }
+
+    .navbar .nav-link.dropdown-toggle,
+.navbar .nav-link.dropdown-toggle:focus,
+.navbar .nav-link.dropdown-toggle:hover,
+.navbar .nav-item.show .nav-link.dropdown-toggle {
+    border: none !important;          /* remove underline/focus line */
+    box-shadow: none !important;      /* remove focus shadow */
+    outline: none !important;         /* remove focus outline */
+}
+
+.navbar .nav-link.dropdown-toggle::after {
+    display: inline-block; /* keep the normal Bootstrap caret */
+}
 </style>
 
 <!-- ===== Site Search Data ===== -->

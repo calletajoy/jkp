@@ -27,8 +27,9 @@ function navActive(string $key): string
                             <a href="tel:+254777101115">
                                 <i class="bi bi-telephone phone"></i> +254 777 101 115
                             </a>
-                            <a href="mailto:info@jumuiya.org">
-                                <i class="bi bi-envelope email"></i> info@jumuiya.org
+                           
+                            <a href="mailto:secretariat@jumuiya.org">
+                                <i class="bi bi-envelope email"></i> secretariat@jumuiya.org
                             </a>
                             <span class="text-white d-none d-xl-flex align-items-center gap-1">
                                 <i class="bi bi-clock"></i> Mon – Fri: 8:30am – 5:00pm
@@ -93,9 +94,9 @@ function navActive(string $key): string
                                     <div class="row">
                                         <div class="col-md-4">
                                             <ul class="list-unstyled">
-                                                <li><a class="dropdown-item px-0" href="/about">📊 About JKP Economic Bloc</a></li>
-                                                <li><a class="dropdown-item px-0" href="/core-mandate">🎯 Core Mandate</a></li>
-                                                <li><a class="dropdown-item px-0" href="/stakeholders">🤝 Stakeholders</a></li>
+                                                <li><a class="dropdown-item px-0" href="/about"> About JKP Economic Bloc</a></li>
+                                                <li><a class="dropdown-item px-0" href="/core-mandate"> Core Mandate</a></li>
+                                                <li><a class="dropdown-item px-0" href="/stakeholders"> Stakeholders</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-md-4">
@@ -124,7 +125,7 @@ function navActive(string $key): string
                                     <div class="row">
                                         <div class="col-md-6">
                                             <ul class="list-unstyled">
-                                                <li><a class="dropdown-item px-0" href="/blueprint">📘Jumuiya-TCH Blueprint 2030</a></li>
+                                                <li><a class="dropdown-item px-0" href="/blueprint">Jumuiya-TCH Blueprint 2030</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-md-6">
@@ -152,7 +153,7 @@ function navActive(string $key): string
                                             <ul class="list-unstyled">
                                                 <li><a class="dropdown-item px-0" href="/news-updates">News & updates</a></li>
                                                 <li><a class="dropdown-item px-0" href="/photos-video-gallery"> Photo & Video Gallery</a></li>
-                                                <li><a class="dropdown-item px-0" href="/newsletter-archive">📧 Newsletter Archive</a></li>
+                                                <li><a class="dropdown-item px-0" href="/newsletter-archive"> Newsletter Archive</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-md-4">

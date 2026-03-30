@@ -7,8 +7,8 @@
     border-radius: 0;
 
     /* Fully transparent */
-    background: transparent !important;
-    background-color: transparent !important;
+    background: white  !important;
+    background-color: white !important;
     box-shadow: none !important;
 }
 
@@ -24,7 +24,7 @@
     padding: 6px 0;
     
     /* Transparent background but bold text */
-    background: transparent !important;
+    background: white !important;
     color: inherit;
     font-weight: 700 !important; /* bold */
     transition: 0.3s;
@@ -34,10 +34,23 @@
 .mega-menu .dropdown-item:hover,
 .mega-menu .dropdown-item:focus {
     color: #0d6efd; /* highlight color */
-    background: transparent !important;
+    background: white !important;
 }
 
 /* Make all top-level nav links bold too */
 .navbar .nav-link {
     font-weight: 700 !important; /* bold */
+}
+
+.navbar .nav-link.dropdown-toggle,
+.navbar .nav-link.dropdown-toggle:focus,
+.navbar .nav-link.dropdown-toggle:hover,
+.navbar .nav-item.show .nav-link.dropdown-toggle {
+    border: none !important;          /* remove underline/focus line */
+    box-shadow: none !important;      /* remove focus shadow */
+    outline: none !important;         /* remove focus outline */
+}
+
+.navbar .nav-link.dropdown-toggle::after {
+    display: inline-block; /* keep the normal Bootstrap caret */
 }
