@@ -150,8 +150,8 @@ function navActive(string $key): string
                                     <div class="row">
                                         <div class="col-md-4">
                                             <ul class="list-unstyled">
-                                                <li><a class="dropdown-item px-0" href="/news-updates">📰 News & updates</a></li>
-                                                <li><a class="dropdown-item px-0" href="/photos-video-gallery">📸 Photo & Video Gallery</a></li>
+                                                <li><a class="dropdown-item px-0" href="/news-updates">News & updates</a></li>
+                                                <li><a class="dropdown-item px-0" href="/photos-video-gallery"> Photo & Video Gallery</a></li>
                                                 <li><a class="dropdown-item px-0" href="/newsletter-archive">📧 Newsletter Archive</a></li>
                                             </ul>
                                         </div>
@@ -166,15 +166,34 @@ function navActive(string $key): string
                             </div>
                         </li>
 
-                        <li class="nav-item">
-    <a class="nav-link" href="https://jabeic.jumuiya.org/" target="_blank" rel="noopener noreferrer">
-        Jabeic
-    </a>
-</li>
-                        <!-- Events -->
-                        <li class="nav-item">
-                            <a class="nav-link fw-normal <?php echo navActive('events'); ?>" href="/events">Events</a>
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a class="nav-link dropdown-toggle <?php echo navActive('media'); ?>"
+                               href="/media-center"
+                               id="mediaMega"
+                               role="button"
+                               data-bs-toggle="dropdown"
+                               aria-expanded="false">
+                                Events 
+                            </a>
+                            <div class="dropdown-menu mega-menu p-4" aria-labelledby="mediaMega">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <ul class="list-unstyled">
+                                                 <li><a class="dropdown-item px-0" href="/events"> Events</a></li>
+                                                <li><a class="dropdown-item px-0" href="https://jabeic.jumuiya.org/" target="_blank" rel="noopener noreferrer">Jabeic</a></li>
+                                                 <li><a class="dropdown-item px-0" href="#">Other events</a></li>
+                                            </ul>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
                         </li>
+
+                        <li class="nav-item">
+    
+                       
 
                         <!-- Contact -->
                         <li class="nav-item">
