@@ -398,16 +398,18 @@ body > nav:not(.events-nav) {
 
 .card-image {
     position: relative;
-    height: 250px;
+    aspect-ratio: 16/9;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 .card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-    transform: scale(1);
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .event-card:hover .card-image img {

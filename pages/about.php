@@ -260,6 +260,18 @@ include __DIR__ . '/../partials/page-hero.php';
             color: rgba(255,255,255,0.7) !important;
             font-size: 0.85rem;
         }
+
+        .about-company {
+    padding-bottom: 20px !important;
+}
+
+.our-investigators {
+    padding-top: 20px !important;
+}
+
+.about-company {
+    padding-top: 20px !important; /* adjust as needed */
+}
         </style>
 
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">

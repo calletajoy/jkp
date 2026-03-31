@@ -1025,7 +1025,7 @@
 
             <div class="event-card">
                 <div class="card-image">
-                    <img src="assets/images/JUMGALA.png" alt="Gala Dinner">
+                    <img src="assets/images/galajum1.png" alt="Gala Dinner">
                     <div class="card-date-badge"><span class="day">02</span><span class="month">Apr</span></div>
                 </div>
                 <div class="card-body">
@@ -1041,7 +1041,7 @@
 
             <div class="event-card">
                 <div class="card-image">
-                    <img src="assets/images/jumy10.png" alt="Sports & Networking">
+                    <img src="assets/images/JUM10-1.png" alt="Sports & Networking">
                     <div class="card-date-badge"><span class="day">01</span><span class="month">Apr</span></div>
                 </div>
                 <div class="card-body">
