@@ -778,10 +778,8 @@ ob_start();
     .mega-dropdown .dropdown-menu,
     .dropdown-menu,
     .navbar .dropdown-menu {
-        
         background-color: white !important;
         border: none !important;
-    
     }
     
     /* Style mega menu items */
@@ -798,7 +796,6 @@ ob_start();
         color: var(--turquoise) !important;
         background: transparent !important;
         padding-left: 10px !important;
-        color: #00CED1 !important;
     }
     
     /* Override Bootstrap's default dropdown item hover */
@@ -813,10 +810,24 @@ ob_start();
         background: transparent !important;
     }
     
-    /* Optional: Add a subtle divider between menu items if desired */
-    .mega-menu .dropdown-item:not(:last-child) {
-        
-    }
+    /* ===== COMPLETELY REMOVE DROPDOWN ARROWS ===== */
+/* Remove all borders/lines from dropdown toggles */
+.navbar .nav-link.dropdown-toggle,
+.navbar .nav-link.dropdown-toggle:focus,
+.navbar .nav-link.dropdown-toggle:hover,
+.navbar .nav-item.show .nav-link.dropdown-toggle {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    text-decoration: none !important;
+}
+
+/* Completely remove the dropdown arrow */
+.navbar .nav-link.dropdown-toggle::after,
+.dropdown-toggle::after {
+    display: none !important;
+    content: none !important;
+}
     
     /* ===== REMOVE BLUR FROM HERO SECTION ===== */
     /* Remove all blur effects from hero section images */
@@ -848,6 +859,46 @@ ob_start();
     .banner-right .overlay {
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
+    }
+    
+    /* ===== REDUCED SPACING BETWEEN SECTIONS ===== */
+    /* Search bar to About JKP */
+    .about-company {
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+    }
+    
+    .banner-card .container > form {
+        margin-bottom: 0 !important;
+    }
+    
+    .banner-card {
+        margin-bottom: -30px !important;
+    }
+    
+    /* About JKP to Mission/Vision section */
+    section[style*="background: var(--light-bg)"] {
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+    }
+    
+    /* Key Milestones to Projects */
+    section:has(.staircase-container) {
+        padding-bottom: 20px !important;
+    }
+    
+    section:has(.project-card-fancy) {
+        padding-top: 20px !important;
+    }
+    
+    /* Latest Updates to Partners */
+    .newsroom {
+        padding-bottom: 20px !important;
+    }
+    
+    /* Partners to Contact Strip */
+    .upcoming-city {
+        padding-top: 20px !important;
     }
     
     @media (max-width: 768px) {
@@ -895,19 +946,6 @@ ob_start();
             font-size: 1.8rem !important;
         }
     }
-
-    .navbar .nav-link.dropdown-toggle,
-.navbar .nav-link.dropdown-toggle:focus,
-.navbar .nav-link.dropdown-toggle:hover,
-.navbar .nav-item.show .nav-link.dropdown-toggle {
-    border: none !important;          /* remove underline/focus line */
-    box-shadow: none !important;      /* remove focus shadow */
-    outline: none !important;         /* remove focus outline */
-}
-
-.navbar .nav-link.dropdown-toggle::after {
-    display: inline-block; /* keep the normal Bootstrap caret */
-}
 </style>
 
 <!-- ===== Site Search Data ===== -->
