@@ -5,9 +5,8 @@
     padding: 20px;
     border: none;
     border-radius: 0;
-
     /* Fully transparent */
-    background: white  !important;
+    background: white !important;
     background-color: white !important;
     box-shadow: none !important;
 }
@@ -22,7 +21,6 @@
 .mega-menu .dropdown-item {
     font-size: 14px;
     padding: 6px 0;
-    
     /* Transparent background but bold text */
     background: white !important;
     color: inherit;
@@ -42,15 +40,20 @@
     font-weight: 700 !important; /* bold */
 }
 
+/* Remove all borders/lines from dropdown toggles */
 .navbar .nav-link.dropdown-toggle,
 .navbar .nav-link.dropdown-toggle:focus,
 .navbar .nav-link.dropdown-toggle:hover,
 .navbar .nav-item.show .nav-link.dropdown-toggle {
-    border: none !important;          /* remove underline/focus line */
-    box-shadow: none !important;      /* remove focus shadow */
-    outline: none !important;         /* remove focus outline */
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    text-decoration: none !important;
 }
 
-.navbar .nav-link.dropdown-toggle::after {
-    display: inline-block; /* keep the normal Bootstrap caret */
+/* COMPLETELY REMOVE THE DROPDOWN ARROW/CARET */
+.navbar .nav-link.dropdown-toggle::after,
+.dropdown-toggle::after {
+    display: none !important;
+    content: none !important;
 }
