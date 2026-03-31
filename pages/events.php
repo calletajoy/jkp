@@ -404,21 +404,20 @@
         }
 
         .card-image {
-            position: relative;
-            height: 250px;
-            overflow: hidden;
-        }
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f9ff; /* optional: fills empty space nicely */
+}
 
-        .card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-            transform: scale(1);
-            image-rendering: auto;
-            image-rendering: crisp-edges;
-            image-rendering: high-quality;
-        }
+.card-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
 
         .event-card:hover .card-image img {
             transform: scale(1.05);

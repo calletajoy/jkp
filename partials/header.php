@@ -194,7 +194,9 @@ function navActive(string $key): string
 
                         <li class="nav-item">
     
-                       
+                        <li class="nav-item">
+                            <a class="nav-link fw-normal <?php echo navActive('home'); ?>" href="#">Go Kenya Coast</a>
+                        </li>
 
                         <!-- Contact -->
                         <li class="nav-item">
