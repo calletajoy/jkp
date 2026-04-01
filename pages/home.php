@@ -1610,6 +1610,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <?php include __DIR__ . '/components/partners.php'; ?>
 
+
 <?php
 $pageContent = ob_get_clean();
 require __DIR__ . '/../layout.php';
