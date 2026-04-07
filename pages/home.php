@@ -196,7 +196,7 @@ ob_start();
     .milestone-card {
         background: white;
         border-radius: 20px;
-        padding: 2rem;
+        padding: 1rem;
         box-shadow: 0 15px 35px -15px rgba(0,0,0,0.1);
         border-left: 6px solid var(--turquoise);
         transition: all 0.4s ease;
@@ -614,7 +614,7 @@ ob_start();
     
     .staircase-year {
         font-size: 3rem;
-        font-weight: 800;
+        font-weight: 300;
         background: linear-gradient(135deg, var(--navy), var(--deep-blue));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -624,7 +624,7 @@ ob_start();
     
     .staircase-title {
         font-size: 1.3rem;
-        font-weight: 700;
+        font-weight: 400;
         color: var(--navy);
         margin-bottom: 15px;
         padding-bottom: 10px;
@@ -879,7 +879,7 @@ ob_start();
     /* About JKP to Mission/Vision section */
     section[style*="background: var(--light-bg)"] {
         padding-top: 20px !important;
-        padding-bottom: 20px !important;
+        padding-bottom: 80px !important;
     }
     
     /* Key Milestones to Projects */
@@ -946,6 +946,20 @@ ob_start();
             font-size: 1.8rem !important;
         }
     }
+
+    /*equal height for stat cards */
+.stats-section .row .col-md-6.col-lg-3 {
+    display: flex;
+}
+
+.stat-card-fancy {
+    min-height: 320px; /* Ensures consistent minimum height */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.stat-card-fancy p {
+    margin-top: auto; /* Pushes description to bottom */
+}
 </style>
 
 <!-- ===== Site Search Data ===== -->
@@ -1231,7 +1245,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         <!-- Right side: 10 Years Anniversary Image -->
         <div class="banner-right">
-            <img src="assets/images/ev-jum10.png" alt="10 Years Anniversary" onerror="this.src='/assets/images/jummy-10.png'">
+            <img src="assets/images/ev-jum10-1.png" alt="10 Years Anniversary" onerror="this.src='/assets/images/jummy-10.png'">
             <!-- Added overlay and text for anniversary if needed -->
            
     </div>
@@ -1387,7 +1401,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </section>
 
-<!-- ===== Achievements with Animated Counters ===== -->
+<!-- ===== Achievements with Animated Counters - EQUAL HEIGHT ===== -->
 <section class="stats-section" style="background: var(--light-bg);" data-aos="fade-up">
     <div class="container">
         <div class="section-title-fancy text-center mb-5">
@@ -1425,14 +1439,14 @@ document.addEventListener('DOMContentLoaded', function() {
         
         <div class="row g-4">
             <?php foreach ($stats as $stat): ?>
-                <div class="col-md-6 col-lg-3">
-                    <div class="stat-card-fancy text-center">
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
+                    <div class="stat-card-fancy text-center w-100 d-flex flex-column">
                         <div class="stat-icon-fancy">
                             <i class="bi <?php echo $stat['icon']; ?>"></i>
                         </div>
                         <div class="stat-value-fancy h1 fw-bold mb-2" data-value="<?php echo $stat['value']; ?>" style="color: var(--navy);">0</div>
                         <h5 class="fw-bold mb-2" style="color: var(--deep-blue);"><?php echo $stat['label']; ?></h5>
-                        <p class="small text-muted mb-0"><?php echo $stat['desc']; ?></p>
+                        <p class="small text-muted mb-0 mt-auto"><?php echo $stat['desc']; ?></p>
                     </div>
                 </div>
             <?php endforeach; ?>
@@ -1597,7 +1611,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="project-content">
                             <small class="text-muted mb-2 d-block">By <?php echo htmlspecialchars($item['author']); ?></small>
                             <h4 class="project-title h5"><?php echo htmlspecialchars($item['title']); ?></h4>
-                            <a href="/blog" class="read-more mt-3">
+                            <a href="pages/news-updates.php" class="read-more mt-3">
                                 Read Full Story <i class="bi bi-arrow-up-right"></i>
                             </a>
                         </div>
