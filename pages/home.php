@@ -1245,7 +1245,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         <!-- Right side: 10 Years Anniversary Image -->
         <div class="banner-right">
-            <img src="assets/images/ev-jum10-1.png" alt="10 Years Anniversary" onerror="this.src='/assets/images/jummy-10.png'">
+            <img src="assets/images/10TH ANNIVERSARY CELEBRATIONS (1).png" alt="10 Years Anniversary" onerror="this.src='/assets/images/jummy-10.png'">
             <!-- Added overlay and text for anniversary if needed -->
            
     </div>
