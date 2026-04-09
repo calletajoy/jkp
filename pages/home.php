@@ -1312,7 +1312,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <span class="title" style="color: var(--turquoise); letter-spacing: 2px;">About JKP</span>
                         </div>
                     </div>
-                    <h2 class="display-6 fw-bold mb-3" style="color: var(--navy);">
+                    <h2 class="fw-bold mb-3" style="color: var(--navy);">
     <span class="cssanimation lePopUp sequence">Jumuiya ya Kaunti za Pwani</span><br>
     <span class="cssanimation lePopUp sequence" style="color: var(--turquoise);">— Kenya's Coastal Economic Bloc</span>
 </h2>

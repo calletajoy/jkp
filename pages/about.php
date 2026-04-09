@@ -26,7 +26,7 @@ include __DIR__ . '/../partials/page-hero.php';
                             <span class="title">About Us</span>
                         </div>
                     </div>
-                    <h2 style="font-size: 1.6rem;">
+                    <h2 style="font-size: 1.25rem;">
     <span class="cssanimation lePopUp sequence">The Jumuiya Economic Bloc is led by an</span><br>
     <span class="cssanimation lePopUp sequence">exclusive and competent team</span>
 </h2>
