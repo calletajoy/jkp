@@ -18,6 +18,59 @@ $darkBlue = '#244080';
 
 // News posts data
 $newsPosts = [
+    // NEW ENTRY 1 - March 6, 2026 (Tourism)
+    [
+        'id' => 20,
+        'title' => 'JKP and TRA strengthen collaboration on sustainable tourism',
+        'excerpt' => 'Jumuiya Economic Development Secretariat held a courtesy meeting with the Tourism Regulatory Authority (TRA) to strengthen collaboration on sustainable tourism along the Coastal region. TRA presented on the development of a Beach Management Standard aimed at improving beach governance, enhancing visitor experience, and promoting environmental conservation.',
+        'date' => '6',
+        'month' => 'Mar 26',
+        'year' => '2026',
+        'author' => 'Editorial Staff',
+        'comments' => 'No Comments',
+        'image' => 'assets/images/TRA (2).png',
+        'category' => 'Tourism'
+    ],
+    // NEW ENTRY 2 - February 26, 2026 (Education)
+    [
+        'id' => 21,
+        'title' => 'EAWLS trains coastal stakeholders on Blue Carbon policy and advocacy',
+        'excerpt' => 'The East African Wild Life Society (EAWLS) kicked off a two-day Policy and Advocacy Training on Blue Carbon Ecosystems in Mombasa, bringing together over 40 stakeholders from across Kenya\'s coastal region, including Beach Management Units, Community Forest Associations, and CBOs.',
+        'date' => '26',
+        'month' => 'Feb 26',
+        'year' => '2026',
+        'author' => 'Editorial Staff',
+        'comments' => 'No Comments',
+        'image' => 'assets/images/EAWLS (4).png',
+        'category' => 'Education'
+    ],
+    // NEW ENTRY 3 - February 24, 2026 (Investment)
+    [
+        'id' => 22,
+        'title' => 'JKP Agricultural Revitalization Summit kicks off in Malindi',
+        'excerpt' => 'The Jumuiya ya Kaunti za Pwani Agricultural Revitalization Summit commenced at Ocean Beach Hotel, Malindi, officiated by Hon. Mutahi Kagwe, Cabinet Secretary of Agriculture and Livestock. Discussions centered on Climate Smart Agriculture, Value Addition, and deepening collaboration between National and County Governments.',
+        'date' => '24',
+        'month' => 'Feb 26',
+        'year' => '2026',
+        'author' => 'Editorial Staff',
+        'comments' => 'No Comments',
+        'image' => 'assets/images/revt-sumit (1).png',
+        'category' => 'Investment'
+    ],
+    // NEW ENTRY 4 - February 26, 2026 (Blue Economy)
+    [
+        'id' => 23,
+        'title' => 'Ocean Conservation and Sustainable Coastal Development Workshop',
+        'excerpt' => 'A workshop on policy making and advocacy for ocean conservation and sustainable coastal development was held in Mombasa. Discussions focused on protection of marine ecosystems such as seagrass and mangroves, and opportunities for collaboration in global platforms like the Our Ocean Conference.',
+        'date' => '26',
+        'month' => 'Feb 26',
+        'year' => '2026',
+        'author' => 'Editorial Staff',
+        'comments' => 'No Comments',
+        'image' => 'assets/images/fauna.jpeg',
+        'category' => 'Blue Economy'
+    ],
+    // EXISTING POSTS START HERE
     [
         'id' => 1,
         'title' => 'Kisauni VTC Graduates 513 Students in Blue Economy Courses',
@@ -246,27 +299,38 @@ $newsPosts = [
     ]
 ];
 
-// Define category mapping
+// Define category mapping (subcategory -> main group)
 $categoryMapping = [
-    'Go Blue Component 1' => ['Blue Economy', 'Infrastructure', 'Fisheries', 'Climate Change', 'Conservation', 'Fashion'],
-    'Go Blue News' => ['Partnerships'],
-    'JKP News Updates' => ['Governance', 'Tourism', 'Education', 'Investment', 'Trade']
+    'Blue Economy' => 'Go Blue Component 1',
+    'Infrastructure' => 'Go Blue Component 1',
+    'Fisheries' => 'Go Blue Component 1',
+    'Climate Change' => 'Go Blue Component 1',
+    'Conservation' => 'Go Blue Component 1',
+    'Fashion' => 'Go Blue Component 1',
+    'Partnerships' => 'Go Blue News',
+    'Governance' => 'JKP News Updates',
+    'Tourism' => 'JKP News Updates',
+    'Education' => 'JKP News Updates',
+    'Investment' => 'JKP News Updates',
+    'Trade' => 'JKP News Updates'
 ];
 
-// Calculate dynamic category counts
-$categoryCounts = [];
-foreach ($categoryMapping as $mainCategory => $subCategories) {
-    $categoryCounts[$mainCategory] = 0;
-    foreach ($newsPosts as $post) {
-        if (in_array($post['category'], $subCategories)) {
-            $categoryCounts[$mainCategory]++;
-        }
-    }
+// Calculate dynamic category counts for sidebar
+$categoryCounts = [
+    'Go Blue Component 1' => 0,
+    'Go Blue News' => 0,
+    'JKP News Updates' => 0
+];
+
+foreach ($newsPosts as $post) {
+    $mainGroup = $categoryMapping[$post['category']] ?? 'JKP News Updates';
+    $categoryCounts[$mainGroup]++;
 }
 
 // Get filter parameters from URL
 $selectedMonth = isset($_GET['month']) ? $_GET['month'] : '';
 $selectedCategory = isset($_GET['category']) ? $_GET['category'] : '';
+$selectedSubcategory = isset($_GET['subcategory']) ? $_GET['subcategory'] : '';
 $selectedYear = isset($_GET['year']) ? $_GET['year'] : '';
 
 // Filter news posts based on parameters
@@ -279,11 +343,17 @@ if (!empty($selectedMonth)) {
 }
 
 if (!empty($selectedCategory)) {
+    // Filter by main group category
     $filteredPosts = array_filter($filteredPosts, function($post) use ($selectedCategory, $categoryMapping) {
-        if (isset($categoryMapping[$selectedCategory])) {
-            return in_array($post['category'], $categoryMapping[$selectedCategory]);
-        }
-        return false;
+        $mainGroup = $categoryMapping[$post['category']] ?? 'JKP News Updates';
+        return $mainGroup === $selectedCategory;
+    });
+}
+
+if (!empty($selectedSubcategory)) {
+    // Filter by specific subcategory (e.g., Tourism, Blue Economy, etc.)
+    $filteredPosts = array_filter($filteredPosts, function($post) use ($selectedSubcategory) {
+        return $post['category'] === $selectedSubcategory;
     });
 }
 
@@ -294,9 +364,9 @@ if (!empty($selectedYear)) {
     });
 }
 
-// Generate dynamic archives from news posts
+// Generate dynamic archives from news posts (using filtered posts)
 $archives = [];
-foreach ($newsPosts as $post) {
+foreach ($filteredPosts as $post) {
     $month = $post['month'];
     if (!isset($archives[$month])) {
         $archives[$month] = 0;
@@ -311,9 +381,9 @@ uksort($archives, function($a, $b) {
     return $dateB <=> $dateA;
 });
 
-// Generate dynamic years from news posts
+// Generate dynamic years from news posts (using filtered posts)
 $years = [];
-foreach ($newsPosts as $post) {
+foreach ($filteredPosts as $post) {
     $year = '20' . substr($post['month'], -2);
     if (!isset($years[$year])) {
         $years[$year] = 0;
@@ -341,12 +411,7 @@ if ($page > 1) {
 
 // Function to get main category for a post
 function getMainCategory($postCategory, $categoryMapping) {
-    foreach ($categoryMapping as $mainCategory => $subCategories) {
-        if (in_array($postCategory, $subCategories)) {
-            return $mainCategory;
-        }
-    }
-    return 'JKP News Updates'; // Default
+    return $categoryMapping[$postCategory] ?? 'JKP News Updates';
 }
 
 // Build query string for pagination
@@ -357,6 +422,9 @@ function buildQueryString($exclude = []) {
     }
     if (isset($_GET['category']) && !in_array('category', $exclude)) {
         $params['category'] = $_GET['category'];
+    }
+    if (isset($_GET['subcategory']) && !in_array('subcategory', $exclude)) {
+        $params['subcategory'] = $_GET['subcategory'];
     }
     if (isset($_GET['year']) && !in_array('year', $exclude)) {
         $params['year'] = $_GET['year'];
@@ -387,7 +455,12 @@ $newsPages = [
     16 => 'reface-forum-2023',
     17 => 'safaricom-mou',
     18 => 'eu-heads-mission',
-    19 => 'support-fisher-communities'
+    19 => 'support-fisher-communities',
+    // NEW MAPPINGS FOR 2026 ENTRIES
+    20 => 'jkp-tra-tourism-collaboration',
+    21 => 'eawls-blue-carbon-training',
+    22 => 'jkp-agricultural-summit',
+    23 => 'ocean-governance-workshop'
 ];
 ?>
 
@@ -777,32 +850,12 @@ $newsPages = [
     font-weight: 600;
 }
 
-/* Previous Page Preview */
-.prev-page-preview {
-    margin-top: 1rem;
-    padding-top: 1.5rem;
-    border-top: 2px solid #e0e0e0;
-}
-
-.prev-page-title {
-    color: var(--dark-blue);
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.prev-page-title i {
-    color: var(--primary-blue);
-}
-
+/* Previous Page Preview - IMPROVED */
 .preview-item {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 0.5rem 0;
+    padding: 0.75rem 0;
     border-bottom: 1px solid #f0f0f0;
 }
 
@@ -811,9 +864,9 @@ $newsPages = [
 }
 
 .preview-thumb {
-    width: 50px;
-    height: 50px;
-    min-width: 50px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
     border-radius: 5px;
     overflow: hidden;
 }
@@ -824,23 +877,20 @@ $newsPages = [
     object-fit: cover;
 }
 
-.preview-info {
-    flex: 1;
-}
-
 .preview-info h6 {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin-bottom: 0.2rem;
     color: var(--dark-blue);
     font-weight: 600;
+    line-height: 1.3;
 }
 
 .preview-info small {
     color: #6c757d;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
 }
 
-/* Pagination */
+/* Pagination - IMPROVED */
 .pagination-wrapper {
     margin-top: 3rem;
     text-align: center;
@@ -849,9 +899,10 @@ $newsPages = [
 .pagination {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .page-item {
@@ -862,27 +913,41 @@ $newsPages = [
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    min-width: 42px;
+    height: 42px;
+    padding: 0 0.75rem;
     background: white;
     color: var(--dark-blue);
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px;
     border: 1px solid #e0e0e0;
+    font-weight: 500;
+    font-size: 0.95rem;
     transition: all 0.3s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
-.page-link:hover,
-.page-item.active .page-link {
-    background: var(--primary-blue);
+.page-link:hover {
+    background: #6EC1E4;
     color: white;
-    border-color: var(--primary-blue);
+    border-color: #6EC1E4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(110, 193, 228, 0.2);
+}
+
+.page-item.active .page-link {
+    background: #6EC1E4;
+    color: white;
+    border-color: #6EC1E4;
+    box-shadow: 0 2px 6px rgba(110, 193, 228, 0.3);
 }
 
 .page-item.disabled .page-link {
     opacity: 0.5;
     cursor: not-allowed;
     pointer-events: none;
+    transform: none;
+    box-shadow: none;
 }
 
 /* Active filter highlight */
@@ -926,13 +991,14 @@ $newsPages = [
     <div class="container">
         
         <!-- Filter Alert -->
-        <?php if (!empty($selectedMonth) || !empty($selectedCategory) || !empty($selectedYear)): ?>
+        <?php if (!empty($selectedMonth) || !empty($selectedCategory) || !empty($selectedSubcategory) || !empty($selectedYear)): ?>
         <div class="filter-alert" data-aos="fade-up">
             <div>
                 <i class="bi bi-funnel" style="color: var(--primary-blue);"></i> 
                 <strong>Showing filtered results</strong>
                 <?php if ($selectedMonth): ?> for <strong><?php echo $selectedMonth; ?></strong><?php endif; ?>
                 <?php if ($selectedCategory): ?> in category <strong><?php echo $selectedCategory; ?></strong><?php endif; ?>
+                <?php if ($selectedSubcategory): ?> in <strong><?php echo $selectedSubcategory; ?></strong><?php endif; ?>
                 <?php if ($selectedYear): ?> from year <strong><?php echo $selectedYear; ?></strong><?php endif; ?>
             </div>
             <a href="/news-updates" class="clear-filter">Clear Filter</a>
@@ -968,7 +1034,7 @@ $newsPages = [
                             <h3 class="news-title"><?php echo htmlspecialchars($post['title']); ?></h3>
                             <p class="news-excerpt"><?php echo htmlspecialchars($post['excerpt']); ?></p>
                             <div class="news-footer">
-                                <a href="/news-updates?category=<?php echo urlencode(getMainCategory($post['category'], $categoryMapping)); ?>" class="news-category">
+                                <a href="/news-updates?subcategory=<?php echo urlencode($post['category']); ?>" class="news-category">
                                     <?php echo $post['category']; ?>
                                 </a>
                                 <a href="/<?php echo $pageFile; ?>" class="read-more">
@@ -1047,7 +1113,7 @@ $newsPages = [
                     <ul class="years-list">
                         <?php foreach ($years as $year => $count): ?>
                         <li class="year-item <?php echo $selectedYear == $year ? 'active' : ''; ?>">
-                            <a href="/news-updates?year=<?php echo $year; ?>" class="year-link">
+                            <a href="/news-updates?year=<?php echo $year; ?><?php echo $selectedSubcategory ? '&subcategory=' . urlencode($selectedSubcategory) : ''; ?><?php echo $selectedCategory ? '&category=' . urlencode($selectedCategory) : ''; ?>" class="year-link">
                                 <i class="bi bi-calendar-year"></i>
                                 <?php echo $year; ?>
                             </a>
@@ -1063,7 +1129,7 @@ $newsPages = [
                     <ul class="archive-list">
                         <?php foreach ($archives as $month => $count): ?>
                         <li class="archive-item <?php echo $selectedMonth == $month ? 'active' : ''; ?>">
-                            <a href="/news-updates?month=<?php echo urlencode($month); ?>" class="archive-link">
+                            <a href="/news-updates?month=<?php echo urlencode($month); ?><?php echo $selectedSubcategory ? '&subcategory=' . urlencode($selectedSubcategory) : ''; ?><?php echo $selectedCategory ? '&category=' . urlencode($selectedCategory) : ''; ?>" class="archive-link">
                                 <i class="bi bi-calendar3"></i>
                                 <?php echo $month; ?>
                             </a>
@@ -1073,19 +1139,31 @@ $newsPages = [
                     </ul>
                 </div>
 
-                <!-- Categories Widget (Dynamic) -->
+                <!-- Categories Widget (Grouped) -->
                 <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="150">
                     <h4 class="widget-title">Categories</h4>
                     <ul class="category-list">
-                        <?php foreach ($categoryCounts as $category => $count): ?>
-                        <li class="category-item <?php echo $selectedCategory == $category ? 'active' : ''; ?>">
-                            <a href="/news-updates?category=<?php echo urlencode($category); ?>" class="category-link">
+                        <li class="category-item <?php echo $selectedCategory == 'Go Blue Component 1' ? 'active' : ''; ?>">
+                            <a href="/news-updates?category=Go Blue Component 1<?php echo $selectedSubcategory ? '&subcategory=' . urlencode($selectedSubcategory) : ''; ?>" class="category-link">
                                 <i class="bi bi-folder"></i>
-                                <?php echo $category; ?>
+                                Go Blue Component 1
                             </a>
-                            <span class="category-count"><?php echo $count; ?></span>
+                            <span class="category-count"><?php echo $categoryCounts['Go Blue Component 1']; ?></span>
                         </li>
-                        <?php endforeach; ?>
+                        <li class="category-item <?php echo $selectedCategory == 'Go Blue News' ? 'active' : ''; ?>">
+                            <a href="/news-updates?category=Go Blue News<?php echo $selectedSubcategory ? '&subcategory=' . urlencode($selectedSubcategory) : ''; ?>" class="category-link">
+                                <i class="bi bi-folder"></i>
+                                Go Blue News
+                            </a>
+                            <span class="category-count"><?php echo $categoryCounts['Go Blue News']; ?></span>
+                        </li>
+                        <li class="category-item <?php echo $selectedCategory == 'JKP News Updates' ? 'active' : ''; ?>">
+                            <a href="/news-updates?category=JKP News Updates<?php echo $selectedSubcategory ? '&subcategory=' . urlencode($selectedSubcategory) : ''; ?>" class="category-link">
+                                <i class="bi bi-folder"></i>
+                                JKP News Updates
+                            </a>
+                            <span class="category-count"><?php echo $categoryCounts['JKP News Updates']; ?></span>
+                        </li>
                     </ul>
                 </div>
 

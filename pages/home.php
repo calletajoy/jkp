@@ -1469,31 +1469,71 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="staircase-card">
                     <div class="staircase-year">2015</div>
                     <div class="staircase-title">Foundation of Jumuiya</div>
-                    <div class="staircase-desc">Six coastal counties united to form the economic bloc, establishing our vision for regional prosperity.</div>
+                    <div class="staircase-desc">JKP MOU signed</div>
                 </div>
             </div>
             
             <div class="staircase-row">
                 <div class="staircase-card">
-                    <div class="staircase-year">2015</div>
-                    <div class="staircase-title">Blue Economy Framework</div>
-                    <div class="staircase-desc">Introduced comprehensive strategy for sustainable marine resource development across member counties.</div>
+                    <div class="staircase-year">2017</div>
+                    <div class="staircase-title">FAO–JKP Partnership</div>
+                    <div class="staircase-desc">development of the JKP Blueprint.</div>
                 </div>
             </div>
             
             <div class="staircase-row">
                 <div class="staircase-card">
-                    <div class="staircase-year">2020</div>
-                    <div class="staircase-title">50,000 Jobs Created</div>
-                    <div class="staircase-desc">Milestone achievement in youth and women employment through economic empowerment programs.</div>
+                    <div class="staircase-year">2018</div>
+                    <div class="staircase-title">JABEIC</div>
+                    <div class="staircase-desc">1st investment conference Mombasa </div>
                 </div>
             </div>
             
             <div class="staircase-row">
+                <div class="staircase-card">
+                    <div class="staircase-year">2019-2020</div>
+                    <div class="staircase-title">Jumuiya One Million Acres Project</div>
+                    <div class="staircase-desc">Launch ofthe One Million Acre Project alongside COVID-19 recovery strategies and the Innovation hub.</div>
+                </div>
+            </div>
+
+            <div class="staircase-row">
+                <div class="staircase-card">
+                    <div class="staircase-year">2021-2025</div>
+                    <div class="staircase-title">GO BLUE project</div>
+                    <div class="staircase-desc">Launch of the Go Blue Project </div>
+                </div>
+            </div>
+             
+             <div class="staircase-row">
+                <div class="staircase-card">
+                    <div class="staircase-year">2024</div>
+                    <div class="staircase-title">She Stands</div>
+                    <div class="staircase-desc">Launch of the She Stands Project </div>
+                </div>
+            </div>
+
+             <div class="staircase-row">
+                <div class="staircase-card">
+                    <div class="staircase-year">2025</div>
+                    <div class="staircase-title">Blue Skies</div>
+                    <div class="staircase-desc">Launch of the Blue Skies vehicle emissions project </div>
+                </div>
+            </div>
+
+             <div class="staircase-row">
                 <div class="staircase-card">
                     <div class="staircase-year">2025</div>
                     <div class="staircase-title">10th Anniversary</div>
-                    <div class="staircase-desc">Celebrating 10 years of transformative impact with 200+ projects and 100,000+ beneficiaries.</div>
+                    <div class="staircase-desc">Celebrating 10 years of regional unity and growth</div>
+                </div>
+            </div>
+
+             <div class="staircase-row">
+                <div class="staircase-card">
+                    <div class="staircase-year">2026-2030</div>
+                    <div class="staircase-title">Go Blue–Go Green Bond</div>
+                    <div class="staircase-desc">Go Blue–Go Green Bond Phase II</div>
                 </div>
             </div>
         </div>
