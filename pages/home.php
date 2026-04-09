@@ -1312,13 +1312,13 @@ document.addEventListener('DOMContentLoaded', function() {
                             <span class="title" style="color: var(--turquoise); letter-spacing: 2px;">About JKP</span>
                         </div>
                     </div>
-                    <h2 class="display-6 fw-bold mb-4" style="color: var(--navy);">
+                    <h2 class="display-6 fw-bold mb-3" style="color: var(--navy);">
     <span class="cssanimation lePopUp sequence">Jumuiya ya Kaunti za Pwani</span><br>
     <span class="cssanimation lePopUp sequence" style="color: var(--turquoise);">— Kenya's Coastal Economic Bloc</span>
 </h2>
-                    <p class="lead mb-4" style="color: var(--text-dark); line-height: 1.8;">The Jumuiya ya Kaunti za Pwani (JKP) serves as the regional economic development body for Kenya's coastal counties. Our primary goal is to foster a unified economic environment by bringing together regional leaders, county and national governments, development partners, the private sector, and academic institutions to drive economic growth.</p>
+                    <p class="lead mb-2" style="color: var(--text-dark); line-height: 1.8;">The Jumuiya ya Kaunti za Pwani (JKP) serves as the regional economic development body for Kenya's coastal counties. Our primary goal is to foster a unified economic environment by bringing together regional leaders, county and national governments, development partners, the private sector, and academic institutions to drive economic growth.</p>
 
-                    <div class="row g-3 mb-4">
+                    <div class="row g-2 mb-2">
                         <div class="col-6">
                             <ul class="list-unstyled">
                                 <li class="mb-2"><span class="me-2" style="color: var(--turquoise);">●</span> <a href="https://web.mombasa.go.ke/" target="_blank" rel="noopener noreferrer" style="color: var(--navy); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--turquoise)'" onmouseout="this.style.color='var(--navy)'">Mombasa County</a></li>
