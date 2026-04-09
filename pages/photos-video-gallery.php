@@ -110,37 +110,46 @@ $videoItems = [
     ]
 ];
 
+// NEW RECENT EVENTS - 4 entries from News Updates page
 $recentEvents = [
     [
-        'title' => 'JABEIC Conference 2024',
-        'description' => 'Jumuiya Agribusiness & Blue Economy Investment Conference bringing together investors, government leaders, and development partners for coastal region transformation.',
-        'location' => 'Voi, Taita Taveta',
-        'date' => 'November 2024',
-        'image' => '/assets/images/jab.jpg'
-    ],
-    [
-        'title' => 'Community Engagement Initiative',
-        'description' => 'Showcasing JKP\'s community initiatives and partnerships that drive sustainable development across the coastal counties.',
+        'title' => 'JKP and TRA strengthen collaboration on sustainable tourism',
+        'description' => 'JKP held a courtesy meeting with TRA to discuss Beach Management Standards for improved beach governance and environmental conservation.',
         'location' => 'Coastal Region',
-        'date' => '2024',
-        'image' => '/assets/images/ig-1.png'
+        'date' => 'March 6, 2026',
+        'link' => '/jkp-tra-tourism-collaboration',
+        'type' => 'news'
     ],
     [
-        'title' => 'Project Highlights Launch',
-        'description' => 'Highlighting key projects and achievements of Jumuiya ya Kaunti za Pwani in regional development and economic transformation.',
-        'location' => 'Coastal Counties',
-        'date' => '2024',
-        'image' => '/assets/images/ig-2.png'
+        'title' => 'EAWLS trains coastal stakeholders on Blue Carbon policy and advocacy',
+        'description' => 'Over 40 stakeholders from BMUs, CFAs, and CBOs gathered in Mombasa for training on mangroves, seagrasses, and advocacy strategies.',
+        'location' => 'Mombasa, Coastal Region',
+        'date' => 'February 26, 2026',
+        'link' => '/eawls-blue-carbon-training',
+        'type' => 'news'
     ],
     [
-        'title' => 'JKP Documentary Release',
-        'description' => 'Documentary video showcasing the impact and achievements of Jumuiya ya Kaunti za Pwani in driving regional development and economic growth across the coast.',
-        'location' => 'Coastal Region',
-        'date' => '2024',
-        'image' => '/assets/images/jum3.jpg',
-        'type' => 'video'
+        'title' => 'JKP Agricultural Revitalization Summit kicks off in Malindi',
+        'description' => 'The summit officiated by CS Mutahi Kagwe brought together governors, experts, and partners to advance climate-smart agriculture and value addition.',
+        'location' => 'Malindi',
+        'date' => 'February 24, 2026',
+        'link' => '/jkp-agricultural-summit',
+        'type' => 'news'
+    ],
+    [
+        'title' => 'Workshop on ocean governance and blue economy policy held in Mombasa',
+        'description' => 'Discussions focused on protecting seagrass and mangroves, and engaging in global platforms like the Our Ocean Conference.',
+        'location' => 'Mombasa',
+        'date' => 'February 26, 2026',
+        'link' => '/ocean-governance-workshop',
+        'type' => 'news'
     ]
 ];
+
+// Define the correct Facebook page URL
+$facebookUrl = 'https://www.facebook.com/JKPKE/';
+$instagramUrl = 'https://www.instagram.com/jumuiyapwani/';
+$youtubeUrl = 'https://www.youtube.com/watch?v=ZaE74xQkQoE';
 ?>
 
 <style>
@@ -522,7 +531,7 @@ $recentEvents = [
     <div class="connect-section" data-aos="fade-up">
         <h3>Connect With Us</h3>
         <p>More Photos on Facebook<br>Explore our complete photo collection and stay updated with the latest events and activities from Jumuiya ya Kaunti za Pwani</p>
-        <a href="https://web.facebook.com/JumuiyaKauntiZaPwani" class="social-btn" target="_blank" rel="noopener noreferrer">
+        <a href="<?php echo $facebookUrl; ?>" class="social-btn" target="_blank" rel="noopener noreferrer">
             <i class="bi bi-facebook"></i> Visit JKP Facebook Gallery
         </a>
     </div>
@@ -553,9 +562,9 @@ $recentEvents = [
         <div class="row g-4">
             <?php foreach ($galleryItems as $item): 
                 $platform = detectPlatform($item['image'], $item['type']);
-                $platformUrl = $platform === 'facebook' ? 'https://web.facebook.com/JumuiyaKauntiZaPwani' : 
-                              ($platform === 'instagram' ? 'https://www.instagram.com/jumuiyapwani/' : 
-                              'https://www.youtube.com/watch?v=ZaE74xQkQoE');
+                $platformUrl = $platform === 'facebook' ? $facebookUrl : 
+                              ($platform === 'instagram' ? $instagramUrl : 
+                              $youtubeUrl);
             ?>
             <div class="col-md-6 col-lg-4" data-aos="fade-up">
                 <div class="gallery-card card">
@@ -635,7 +644,7 @@ $recentEvents = [
     </div>
 </section>
 
-<!-- Stay Updated Section with Vertical Line -->
+<!-- Stay Updated Section with Vertical Line - REPLACED WITH NEW NEWS ENTRIES -->
 <section class="stay-updated-section py-5">
     <div class="container">
         <!-- Centered Section Header -->
@@ -649,12 +658,7 @@ $recentEvents = [
         <div class="vertical-line-wrapper" data-aos="fade-up" data-aos-delay="100">
             <div class="vertical-line"></div>
             <div class="events-list">
-                <?php foreach ($recentEvents as $event): 
-                    $platform = detectPlatform($event['image'], $event['type'] ?? 'photo');
-                    $platformUrl = $platform === 'facebook' ? 'https://web.facebook.com/JumuiyaKauntiZaPwani' : 
-                                  ($platform === 'instagram' ? 'https://www.instagram.com/jumuiyapwani/' : 
-                                  'https://www.youtube.com/watch?v=ZaE74xQkQoE');
-                ?>
+                <?php foreach ($recentEvents as $event): ?>
                 <div class="event-card">
                     <div class="event-date"><?php echo htmlspecialchars($event['date']); ?></div>
                     <h5 class="event-title"><?php echo htmlspecialchars($event['title']); ?></h5>
@@ -663,9 +667,9 @@ $recentEvents = [
                         <i class="bi bi-geo-alt" style="color: var(--primary-blue);"></i>
                         <?php echo htmlspecialchars($event['location']); ?>
                     </div>
-                    <a href="<?php echo $platformUrl; ?>" class="view-post-btn" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-<?php echo $platform; ?>"></i> 
-                        <?php echo isset($event['type']) && $event['type'] === 'video' ? 'Watch Video' : 'View Post'; ?> 
+                    <a href="<?php echo $event['link']; ?>" class="view-post-btn">
+                        <i class="bi bi-newspaper"></i> 
+                        Read Full Story
                         <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
@@ -682,13 +686,13 @@ $recentEvents = [
         <p class="mb-4" data-aos="fade-up" data-aos-delay="100">Follow us on social media for the latest updates, events, and stories from Jumuiya ya Kaunti za Pwani</p>
         
         <div class="social-links" data-aos="fade-up" data-aos-delay="200">
-            <a href="https://web.facebook.com/JKPKE/?_rdc=1&_rdr#" class="social-icon" target="_blank" rel="noopener noreferrer">
+            <a href="<?php echo $facebookUrl; ?>" class="social-icon" target="_blank" rel="noopener noreferrer">
                 <i class="bi bi-facebook"></i>
             </a>
-            <a href="https://www.instagram.com/jumuiyapwani/" class="social-icon" target="_blank" rel="noopener noreferrer">
+            <a href="<?php echo $instagramUrl; ?>" class="social-icon" target="_blank" rel="noopener noreferrer">
                 <i class="bi bi-instagram"></i>
             </a>
-            <a href="https://www.youtube.com/watch?v=ZaE74xQkQoE" class="social-icon" target="_blank" rel="noopener noreferrer">
+            <a href="<?php echo $youtubeUrl; ?>" class="social-icon" target="_blank" rel="noopener noreferrer">
                 <i class="bi bi-youtube"></i>
             </a>
         </div>
@@ -698,3 +702,4 @@ $recentEvents = [
 <?php
 $pageContent = ob_get_clean();
 require __DIR__ . '/../layout.php';
+?>

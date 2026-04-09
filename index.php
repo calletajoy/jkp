@@ -56,6 +56,10 @@ $routes = [
     'component-2'   => 'pages/component-2.php',
     'unep-habitat'   => 'pages/unep-habitat.php',
     'process-registration'   => 'pages/process-registration.php',
+    'jkp-tra-tourism-collaboration'   => 'pages/jkp-tra-tourism-collaboration.php',
+    'eawls-blue-carbon-training'   => 'pages/eawls-blue-carbon-training.php',
+    'jkp-agricultural-summit'   => 'pages/jkp-agricultural-summit.php',
+    'ocean-governance-workshop'   => 'pages/ocean-governance-workshop.php',
     
 ];
 
