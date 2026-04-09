@@ -866,35 +866,7 @@ include __DIR__ . '/../partials/page-hero.php';
                     
                     <p>This training is part of a Pew-funded initiative aimed at integrating Blue Carbon Ecosystems into Kenya's Nationally Determined Contributions (NDCs), strengthening policy coherence, and enhancing civil society engagement in climate governance.</p>
                     
-                    <!-- Stakeholders Grid -->
-                    <h3 class="sub-heading">Stakeholders Present</h3>
-                    <div class="stakeholders-grid">
-                        <div class="stakeholder-item">
-                            <div class="stakeholder-icon"><i class="bi bi-building"></i></div>
-                            <span class="stakeholder-name">Jumuiya ya Kaunti za Pwani</span>
-                        </div>
-                        <div class="stakeholder-item">
-                            <div class="stakeholder-icon"><i class="bi bi-water"></i></div>
-                            <span class="stakeholder-name">Beach Management Units (BMUs)</span>
-                        </div>
-                        <div class="stakeholder-item">
-                            <div class="stakeholder-icon"><i class="bi bi-tree"></i></div>
-                            <span class="stakeholder-name">Community Forest Associations (CFAs)</span>
-                        </div>
-                        <div class="stakeholder-item">
-                            <div class="stakeholder-icon"><i class="bi bi-people"></i></div>
-                            <span class="stakeholder-name">Community-Based Organizations (CBOs)</span>
-                        </div>
-                        <div class="stakeholder-item">
-                            <div class="stakeholder-icon"><i class="bi bi-gender-trans"></i></div>
-                            <span class="stakeholder-name">Women and Youth Representatives</span>
-                        </div>
-                        <div class="stakeholder-item">
-                            <div class="stakeholder-icon"><i class="bi bi-universal-access"></i></div>
-                            <span class="stakeholder-name">Persons with Disabilities</span>
-                        </div>
-                    </div>
-                    
+                  
                     <!-- Blue Carbon Ecosystems -->
                     <h3 class="sub-heading">Blue Carbon Ecosystems Covered</h3>
                     <div class="ecosystem-grid">
@@ -928,23 +900,15 @@ include __DIR__ . '/../partials/page-hero.php';
                     
                     <div class="grid-container">
                         <div class="grid-item">
-                            <img src="/assets/images/placeholder-gallery-1.jpg" alt="Gallery Image 1 - Replace with actual path">
+                            <img src="assets/images/EAWLS (2).png" alt="Gallery Image 1 - Replace with actual path">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/placeholder-gallery-2.jpg" alt="Gallery Image 2 - Replace with actual path">
+                            <img src="assets/images/EAWLS (3).png" alt="Gallery Image 2 - Replace with actual path">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/placeholder-gallery-3.jpg" alt="Gallery Image 3 - Replace with actual path">
+                            <img src="assets/images/EAWLS (1).png" alt="Gallery Image 3 - Replace with actual path">
                         </div>
-                        <div class="grid-item">
-                            <img src="/assets/images/placeholder-gallery-4.jpg" alt="Gallery Image 4 - Replace with actual path">
-                        </div>
-                        <div class="grid-item">
-                            <img src="/assets/images/placeholder-gallery-5.jpg" alt="Gallery Image 5 - Replace with actual path">
-                        </div>
-                        <div class="grid-item">
-                            <img src="/assets/images/placeholder-gallery-6.jpg" alt="Gallery Image 6 - Replace with actual path">
-                        </div>
+                       
                     </div>
                 </div>
 

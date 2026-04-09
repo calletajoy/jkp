@@ -873,37 +873,10 @@ include __DIR__ . '/../partials/page-hero.php';
                     
                     <div class="quote-box">
                         <i class="bi bi-chat-quote"></i>
-                        <p>This summit marks a significant step towards growth of the agricultural sector and ensuring our region makes action-driven steps to realize the great potential that it possesses.</p>
+                        <p>CS Sen. Mutahi Kagwe has urged Kenyans to reflect on land subdivision and what it means for the future of farming, food security, and economic growth. Speaking in Malindi, he noted that as land continues to be divided into smaller portions, it becomes harder to support mechanization, attract investment, and fully unlock agriculture's potential. Kagwe called for a shared effort between farmers, counties, and investors to build stronger value chains, especially through local processing of crops like cashew and coconut, to create jobs and expand opportunity at the Coast.</p>
                     </div>
                     
-                    <!-- Stakeholders Grid -->
-                    <h3 class="sub-heading">Key Stakeholders</h3>
-                    <div class="stakeholders-grid">
-                        <div class="stakeholder-item">
-                            <div class="stakeholder-icon"><i class="bi bi-building"></i></div>
-                            <span class="stakeholder-name">JKP Governors</span>
-                        </div>
-                        <div class="stakeholder-item">
-                            <div class="stakeholder-icon"><i class="bi bi-bank"></i></div>
-                            <span class="stakeholder-name">Government Agencies</span>
-                        </div>
-                        <div class="stakeholder-item">
-                            <div class="stakeholder-icon"><i class="bi bi-flower1"></i></div>
-                            <span class="stakeholder-name">Agriculture Experts</span>
-                        </div>
-                        <div class="stakeholder-item">
-                            <div class="stakeholder-icon"><i class="bi bi-briefcase"></i></div>
-                            <span class="stakeholder-name">Development Partners</span>
-                        </div>
-                        <div class="stakeholder-item">
-                            <div class="stakeholder-icon"><i class="bi bi-shop"></i></div>
-                            <span class="stakeholder-name">Private Sector</span>
-                        </div>
-                        <div class="stakeholder-item">
-                            <div class="stakeholder-icon"><i class="bi bi-person-badge"></i></div>
-                            <span class="stakeholder-name">CS Mutahi Kagwe (Keynote)</span>
-                        </div>
-                    </div>
+                   
                     
                     <!-- Focus Areas -->
                     <h3 class="sub-heading">Key Focus Areas</h3>
@@ -940,23 +913,18 @@ include __DIR__ . '/../partials/page-hero.php';
                     
                     <div class="grid-container">
                         <div class="grid-item">
-                            <img src="/assets/images/placeholder-gallery-1.jpg" alt="Gallery Image 1 - Replace with actual path">
+                            <img src="assets/images/revt-sumit (3).png" alt="Gallery Image 1 - Replace with actual path">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/placeholder-gallery-2.jpg" alt="Gallery Image 2 - Replace with actual path">
+                            <img src="assets/images/revt-sumit (4).png" alt="Gallery Image 2 - Replace with actual path">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/placeholder-gallery-3.jpg" alt="Gallery Image 3 - Replace with actual path">
+                            <img src="assets/images/revt-sumit (2).png" alt="Gallery Image 3 - Replace with actual path">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/placeholder-gallery-4.jpg" alt="Gallery Image 4 - Replace with actual path">
+                            <img src="assets/images/revt-sumit (5).png" alt="Gallery Image 4 - Replace with actual path">
                         </div>
-                        <div class="grid-item">
-                            <img src="/assets/images/placeholder-gallery-5.jpg" alt="Gallery Image 5 - Replace with actual path">
-                        </div>
-                        <div class="grid-item">
-                            <img src="/assets/images/placeholder-gallery-6.jpg" alt="Gallery Image 6 - Replace with actual path">
-                        </div>
+                       
                     </div>
                 </div>
 

@@ -791,27 +791,16 @@ include __DIR__ . '/../partials/page-hero.php';
 
                 <!-- Image Grid - Placeholder Images (replace with actual paths) -->
                 <div class="image-grid" data-aos="fade-up">
-                    <h3>Meeting Highlights</h3>
+                    
                     
                     <div class="grid-container">
                         <div class="grid-item">
-                            <img src="/assets/images/placeholder-gallery-1.jpg" alt="Gallery Image 1 - Replace with actual path">
+                            <img src="assets/images/TRA (1).png" alt="Gallery Image 1 - Replace with actual path">
                         </div>
                         <div class="grid-item">
-                            <img src="/assets/images/placeholder-gallery-2.jpg" alt="Gallery Image 2 - Replace with actual path">
+                            <img src="assets/images/TRA (3).png" alt="Gallery Image 2 - Replace with actual path">
                         </div>
-                        <div class="grid-item">
-                            <img src="/assets/images/placeholder-gallery-3.jpg" alt="Gallery Image 3 - Replace with actual path">
-                        </div>
-                        <div class="grid-item">
-                            <img src="/assets/images/placeholder-gallery-4.jpg" alt="Gallery Image 4 - Replace with actual path">
-                        </div>
-                        <div class="grid-item">
-                            <img src="/assets/images/placeholder-gallery-5.jpg" alt="Gallery Image 5 - Replace with actual path">
-                        </div>
-                        <div class="grid-item">
-                            <img src="/assets/images/placeholder-gallery-6.jpg" alt="Gallery Image 6 - Replace with actual path">
-                        </div>
+                       
                     </div>
                 </div>
 
