@@ -18,6 +18,19 @@ $darkBlue = '#244080';
 
 // News posts data
 $newsPosts = [
+    // NEW ENTRY - April 30, 2026 (Conservation - Blue Carbon Ecosystems Validation Workshop)
+    [
+        'id' => 25,
+        'title' => 'EAWLS and Fauna & Flora validate Blue Carbon Ecosystems governance framework in Mombasa',
+        'excerpt' => 'EAWLS, in partnership with Fauna & Flora, convened a two-day Multi-Stakeholder Validation Workshop in Mombasa to strengthen governance of Kenya\'s blue carbon ecosystems. Stakeholders validated the Blue Carbon Ecosystems Working Group Manual and reviewed findings from a comprehensive Policy Analysis Report, identifying critical gaps and opportunities within existing policy frameworks. The initiative supports ongoing processes including the draft NDC Blue Carbon Ecosystem Investment Plan and the Seagrass and Coral Reef Action Plan (2026–2036), advancing a coordinated national approach to coastal conservation and climate resilience.',
+        'date' => '30',
+        'month' => 'Apr 26',
+        'year' => '2026',
+        'author' => 'Editorial Staff',
+        'comments' => 'No Comments',
+        'image' => 'assets/images/eawl2 (5).png',
+        'category' => 'Conservation'
+    ],
     // NEW ENTRY - April 22-24, 2026 (Conservation - Coral & Seagrass Action Plan)
     [
         'id' => 24,
@@ -93,7 +106,7 @@ $newsPosts = [
         'year' => '2024',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => '/assets/images/kisauni.png',
+        'image' => 'assets/images/kisauni.png',
         'category' => 'Blue Economy'
     ],
     [
@@ -105,7 +118,7 @@ $newsPosts = [
         'year' => '2024',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => '/assets/images/ecoblue.png',
+        'image' => 'assets/images/ecoblue.png',
         'category' => 'Blue Economy'
     ],
     [
@@ -117,7 +130,7 @@ $newsPosts = [
         'year' => '2024',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => '/assets/images/govs.png',
+        'image' => 'assets/images/govs.png',
         'category' => 'Governance'
     ],
     [
@@ -129,7 +142,7 @@ $newsPosts = [
         'year' => '2024',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => '/assets/images/strength bi.png',
+        'image' => 'assets/images/strength bi.png',
         'category' => 'Partnerships'
     ],
     [
@@ -141,7 +154,7 @@ $newsPosts = [
         'year' => '2024',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => '/assets/images/advo 4th gen.png',
+        'image' => 'assets/images/advo 4th gen.png',
         'category' => 'Governance'
     ],
     [
@@ -153,7 +166,7 @@ $newsPosts = [
         'year' => '2024',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => '/assets/images/townhall.png',
+        'image' => 'assets/images/townhall.png',
         'category' => 'Climate Change'
     ],
     [
@@ -165,7 +178,7 @@ $newsPosts = [
         'year' => '2024',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => '/assets/images/supply contract.png',
+        'image' => 'assets/images/supply contract.png',
         'category' => 'Infrastructure'
     ],
     [
@@ -177,7 +190,7 @@ $newsPosts = [
         'year' => '2024',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => '/assets/images/signing collabo.png',
+        'image' => 'assets/images/signing collabo.png',
         'category' => 'Conservation'
     ],
     [
@@ -189,7 +202,7 @@ $newsPosts = [
         'year' => '2023',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => '/assets/images/iowa state.png',
+        'image' => 'assets/images/iowa state.png',
         'category' => 'Education'
     ],
     [
@@ -201,7 +214,7 @@ $newsPosts = [
         'year' => '2023',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => '/assets/images/q4-reports.jpg',
+        'image' => 'assets/images/q4-reports.jpg',
         'category' => 'Partnerships'
     ],
     [
@@ -213,7 +226,7 @@ $newsPosts = [
         'year' => '2023',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => '/assets/images/tourism.png',
+        'image' => 'assets/images/tourism.png',
         'category' => 'Tourism'
     ],
     [
@@ -225,7 +238,7 @@ $newsPosts = [
         'year' => '2023',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => '/assets/images/eurometal.png',
+        'image' => 'assets/images/eurometal.png',
         'category' => 'Investment'
     ],
     [
@@ -237,7 +250,7 @@ $newsPosts = [
         'year' => '2023',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => '/assets/images/trade mission.png',
+        'image' => 'assets/images/trade mission.png',
         'category' => 'Trade'
     ],
     [
@@ -249,7 +262,7 @@ $newsPosts = [
         'year' => '2023',
         'author' => 'Editorial Staff',
         'comments' => '3 Comments',
-        'image' => '/assets/images/eth-oromia.png',
+        'image' => 'assets/images/eth-oromia.png',
         'category' => 'Tourism'
     ],
     [
@@ -261,7 +274,7 @@ $newsPosts = [
         'year' => '2023',
         'author' => 'Editorial Staff',
         'comments' => '3 Comments',
-        'image' => '/assets/images/jum-eco.png',
+        'image' => 'assets/images/jum-eco.png',
         'category' => 'Blue Economy'
     ],
     [
@@ -273,7 +286,7 @@ $newsPosts = [
         'year' => '2023',
         'author' => 'Editorial Staff',
         'comments' => '2 Comments',
-        'image' => '/assets/images/rege.png',
+        'image' => 'assets/images/rege.png',
         'category' => 'Fashion'
     ],
     [
@@ -285,7 +298,7 @@ $newsPosts = [
         'year' => '2023',
         'author' => 'Editorial Staff',
         'comments' => '3 Comments',
-        'image' => '/assets/images/saf-plc.png',
+        'image' => 'assets/images/saf-plc.png',
         'category' => 'Partnerships'
     ],
     [
@@ -296,7 +309,7 @@ $newsPosts = [
         'month' => 'Jun 23',
         'author' => 'Editorial Staff',
         'comments' => '2 Comments',
-        'image' => '/assets/images/eu-heads.png',
+        'image' => 'assets/images/eu-heads.png',
         'category' => 'Blue Economy'
     ],
     [
@@ -307,7 +320,7 @@ $newsPosts = [
         'month' => 'Apr 23',
         'author' => 'Editorial Staff',
         'comments' => '2 Comments',
-        'image' => '/assets/images/fishermen.png',
+        'image' => 'assets/images/fishermen.png',
         'category' => 'Fisheries'
     ]
 ];
@@ -475,7 +488,9 @@ $newsPages = [
     22 => 'jkp-agricultural-summit',
     23 => 'ocean-governance-workshop',
     // MAPPING FOR CORAL & SEAGRASS ACTION PLAN
-    24 => 'coral-seagrass-conservation-action-plan'
+    24 => 'coral-seagrass-conservation-action-plan',
+    // MAPPING FOR BLUE CARBON ECOSYSTEMS VALIDATION WORKSHOP
+    25 => 'eawls-blue-carbon-validation-workshop'
 ];
 ?>
 
