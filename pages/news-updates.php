@@ -18,6 +18,19 @@ $darkBlue = '#244080';
 
 // News posts data
 $newsPosts = [
+    // NEW ENTRY - April 22-24, 2026 (Conservation - Coral & Seagrass Action Plan)
+    [
+        'id' => 24,
+        'title' => 'Coral and Seagrass Conservation Action Plan in Mombasa workshop',
+        'excerpt' => 'As a member of the Task Force on the Coral and Seagrass Conservation Action Plan development, JKP participated in a workshop held on 22nd–24th April 2026 at City Blue Creekside Hotel & Suites, Mombasa. The purpose was to obtain structured feedback from the taskforce to strengthen the technical quality, policy alignment, feasibility, and ownership of the Action Plan prior to finalisation and adoption.',
+        'date' => '24',
+        'month' => 'Apr 26',
+        'year' => '2026',
+        'author' => 'Editorial Staff',
+        'comments' => 'No Comments',
+        'image' => 'assets/images/coral-seagrass-workshop.png',
+        'category' => 'Conservation'
+    ],
     // NEW ENTRY 1 - March 6, 2026 (Tourism)
     [
         'id' => 20,
@@ -460,7 +473,9 @@ $newsPages = [
     20 => 'jkp-tra-tourism-collaboration',
     21 => 'eawls-blue-carbon-training',
     22 => 'jkp-agricultural-summit',
-    23 => 'ocean-governance-workshop'
+    23 => 'ocean-governance-workshop',
+    // MAPPING FOR CORAL & SEAGRASS ACTION PLAN
+    24 => 'coral-seagrass-conservation-action-plan'
 ];
 ?>
 
