@@ -1,0 +1,4 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/jumuiyao/public_html/dev.jumuiya.org
+    - /bin/cp -R * $DEPLOYPATH
