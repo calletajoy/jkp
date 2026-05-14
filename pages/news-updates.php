@@ -28,7 +28,7 @@ $newsPosts = [
         'year' => '2026',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => 'assets/images/coral-seagrass-workshop.png',
+        'image' => 'assets/images/coralsea (4).png',
         'category' => 'Conservation'
     ],
     // NEW ENTRY 1 - March 6, 2026 (Tourism)
