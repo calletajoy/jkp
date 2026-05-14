@@ -28,7 +28,7 @@ $newsPosts = [
         'year' => '2026',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => 'assets/images/eawl2 (5).png',
+        'image' => '/assets/images/eawl2 (5).png',
         'category' => 'Conservation'
     ],
     // NEW ENTRY - April 22-24, 2026 (Conservation - Coral & Seagrass Action Plan)
@@ -41,7 +41,7 @@ $newsPosts = [
         'year' => '2026',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => 'assets/images/coralsea (4).png',
+        'image' => '/assets/images/coralsea (4).png',
         'category' => 'Conservation'
     ],
     // NEW ENTRY 1 - March 6, 2026 (Tourism)
@@ -54,7 +54,7 @@ $newsPosts = [
         'year' => '2026',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => 'assets/images/TRA (2).png',
+        'image' => '/assets/images/TRA (2).png',
         'category' => 'Tourism'
     ],
     // NEW ENTRY 2 - February 26, 2026 (Education)
@@ -67,7 +67,7 @@ $newsPosts = [
         'year' => '2026',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => 'assets/images/EAWLS (4).png',
+        'image' => '/assets/images/EAWLS (4).png',
         'category' => 'Education'
     ],
     // NEW ENTRY 3 - February 24, 2026 (Investment)
@@ -80,7 +80,7 @@ $newsPosts = [
         'year' => '2026',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => 'assets/images/revt-sumit (1).png',
+        'image' => '/assets/images/revt-sumit (1).png',
         'category' => 'Investment'
     ],
     // NEW ENTRY 4 - February 26, 2026 (Blue Economy)
@@ -93,7 +93,7 @@ $newsPosts = [
         'year' => '2026',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => 'assets/images/fauna.jpeg',
+        'image' => '/assets/images/fauna.jpeg',
         'category' => 'Blue Economy'
     ],
     // EXISTING POSTS START HERE
@@ -106,7 +106,7 @@ $newsPosts = [
         'year' => '2024',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => 'assets/images/kisauni.png',
+        'image' => '/assets/images/kisauni.png',
         'category' => 'Blue Economy'
     ],
     [
@@ -118,7 +118,7 @@ $newsPosts = [
         'year' => '2024',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => 'assets/images/ecoblue.png',
+        'image' => '/assets/images/ecoblue.png',
         'category' => 'Blue Economy'
     ],
     [
@@ -130,7 +130,7 @@ $newsPosts = [
         'year' => '2024',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => 'assets/images/govs.png',
+        'image' => '/assets/images/govs.png',
         'category' => 'Governance'
     ],
     [
@@ -142,7 +142,7 @@ $newsPosts = [
         'year' => '2024',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => 'assets/images/strength bi.png',
+        'image' => '/assets/images/strength bi.png',
         'category' => 'Partnerships'
     ],
     [
@@ -154,7 +154,7 @@ $newsPosts = [
         'year' => '2024',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => 'assets/images/advo 4th gen.png',
+        'image' => '/assets/images/advo 4th gen.png',
         'category' => 'Governance'
     ],
     [
@@ -166,7 +166,7 @@ $newsPosts = [
         'year' => '2024',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => 'assets/images/townhall.png',
+        'image' => '/assets/images/townhall.png',
         'category' => 'Climate Change'
     ],
     [
@@ -178,7 +178,7 @@ $newsPosts = [
         'year' => '2024',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => 'assets/images/supply contract.png',
+        'image' => '/assets/images/supply contract.png',
         'category' => 'Infrastructure'
     ],
     [
@@ -190,7 +190,7 @@ $newsPosts = [
         'year' => '2024',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => 'assets/images/signing collabo.png',
+        'image' => '/assets/images/signing collabo.png',
         'category' => 'Conservation'
     ],
     [
@@ -202,7 +202,7 @@ $newsPosts = [
         'year' => '2023',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => 'assets/images/iowa state.png',
+        'image' => '/assets/images/iowa state.png',
         'category' => 'Education'
     ],
     [
@@ -214,7 +214,7 @@ $newsPosts = [
         'year' => '2023',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => 'assets/images/q4-reports.jpg',
+        'image' => '/assets/images/q4-reports.jpg',
         'category' => 'Partnerships'
     ],
     [
@@ -226,7 +226,7 @@ $newsPosts = [
         'year' => '2023',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => 'assets/images/tourism.png',
+        'image' => '/assets/images/tourism.png',
         'category' => 'Tourism'
     ],
     [
@@ -238,7 +238,7 @@ $newsPosts = [
         'year' => '2023',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => 'assets/images/eurometal.png',
+        'image' => '/assets/images/eurometal.png',
         'category' => 'Investment'
     ],
     [
@@ -250,7 +250,7 @@ $newsPosts = [
         'year' => '2023',
         'author' => 'Editorial Staff',
         'comments' => 'No Comments',
-        'image' => 'assets/images/trade mission.png',
+        'image' => '/assets/images/trade mission.png',
         'category' => 'Trade'
     ],
     [
@@ -262,7 +262,7 @@ $newsPosts = [
         'year' => '2023',
         'author' => 'Editorial Staff',
         'comments' => '3 Comments',
-        'image' => 'assets/images/eth-oromia.png',
+        'image' => '/assets/images/eth-oromia.png',
         'category' => 'Tourism'
     ],
     [
@@ -274,7 +274,7 @@ $newsPosts = [
         'year' => '2023',
         'author' => 'Editorial Staff',
         'comments' => '3 Comments',
-        'image' => 'assets/images/jum-eco.png',
+        'image' => '/assets/images/jum-eco.png',
         'category' => 'Blue Economy'
     ],
     [
@@ -286,7 +286,7 @@ $newsPosts = [
         'year' => '2023',
         'author' => 'Editorial Staff',
         'comments' => '2 Comments',
-        'image' => 'assets/images/rege.png',
+        'image' => '/assets/images/rege.png',
         'category' => 'Fashion'
     ],
     [
@@ -298,7 +298,7 @@ $newsPosts = [
         'year' => '2023',
         'author' => 'Editorial Staff',
         'comments' => '3 Comments',
-        'image' => 'assets/images/saf-plc.png',
+        'image' => '/assets/images/saf-plc.png',
         'category' => 'Partnerships'
     ],
     [
@@ -309,7 +309,7 @@ $newsPosts = [
         'month' => 'Jun 23',
         'author' => 'Editorial Staff',
         'comments' => '2 Comments',
-        'image' => 'assets/images/eu-heads.png',
+        'image' => '/assets/images/eu-heads.png',
         'category' => 'Blue Economy'
     ],
     [
@@ -320,7 +320,7 @@ $newsPosts = [
         'month' => 'Apr 23',
         'author' => 'Editorial Staff',
         'comments' => '2 Comments',
-        'image' => 'assets/images/fishermen.png',
+        'image' => '/assets/images/fishermen.png',
         'category' => 'Fisheries'
     ]
 ];
